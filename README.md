@@ -1,3 +1,11 @@
+# web_BKC
+Website BKC
+Pure HTML SASS JS webssite ported to Astro from 2026
+
+
+
+
+
 # Astro Starter Kit: Basics
 
 ```sh

@@ -1,11 +1,159 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Menu from '../components/Menu.astro';
+import Footer from '../components/Footer.astro';
+import '../css/general.css';
 ---
-
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>BKC Accueil</title>
+	</head>
+	<body>
+		<Menu />
+		<main>
+			<p>Bienvenue chez Bilene Kite Center</p>
+        <p>de septembre à mars</p>
+        <h1>Kitesurf et Wing au Mozambique</h1>
+        <video src="./images/mini.webm" autoplay loop muted poster="/images/1-spot/9.webp">
+            Navigateur incompatible
+        </video>
+        <p id="intro"> Votre <em>spot de Kitesurf et Wingfoil au Mozambique</em>  , en <em>direct sur la plage</em> d'une lagune magnifique aux eaux claires et peu profondes.</p>
+        <div class="flexi">
+            <a href="./fr/le-spot-de-bilene-au-mozambique.html">
+                <figure>
+                    <img src="./images/accueil/1.webp" alt="kitesurfer dans un paysage magnifique" loading="lazy">
+                    <figcaption>
+                        <h2>Le spot, unique, vierge</h2>
+                        <p>Découvrez le spot de Bilene, son lagon unique en son genre, paradisiaque. Le Mozambique, un pays <em>vierge du tourisme de masse</em>, son accueil chaleureux.</p>
+                    </figcaption>
+                </figure>
+            </a>
+            <a href="./fr/le-centre-de-kite-au-mozambique.html">
+                <figure>
+                    <img src="./images/accueil/2.webp" alt="Centre de kite au bord de la plage" loading="lazy">
+                    <figcaption>
+                        <h2>Le Centre de Kite</h2>
+                        <p>Un centre dédié au kite, équipé de douche, rangements, zone chilling, un spot sécurisé, des cours, de la location de matériel Eleveight de l'année, du guiding dans la lagune, ses speedspots, ses downwinds, son spot de vagues.</p>
+                    </figcaption>
+                </figure>
+            </a>
+            <a href="./fr/ecole-de-kite-au-mozambique.html">
+                <figure>
+                    <img src="./images/accueil/3.webp" alt="cours de kitesurf" loading="lazy">
+                    <figcaption>
+                        <h2>L'école de kite</h2>
+                        <p>Un instructeur certifié IKO pour vous faire découvrir le sport dans des conditions idéales. Un équipement complet de l’année. Un moniteur OLK pour le coaching freestyle, big air, strapless, vagues.</p>
+                    </figcaption>
+                </figure>
+            </a>
+            <a href="./fr/trip-kite-au-mozambique.html">
+                <figure>
+                    <img src="./images/accueil/6.webp" alt="groupe de personnes devant un spot vierge" loading="lazy">
+                    <figcaption>
+                        <h2>Trips / Kitesafary / KiteTrip</h2>
+                        <p>Le Mozambique regorge de spots magiques, pour tous les goûts, nous vous emmenons les découvrir.</p>
+                    </figcaption>
+                </figure>
+            </a>
+            <a href="./fr/video-pro-au-mozambique.html">
+                <figure>
+                    <img src="./images/accueil/4.webp" alt="kitesurfer pendant un saut" loading="lazy">
+                    <figcaption>
+                        <h2>Vidéos pro</h2>
+                        <p>Du montage rider complet, avec slow motions et prises de de vue en drone aux
+                            photos ou vidéos de vos sessions, votre progression pendant votre stage. BKC est partenaire Air Tricks Prod, spécialiste des vidéos kite.</p>
+                    </figcaption>
+                </figure>
+            </a>
+            <a href="./fr/infos-mozambique.html">
+                <figure>
+                    <img src="./images/accueil/5.webp" alt="équipe de riders qui regarde un paysage magnifique" loading="lazy">
+                    <figcaption>
+                        <h2>Infos complémentaires, logement, vols</h2>
+                        <p>Comment nous rejoindre, les Visas, les vols, les transferts de l'aéroport, le logement, nous nous occupons de tout dès votre sortie de l'aéroport.</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div id="feednpart">
+            <div id="tripadvisor">
+                <a target="_blank" href="https://www.tripadvisor.fr/Attraction_Review-g1597322-d15360648-Reviews-Bilene_Kite_Center-Bilene_Gaza_Province.html">
+                    <img src="./images/accueil/TripAdv.webp" alt="copie d'écran site trip advisor">
+                </a>
+            </div>
+			<div id="partenaires">
+                <h2>Partenaires BKC</h2>
+                <p>Ils sont avec nous !</p>
+                <div id="partnairesListe">
+                    <a href="https://kitesurf.voyages-adekua.fr/sejour-kitesurf/mozambique/bilene" target="_blank">
+                        <img src="./images/accueil/partners/Adekua.webp" alt="logo Adekua"/>
+                    </a>
+                    <a href="https://www.manawa.com">
+                        <img src="./images/accueil/partners/Adrenaline.webp" alt="logo Adrenaline"/>
+                    </a>
+                    <a href="https://fto110.wixsite.com/air-tricks">
+                        <img src="./images/accueil/partners/airtricks.webp" alt="logo airtricks"/>
+                    </a>
+                    <a href="https://www.atibavoyage.com/">
+                        <img src="./images/accueil/partners/Atiba.webp" alt="logo Atiba"/>
+                    </a>
+                    <a href="https://www.eleveightkites.com/">
+                        <img src="./images/accueil/partners/E8.png" alt="logo Eleveight"/>
+                    </a>
+                    <a href="https://www.voyages-gallia.fr/">
+                        <img src="./images/accueil/partners/galia.webp" alt="Logo galia"/>
+                    </a>
+                    <a href="https://www.kitexperience.com/les-destinations-pour-le-kitesurf/kitesurf-au-mozambique/sejour-kite-a-bilene/">
+                        <img src="./images/accueil/partners/kitexperience.webp" alt="logo kitexperience"/>
+                    </a>
+                    <a href="https://www.onelaunchkiteboarding.com/">
+                        <img src="./images/accueil/partners/olk.webp" alt="Logo OLK"/>
+                    </a>
+                    <a href="https://sonofkite.com">
+                        <img src="./images/accueil/partners/sonof.webp" alt="Logo Son Of Kite"/>
+                    </a>
+                    <a href="https://tribbuu.com/">
+                        <img src="./images/accueil/partners/Tribbu.webp" alt="Logo Tribbu"/>
+                    </a>
+                    <a href="https://www.tripadvisor.fr/">
+                        <img src="./images/accueil/partners/tripadvisor.webp" alt="Logo tripadvisor"/>
+                    </a>
+                    <a href="https://www.tripaneer.com/">
+                        <img src="./images/accueil/partners/tripaneer.webp" alt="Logo tripaneer"/>
+                    </a>                    
+                    <a href="https://www.waterexpeditions.com/">
+                        <img src="./images/accueil/partners/water-expeditions-logo.webp" alt="Logo water expedition"/>
+                    </a>
+                    <a href="https://www.kayak.com.br/"><img src="../images/accueil/partners/kayak.png" alt="logo Kayak Group">
+                    </a>
+                    <a href="https://www.decathlontravel.com/voyages/sport-kitesurf/voyage-stage-kitesurf-au-mozambique-2-personnes/ZUZKEU">
+                        <img src="./images/accueil/partners/decathTravel.png" alt="Logo Decathlon Travel">
+                    </a>
+                    <a href="https://fun-and-fly.com/spot/bilene/">
+                        <img src="./images/accueil/partners/fun-and-fly-sport-away-logo.webp" alt="Logo fun-and-fly">
+                    </a>
+                    <a href="https://kitelab.info/fr/">
+                        <img src="./images/accueil/partners/kitelab-logo.webp" alt="Logo Kitelab">
+                    </a>
+                </div>
+            </div> 
+        </div>
+		<div id="whoweare" class="flexi">
+            <figure>
+                <img src="./images/accueil/7.webp" alt="équipe de riders accueillants" loading="lazy">
+                <figcaption>
+                    <h2>Qui sommes nous ?</h2>
+                    <p>Teresa, Pereira, Guillaume, 3 passionnés qui ont voulu partager leur passion pour les <em>sports de glisse</em>  à travers le monde et spécialement au <em>Mozambique</em>. <br>
+                    <a href="https://youtu.be/XeEac9lFaYk" target="_blank">Voir la vidéo de notre trip de découverte</a>.</p>
+                </figcaption>
+            </figure>
+        </div>
+		</main>
+		<Footer />
+	</body>
+</html>
