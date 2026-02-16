@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(for file in *.astro)",
+      "Bash(do echo \"✓ $file\")",
+      "Bash(done)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}

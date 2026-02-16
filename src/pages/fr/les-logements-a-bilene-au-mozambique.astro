@@ -1,0 +1,77 @@
+---
+import Menu from '../../components/Menu.astro';
+import Footer from '../../components/Footer.astro';
+import '../../css/general.css';
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
+    <title>Les logements à Bilene au Mozambique</title>
+    <meta name="description" content="Les possibilités de logement que nous proposons à Bilene au Mozambique">
+    <meta name="keywords" content="logement,logements, hotel, restaurant, beah-bar, bar, plage, resort, Palmeiras, San Martinho, Sunset">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1CJQ1EJQS"></script>
+</head>
+<body>
+    <Menu />
+
+
+    <main>
+        <section id="headsection">
+            <img src="/images/11-Accomodation/Palm_view.jpg" alt="Vue sur la lagune de Bilene">
+            <h1 style="text-shadow: 1px 1px 2px black;">Les Logements à Bilene</h1>
+            <h2 style="color: #b0cff7; text-shadow: 1px 1px 2px black;">Au calme, au bord de la lagune</h2>
+        </section>
+        <section id="introinfos">
+            <p>Nous avons des partenariats avec les 3 établissements proposés, n'hésitez pas à nous contacter pour les disponibilités et réservations<br></p>            
+        </section>
+        <section id="mainsection">
+            <div class="flexdiv">
+                <div class="flextext">
+                    <h2>Le Palmeiras</h2>
+                    <p>C'est la que ce trouve notre centre de kite, petit resort traditionnel tout confort, avec son beach bar et restaurant sur la plage, vous pourrez déguster une "2M" (la bière locale) en regardant les
+                        riders à l'eau. Ils proposent des bungalows proches de la mer, ou des maisons partagées, en direct sur la plage, A titre indicatif, les prix sont autour de 50€ / nuit / bungalow.
+                    </p>
+                </div>
+                <div class="fleximg">
+                    <img src="/images/11-Accomodation/Palm_house.jpg" alt="Intérieur de maison dans la nature">
+                    <img src="/images/11-Accomodation/Palm_Bung.jpg" alt="bungalow dans la forêt">
+                </div>
+            </div>
+            <div class="flexdiv background">
+                <div class="flextext">
+                    <h2>Le San Martinho</h2>
+                    <p>Situé à 500m de notre centre de kite, sur la même plage, le San Martinho est l'alternative au plus haut standing de la lagune. Il propose des chambres d'hotel 
+                        ou des maisons confortables à se partager, jusque 4 chambres. Il est soigneusement entretenu, dispose de plusieurs piscines, d'un restaurant et beach-bar de qualité
+                        A titre indicatif, les prix sont autour de 120€ / nuit / chambre. 
+                        <a href="https://www.smbc.co.za/">Le site du San Martinho</a>
+                    </p>
+                </div>
+                <div class="fleximg">
+                    <img src="/images/11-Accomodation/SanMart1.webp" alt="vue aérienne d'un hotel en bord de lagune">
+                    <img src="/images/11-Accomodation/SanMart2.webp" alt="vue aérienne inversée d'un hotel en bord de lagune">
+                </div>
+            </div>
+            <div class="flexdiv">
+                <div class="flextext">
+                    <h2>Le Sunset</h2>
+                    <p>C'est un peu le compromis entre nos précédents choix, situé à 800m du centre de kite, sur la même plage, le Sunset est un petit hotel paisible avec 
+                        son restaurant de qualité (nous y allons souvent diner), des chambres soignées, un standing intermédiaire entre le Palmeiras et le San Martinho. 
+                        A titre indicatif, les prix sont autour de 120€ / nuit / chambre.
+                    </p>
+                </div>
+                <div class="fleximg">
+                    <img src="/images/11-Accomodation/Sun1.webp" alt="terrasse d'un' restaurant en bord de lagune paradisiaque">
+                    <img src="/images/11-Accomodation/Sun2.webp" alt="intérieur de chambre d'hotel">
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</body>
+</html>
