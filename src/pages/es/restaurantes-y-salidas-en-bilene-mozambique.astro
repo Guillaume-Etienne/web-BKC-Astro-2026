@@ -1,0 +1,45 @@
+---
+import MenuES from '../../components/MenuES.astro';
+import Footer from '../../components/Footer.astro';
+import Analytics from '../../components/Analytics.astro';
+import '../../sass/general.scss';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
+    <title>Restaurantes y salidas en Bilene, Mozambique</title>
+    <meta name="description" content="Los restaurantes y salidas que ofrecemos en Bilene, Mozambique">
+    <meta name="keywords" content="alojamiento, hotel, restaurante, beach-bar, bar, playa, resort, Palmeiras, San Martinho, Sunset">
+    <Analytics />
+</head>
+<body>
+    <MenuES />
+
+    <main>
+        <section id="headsection">
+            <img src="/images/11-Accomodation/Palm_view.jpg" alt="Vista sobre la laguna de Bilene">
+            <h1 style="text-shadow: 1px 1px 2px black;">Restaurantes y salidas en Bilene</h1>
+            <h2 style="color: #b0cff7; text-shadow: 1px 1px 2px black;">Los buenos momentos por la noche</h2>
+        </section>
+        <section id="mainsection">
+            <div class="flexdiv">
+                <div class="flextext">
+                    <h2>En construcción</h2>
+                    <p>
+                    </p>
+                </div>
+                <div class="fleximg">
+                    <img src="/images/inprogress.webp" alt="foto de un kitesurfer en el aire">
+                    <img src="/images/11-Accomodation/Palm_Bung.jpg" alt="bungalow en el bosque">
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</body>
+</html>

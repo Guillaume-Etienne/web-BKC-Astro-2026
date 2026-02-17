@@ -1,0 +1,57 @@
+---
+import MenuES from '../../components/MenuES.astro';
+import Footer from '../../components/Footer.astro';
+import Analytics from '../../components/Analytics.astro';
+import '../../sass/general.scss';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
+    <title>Un video con tus mejores trucos y momentos</title>
+    <meta name="description" content="Tus propios videos de kitesurf y wing en Bilene, Mozambique">
+    <meta name="keywords" content="photo, photos, video, videos, kite, kitesurf, kiteboard, wing, wingsurf, SUP, paddle, Mozambique, Bilene">
+    <Analytics />
+</head>
+<body>
+    <MenuES />
+    <main>
+        <section id="headsection">
+            <img src="/images/8-videos/1.webp" alt="cámara de video">
+            <h1>Un video con tus mejores trucos y momentos</h1>
+            <h2>Con Air Tricks Prod, especialista de videos deportivos</h2>
+        </section>
+        <section>
+            <h2>Kitesurf, un deporte espectacular para imágenes y videos</h2>
+        </section>
+        <section id="mainsection">
+            <div class="flexdiv middle">
+                <div class="flextext">
+                    <h2>Grabación y edición:</h2>
+                    <p>Con más de 10 años de experiencia, Air Tricks Prod se especializa en la filmación y edición de videos de deportes acuáticos.
+                        Con cámara 4k Sony, cámaras go-pro slow motion, dron DJI. Todo lo necesario para crear un recuerdo inolvidable sobre tu visita.
+                    </p>
+                </div>
+                <div class="fleximg">
+                    <img src="/images/accueil/partners/airtricks.webp" alt="logo Air Tricks Prod" loading="lazy" id="logoairtricks">
+                </div>
+            </div>
+            <div id="videos">
+                <iframe class="vid" width="560" height="315" src="https://www.youtube.com/embed/EA8pjVDsoGk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F288244685233804%2Fvideos%2F644870583320281%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F288244685233804%2Fvideos%2F326764389420690%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/fCApeQ2XZj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/UOrAW9Kbiw4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/rcRHQt_O95M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div>
+                <p>Más videos en Bilene :</p>
+                <a href="https://www.facebook.com/BKC-Bilene-Kite-Center-288244685233804/videos/?ref=page_internal">Enlace a vídeos</a>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</body>
+</html>
