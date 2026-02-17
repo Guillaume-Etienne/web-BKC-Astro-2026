@@ -1,0 +1,45 @@
+---
+import MenuES from '../../../components/MenuES.astro';
+import Footer from '../../../components/Footer.astro';
+import Analytics from '../../../components/Analytics.astro';
+import '../../../sass/general.scss';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
+    <title>Bienvenidos a nuestro blog - Bilene Kite Center</title>
+    <meta name="description" content="Primer artículo del blog Bilene Kite Center: bienvenida y presentación de nuestro blog de kitesurf en Mozambique">
+    <Analytics />
+</head>
+<body>
+    <MenuES />
+
+    <main>
+        <section id="headsection">
+            <img src="/images/1-spot/1.webp" alt="blog Bilene Kite Center">
+            <h1>¡Bienvenidos a nuestro blog!</h1>
+            <h2>Febrero 2026</h2>
+        </section>
+        <section id="mainsection">
+            <div class="flexdiv">
+                <div class="flextext">
+                    <p>¡Estamos encantados de lanzar el blog del Bilene Kite Center! Aquí compartiremos regularmente nuestras noticias, consejos para el kitesurf en Mozambique, las mejores condiciones de viento y todo lo que hace que Bilene sea tan especial.</p>
+                    <p>Estad atentos a nuestros próximos artículos sobre spots, condiciones meteorológicas, vida local y mucho más.</p>
+                    <p>¡Nos vemos en el agua!</p>
+                </div>
+            </div>
+            <div class="flexdiv">
+                <div class="flextext">
+                    <a href="/es/blog">← Volver al blog</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</body>
+</html>

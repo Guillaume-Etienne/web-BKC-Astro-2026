@@ -1,0 +1,55 @@
+---
+import Menu from '../../../components/Menu.astro';
+import Footer from '../../../components/Footer.astro';
+import Analytics from '../../../components/Analytics.astro';
+import '../../../sass/general.scss';
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
+    <title>Blog - Bilene Kite Center</title>
+    <meta name="description" content="Le blog du Bilene Kite Center : actualités, conseils kitesurf et vie au Mozambique">
+    <Analytics />
+</head>
+<body>
+    <Menu />
+
+    <main>
+        <section id="headsection">
+            <img src="/images/blog/blog.webp" alt="blog Bilene Kite Center">
+            <h1>Blog</h1>
+            <h2>Actualités et conseils</h2>
+        </section>
+        <section id="mainsection">
+            <div class="flexdiv">
+                <div class="flextext">
+                    <h2>Nos derniers articles</h2>
+                </div>
+            </div>
+
+            <div class="flexdiv">
+                <a href="/fr/blog/bienvenue" class="flextext">
+                    <h3>Les massages ! Nouveau à Bilene Kite Center</h3>
+                    <p><em>Février 2026</em></p>
+                    <p>Un moment de détente après une session sur l'eau, c'est ce que propose le nouveau service de massage à Bilene Kite Center.</p>
+                </a>
+            </div>
+
+            <div class="flexdiv">
+                <a href="/fr/blog/enavion" class="flextext">
+                    <h3>En avion, au-dessus de Bilene</h3>
+                    <p><em>Janvier 2026</em></p>
+                    <p>Il est venu en avion au-dessus de Bilene, pour découvrir le spot et les conditions de vent.</p>
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <Footer />
+</body>
+</html>

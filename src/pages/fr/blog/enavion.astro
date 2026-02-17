@@ -1,0 +1,51 @@
+---
+import Menu from '../../../components/Menu.astro';
+import Footer from '../../../components/Footer.astro';
+import Analytics from '../../../components/Analytics.astro';
+import '../../../sass/general.scss';
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
+    <title>En avion, au-dessus de Bilene</title>
+    <meta name="description" content="Un article du blog Bilene Kite Center : découverte du spot en avion et conditions de vent">
+    <Analytics />
+</head>
+<body>
+    <Menu />
+
+    <main>
+        <section id="headsection">
+            <img src="/images/blog/blog.webp" alt="blog Bilene Kite Center">
+            <h1>Inondation ? Pas de problème</h1>
+            <h2>Février 2026</h2>
+        </section>
+        <section id="mainsection">
+            <div class="flexdiv">
+                <div class="flextext">
+                    <p>Notre moniteur a visité Bilene en avion pour découvrir le spot et les conditions de vent.</p>
+                    <p>Il a été impressionné par la beauté de la lagune et les conditions de vent parfaites pour le kitesurf. Il a hâte de partager cette expérience avec nos clients et de les emmener découvrir Bilene depuis les airs.</p>
+                    <p>Restez connectés pour découvrir nos prochains articles sur les spots, les conditions météo, la vie locale et bien plus encore.</p>
+                    <p>À très bientôt sur l'eau !</p>
+                </div>
+                <div class="fleximg">
+                    <img src="/images/blog/massage.webp" alt="blog Bilene Kite Center">
+
+
+                </div>
+            </div>
+            <div class="flexdiv">
+                <div class="flextext">
+                    <a href="/fr/blog">← Retour au blog</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</body>
+</html>
