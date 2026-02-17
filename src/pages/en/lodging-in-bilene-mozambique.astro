@@ -1,0 +1,76 @@
+---
+import MenuEN from '../../components/MenuEN.astro';
+import Footer from '../../components/Footer.astro';
+import Analytics from '../../components/Analytics.astro';
+import '../../sass/general.scss';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
+    <title>Accommodation in Bilene, Mozambique</title>
+    <meta name="description" content="Accommodation options we offer in Bilene, Mozambique">
+    <meta name="keywords" content="accommodation, hotel, restaurant, beach-bar, bar, beach, resort, Palmeiras, San Martinho, Sunset">
+    <Analytics />
+</head>
+<body>
+    <MenuEN />
+
+    <main>
+        <section id="headsection">
+            <img src="/images/11-Accomodation/Palm_view.jpg" alt="View of the Bilene lagoon">
+            <h1 style="text-shadow: 1px 1px 2px black;">Accommodation in Bilene</h1>
+            <h2 style="color: #b0cff7; text-shadow: 1px 1px 2px black;">Peaceful, by the lagoon</h2>
+        </section>
+        <section id="introinfos">
+            <p>We have partnerships with the 3 establishments offered, do not hesitate to contact us for availability and reservations<br></p>
+        </section>
+        <section id="mainsection">
+            <div class="flexdiv">
+                <div class="flextext">
+                    <h2>The Palmeiras</h2>
+                    <p>This is where our kite center is located, a traditional all-comfort small resort, with its beach bar and restaurant on the beach, where you can enjoy a "2M" (the local beer) while watching
+                        riders on the water. They offer bungalows close to the sea, or shared houses, directly on the beach. As an indication, prices are around 50€ / night / bungalow.
+                    </p>
+                </div>
+                <div class="fleximg">
+                    <img src="/images/11-Accomodation/Palm_house.jpg" alt="House interior in nature">
+                    <img src="/images/11-Accomodation/Palm_Bung.jpg" alt="bungalow in the forest">
+                </div>
+            </div>
+            <div class="flexdiv background">
+                <div class="flextext">
+                    <h2>The San Martinho</h2>
+                    <p>Located 500m from our kite center, on the same beach, the San Martinho is the highest standing alternative on the lagoon. It offers hotel rooms
+                        or comfortable houses to share, up to 4 bedrooms. It is carefully maintained, has several pools, a quality restaurant and beach bar.
+                        As an indication, prices are around 120€ / night / room.
+                        <a href="https://www.smbc.co.za/">San Martinho website</a>
+                    </p>
+                </div>
+                <div class="fleximg">
+                    <img src="/images/11-Accomodation/SanMart1.webp" alt="aerial view of a lagoon-side hotel">
+                    <img src="/images/11-Accomodation/SanMart2.webp" alt="reverse aerial view of a lagoon-side hotel">
+                </div>
+            </div>
+            <div class="flexdiv">
+                <div class="flextext">
+                    <h2>The Sunset</h2>
+                    <p>It's a bit of a compromise between our previous choices, located 800m from the kite center, on the same beach, the Sunset is a small peaceful hotel with
+                        its quality restaurant (we often go there for dinner), well-kept rooms, an intermediate standing between the Palmeiras and the San Martinho.
+                        As an indication, prices are around 120€ / night / room.
+                    </p>
+                </div>
+                <div class="fleximg">
+                    <img src="/images/11-Accomodation/Sun1.webp" alt="restaurant terrace by a paradise lagoon">
+                    <img src="/images/11-Accomodation/Sun2.webp" alt="hotel room interior">
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</body>
+</html>
