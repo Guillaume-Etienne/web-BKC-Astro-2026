@@ -1,6 +1,7 @@
 ---
 import Menu from '../components/Menu.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
 import '../sass/general.scss';
 ---
 <!doctype html>
@@ -9,9 +10,26 @@ import '../sass/general.scss';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>BKC Accueil</title>
+		<link rel="icon" href="/favicon.ico" />		
+		<title>Bilene Kite Center - Kitesurf et Wing au Mozambique</title>
+        <meta name="description" content="Un spot de kitesurf et wingsurf vierge dans une lagune paradisiaque au Mozambique, le pays au plus belles plages d'Afrique">
+        <meta name="keywords" content="logement, hotel, restaurant, kite, kitesurf, kiteboard, wing, wingsurf,Wingfoil, SUP, paddle, Mozambique, Bilene, cours, trip, voyage, trips, downind, downwinds, speedspot, coaching">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+         <Analytics />
+        <!-- Facebook -->
+        <meta property="og:title" content="Bilene Kite Center au Mozambique" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Un spot de kitesurf vierge dans une lagune paradisiaque au Mozambique, le pays au plus belles plages d'Afrique" />
+        <meta property="author" content="Air Tricks Prod" />
+        <meta property="og:image" content="https://www.bilenekite.com/images/accueil/1.webp" />
+
+        <!-- twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="https://twitter.com/Guillau69115762">
+        <meta name="twitter:title" content="Bilene Kite Center au Mozambique" />
+        <meta name="twitter:description" content="Un spot de kitesurf vierge dans une lagune paradisiaque au Mozambique, le pays au plus belles plages d'Afrique" />
+        <!-- Twitter summary card avec image large de 280x150px -->
+        <meta name="twitter:image:src" content="https://www.bilenekite.com/images/accueil/1.webp" />
 	</head>
 	<body>
 		<Menu />
