@@ -8,9 +8,8 @@ import '../../../sass/general.scss';
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
     <title>Blog - Bilene Kite Center</title>
     <meta name="description" content="Bilene Kite Center blog: news, kitesurfing tips and life in Mozambique">
     <Analytics />
@@ -19,29 +18,143 @@ import '../../../sass/general.scss';
     <MenuEN />
 
     <main>
-        <section id="headsection">
-            <img src="/images/1-spot/1.webp" alt="blog Bilene Kite Center">
-            <h1>Blog</h1>
-            <h2>News and tips</h2>
-        </section>
-        <section id="mainsection">
-            <div class="flexdiv">
-                <div class="flextext">
-                    <h2>Latest articles</h2>
-                </div>
+        <div class="blog-hero">
+            <img src="/images/blog/blog.webp" alt="blog Bilene Kite Center">
+            <div class="blog-hero-overlay">
+                <h1>Blog</h1>
+                <p>News and tips</p>
             </div>
+        </div>
 
-            <div class="flexdiv">
-                <a href="/en/blog/welcome" class="flextext">
-                    <h3>Welcome to our blog!</h3>
-                    <p><em>February 2026</em></p>
-                    <p>Discover the latest news from Bilene Kite Center, our kitesurfing tips for Mozambique and much more.</p>
+        <section class="blog-list">
+            <h2>Latest articles</h2>
+            <div class="blog-cards">
+                <a href="/en/blog/welcome" class="blog-card">
+                    <img src="/images/blog/massage.webp" alt="massages at Bilene Kite Center">
+                    <div class="blog-card-body">
+                        <span class="blog-date">February 2026</span>
+                        <h3>New! Massages at Bilene Kite Center</h3>
+                        <p>A moment of relaxation after a session on the water — discover the new massage service at Bilene Kite Center.</p>
+                    </div>
+                </a>
+                <a href="/en/blog/by-plane" class="blog-card">
+                    <img src="/images/blog/blog.webp" alt="By plane over Bilene">
+                    <div class="blog-card-body">
+                        <span class="blog-date">January 2026</span>
+                        <h3>By plane, over Bilene</h3>
+                        <p>He flew over Bilene to discover the spot and the wind conditions.</p>
+                    </div>
                 </a>
             </div>
-
         </section>
     </main>
 
     <Footer />
 </body>
 </html>
+
+<style>
+    .blog-hero {
+        position: relative;
+        width: 100%;
+        height: 560px;
+        overflow: hidden;
+    }
+    .blog-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .blog-hero-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 40px 20px;
+        background: linear-gradient(transparent, rgba(0,0,0,0.7));
+        color: white;
+    }
+    .blog-hero-overlay h1 {
+        font-size: 3em;
+        margin: 0;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    .blog-hero-overlay p {
+        font-size: 1.3em;
+        margin: 5px 0 0;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+    .blog-list {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    .blog-list h2 {
+        text-align: left;
+        font-size: 1.6em;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #4695fc;
+    }
+    .blog-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    .blog-card {
+        display: flex;
+        flex-direction: row;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+        font-weight: normal;
+    }
+    .blog-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .blog-card img {
+        width: 250px;
+        min-height: 180px;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+    .blog-card-body {
+        padding: 20px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .blog-date {
+        font-size: 0.8em;
+        color: #4695fc;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .blog-card h3 {
+        margin: 8px 0;
+        font-size: 1.2em;
+    }
+    .blog-card p {
+        margin: 0;
+        color: #666;
+        font-size: 0.95em;
+        line-height: 1.5;
+        text-align: left;
+    }
+    @media (max-width: 600px) {
+        .blog-hero {
+            height: 350px;
+        }
+        .blog-card {
+            flex-direction: column;
+        }
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+        }
+    }
+</style>

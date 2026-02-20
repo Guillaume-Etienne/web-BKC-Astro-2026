@@ -8,38 +8,116 @@ import '../../../sass/general.scss';
 <!DOCTYPE html>
 <html lang="es">
 <head><meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
-    <title>Bienvenidos a nuestro blog - Bilene Kite Center</title>
-    <meta name="description" content="Primer artículo del blog Bilene Kite Center: bienvenida y presentación de nuestro blog de kitesurf en Mozambique">
+    <title>¡Nuevo! Masajes en Bilene Kite Center</title>
+    <meta name="description" content="Blog Bilene Kite Center: descubre nuestro nuevo servicio de masajes bienestar frente al océano en Mozambique">
     <Analytics />
 </head>
 <body>
     <MenuES />
 
     <main>
-        <section id="headsection">
-            <img src="/images/1-spot/1.webp" alt="blog Bilene Kite Center">
-            <h1>¡Bienvenidos a nuestro blog!</h1>
-            <h2>Febrero 2026</h2>
-        </section>
-        <section id="mainsection">
-            <div class="flexdiv">
-                <div class="flextext">
-                    <p>¡Estamos encantados de lanzar el blog del Bilene Kite Center! Aquí compartiremos regularmente nuestras noticias, consejos para el kitesurf en Mozambique, las mejores condiciones de viento y todo lo que hace que Bilene sea tan especial.</p>
-                    <p>Estad atentos a nuestros próximos artículos sobre spots, condiciones meteorológicas, vida local y mucho más.</p>
-                    <p>¡Nos vemos en el agua!</p>
-                </div>
+        <div class="blog-hero">
+            <img src="/images/blog/blog.webp" alt="blog Bilene Kite Center">
+            <div class="blog-hero-overlay">
+                <span class="blog-date">Febrero 2026</span>
+                <h1>¡Nuevo! Masajes en Bilene Kite Center</h1>
             </div>
-            <div class="flexdiv">
-                <div class="flextext">
-                    <a href="/es/blog">← Volver al blog</a>
-                </div>
-            </div>
-        </section>
+        </div>
+
+        <article class="blog-article">
+            <h2>Novedad en Bilenekite: Masajes Bienestar Frente al Océano</h2>
+            <p>
+                A partir de ahora, prolonga tu experiencia Bilenekite con nuestros <strong>masajes de relajación</strong>, especialmente pensados para los apasionados del kite y los amantes de la serenidad. Acomódate bajo nuestras palapas, frente al mar, y déjate mimar entre el murmullo de las olas y la suavidad del viento.
+            </p>
+            <p>
+                Ideal para aflojar los músculos después de una sesión o simplemente disfrutar de un momento de calma, nuestros masajes se integran de forma natural en tu estancia. <em>Relax garantizado, energía recuperada</em> — todo en un entorno paradisíaco.
+            </p>
+            <p>
+                Disponibles durante toda la temporada. ¡Reserva ya!
+            </p>
+            <img src="/images/blog/massage.webp" alt="masaje en Bilene Kite Center" class="blog-img">
+            <a href="/es/blog" class="blog-back">&larr; Volver al blog</a>
+        </article>
     </main>
 
     <Footer />
 </body>
 </html>
+
+<style>
+    .blog-hero {
+        position: relative;
+        width: 100%;
+        height: 560px;
+        overflow: hidden;
+    }
+    .blog-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .blog-hero-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 40px 20px;
+        background: linear-gradient(transparent, rgba(0,0,0,0.7));
+        color: white;
+    }
+    .blog-hero-overlay h1 {
+        font-size: 2.4em;
+        margin: 8px 0 0;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    .blog-hero-overlay .blog-date {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        opacity: 0.9;
+    }
+    .blog-article {
+        max-width: 750px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    .blog-article p {
+        font-size: 1.05em;
+        line-height: 1.8;
+        text-align: left;
+        color: #444;
+        margin-bottom: 15px;
+    }
+    .blog-img {
+        width: 100%;
+        border-radius: 8px;
+        margin: 25px 0;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    .blog-back {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #4695fc;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.2s;
+    }
+    .blog-back:hover {
+        background: #3578d8;
+    }
+    .blog-back:visited {
+        color: white;
+    }
+    @media (max-width: 600px) {
+        .blog-hero {
+            height: 350px;
+        }
+        .blog-hero-overlay h1 {
+            font-size: 1.6em;
+        }
+    }
+</style>
