@@ -50,6 +50,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
     & img{
         margin: -10px 0 -10px 0;
         width: 70px;
