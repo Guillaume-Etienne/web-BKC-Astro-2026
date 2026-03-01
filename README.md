@@ -1,9 +1,11 @@
 # web_BKC
 Website BKC
 Pure HTML SASS JS webssite ported to Astro from 2026
+Redirection multiples suite à changement de format Astro ex typique :
 
-
-
+https://www.bilenekite.com/fr/activites-a-bilene-sorties-visites-ballades-exploration.html
+et maintenant : 
+https://www.bilenekite.com/fr/activites-a-bilene-sorties-visites-ballades-exploration/
 
 
 # Astro Starter Kit: Basics
