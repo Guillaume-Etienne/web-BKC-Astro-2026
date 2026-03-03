@@ -175,6 +175,16 @@ footer{
         }
     }
 }
+// Blog hero — titres sur photo sombre
+.blog-hero-overlay {
+    & h1, & h2 {
+        color: white;
+        text-shadow:
+            0 2px 12px rgba(0, 0, 0, 0.9),
+            0 0 40px rgba(0, 0, 0, 0.5);
+    }
+}
+
 // Toggle - used in Prices and Menus
 .block {
     display: none;

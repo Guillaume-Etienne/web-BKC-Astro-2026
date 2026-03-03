@@ -30,7 +30,7 @@ import '../../sass/general.scss';
             <p>We take care of everything as soon as you leave the airport.
                 There are so many things to tell you! Here they are summarized in the form of links:<br>
             </p>
-            <p id="piti">(clicking on a link takes you to the relevant chapter, another click brings you back here)</p>
+            <p id="piti">(clicking on a link takes you to the relevant chapter)</p>
             <ul id="menulist">
                 <a href="#acco"><li>Accommodation</li></a>
                 <a href="#flights"><li>Flights</li></a>
@@ -59,7 +59,7 @@ import '../../sass/general.scss';
             </div>
             <div class="flexdiv background" id="flights">
                 <div class="flextext">
-                    <a href="#menulist"><h2><img src="/icons/arrow-up-solid.svg" alt="up arrow" class="arrow"> Flights <img src="/icons/arrow-up-solid.svg" alt="up arrow" class="arrow"> </h2></a>
+                    <h2>Flights</h2>
                     <p>Many airlines serve Maputo, the capital of Mozambique.
                         Among them
                         Ethiopian Airlines
@@ -80,7 +80,7 @@ import '../../sass/general.scss';
             </div>
             <div class="flexdiv">
                 <div class="flextext" id="visas">
-                    <a href="#menulist"><h2><img src="/icons/arrow-up-solid.svg" alt="up arrow" class="arrow"> Visas for Mozambique <img src="/icons/arrow-up-solid.svg" alt="up arrow" class="arrow"> </h2></a>
+                    <h2>Visas for Mozambique</h2>
                     <p>Since May 2023, the visa is issued directly upon your arrival at the airport, upon presentation of your passport,
                         which must necessarily be valid for more than 6 months from your arrival date, as well as the famous "accommodation letter"
                         which we will send to you in advance. The process will cost you €10, the authorities will give you a receipt which it is
@@ -94,7 +94,7 @@ import '../../sass/general.scss';
             </div>
             <div class="flexdiv background" id="transferts">
                 <div class="flextext">
-                    <a href="#menulist"><h2><img src="/icons/arrow-up-solid.svg" alt="up arrow" class="arrow"> Airport Transfers <img src="/icons/arrow-up-solid.svg" alt="up arrow" class="arrow"> </h2></a>
+                    <h2>Airport Transfers</h2>
                     <p>They are done by taxi, on an asphalt road in good condition, in the middle of typical African landscapes. Prices can vary from simple to triple.
                         We have a partnership agreement and take care of booking them for you.
                     </p>
@@ -106,10 +106,10 @@ import '../../sass/general.scss';
             </div>
             <div class="flexdiv">
                 <div class="flextext" id="situation">
-                    <a href="#menulist"><h2><img src="/icons/arrow-up-solid.svg" alt="up arrow" class="arrow"> Situation of Mozambique <img src="/icons/arrow-up-solid.svg" alt="up arrow" class="arrow"> </h2></a>
+                    <h2>Situation in Mozambique</h2>
                     <p>Mozambique is a calm and welcoming country, its inhabitants are warm and smiling. Many of our guests have visited many spots, by taxi or even aboard traditional "chapas" (local transport),
                          not to mention whole families, including young children, who have traveled there in Vans or converted 4x4s <a href="https://ubuntu-overland.com/" target="_blank">ubuntu-overland</a>.
-                        </p>
+                    </p>
                 </div>
                 <div class="fleximg">
                     <img src="/images/7-infos/7.webp" alt="smiling barbecue">
@@ -118,7 +118,7 @@ import '../../sass/general.scss';
             </div>
             <div class="flexdiv background" id="sanitaire">
                 <div class="flextext">
-                    <a href="#menulist"><h2><img src="/icons/arrow-up-solid.svg" alt="up arrow" class="arrow"> And for health <img src="/icons/arrow-up-solid.svg" alt="up arrow" class="arrow"> </h2></a>
+                    <h2>And for health</h2>
                     <p>Teresa is an emergency nurse at the International Red Cross, she has intervened on many scenes of natural disasters all over the world, in other words, the scratches of everyday life
                         will be quickly forgotten. The spot is completely safe and secure, if something really happens, Mozambique has several private hospitals with competent staff.
                         There is no vaccination required for Mozambique.
@@ -129,12 +129,9 @@ import '../../sass/general.scss';
                     <img src="/images/7-infos/8.webp" alt="Medical care">
                 </div>
             </div>
-            <section class="info-sec" id="">
-                <h2></h2>
-            </section>
             <section class="flexdiv" id="emporter">
                 <div class="flextext">
-                    <a href="#menulist"><h2><img src="/icons/arrow-up-solid.svg" alt="up arrow" class="arrow"> To take with you <img src="/icons/arrow-up-solid.svg" alt="up arrow" class="arrow"> </h2></a>
+                    <h2>To take with you</h2>
                     <p>Bilene enjoys an ideal tropical climate due to its proximity to the ocean. The average temperature is around 30°, the water is not far from it.
                         We sail in Lycra most of the time, a shorty can be useful for days with strong winds.
                         A non-exhaustive list of what we recommend taking with you:
@@ -147,11 +144,41 @@ import '../../sass/general.scss';
             </section>
         </section>
         <section id="contactus">
-            <a href="#menulist"><h2><img src="/icons/arrow-up-solid.svg" alt="up arrow" class="arrow"> Contact us <img src="/icons/arrow-up-solid.svg" alt="up arrow" class="arrow"> </h2></a>
+            <h2>Contact us</h2>
             <p>No robots in Bilene, you will be connected to humans</p>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeK2bYq3kie_E8u55hC1iC6l6-JtUzieJP8Ri9qw58BCFvycw/viewform?embedded=true" width="100%" height="981" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-            </section>
+        </section>
     </main>
+
+    <a href="#menulist" class="btn-top" title="Back to summary">&#8679;</a>
+
     <Footer />
 </body>
 </html>
+
+<style>
+    .btn-top {
+        position: fixed;
+        bottom: 24px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        background-color: #0066CC;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6em;
+        font-weight: bold;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+        z-index: 50;
+        opacity: 0.75;
+        transition: opacity 0.2s, transform 0.2s;
+        text-decoration: none;
+    }
+    .btn-top:hover {
+        opacity: 1;
+        transform: scale(1.1) translateY(-2px);
+    }
+</style>
