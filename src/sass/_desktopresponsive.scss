@@ -1,27 +1,169 @@
 @use "variables" as *;
 
-// general / pages / pages prix / page secrete
-@media screen and (min-width: 1280px) {
-    header{
-        position:relative;
-        & img{
+// ============================================================
+// RESPONSIVE — Mobile-first avec breakpoints intermediaires
+// sm: 640px | md: 768px | lg: 1024px | xl: 1280px
+// ============================================================
+
+// ─── SM (640px) — Grands mobiles ─────────────────────────────
+@media screen and (min-width: $bp-sm) {
+    .flexi a {
+        max-width: 540px;
+    }
+
+    #partnairesListe img {
+        width: 100px;
+    }
+
+    .flex {
+        max-width: 320px;
+    }
+
+    .groupPrice {
+        flex-direction: row;
+        max-width: fit-content;
+        & img {
+            width: 50%;
+        }
+    }
+}
+
+// ─── MD (768px) — Tablettes portrait ─────────────────────────
+@media screen and (min-width: $bp-md) {
+    .flexi {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        & a {
+            width: calc(50% - #{$space-lg});
+            max-width: 480px;
+        }
+    }
+
+    .flexdiv {
+        flex-direction: row;
+        padding: $space-xl $space-lg;
+        gap: $space-xl;
+    }
+
+    .flextext {
+        flex: 1;
+        & p {
+            text-align: justify;
+        }
+    }
+
+    .fleximg {
+        flex: 1;
+        margin-top: 0;
+        display: flex;
+        gap: $space-sm;
+        max-height: 300px;
+        & img {
+            object-fit: cover;
+            width: 100%;
+            border-radius: $radius-md;
+        }
+    }
+
+    #mainsection > :nth-child(2n) {
+        flex-direction: row-reverse;
+    }
+
+    #packages {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    .packs {
+        max-width: 360px;
+        flex: 1;
+    }
+
+    footer {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #feednpart {
+        flex-direction: row;
+        gap: $space-2xl;
+        padding: $space-2xl;
+    }
+
+    #tripadvisor {
+        width: 50%;
+    }
+}
+
+// ─── LG (1024px) — Tablettes paysage / petits desktops ──────
+@media screen and (min-width: $bp-lg) {
+    .flexi a {
+        width: calc(50% - #{$space-xl});
+        max-width: 600px;
+    }
+
+    .flexdiv {
+        margin: 0 $space-xl;
+        padding: $space-2xl;
+        border-radius: $radius-lg;
+        transition: box-shadow $transition-base;
+        &:hover {
+            box-shadow: $shadow-md;
+        }
+    }
+
+    #headsection {
+        max-height: 360px;
+        & h1 {
+            font-size: $fs-3xl;
+            margin-top: -200px;
+        }
+        & h2 {
+            margin-top: -$space-lg;
+        }
+        & img {
+            max-height: 360px;
+        }
+    }
+
+    .flex {
+        max-width: 360px;
+    }
+}
+
+// ─── XL (1280px) — Desktop ──────────────────────────────────
+@media screen and (min-width: $bp-xl) {
+    // Layout
+    body {
+        margin: auto;
+        box-shadow: 0 0 60px rgba(10, 22, 40, 0.08);
+    }
+
+    header {
+        position: relative;
+        & img {
             margin: auto;
         }
     }
-    body{
-        margin: auto;
-        box-shadow: 0 0 40px rgba(10, 22, 40, 0.12);
+    h3 {
+        font-size: 20px;
     }
-    .burger-icon span, .sidenav .close{
+
+    // Burger masque, nav horizontale
+    .burger-icon span, .sidenav .close {
         display: none;
     }
+
     #lang {
         width: 220px;
-        padding: 0 0 0 10px;
+        padding: $space-xs $space-md;
     }
-    a:hover{
-        transform: scale(105%);
-    }
+
     .sidenav {
         height: auto;
         width: 100%;
@@ -29,195 +171,149 @@
         top: auto;
         left: auto;
         padding-top: 0;
-        background-color: transparent;
+        background: transparent;
         box-shadow: none;
-        > ul{
+        overflow: visible;
+        > ul {
             display: flex;
+            justify-content: center;
+            gap: $space-xs;
         }
-        // Liens du nav principal uniquement (pas les sous-menus)
+        // Liens principaux (pas sous-menus)
         > ul > li > a {
-            font-size: 1.1em;
+            font-size: $fs-base;
             color: $colorprimary;
             border-left: none;
-            padding-left: 8px;
+            padding: $space-sm $space-md;
+            border-radius: $radius-md;
+            font-weight: 500;
+            white-space: nowrap;
             &:hover {
                 color: $color-ocean;
+                background: rgba($color-ocean, 0.06);
                 border-left: none;
-                padding-left: 8px;
+                padding-left: $space-md;
+                transform: none;
             }
             &:visited {
                 color: $colorprimary;
             }
         }
-        // Affichage des sous-menus au hover (plus propre que JS en desktop)
+        // Sous-menus au hover CSS
         li:hover > .sub-menu {
             display: block;
         }
-        // Liens dans les sous-menus — couleur claire sur fond sombre
-        .sub-menu a {
-            color: rgba(255, 255, 255, 0.85);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 1em;
-            padding-left: 16px;
-            border-left: none;
-            &:hover {
-                color: $color-sky;
-                padding-left: 16px;
-                border-left: none;
-            }
-            &:visited {
-                color: rgba(255, 255, 255, 0.75);
-            }
-        }
     }
-    video{
+
+    // Hover liens generaux — pas de scale (indesirable sur nav)
+    a:hover {
+        transform: none;
+    }
+
+    // Video desktop
+    video {
         position: relative;
         width: 100%;
         margin: 0;
         padding: 0;
-        box-shadow: $shadowbox;
+        box-shadow: $shadow-lg;
     }
-    #intro{
-        margin-top: 38px;
+
+    #intro {
+        margin-top: $space-2xl;
     }
-    .flexi{
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-        & a{
-            margin: 20px;
-            width: 640px;
-            border-radius: 10px;
-            transition: box-shadow 0.2s, transform 0.15s;
-            &:hover{
-                transform: translateY(-4px);
-                box-shadow: $shadowbox;
+
+    // Cards desktop
+    .flexi {
+        gap: $space-xl;
+        & a {
+            width: 620px;
+            border-radius: $radius-lg;
+            &:hover {
+                transform: translateY(-6px);
+                box-shadow: $shadow-xl;
             }
         }
-        & figure{
+        & figure {
             max-width: 100%;
-            border-radius: 10px 10px 0 0;
+            border-radius: $radius-lg $radius-lg 0 0;
             overflow: hidden;
-            & img{
+            & img {
                 width: 100%;
-                border-radius: 10px 10px 0 0;
-                transition: transform 0.3s ease;
+                border-radius: $radius-lg $radius-lg 0 0;
             }
         }
-        & a:hover figure img {
-            transform: scale(1.03);
+    }
+
+    // Sections internes desktop
+    .flexdiv {
+        margin: 0 $space-2xl;
+        padding: $space-2xl;
+        border-radius: $radius-lg;
+        box-shadow: $shadow-xs;
+        transition: box-shadow $transition-base, transform $transition-base;
+        &:hover {
+            box-shadow: $shadow-md;
+            transform: translateY(-2px);
         }
     }
-    footer{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        & img{
-            margin: 10px 20px 10px 20px;
-        }
-        & a, p{
-            margin-top: 0;
-        }
+
+    .longtext {
+        flex-basis: 180%;
     }
-    // Accueil
-    #feednpart {
-        flex-direction: row;
-        margin: 40px;
-    }
-    #tripadvisor{
-        width: 90%;
-    }
-    // Pages
-    #headsection{
+
+    // Headsection desktop
+    #headsection {
         height: 360px;
         max-height: 360px;
-        & h1{
-            font-size: 3.5em;
+        & h1 {
+            font-size: $fs-3xl;
             margin-top: -200px;
         }
-        & h2{
-            font-size: 2.5em;
-            margin-top: -40px;
+        & h2 {
+            font-size: $fs-2xl;
+            margin-top: -$space-xl;
         }
-        & img{
+        & img {
             max-height: 100%;
         }
     }
-    #mainsection{
+
+    #mainsection {
         margin-top: 0;
         padding: 0;
         max-width: 100%;
-        & :nth-child(2n){
-            flex-direction: row-reverse;
-        }
-        & a:hover{
+        & a:hover {
             background-color: $colorsecondary;
         }
     }
-    .flexdiv {
-        flex-direction: row;
-        box-shadow: $shadow-card;
-        margin: 40px;
-        padding: 20px;
-        border-radius: 10px;
-        transition: box-shadow 0.2s;
-        &:hover {
-            box-shadow: $shadowbox;
-        }
+
+    // Prix desktop
+    #packages {
+        align-items: stretch;
     }
-    .flextext {
-        width: 50%;
-        & p{
-            text-align: justify;
-        }
+    .packs {
+        max-width: 420px;
     }
-    .fleximg {
-        margin-top: 0;
-        display: flex;
-        max-height: 300px;
-        & img {
-            object-fit: cover;
-            width: 49%;
-            margin-left: 10px;
-            border-radius: 8px;
-        }
+    #prixlessons {
+        margin-right: $space-md;
     }
-    .longtext{
-        flex-basis: 180%;
-    }
-    .background{
-        background-color: $colorsecondary;
-    }
-    // page galerie
+
+    // Galerie
     #xaixai {
         transform: translateX(150px);
     }
     .middle {
         justify-content: space-around;
     }
-    // pages prix
-    #packages{
-        flex-direction: row;
-        align-items: flex-start;
-    }
-    .packs{
-        max-width: 500px;
-    }
-    #prixlessons{
-        margin-right: 15px;
-    }
-    .groupPrice{
-        flex-direction: row;
-        max-width: fit-content;
-        margin: 5px;
-        & img{
-            width: 50%;
-        }
-    }
-    // vidéos
+
+    // Video logos
     #logoairtricks {
         width: 100%;
+    }
+
+    // Tripadvisor
+    #tripadvisor {
+        width: 90%;
     }
 }

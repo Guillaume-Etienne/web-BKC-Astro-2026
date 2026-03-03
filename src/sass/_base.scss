@@ -1,181 +1,312 @@
+@use "sass:color";
 @use "variables" as *;
 
-// general, puis toggle, puis les pages, prix, galerie, infos, secret
-// ------- Page Activity ------------
-
-*{
+// ─── RESET & BASE ────────────────────────────────────────────
+* {
     box-sizing: border-box;
-}
-a{
-    text-decoration: none;
-    color: $color-ocean;
-    &:visited{
-        color: $color-ocean;
-    }
-}
-body
-{
     margin: 0;
     padding: 0;
-    min-width: 380px;
-    max-width: 1400px;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    max-width: $container-max;
     background: $colorbackground;
     color: $colorprimary;
-    font-family: "Roboto", "Avenir", sans-serif;
-    line-height: 1.6;
-    animation: fromUp 1.8s;
-    & em{
-        font-style:normal;
-    }
-    & a {
-        font-weight: bold;
-    }
-    .vimeo{
-        margin-top: 20px;
+    font-family: $font-body;
+    font-size: $fs-base;
+    line-height: $lh-normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    & em {
+        font-style: normal;
     }
 }
-.sub-menu {
-    display: none;
+
+// ─── SKIP TO CONTENT (accessibilite) ─────────────────────────
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: $space-md;
+    padding: $space-sm $space-md;
+    background: $color-ocean;
+    color: white;
+    border-radius: $radius-md;
+    z-index: $z-toast;
+    font-weight: 600;
+    &:focus {
+        top: $space-sm;
+    }
 }
-header{
-    position:sticky;
+
+// ─── TYPOGRAPHIE ─────────────────────────────────────────────
+h1, h2, h3, h4, h5, h6 {
+    line-height: $lh-tight;
+    color: $color-dark;
+}
+
+h1, h2 {
+    text-align: center;
+    font-family: $font-display;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+h1 {
+    font-size: $fs-3xl;
+    margin-bottom: $space-md;
+}
+
+h2 {
+    font-size: $fs-2xl;
+    margin-bottom: $space-sm;
+}
+
+h3 {
+    font-size: $fs-xl;
+    font-weight: 600;
+    margin-bottom: $space-xs;
+}
+
+h4 {
+    font-size: $fs-lg;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: $space-md;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// ─── LIENS ───────────────────────────────────────────────────
+a {
+    text-decoration: none;
+    color: $color-ocean;
+    transition: color $transition-fast;
+    &:visited {
+        color: $color-ocean;
+    }
+    &:hover {
+        color: $color-ocean-dark;
+    }
+}
+
+// Focus visible pour accessibilite (clavier uniquement)
+:focus-visible {
+    outline: 2px solid $color-ocean;
+    outline-offset: 3px;
+    border-radius: $radius-sm;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+// ─── IMAGES ──────────────────────────────────────────────────
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+// ─── HEADER ──────────────────────────────────────────────────
+header {
+    position: sticky;
     background-color: $colorbackground;
-    border-bottom: 1px solid rgba(10, 22, 40, 0.08);
-    top:0px;
-    padding: 0 10px 0 10px;
+    border-bottom: 1px solid rgba($color-dark, 0.08);
+    top: 0;
+    padding: $space-sm $space-md;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
-    & img{
-        margin: -10px 0 -10px 0;
+    z-index: $z-sticky;
+    & img {
+        margin: -10px 0;
         width: 70px;
     }
 }
-h1, h2{
-    text-align: center;
-    font-family: "Shrikhand", sans-serif;
-    font-weight: 400;
-    color: $color-dark;
-    letter-spacing: 0.02em;
-}
-h3, h4 {
-    color: $color-dark;
-}
+
 #lang {
     background-color: $colorsecondary;
-    border-radius: 20px;
-    padding: 0 20px 0 20px;
-}
-
-main{
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    & p{
-        text-align: center;
-        margin: 0 5px;
+    border-radius: $radius-full;
+    padding: $space-xs $space-lg;
+    font-size: $fs-sm;
+    white-space: nowrap;
+    & a {
+        font-weight: 600;
     }
 }
-video{
+
+// ─── MAIN ────────────────────────────────────────────────────
+main {
+    margin-top: $space-md;
+    display: flex;
+    flex-direction: column;
+    & > p {
+        text-align: center;
+        margin: 0 $space-sm;
+    }
+}
+
+// ─── HERO SECTION ────────────────────────────────────────────
+#headsection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-height: 320px;
+    overflow: hidden;
+    & img {
+        width: 100%;
+        max-height: 320px;
+        object-fit: cover;
+    }
+    & h1 {
+        position: relative;
+        margin-top: -180px;
+        color: white;
+        font-size: $fs-3xl;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.3);
+    }
+    & h2 {
+        color: white;
+        font-size: $fs-xl;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+}
+
+// ─── VIDEO ───────────────────────────────────────────────────
+video {
     max-width: 100%;
     min-height: 250px;
     object-fit: cover;
-    margin: 0 0 10px 0;
+    margin: 0 0 $space-md 0;
     padding: 0;
-    box-shadow: $shadowmobile;
+    box-shadow: $shadow-md;
     pointer-events: none;
 }
-figure{
-    margin: 0;
-    padding: 0;
-    & img{
-        width: 100%;
-    }
-}
-.flexi{
-    margin: 20px 0 10px 0;
+
+// ─── CARDS UNIFIEES ──────────────────────────────────────────
+// Pattern principal : .flexi (grille de cards verticales)
+.flexi {
+    margin: $space-xl 0 $space-md 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    & a{
-        box-shadow: $shadow-card;
-        margin: 10px 0 10px 0;
-        padding: 0 0 20px 0;
+    gap: $space-lg;
+    & a {
+        background: $color-surface;
+        box-shadow: $shadow-sm;
         max-width: 800px;
-        border-radius: 8px;
+        width: 100%;
+        border-radius: $radius-lg;
         overflow: hidden;
-        transition: box-shadow 0.2s, transform 0.2s;
+        transition: box-shadow $transition-base, transform $transition-base;
         &:hover {
-            box-shadow: $shadowbox;
+            box-shadow: $shadow-lg;
+            transform: translateY(-4px);
         }
-        // Le texte dans les cards reste en couleur primaire (pas hérité du bleu lien)
         & p, & figcaption {
             color: $colorprimary;
+            padding: 5px $space-md;
+        }
+        & h2 {
+            padding: 0 $space-md;
+            margin-top: $space-md;
+        }
+        & figure img {
+            width: 100%;
+            transition: transform $transition-slow;
+        }
+        &:hover figure img {
+            transform: scale(1.03);
         }
     }
 }
-#feednpart {
+
+// ─── SECTIONS FLEXDIV (pages internes) ───────────────────────
+#mainsection {
+    margin-top: $space-xl;
+}
+
+.flexdiv {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: $space-lg $space-md;
 }
 
-#partnairesListe {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 5px;
+.flextext {
+    & p {
+        text-align: justify;
+    }
+    & h2 {
+        margin-top: $space-sm;
+    }
+}
+
+.fleximg {
+    margin-top: $space-lg;
+    max-width: 800px;
     & img {
-        margin: 5px;
-        width: 100px;
+        border-radius: $radius-md;
     }
 }
-#whoweare {
-    & figure{
-        margin: 20px 0 18px 0;
-        padding-bottom: 10px;
-        max-width: 600px;
-        box-shadow: $shadow-card;
-        border-radius: 8px;
-        overflow: hidden;
-        & img{
-            width: 100%;
-        }
-        & a{
-            box-shadow: none;
-        }
-    }
+
+.background {
+    background-color: $colorsecondary;
 }
-footer{
-    margin-top: 0;
-    padding: 30px 20px;
-    background-color: $color-dark;
+
+// ─── FOOTER ──────────────────────────────────────────────────
+footer {
+    margin-top: $space-3xl;
+    padding: $space-2xl $space-lg;
+    background: $gradient-dark;
     color: rgba(255, 255, 255, 0.85);
     text-align: center;
     & p {
         margin-top: 0;
         color: rgba(255, 255, 255, 0.7);
+        font-size: $fs-sm;
     }
     & a {
         color: $color-sky;
+        transition: color $transition-fast;
         &:visited { color: $color-sky; }
+        &:hover { color: color.adjust($color-sky, $lightness: 15%); }
     }
-    & #footicons{
+    & #footicons {
         display: flex;
         padding: 0;
-        justify-content:center;
-        & img{
-            width: 50px;
-            margin: 10px 20px 10px 20px;
+        justify-content: center;
+        gap: $space-xl;
+        & img {
+            width: 44px;
             filter: brightness(0) invert(1);
             opacity: 0.85;
-            transition: opacity 0.2s;
-            &:hover { opacity: 1; }
+            transition: opacity $transition-fast, transform $transition-fast;
+            &:hover {
+                opacity: 1;
+                transform: scale(1.1);
+            }
         }
     }
 }
-// Blog hero — titres sur photo sombre
+
+// ─── BLOG HERO ───────────────────────────────────────────────
 .blog-hero-overlay {
     & h1, & h2 {
         color: white;
@@ -185,264 +316,380 @@ footer{
     }
 }
 
-// Toggle - used in Prices and Menus
+// ─── BOUTONS ─────────────────────────────────────────────────
+button, .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    letter-spacing: 0.05em;
+    padding: $space-sm $space-xl;
+    border-radius: $radius-full;
+    border: none;
+    background: $gradient-ocean;
+    cursor: pointer;
+    font-size: $fs-base;
+    font-family: $font-body;
+    font-weight: 600;
+    transition: transform $transition-fast, box-shadow $transition-fast, opacity $transition-fast;
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+    }
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+// Bouton secondaire (outline)
+.btn-outline {
+    background: transparent;
+    color: $color-ocean;
+    border: 2px solid $color-ocean;
+    &:hover {
+        background: $color-ocean;
+        color: white;
+    }
+}
+
+// ─── TOGGLES (prix, excursions) ──────────────────────────────
 .block {
     display: none;
 }
 .visible {
     display: block;
 }
-
-// pages
-img {
-    width: 100%;
+.toggle-button {
+    cursor: pointer;
+    background: rgba($color-ocean, 0.1);
+    color: $color-ocean;
+    border: 1px solid rgba($color-ocean, 0.2);
+    padding: $space-xs $space-md;
+    border-radius: $radius-full;
+    font-size: $fs-sm;
+    font-weight: 600;
+    transition: background $transition-fast, color $transition-fast;
+    &:hover {
+        background: $color-ocean;
+        color: white;
+    }
 }
-#headsection {
+.additional-text {
+    display: none;
+    & p {
+        text-align: start;
+    }
+}
+
+// ─── PARTENAIRES ─────────────────────────────────────────────
+#feednpart {
     display: flex;
     flex-direction: column;
-    max-height: 320px;
-    & h1 {
-        margin-top: -180px;
-        position: relative;
-    }
-    & h1, h2 {
-        text-shadow: 1px 2px 8px rgba(0,0,0,0.7);
-    }
+    align-items: center;
+    padding: $space-xl $space-md;
+}
+
+#partnairesListe {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: $space-md;
+    margin: $space-md 0;
     & img {
-        max-height: 320px;
-        object-fit: cover;
+        width: 90px;
+        opacity: 0.7;
+        transition: opacity $transition-fast, transform $transition-fast;
+        filter: grayscale(30%);
+        &:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.08);
+        }
     }
 }
-#headsection h1, #headsection h2{
-    color: white;
-    font-size: 1.8em;
-}
-#mainsection {
-    margin-top: 20px;
-}
-.flexdiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.fleximg {
-    margin-top: 20px;
-    max-width: 800px;
-}
-.flextext p {
-    text-align: justify;
+
+#whoweare {
+    & figure {
+        margin: $space-xl auto;
+        padding-bottom: $space-md;
+        max-width: 600px;
+        background: $color-surface;
+        box-shadow: $shadow-sm;
+        border-radius: $radius-lg;
+        overflow: hidden;
+        & img {
+            width: 100%;
+        }
+        & a {
+            box-shadow: none;
+        }
+        & figcaption {
+            padding: $space-md $space-lg;
+        }
+    }
 }
 
-//pages prix
-#mainprice{
-    margin-top: 30px;
+// ─── PRIX ────────────────────────────────────────────────────
+#mainprice {
+    margin-top: $space-xl;
+    padding: 0 $space-md;
 }
-#packages{
+
+#packages {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: $space-lg;
 }
-.packs{
+
+.packs {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 10px;
-    padding: 10px;
+    padding: 0;
     max-width: 700px;
-    box-shadow: $shadow-card;
-    border-radius: 8px;
+    background: $color-surface;
+    box-shadow: $shadow-sm;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    transition: box-shadow $transition-base, transform $transition-base;
+    &:hover {
+        box-shadow: $shadow-lg;
+        transform: translateY(-4px);
+    }
+    & img {
+        width: 100%;
+        border-radius: 0;
+    }
     & aside {
-        transform:translateY(-50px);
-        background-color: white;
-        padding: 10px 10px 20px 10px;
-        border-radius: 0 0 8px 8px;
-        & h2{
-            margin-top: 5px;
+        transform: translateY(-50px);
+        background-color: $color-surface;
+        padding: $space-md $space-md $space-lg;
+        border-radius: 0 0 $radius-md $radius-md;
+        width: 100%;
+        & h2 {
+            margin-top: $space-xs;
         }
     }
     & ul {
-        list-style-type:'- ';
+        list-style-type: '- ';
+        padding: 0 $space-xl;
+    }
+    & > p {
+        padding: 0 $space-md;
+        font-weight: 600;
+        color: $colorgreytext1;
     }
 }
-.price{
+
+.price {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    & button {
-        border: 0;
-        line-height: 2.5;
-        padding: 0 20px;
-        font-size: 1rem;
-        text-align: center;
-        color: #fff;
-        background-color: $color-ocean;
-        border-radius: 6px;
+    padding: $space-md;
+    border-top: 1px solid rgba($color-dark, 0.08);
+    margin-top: $space-md;
+    & p {
+        margin: 0;
+    }
+    & p:last-child {
+        font-size: $fs-xl;
+        font-weight: 700;
+        color: $color-ocean;
     }
 }
-#prixlessons{
+
+#prixlessons {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: $space-xl $space-md;
 }
-.groupPrice{
+
+.groupPrice {
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 700px;
-    & img{
-        margin: 5px;
+    & img {
+        margin: $space-xs;
+        border-radius: $radius-md;
+        box-shadow: $shadow-xs;
     }
 }
-// Page galerie
-#containervimeo{
+
+// ─── GALERIE ─────────────────────────────────────────────────
+#containervimeo {
     width: 100%;
     height: 100%;
     position: relative;
 }
-.vid{
+
+.vid {
     max-width: 100%;
 }
-#bug{
+
+#bug {
     width: 450px;
     height: 300px;
 }
-// Page Infos
-li img, .arrow{
+
+// ─── INFOS ───────────────────────────────────────────────────
+li img, .arrow {
     width: 11px;
 }
-#introinfos{
-    margin-top: 30px;
-    & ul{
-        list-style-type:'| ';
+
+#introinfos {
+    margin-top: $space-xl;
+    padding: 0 $space-md;
+    & ul {
+        list-style-type: none;
         display: flex;
         flex-wrap: wrap;
-        & li{
-            margin-left: 20px;
+        gap: $space-xs;
+        padding: $space-md 0;
+        & li {
+            padding: $space-xs $space-md;
+            background: rgba($color-ocean, 0.08);
+            border-radius: $radius-full;
+            font-size: $fs-sm;
+            transition: background $transition-fast;
+            & a {
+                color: $color-ocean;
+                font-weight: 500;
+            }
+            &:hover {
+                background: rgba($color-ocean, 0.15);
+            }
         }
     }
 }
+
 #piti {
-    font-size: smaller;
+    font-size: $fs-xs;
+    color: $color-muted;
 }
-// Page videos
-#videos{
+
+// ─── VIDEOS ──────────────────────────────────────────────────
+#videos {
     text-align: center;
-    margin: 20px;
-    & iframe{
+    margin: $space-xl;
+    & iframe {
         max-width: 100%;
+        border-radius: $radius-md;
     }
 }
 
-// Page secret
-.secret{
-    & a{
-        width: 300px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-#mora {
-    max-width: 900px;
-    margin: 20px auto;
-}
-// ------------------------------- Page Activity ------------------------------
-#intro-acti{
+// ─── PAGE ACTIVITES ──────────────────────────────────────────
+#intro-acti {
     display: flex;
 }
+
 #backgroundimg1 {
     background-image: url("/images/1-accueil/1.webp");
     background-size: cover;
 }
+
 .backgroundimg {
     margin: 0;
     width: 100%;
     background-repeat: no-repeat;
 }
+
 #vignette1 {
     background-color: $color-ocean;
     margin: 60px 60px 0 40px;
 }
+
 #vignette2 {
     background-color: $colorbackground;
-    padding: 20px;
+    padding: $space-lg;
     margin: -310px 40px 50px 80px;
 }
-.vignette{
-    border-radius: 50px;
+
+.vignette {
+    border-radius: $radius-2xl;
     box-shadow: $shadowbox-black;
     min-height: 350px;
     max-width: 450px;
 }
+
 #title {
     padding: 0;
 }
+
 #backgroundimg2 {
     background-image: url("/images/1-accueil/10.webp");
     min-height: 400px;
     display: flex;
     justify-content: center;
 }
-button {
-    color: white;
-    letter-spacing: 0.1em;
-    margin: 20px;
-    padding: 14px 28px;
-    border-radius: 30px;
-    border: none;
-    background-color: $color-ocean;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.2s, transform 0.15s;
-    &:hover {
-        background-color: $color-sky;
-        transform: scale(1.03);
-    }
-}
-#secflex{
-    background-color: $color-dark;
-    margin: 0 0 20px 0;
+
+#secflex {
+    background: $gradient-dark;
+    margin: 0 0 $space-xl 0;
+    padding: $space-xl 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: $space-lg;
 }
-.flex{
-    margin: 20px;
+
+.flex {
+    margin: $space-sm;
     background-color: $colorbackground;
-    border-radius: 50px;
+    border-radius: $radius-2xl;
     width: auto;
-    max-width: 600px;
-    & img{
-        width: 80%;
-        border-radius: 10px;
+    max-width: 380px;
+    overflow: hidden;
+    transition: transform $transition-base, box-shadow $transition-base;
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: $shadow-xl;
+    }
+    & img {
+        width: 100%;
+        border-radius: 0;
+        transition: transform $transition-slow;
+    }
+    &:hover img {
+        transform: scale(1.03);
     }
 }
-.flextop{
-    padding-top: 20px;
+
+.flextop {
     color: white;
-    border-radius: 50px 50px 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $color-ocean;
+    background: $gradient-ocean;
+    & h3 {
+        padding: $space-md;
+        color: white;
+        text-align: center;
+    }
 }
-.flexbottom{
-    padding: 10px 40px 20px 40px;
+
+.flexbottom {
+    padding: $space-md $space-lg $space-lg;
     min-height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 20px;
+    gap: $space-sm;
 }
-#photomaton{
+
+// ─── PHOTOMATON (page activites) ─────────────────────────────
+#photomaton {
     display: flex;
     flex-direction: column;
-    & img{
+    & img {
         margin-left: 50px;
         max-width: 300px;
-        border-radius: 50px;
+        border-radius: $radius-2xl;
     }
     & img:nth-child(1) {
         z-index: 6;
@@ -463,34 +710,105 @@ button {
         margin-left: 80px;
     }
 }
-#stylematon{
+
+#stylematon {
     margin-top: -10px;
-    background-color: $color-ocean;
+    background: $gradient-ocean;
     height: 500px;
     margin-left: 30%;
 }
-#vignettematon{
+
+#vignettematon {
     z-index: 7;
     margin-top: -550px;
     margin-left: 15%;
     margin-right: 15%;
     background-color: $colorbackground;
-    padding: 30px;
+    padding: $space-xl;
 }
-// Pages   --------------------- excursions -------------------
+
+// ─── EXCURSIONS ──────────────────────────────────────────────
 #backgroundimgexcu {
     background-image: url("/images/2-excursions/13-concu.webp");
     background-size: cover;
 }
 
-.additional-text {
-    display: none;
-    & p {
-        text-align: start;
+// ─── PAGE SECRETE ────────────────────────────────────────────
+.secret {
+    & a {
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
-/* Style des boutons */
-.toggle-button {
-    cursor: pointer;
+#mora {
+    max-width: 900px;
+    margin: $space-xl auto;
+}
+
+// ─── VIMEO ───────────────────────────────────────────────────
+.vimeo {
+    margin-top: $space-lg;
+}
+
+// ─── SOUS-MENUS (hidden par defaut) ──────────────────────────
+.sub-menu {
+    display: none;
+}
+
+// ─── BTN TOP (retour haut) ───────────────────────────────────
+.btn-top {
+    position: fixed;
+    bottom: $space-lg;
+    right: $space-lg;
+    width: 48px;
+    height: 48px;
+    background: $gradient-ocean;
+    color: white;
+    border-radius: $radius-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    box-shadow: $shadow-md;
+    z-index: $z-sticky;
+    opacity: 0.8;
+    transition: opacity $transition-fast, transform $transition-fast;
+    text-decoration: none;
+    &:hover {
+        opacity: 1;
+        transform: scale(1.1) translateY(-2px);
+    }
+    &:visited {
+        color: white;
+    }
+}
+
+// ─── SCROLL REVEAL ───────────────────────────────────────────
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+// ─── REDUCED MOTION ──────────────────────────────────────────
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
 }

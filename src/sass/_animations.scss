@@ -1,27 +1,65 @@
-@keyframes fromUp {
-    0%{
+@use "variables" as *;
+
+// ─── PAGE ENTRANCE ───────────────────────────────────────────
+@keyframes fadeIn {
+    from {
         opacity: 0;
-        // transform: translateY(500px);
-        // transform: translateX(-500px);
+        transform: translateY(16px);
     }
-    100%{
+    to {
         opacity: 1;
-        // transform: translateY(0);
-        // transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
+// Legacy alias
+@keyframes fromUp {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+// ─── MENU LOADER ─────────────────────────────────────────────
 @keyframes loader-menu {
-    0%{
+    from {
         opacity: 0;
-        transform: scale(0,1);
-        // transform: rotate(180deg);
-        // margin-top: 50px;
+        transform: scaleX(0);
     }
-    100%{
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+// ─── GALLERY ZOOM ────────────────────────────────────────────
+@keyframes zoomin {
+    from {
+        max-width: 50%;
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        max-width: 100%;
         opacity: 1;
         transform: scale(1);
-        // transform: rotate(0deg);
-        // margin-top: auto;
+    }
+}
+
+// ─── SUBTLE FLOAT (hero elements) ────────────────────────────
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+// ─── PULSE (CTA attention) ───────────────────────────────────
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba($color-ocean, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba($color-ocean, 0);
     }
 }

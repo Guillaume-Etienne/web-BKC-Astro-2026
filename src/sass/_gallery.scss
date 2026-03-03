@@ -1,0 +1,83 @@
+@use "variables" as *;
+
+// ─── GALLERY GRID ────────────────────────────────────────────
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 8px;
+    gap: $space-sm;
+    padding: $space-md;
+}
+
+.gallery img {
+    max-width: 100%;
+    border-radius: $radius-md;
+    box-shadow: $shadow-sm;
+    transition: box-shadow $transition-base, transform $transition-base;
+}
+
+.gallery img:hover {
+    box-shadow: $shadow-lg;
+}
+
+.gallery .content {
+    padding: $space-xs;
+}
+
+.gallery .gallery-item {
+    transition: transform $transition-base;
+    cursor: pointer;
+}
+
+.gallery .gallery-item:hover {
+    transform: scale(1.02);
+}
+
+// ─── FULLSCREEN LIGHTBOX ─────────────────────────────────────
+.hello {
+    opacity: 1 !important;
+}
+
+.full {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $z-modal;
+}
+
+.full .content {
+    background-color: rgba(0, 0, 0, 0.85);
+    height: 100%;
+    width: 100%;
+    display: grid;
+    backdrop-filter: blur(4px);
+}
+
+.full .content img {
+    width: auto;
+    left: 50%;
+    transform: translate3d(0, 0, 0);
+    animation: zoomin 0.4s ease;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.byebye {
+    opacity: 0;
+}
+
+.byebye:hover {
+    transform: scale(0.2) !important;
+}
+
+// ─── RESPONSIVE ──────────────────────────────────────────────
+@media (max-width: $bp-sm) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+    }
+}

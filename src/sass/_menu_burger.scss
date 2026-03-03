@@ -1,101 +1,164 @@
 @use "variables" as *;
 
-/* Sidenav menu */
+// ─── SIDENAV (mobile) ────────────────────────────────────────
 .sidenav {
-  height: 100%;
-  width: 260px;
-  position: fixed;
-  z-index: 6;
-  top: 0;
-  left: -260px;
-  background-color: $color-dark;
-  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
-  padding-top: 60px;
-  transition: left 0.4s ease;
-  & ul{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  & a{
-    padding: 10px 10px 10px 24px;
-    font-size: 22px;
-    color: rgba(255, 255, 255, 0.85);
-    display: block;
-    transition: color 0.2s, padding-left 0.2s;
-    border-left: 3px solid transparent;
-  }
-}
+    height: 100%;
+    width: 280px;
+    position: fixed;
+    z-index: $z-overlay;
+    top: 0;
+    left: -280px;
+    background: $gradient-dark;
+    box-shadow: 4px 0 32px rgba(0, 0, 0, 0.4);
+    padding-top: 72px;
+    transition: left $transition-slow;
+    overflow-y: auto;
 
-.sidenav a:hover {
-  color: $color-sky;
-  padding-left: 30px;
-  border-left-color: $color-sky;
-}
-.sidenav a:visited {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* Active class */
-.sidenav.active {
-  left: 0;
-  z-index: 1;
-}
-
-/* Close btn */
-.sidenav .close {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  color: rgba(255, 255, 255, 0.7);
-  &:hover { color: white; }
-}
-
-.burger-icon span {
-  display: block;
-  width: 35px;
-  height: 4px;
-  background-color: $color-dark;
-  margin: 6px 0;
-  border-radius: 2px;
-  transition: background-color 0.2s;
-}
-
-/* SubMenu mobile — spécificité via .sidenav pour éviter !important */
-.sidenav .sub-menu {
-  & li {
-    margin-left: 10px;
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-  & a {
-    font-size: 18px;
-    padding-left: 32px;
-    border-left: none;
-    color: rgba(255, 255, 255, 0.65);
-    &:hover {
-      color: $color-sky;
-      padding-left: 38px;
-      border-left: none;
+    & ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
     }
-  }
+
+    & a {
+        padding: $space-sm $space-sm $space-sm $space-lg;
+        font-size: $fs-lg;
+        color: rgba(255, 255, 255, 0.9);
+        display: block;
+        transition: color $transition-fast, padding-left $transition-fast, background $transition-fast;
+        border-left: 3px solid transparent;
+        font-weight: 400;
+
+        &:hover {
+            color: $color-sky;
+            padding-left: calc(#{$space-lg} + 6px);
+            border-left-color: $color-sky;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        &:visited {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        &:focus-visible {
+            outline: 2px solid $color-sky;
+            outline-offset: -2px;
+            border-radius: 0;
+        }
+    }
 }
 
-@media screen and (min-width: 1280px) {
-  .sub-menu {
+// Active state
+.sidenav.active {
+    left: 0;
+    z-index: $z-modal;
+}
+
+// Close button
+.sidenav .close {
     position: absolute;
-    background-color: $color-dark;
-    border-radius: 0 0 8px 8px;
-    min-width: 200px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    & li { background-color: transparent; }
-  }
-  // Spécificité (0,2,1) > .sidenav a (0,1,1) → évite l'écrasement par desktopresponsive
-  .sidenav .sub-menu a {
-    color: rgba(255, 255, 255, 0.85);
-    &:hover { color: $color-sky; }
-  }
-  .sidenav li {
-    position: relative;
-  }
+    top: $space-md;
+    right: $space-lg;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1;
+    transition: color $transition-fast, transform $transition-fast;
+    &:hover {
+        color: white;
+        transform: scale(1.15);
+    }
+    &:focus-visible {
+        outline: 2px solid $color-sky;
+        outline-offset: 4px;
+    }
+}
+
+// ─── BURGER ICON ─────────────────────────────────────────────
+.burger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: $space-sm;
+
+    & span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: $color-dark;
+        border-radius: $radius-full;
+        transition: transform $transition-base, opacity $transition-fast;
+    }
+}
+
+// ─── SOUS-MENUS MOBILE ───────────────────────────────────────
+.sidenav .sub-menu {
+    & li {
+        margin-left: $space-sm;
+        background: rgba(255, 255, 255, 0.03);
+    }
+    & a {
+        font-size: $fs-base;
+        padding-left: $space-2xl;
+        border-left: none;
+        color: rgba(255, 255, 255, 0.7);
+        &:hover {
+            color: $color-sky;
+            padding-left: calc(#{$space-2xl} + 6px);
+            border-left: none;
+            background: rgba(255, 255, 255, 0.06);
+        }
+    }
+}
+
+// ─── OVERLAY BACKDROP (click outside to close) ───────────────
+.sidenav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: $z-overlay - 1;
+    backdrop-filter: blur(2px);
+}
+
+.sidenav.active ~ .sidenav-overlay {
+    display: block;
+}
+
+// ─── DESKTOP NAV ─────────────────────────────────────────────
+@media screen and (min-width: $bp-xl) {
+    .sub-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: $color-dark;
+        border-radius: 0 0 $radius-md $radius-md;
+        min-width: 220px;
+        box-shadow: $shadow-lg;
+        z-index: $z-dropdown;
+        & li {
+            background-color: transparent;
+        }
+    }
+
+    .sidenav .sub-menu a {
+        color: rgba(255, 255, 255, 0.9);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: $fs-sm;
+        padding-left: $space-md;
+        border-left: none;
+        &:hover {
+            color: $color-sky;
+            padding-left: $space-md;
+            background: rgba(255, 255, 255, 0.06);
+            border-left: none;
+        }
+    }
+
+    .sidenav li {
+        position: relative;
+    }
 }
