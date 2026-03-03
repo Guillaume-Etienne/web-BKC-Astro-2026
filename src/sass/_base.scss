@@ -2,17 +2,15 @@
 
 // general, puis toggle, puis les pages, prix, galerie, infos, secret
 // ------- Page Activity ------------
-// test de commentaire
 
 *{
     box-sizing: border-box;
-    text-shadow: 0 0 1px $textshadow;
 }
 a{
     text-decoration: none;
-    color: $colorprimary;
+    color: $color-ocean;
     &:visited{
-        color: $colorprimary;
+        color: $color-ocean;
     }
 }
 body
@@ -24,27 +22,25 @@ body
     background: $colorbackground;
     color: $colorprimary;
     font-family: "Roboto", "Avenir", sans-serif;
+    line-height: 1.6;
     animation: fromUp 1.8s;
     & em{
         font-style:normal;
-        text-shadow: 0 0 2px $textshadow;
     }
     & a {
         font-weight: bold;
     }
-.vimeo{
-    margin-top: 20px;
-}
+    .vimeo{
+        margin-top: 20px;
+    }
 }
 .sub-menu {
     display: none;
-    & a {
-        background-color: #fff;
-    }
 }
 header{
     position:sticky;
     background-color: $colorbackground;
+    border-bottom: 1px solid rgba(10, 22, 40, 0.08);
     top:0px;
     padding: 0 10px 0 10px;
     display: flex;
@@ -58,12 +54,18 @@ header{
 }
 h1, h2{
     text-align: center;
-
+    font-family: "Shrikhand", sans-serif;
+    font-weight: 400;
+    color: $color-dark;
+    letter-spacing: 0.02em;
+}
+h3, h4 {
+    color: $color-dark;
 }
 #lang {
     background-color: $colorsecondary;
-        border-radius: 20px;
-        padding: 0 20px 0 20px;
+    border-radius: 20px;
+    padding: 0 20px 0 20px;
 }
 
 main{
@@ -80,10 +82,9 @@ video{
     min-height: 250px;
     object-fit: cover;
     margin: 0 0 10px 0;
-    padding: 0 0 0 0;
+    padding: 0;
     box-shadow: $shadowmobile;
     pointer-events: none;
-    // test
 }
 figure{
     margin: 0;
@@ -98,10 +99,20 @@ figure{
     flex-direction: column;
     align-items: center;
     & a{
-        box-shadow: $shadowmobile;
+        box-shadow: $shadow-card;
         margin: 10px 0 10px 0;
         padding: 0 0 20px 0;
         max-width: 800px;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: box-shadow 0.2s, transform 0.2s;
+        &:hover {
+            box-shadow: $shadowbox;
+        }
+        // Le texte dans les cards reste en couleur primaire (pas hérité du bleu lien)
+        & p, & figcaption {
+            color: $colorprimary;
+        }
     }
 }
 #feednpart {
@@ -110,14 +121,13 @@ figure{
     align-items: center;
 }
 
-
 #partnairesListe {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     margin: 5px;
     & img {
-        margin: 5px;;
+        margin: 5px;
         width: 100px;
     }
 }
@@ -126,7 +136,9 @@ figure{
         margin: 20px 0 18px 0;
         padding-bottom: 10px;
         max-width: 600px;
-        box-shadow: $shadowmobile;
+        box-shadow: $shadow-card;
+        border-radius: 8px;
+        overflow: hidden;
         & img{
             width: 100%;
         }
@@ -137,11 +149,17 @@ figure{
 }
 footer{
     margin-top: 0;
-    padding: 10px;
-    background-color: lightcyan;
+    padding: 30px 20px;
+    background-color: $color-dark;
+    color: rgba(255, 255, 255, 0.85);
     text-align: center;
     & p {
         margin-top: 0;
+        color: rgba(255, 255, 255, 0.7);
+    }
+    & a {
+        color: $color-sky;
+        &:visited { color: $color-sky; }
     }
     & #footicons{
         display: flex;
@@ -150,17 +168,20 @@ footer{
         & img{
             width: 50px;
             margin: 10px 20px 10px 20px;
+            filter: brightness(0) invert(1);
+            opacity: 0.85;
+            transition: opacity 0.2s;
+            &:hover { opacity: 1; }
         }
     }
 }
 // Toggle - used in Prices and Menus
 .block {
     display: none;
-  }
-
-  .visible {
+}
+.visible {
     display: block;
-  }
+}
 
 // pages
 img {
@@ -169,15 +190,16 @@ img {
 #headsection {
     display: flex;
     flex-direction: column;
-    max-height: 280px;
+    max-height: 320px;
     & h1 {
-        margin-top: -160px;
+        margin-top: -180px;
+        position: relative;
     }
     & h1, h2 {
-        text-shadow: 1px 1px 2px black;
+        text-shadow: 1px 2px 8px rgba(0,0,0,0.7);
     }
     & img {
-        max-height: 280px;
+        max-height: 320px;
         object-fit: cover;
     }
 }
@@ -217,11 +239,13 @@ img {
     margin: 10px;
     padding: 10px;
     max-width: 700px;
-    box-shadow: $shadowmobile;
+    box-shadow: $shadow-card;
+    border-radius: 8px;
     & aside {
         transform:translateY(-50px);
         background-color: white;
         padding: 10px 10px 20px 10px;
+        border-radius: 0 0 8px 8px;
         & h2{
             margin-top: 5px;
         }
@@ -237,13 +261,13 @@ img {
     align-items: center;
     & button {
         border: 0;
-    line-height: 2.5;
-    padding: 0 20px;
-    font-size: 1rem;
-    text-align: center;
-    color: #fff;
-    background-color: rgb(92, 179, 206);
-
+        line-height: 2.5;
+        padding: 0 20px;
+        font-size: 1rem;
+        text-align: center;
+        color: #fff;
+        background-color: $color-ocean;
+        border-radius: 6px;
     }
 }
 #prixlessons{
@@ -260,11 +284,10 @@ img {
         margin: 5px;
     }
 }
-// PAge galerie
+// Page galerie
 #containervimeo{
     width: 100%;
     height: 100%;
-    // background-color:red ;
     position: relative;
 }
 .vid{
@@ -280,7 +303,6 @@ li img, .arrow{
 }
 #introinfos{
     margin-top: 30px;
-
     & ul{
         list-style-type:'| ';
         display: flex;
@@ -329,7 +351,7 @@ li img, .arrow{
     background-repeat: no-repeat;
 }
 #vignette1 {
-    background-color: $colorbackground2;
+    background-color: $color-ocean;
     margin: 60px 60px 0 40px;
 }
 #vignette2 {
@@ -353,16 +375,23 @@ li img, .arrow{
     justify-content: center;
 }
 button {
-    color: $colorsecondary;
-    letter-spacing: 0.3em;
+    color: white;
+    letter-spacing: 0.1em;
     margin: 20px;
-    padding: 20px;
+    padding: 14px 28px;
     border-radius: 30px;
-    border: 1px solid transparent;
-    background-color: $colorbackground2;
+    border: none;
+    background-color: $color-ocean;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s, transform 0.15s;
+    &:hover {
+        background-color: $color-sky;
+        transform: scale(1.03);
+    }
 }
 #secflex{
-    background-color: $colorbackground4;
+    background-color: $color-dark;
     margin: 0 0 20px 0;
     display: flex;
     flex-wrap: wrap;
@@ -381,12 +410,12 @@ button {
 }
 .flextop{
     padding-top: 20px;
-    color: $colorsecondary;
+    color: white;
     border-radius: 50px 50px 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $colorbackground2;
+    background-color: $color-ocean;
 }
 .flexbottom{
     padding: 10px 40px 20px 40px;
@@ -395,6 +424,7 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 20px;
 }
 #photomaton{
     display: flex;
@@ -425,7 +455,7 @@ button {
 }
 #stylematon{
     margin-top: -10px;
-    background-color: $colorbackground2;
+    background-color: $color-ocean;
     height: 500px;
     margin-left: 30%;
 }
@@ -453,9 +483,4 @@ button {
 /* Style des boutons */
 .toggle-button {
     cursor: pointer;
-}
-
-/* Style des paragraphes */
-.flexbottom {
-    margin-bottom: 20px;
 }
