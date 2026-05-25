@@ -71,6 +71,19 @@
         flex-direction: row-reverse;
     }
 
+    // La galerie maison BKC n'est pas un flexdiv → row-reverse sans effet
+    .flexdiv.bkc-top {
+        border-radius: $radius-lg $radius-lg 0 0;
+        padding-bottom: $space-md;
+        &:hover { box-shadow: none; }
+    }
+
+    .house-gallery-section {
+        margin: 0 $space-lg;
+        padding: $space-sm $space-xl $space-xl;
+        border-radius: 0 0 $radius-lg $radius-lg;
+    }
+
     #packages {
         flex-direction: row;
         flex-wrap: wrap;
@@ -256,6 +269,23 @@
             box-shadow: $shadow-md;
             transform: translateY(-2px);
         }
+    }
+
+    // Maison BKC — bloc continu (top + galerie soudés)
+    .flexdiv.bkc-top {
+        margin: 0 $space-2xl;
+        border-radius: $radius-lg $radius-lg 0 0;
+        &:hover {
+            box-shadow: none;
+            transform: none;
+        }
+    }
+
+    .house-gallery-section {
+        margin: 0 $space-2xl;
+        padding: $space-sm $space-2xl $space-2xl;
+        border-radius: 0 0 $radius-lg $radius-lg;
+        box-shadow: $shadow-xs;
     }
 
     .longtext {

@@ -381,6 +381,52 @@ button, .btn {
     }
 }
 
+// ─── MAISON BKC ──────────────────────────────────────────────
+.background-bkc {
+    background: color.mix($color-sky, $color-surface, 10%);
+}
+
+.house-gallery-section {
+    padding: $space-sm $space-md $space-xl;
+}
+
+.house-rates {
+    width: 100%;
+    border-collapse: collapse;
+    margin: $space-md 0 $space-lg;
+
+    thead th {
+        padding: $space-xs $space-sm;
+        background: rgba($color-ocean, 0.08);
+        color: $color-ocean;
+        font-weight: 600;
+        text-align: left;
+        font-size: $fs-sm;
+        &:last-child { text-align: right; }
+    }
+
+    tbody {
+        tr {
+            transition: background $transition-fast;
+            &:hover td { background: rgba($color-ocean, 0.03); }
+        }
+        td {
+            padding: $space-xs $space-sm;
+            border-bottom: 1px solid rgba($color-dark, 0.07);
+            font-size: $fs-sm;
+            &:last-child {
+                font-weight: 700;
+                color: $color-ocean;
+                text-align: right;
+            }
+        }
+        tr:last-child td {
+            border-bottom: none;
+            font-weight: 600;
+        }
+    }
+}
+
 // ─── PARTENAIRES ─────────────────────────────────────────────
 #feednpart {
     display: flex;
