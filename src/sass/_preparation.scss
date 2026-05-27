@@ -1,0 +1,342 @@
+@use "sass:color";
+@use "variables" as *;
+
+// ─── PAGE PRÉPARATION VOYAGE ─────────────────────────────────
+// Styles spécifiques à /fr/La-préparation-de-votre-voyage…
+// (timeline transfert + checklist). Tout est scopé sous des
+// classes dédiées → aucun impact sur les autres pages.
+
+// Sous-titres internes (Vols, Visa, Monnaie…) dans .flextext
+.prep-sub {
+    margin-top: $space-lg;
+    color: $color-ocean-dark;
+    &:first-of-type {
+        margin-top: $space-md;
+    }
+}
+
+.prep-list {
+    list-style-type: "— ";
+    padding-left: $space-lg;
+    margin-bottom: $space-md;
+    & li {
+        margin-bottom: $space-2xs;
+    }
+}
+
+// Encart "coup de cœur" (ex. arrivée en Cessna)
+.prep-highlight {
+    margin: $space-lg 0 0;
+    padding: $space-md $space-lg;
+    background: linear-gradient(135deg, rgba($color-ocean, 0.08), rgba($color-sky, 0.10));
+    border-left: 4px solid $color-ocean;
+    border-radius: $radius-md;
+
+    & .prep-highlight-title {
+        display: flex;
+        align-items: center;
+        gap: $space-xs;
+        font-family: $font-display;
+        font-weight: 400;
+        font-size: $fs-lg;
+        color: $color-ocean-dark;
+        margin-bottom: $space-2xs;
+    }
+    & p {
+        text-align: left;
+    }
+    & .prep-highlight-link {
+        display: inline-block;
+        margin-top: $space-2xs;
+        font-weight: 600;
+    }
+}
+
+// ─── ACCORDÉON (variante) — en-têtes en bannières photo ──────
+.acc-item {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto $space-md;
+    background: $color-surface;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-sm;
+    transition: box-shadow $transition-base, transform $transition-base;
+    &:hover {
+        box-shadow: $shadow-md;
+    }
+    &.is-open {
+        box-shadow: $shadow-lg;
+    }
+}
+
+// En-tête = bannière photo (image en background via style inline)
+.acc-header {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-md;
+    width: 100%;
+    min-height: 124px;
+    padding: $space-md $space-lg;
+    cursor: pointer;
+    overflow: hidden;
+    color: white;
+    background-size: cover;
+    background-position: center;
+
+    // Voile sombre dégradé pour la lisibilité du titre
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background: linear-gradient(90deg,
+            rgba($color-dark, 0.80) 0%,
+            rgba($color-dark, 0.45) 55%,
+            rgba($color-dark, 0.20) 100%);
+        transition: background $transition-base;
+    }
+    &:hover::before {
+        background: linear-gradient(90deg,
+            rgba($color-dark, 0.70) 0%,
+            rgba($color-dark, 0.35) 55%,
+            rgba($color-dark, 0.10) 100%);
+    }
+    &:focus-visible {
+        outline: 3px solid $color-sky;
+        outline-offset: -3px;
+    }
+}
+
+.acc-head-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+}
+
+.acc-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.acc-header .acc-title {
+    font-family: $font-display;
+    font-weight: 400;
+    font-size: $fs-2xl;
+    color: white;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+}
+
+// Bouton rond bien visible
+.acc-toggle {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border-radius: $radius-full;
+    background: $gradient-ocean;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: $shadow-md;
+    transition: transform $transition-base, box-shadow $transition-fast;
+    & svg {
+        width: 22px;
+        height: 22px;
+        stroke: white;
+        stroke-width: 3;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+}
+.acc-header:hover .acc-toggle {
+    box-shadow: 0 0 0 6px rgba($color-ocean, 0.25), $shadow-md;
+}
+.acc-item.is-open .acc-toggle {
+    transform: rotate(180deg);
+}
+
+// Panneau : animation height 0 → auto via grid-template-rows
+.acc-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows $transition-base;
+}
+.acc-item.is-open .acc-panel {
+    grid-template-rows: 1fr;
+}
+.acc-panel-inner {
+    overflow: hidden;
+    min-height: 0;
+}
+
+// Corps du panneau : texte épuré, largeur de lecture confortable
+.acc-body {
+    padding: $space-lg;
+    & .flextext {
+        max-width: 760px;
+        margin: 0 auto;
+        & .prep-sub:first-child {
+            margin-top: 0;
+        }
+    }
+    & .transfer-timeline {
+        margin-top: $space-lg;
+    }
+    & .ready-block {
+        padding-bottom: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .acc-panel { transition: none; }
+}
+
+// ─── TIMELINE TRANSFERT ──────────────────────────────────────
+.transfer-timeline {
+    display: flex;
+    flex-direction: column;   // vertical sur mobile
+    align-items: stretch;
+    gap: $space-md;
+    max-width: 900px;
+    margin: $space-lg auto $space-xl;
+    padding: 0 $space-md;
+}
+
+.tl-step {
+    position: relative;
+    flex: 1;
+    background: $color-surface;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    padding: $space-lg $space-md;
+    text-align: center;
+
+    // Cascade séquentielle (réutilise .reveal/.is-visible global)
+    &:nth-child(2) { transition-delay: 0.15s; }
+    &:nth-child(3) { transition-delay: 0.30s; }
+
+    & .tl-icon {
+        font-size: 2.4rem;
+        line-height: 1;
+        margin-bottom: $space-xs;
+    }
+    & h4 {
+        color: $color-dark;
+        margin-bottom: $space-2xs;
+    }
+    & .tl-time {
+        display: inline-block;
+        font-size: $fs-sm;
+        font-weight: 600;
+        color: $color-ocean;
+        background: rgba($color-ocean, 0.08);
+        padding: 2px $space-sm;
+        border-radius: $radius-full;
+        margin-bottom: $space-xs;
+    }
+    & p:last-child {
+        font-size: $fs-sm;
+        color: $colorgreytext1;
+        margin-bottom: 0;
+    }
+}
+
+// Connecteur entre étapes (vertical mobile)
+.tl-connector {
+    align-self: center;
+    width: 2px;
+    height: $space-lg;
+    background: linear-gradient(to bottom, rgba($color-ocean, 0.5), rgba($color-sky, 0.5));
+}
+
+// ─── CHECKLIST « Je suis prêt ? » ────────────────────────────
+.ready-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $space-lg $space-md $space-xl;
+    & h2 {
+        margin-bottom: $space-2xs;
+    }
+    & > p {
+        text-align: center;
+        color: $colorgreytext1;
+        max-width: 600px;
+    }
+}
+
+.ready-checklist {
+    list-style: none;
+    padding: 0;
+    margin: $space-md 0 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-xs;
+    max-width: 700px;
+
+    & li {
+        background: $color-surface;
+        border: 1px solid rgba($color-dark, 0.08);
+        border-radius: $radius-md;
+        transition: border-color $transition-fast, background $transition-fast;
+        &:hover {
+            border-color: rgba($color-ocean, 0.3);
+        }
+    }
+
+    & label {
+        display: flex;
+        align-items: center;
+        gap: $space-sm;
+        padding: $space-sm $space-md;
+        cursor: pointer;
+        font-size: $fs-base;
+    }
+
+    & input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        flex: 0 0 auto;
+        width: 22px;
+        height: 22px;
+        border: 2px solid rgba($color-ocean, 0.4);
+        border-radius: $radius-sm;
+        cursor: pointer;
+        position: relative;
+        transition: background $transition-fast, border-color $transition-fast, transform $transition-fast;
+
+        &:checked {
+            background: $color-ocean;
+            border-color: $color-ocean;
+            transform: scale(1.05);
+        }
+        // Coche dessinée en CSS
+        &:checked::after {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 6px;
+            height: 11px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    }
+
+    // Texte barré/atténué une fois coché
+    & input[type="checkbox"]:checked + span {
+        color: $color-muted;
+        text-decoration: line-through;
+    }
+}
