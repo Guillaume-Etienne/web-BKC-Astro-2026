@@ -39,7 +39,10 @@ import '../../../sass/general.scss';
             </p>
             <a href="https://www.instagram.com/pierro_73/reel/DTySK87DkTV/">Pierrot's video</a>
             <p>See you on the water!</p>
-            <img src="/images/blog/avion.webp" alt="blog Bilene Kite Center" class="blog-img">
+            <div class="blog-video">
+                <iframe src="https://www.youtube.com/embed/4eqp0PWhNOo" title="Flying over Bilene in a Cessna" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <img src="/images/blog/cessna/C6.jpg" alt="Bilene lagoon seen from the Cessna at dawn" class="blog-img">
             <a href="/en/blog" class="blog-back">&larr; Back to blog</a>
         </article>
     </main>
@@ -113,6 +116,22 @@ import '../../../sass/general.scss';
     }
     .blog-back:visited {
         color: white;
+    }
+    .blog-video {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        margin: 25px 0;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    .blog-video iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
     @media (max-width: 600px) {
         .blog-hero {
