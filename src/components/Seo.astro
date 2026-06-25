@@ -1,0 +1,79 @@
+---
+// ============================================================================
+//  <Seo> — balises SEO + multilingue + réseaux sociaux, centralisées.
+// ----------------------------------------------------------------------------
+//  À placer dans le <head> de chaque page. Génère automatiquement, à partir
+//  du plan de routes (src/i18n/pages.js) :
+//    - <title> + meta description
+//    - <link rel="canonical">
+//    - <link rel="alternate" hreflang> pour TOUTES les langues + x-default
+//    - balises Open Graph + Twitter (avec image de partage)
+//    - og:locale selon la langue
+//  Le contenu JSON-LD (Schema.org) est passé en enfant via <slot/>.
+//
+//  Exemple d'usage :
+//    <Seo page="school" lang="fr"
+//         title="L'école de kite à Bilene au Mozambique"
+//         description="Votre école de kitesurf et wingsurf..."
+//         image="/images/accueil/3.webp">
+//      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+//    </Seo>
+// ============================================================================
+import { SITE, DEFAULT_LANG, LOCALES, routesFor } from '../i18n/pages.js';
+
+interface Props {
+  page: string;          // clé dans PAGES (ex. "home", "school")
+  lang: string;          // langue de la page ("fr" | "en" | "es" | ...)
+  title: string;
+  description: string;
+  image?: string;        // chemin "/images/..." ou URL absolue
+  type?: string;         // og:type ("website" par défaut)
+  noindex?: boolean;     // true → noindex (ex. pages obsolètes)
+}
+
+const {
+  page,
+  lang,
+  title,
+  description,
+  image = '/images/accueil/1.webp',
+  type = 'website',
+  noindex = false,
+} = Astro.props;
+
+const routes = routesFor(page);
+const path = routes[lang];
+
+// canonical = domaine prod + chemin de CETTE langue (fallback : URL courante).
+const canonical = path ? SITE + encodeURI(path) : new URL(Astro.url.pathname, SITE).href;
+const ogImage = image.startsWith('http') ? image : SITE + image;
+const locale = LOCALES[lang] ?? lang;
+const defaultPath = routes[DEFAULT_LANG];
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, follow" />}
+
+<link rel="canonical" href={canonical} />
+{Object.entries(routes).map(([l, p]) => (
+  <link rel="alternate" hreflang={l} href={SITE + encodeURI(p)} />
+))}
+{defaultPath && <link rel="alternate" hreflang="x-default" href={SITE + encodeURI(defaultPath)} />}
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Bilene Kite Center" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:locale" content={locale} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="https://twitter.com/Guillau69115762" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<slot />
