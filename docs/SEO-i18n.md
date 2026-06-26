@@ -119,7 +119,13 @@ import { businessJsonLd } from '../../i18n/jsonld.js';
 - [x] Déploiement `<Seo>` sur les 14 pages FR
 - [x] Déploiement `<Seo>` sur les 15 pages EN
 - [x] Déploiement `<Seo>` sur les 14 pages ES (pas de page « mentions légales » en ES)
-- [ ] `FAQPage` JSON-LD sur les 3 pages « Préparation du voyage »
-- [ ] `public/llms.txt` + bots IA dans `robots.txt`
+- [x] `FAQPage` JSON-LD sur les 3 pages « Préparation du voyage » (14 questions/langue, via `const faqItems` dans le frontmatter)
+- [x] `public/llms.txt` + bots IA explicitement autorisés dans `robots.txt`
 - [ ] Compléter les `TODO` factuels de `jsonld.js` (téléphone, GPS, réseaux sociaux)
 - [ ] Pages blog (hors plan de routes pour l'instant)
+
+### Note FAQPage
+Les questions/réponses vivent dans `const faqItems = [...]` du frontmatter de chaque page « Préparation du voyage » (FR/EN/ES), passées à `faqJsonLd()`. Elles **reprennent le contenu visible** de la section 5 — à garder synchronisées si le texte de la page change.
+
+### Note llms.txt
+`public/llms.txt` résume le centre + liste les pages principales (en anglais, convention du format). À mettre à jour si on ajoute/renomme des pages.

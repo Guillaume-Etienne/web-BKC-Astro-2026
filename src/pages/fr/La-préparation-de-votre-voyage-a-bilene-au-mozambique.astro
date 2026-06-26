@@ -5,6 +5,25 @@ import Analytics from '../../components/Analytics.astro';
 import Seo from '../../components/Seo.astro';
 import { businessJsonLd, faqJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
+
+// Questions fréquentes (section 5) → données structurées FAQPage.
+// Reprend le contenu visible de la page ; garder synchronisé si modifié.
+const faqItems = [
+  { q: `Le vent à Bilene — fiabilité et période idéale`, a: `Le vent à Bilene est un thermique : il se lève en journée et tombe le soir. Comptez autour de 15 nœuds en moyenne, avec des pointes parfois plus fortes. Windguru est notre référence, dans l'ensemble fiable, mais la réalité est souvent un peu plus généreuse que l'annonce.` },
+  { q: `Êtes-vous ouverts en juillet/août ?`, a: `Non. Nous ouvrons chaque année autour de mi-octobre et fermons fin mars. Juillet et août correspondent à l'hiver austral au Mozambique : le vent n'est pas au rendez-vous. Nous fermons aussi autour des fêtes de fin d'année.` },
+  { q: `Noël et Nouvel An — êtes-vous ouverts ?`, a: `Non. Bilene se transforme en fête géante pendant les fêtes : des milliers de personnes, musique à fond, quads sans pots d'échappement jour et nuit. L'ambiance est très festive mais très loin du calme africain habituel. Pas l'idéal pour un séjour kite tranquille.` },
+  { q: `L'hébergement — capacité, tarifs, équipements`, a: `Nous proposons plusieurs formules : chambres standard, chambres vue mer, maison complète et d'autres options à Bilene. Tout est à deux pas du spot. Tarifs détaillés et photos sur notre page logements.` },
+  { q: `Le transfert — tarifs et logistique`, a: `Environ 3 heures depuis l'aéroport de Maputo. Nous organisons le transport quelle que soit la taille du groupe, avec les board bags. L'arrivée en Cessna est aussi possible pour les amateurs d'aventure.` },
+  { q: `Les cours — débutants, perfectionnement, wing foil`, a: `Nous accueillons tous les niveaux : débutants complets, riders en perfectionnement et pratiquants de wing foil. Les cours sont personnalisés selon votre progression.` },
+  { q: `Les activités — safari, autres spots, sorties`, a: `Au-delà du kite : safari à la réserve de Maputo (~1h30) ou au Kruger, excursions vers d'autres spots du Mozambique, sorties en quad, snorkeling et découvertes locales.` },
+  { q: `Peut-on venir avec des enfants ?`, a: `Tout à fait. Des baby-sitters de confiance peuvent être organisés sur place. L'initiation au kite est envisageable selon l'âge et l'envie de l'enfant. Pour les non-kiters : plage, paddle et baignade dans la lagune.` },
+  { q: `Proposez-vous de la planche à voile ?`, a: `Non, nous n'avons pas de matériel de planche à voile. San Martinho, un spot voisin, dispose de matériel de niveau débutant absolu, mais rien pour une pratique sportive. Pour la voile, ce n'est pas la destination.` },
+  { q: `Les tarifs — cours, matériel, hébergement`, a: `Les tarifs hébergement sont sur notre page logements, et les tarifs cours et matériel sur notre page tarifs. Contactez-nous pour un devis sur mesure selon votre séjour.` },
+  { q: `Y a-t-il du WiFi ?`, a: `Le WiFi est disponible au bar/restaurant du centre. Pour une connexion mobile partout, on vous aide à vous procurer une carte SIM 4G locale dès l'arrivée — ça tourne bien, les visios ne sont pas un problème.` },
+  { q: `Y a-t-il une laverie ?`, a: `Oui, une laverie dans le village, à 4 minutes à pied. Super service et très abordable.` },
+  { q: `Peut-on venir sans kiter ?`, a: `Bien sûr : plage, baignade dans la lagune, sorties, restaurants, ambiance… il y a largement de quoi passer un beau séjour. Le spot est si idéal pour découvrir le kite ou le wing que beaucoup de non-kiters repartent avec l'envie de s'y mettre.` },
+  { q: `Y a-t-il un distributeur à Bilene ?`, a: `Il en existe quelques-uns, mais les montants sont limités et les frais bancaires élevés. Mieux vaut ne pas en dépendre : venez avec suffisamment de cash en euros.` },
+];
 ---
 
 <!DOCTYPE html>
@@ -21,6 +40,7 @@ import '../../sass/general.scss';
         title="Préparer votre voyage kitesurf à Bilene — Bilene Kite Center"
         description="Pour bien préparer votre voyage kitesurf ou wingfoil à Bilene au Mozambique">
         <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('fr'))} />
+        <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd(faqItems))} />
     </Seo>
     <Analytics />
 </head>

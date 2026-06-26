@@ -2,4 +2,32 @@ User-agent: *
 Allow: /
 Disallow: /secret/
 
+# Bots IA / moteurs génératifs — explicitement autorisés à crawler le site
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://www.bilenekite.com/sitemap-index.xml

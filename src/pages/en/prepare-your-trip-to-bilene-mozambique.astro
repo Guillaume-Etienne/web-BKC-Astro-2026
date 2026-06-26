@@ -5,6 +5,25 @@ import Analytics from '../../components/Analytics.astro';
 import Seo from '../../components/Seo.astro';
 import { businessJsonLd, faqJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
+
+// Frequently asked questions (section 5) → FAQPage structured data.
+// Mirrors the page's visible content; keep in sync if edited.
+const faqItems = [
+  { q: `Wind at Bilene — reliability and best season`, a: `The wind at Bilene is a thermal: it builds through the day and drops in the evening. Expect around 15 knots on average, with gusts that can be stronger. Windguru is our go-to reference, generally reliable, though reality is often a bit stronger than the forecast.` },
+  { q: `Are you open in July/August?`, a: `No. We open each year around mid-October and close at the end of March. July and August are the austral winter in Mozambique, so the wind simply isn't there. We also close around Christmas and New Year.` },
+  { q: `Christmas and New Year — are you open?`, a: `No. Bilene transforms into a massive festival during the holidays: thousands of visitors, loud music, and quad bikes without mufflers day and night. The atmosphere is ultra-festive but very far from the usual African calm. Not ideal for a peaceful kite trip.` },
+  { q: `Accommodation — capacity, prices, facilities`, a: `We offer several options: standard rooms, sea-view rooms, the full house, and other accommodation possibilities in Bilene. Everything is right next to the spot. Detailed prices and photos on our accommodation page.` },
+  { q: `Transfer from Maputo — cost and logistics`, a: `About 3 hours from Maputo airport. We organise transport for any group size, board bags included. For the adventurous, arriving by Cessna is also an option.` },
+  { q: `Lessons — beginners, improvement, wing foil`, a: `We welcome all levels: complete beginners, riders looking to improve, and wing foil practitioners. Sessions are tailored to your progression.` },
+  { q: `Activities — safari, other spots, outings`, a: `Beyond kite: safari at the Maputo Special Reserve (~1.5h away) or the Kruger, excursions to other Mozambican spots, quad trips, snorkelling and local discoveries.` },
+  { q: `Can you come with children?`, a: `Absolutely. Trusted babysitters can be arranged on site. Kite initiation is possible for children depending on age and interest. For non-kiters: beach, paddleboarding and swimming in the lagoon.` },
+  { q: `Do you offer windsurfing?`, a: `No, we don't have windsurfing gear. San Martinho, a nearby spot, has entry-level equipment, but nothing for sporty practice either. For windsurfing, this isn't the destination.` },
+  { q: `Prices — lessons, gear, accommodation`, a: `Accommodation prices are on our lodging page, and lesson and gear rates on our prices page. Contact us for a personalised quote.` },
+  { q: `Is there WiFi?`, a: `WiFi is available at the centre's bar/restaurant. For mobile coverage everywhere, we'll help you get a local 4G SIM card on arrival — it works well, video calls are no problem.` },
+  { q: `Is there a laundry?`, a: `Yes, a laundry service in the village, a 4-minute walk away. Great service and very affordable.` },
+  { q: `Can you come without kiting?`, a: `Of course: beach, swimming in the lagoon, outings, restaurants, great vibes… there's plenty for a wonderful stay. The spot is so perfect for discovering kite or wing that many non-kiters leave wanting to give it a try.` },
+  { q: `Is there an ATM in Bilene?`, a: `There are a few, but withdrawal limits are low and bank fees are high. Better not to rely on them — come with enough cash in euros.` },
+];
 ---
 
 <!DOCTYPE html>
@@ -21,6 +40,7 @@ import '../../sass/general.scss';
         title="Prepare your trip to Bilene, Mozambique"
         description="To prepare your kitesurf or wingfoil trip to Bilene in Mozambique">
         <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('en'))} />
+        <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd(faqItems))} />
     </Seo>
     <Analytics />
 </head>

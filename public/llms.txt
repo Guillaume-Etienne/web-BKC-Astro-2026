@@ -1,0 +1,39 @@
+# Bilene Kite Center
+
+> Bilene Kite Center is a kitesurfing, wingfoil and SUP center located directly on the lagoon beach of Bilene (Praia do Bilene), Gaza province, Mozambique. It offers IKO-certified lessons, gear rental (Eleveight), guiding, kite trips and safaris, on-site accommodation, video production, and full travel logistics from Maputo airport. Season runs from mid-October to the end of March. The site is published in French, English and Spanish.
+
+## Key facts
+
+- Location: Praia do Bilene, Gaza, Mozambique — a shallow, flat, turquoise lagoon, ideal for all levels.
+- Sports: kitesurfing, wingfoil (wing), stand-up paddleboarding (SUP).
+- Lessons: IKO-certified instructor; coaching for freestyle, big air, strapless and waves (OLK).
+- Equipment: current-year Eleveight gear for rental.
+- Season: open from ~mid-October to end of March. Closed July–August (austral winter, no wind) and around Christmas/New Year.
+- Wind: thermal wind, ~15 knots average, builds during the day. Windguru is the reference forecast.
+- Transfer: ~3 hours from Maputo airport; group transport with board bags; Cessna arrival possible.
+- Contact: contact@bilenekite.com
+- Operated with Air Tricks Prod (kite video specialist).
+
+## Main pages (French — primary language)
+
+- [Accueil / Home](https://www.bilenekite.com/): overview of the center.
+- [Le spot de Bilene](https://www.bilenekite.com/fr/le-spot-de-bilene-au-mozambique): the lagoon spot and conditions.
+- [Le Centre de kite](https://www.bilenekite.com/fr/le-centre-de-kite-au-mozambique): the kite center facilities.
+- [L'école de kite](https://www.bilenekite.com/fr/ecole-de-kite-au-mozambique): lessons, IKO, coaching.
+- [Les trips kite](https://www.bilenekite.com/fr/trip-kite-au-mozambique): kite trips and kitesafaris.
+- [Vidéos pro](https://www.bilenekite.com/fr/video-pro-au-mozambique): professional video of your sessions.
+- [Galerie photos et vidéos](https://www.bilenekite.com/fr/galerie-photos-video-bilene-kite-mozambique): photo and video gallery.
+- [Tarifs et services](https://www.bilenekite.com/fr/les-prix-bilene-kite-center): prices for lessons, rental and services.
+- [Activités et excursions](https://www.bilenekite.com/fr/activites-a-bilene-sorties-visites-ballades-exploration): safaris, outings, exploration.
+- [Safaris Kruger et réserves](https://www.bilenekite.com/fr/les-safari-au-kruger-et-réserves-naturelles-au-mozambique): Kruger and Maputo reserve safaris.
+- [Logements](https://www.bilenekite.com/fr/les-logements-a-bilene-au-mozambique): on-site accommodation and rates.
+- [Restaurants et sorties](https://www.bilenekite.com/fr/les-sorties-et-restaurants-a-bilene-au-mozambique): dining, barbecue, team evenings.
+- [Informations et contact](https://www.bilenekite.com/fr/infos-mozambique): practical info, flights, visas, contact.
+- [Préparer votre voyage (FAQ)](https://www.bilenekite.com/fr/La-préparation-de-votre-voyage-a-bilene-au-mozambique): full trip preparation guide and frequently asked questions.
+
+## Other languages
+
+- English: https://www.bilenekite.com/en/
+- Español: https://www.bilenekite.com/es/
+
+Each French page above has an equivalent English and Spanish version, linked via hreflang tags.
