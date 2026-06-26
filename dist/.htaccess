@@ -1,8 +1,0 @@
-RewriteEngine On
-RewriteCond %{SERVER_PORT} !=443
-RewriteRule ^(.*)$ https://www.bilenekite.com/$1 [R=301,L]
-
-# Pages FAQ abandonnées → redirigées vers la page "Préparation du voyage" (qui contient désormais la FAQ)
-Redirect 301 /fr/la-faq-pour-bilene-au-mozambique https://www.bilenekite.com/fr/La-pr%C3%A9paration-de-votre-voyage-a-bilene-au-mozambique
-Redirect 301 /en/faq-bilene-mozambique https://www.bilenekite.com/en/prepare-your-trip-to-bilene-mozambique
-Redirect 301 /es/faq-bilene-mozambique https://www.bilenekite.com/es/preparar-tu-viaje-a-bilene-mozambique

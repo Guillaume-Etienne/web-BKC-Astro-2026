@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /secret/
-
-Sitemap: https://www.bilenekite.com/sitemap-index.xml
