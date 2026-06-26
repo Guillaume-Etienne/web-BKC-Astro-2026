@@ -2,6 +2,8 @@
 import MenuEN from '../../components/MenuEN.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
+import Seo from '../../components/Seo.astro';
+import { businessJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
 ---
 
@@ -14,9 +16,13 @@ import '../../sass/general.scss';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
-    <title>Bilene, Activities, excursions, visits, in Mozambique</title>
-    <meta name="description" content="In Bilene, activities, visits, safaris, excursions and visit of Maputo, in Mozambique">
-    <meta name="keywords" content="Activities, activity, trip, trips, excursion, excursions, visit, visits, discovery, accommodation, hotel, restaurant, kite, kitesurf, wing, Wingfoil, SUP, paddle, Mozambique, Bilene, lessons, trip, travel, trips">
+    <Seo
+        page="activities"
+        lang="en"
+        title="Bilene, Activities, excursions, visits, in Mozambique"
+        description="In Bilene, activities, visits, safaris, excursions and visit of Maputo, in Mozambique">
+        <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('en'))} />
+    </Seo>
 </head>
 <body>
     <MenuEN />

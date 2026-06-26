@@ -2,6 +2,8 @@
 import MenuEN from '../../components/MenuEN.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
+import Seo from '../../components/Seo.astro';
+import { businessJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
 ---
 <!doctype html>
@@ -10,22 +12,16 @@ import '../../sass/general.scss';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/favicon.ico" />
-		<title>Bilene Kite Center - Kitesurfing and Wing in Mozambique</title>
-        <meta name="description" content="A pristine kitesurfing and wingsurfing spot in a paradisiacal lagoon in Mozambique, the country with the most beautiful beaches in Africa">
-        <meta name="keywords" content="accommodation, hotel, restaurant, kite, kitesurfing, kiteboarding, wing, wingsurfing, Wingfoil, SUP, paddle, Mozambique, Bilene, lessons, trip, travel, trips, downwind, downwinds, speedspot, coaching">
-        <Analytics />
-        <!-- Facebook -->
-        <meta property="og:title" content="Bilene Kite Center in Mozambique" />
-        <meta property="og:type" content="website" />
-        <meta property="og:description" content="A pristine kitesurfing spot in a paradisiacal lagoon in Mozambique, the country with the most beautiful beaches in Africa" />
-        <meta property="author" content="Air Tricks Prod" />
-        <meta property="og:image" content="https://www.bilenekite.com/images/accueil/1.webp" />
-        <!-- twitter -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="https://twitter.com/Guillau69115762">
-        <meta name="twitter:title" content="Bilene Kite Center in Mozambique" />
-        <meta name="twitter:description" content="A pristine kitesurfing spot in a paradisiacal lagoon in Mozambique, the country with the most beautiful beaches in Africa" />
-        <meta name="twitter:image:src" content="https://www.bilenekite.com/images/accueil/1.webp" />
+		<Seo
+			page="home"
+			lang="en"
+			title="Bilene Kite Center - Kitesurfing and Wing in Mozambique"
+			description="A pristine kitesurfing and wingsurfing spot in a paradisiacal lagoon in Mozambique, the country with the most beautiful beaches in Africa"
+			image="/images/accueil/1.webp"
+		>
+			<script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('en'))} />
+		</Seo>
+		<Analytics />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
 	</head>
 	<body>

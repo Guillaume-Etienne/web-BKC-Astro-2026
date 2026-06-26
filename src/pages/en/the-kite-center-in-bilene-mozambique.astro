@@ -2,6 +2,8 @@
 import MenuEN from '../../components/MenuEN.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
+import Seo from '../../components/Seo.astro';
+import { businessJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
 ---
 <!DOCTYPE html>
@@ -12,9 +14,14 @@ import '../../sass/general.scss';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
-    <title>The kite Center in Bilene, Mozambique</title>
-    <meta name="description" content="Presentation and details about the magical spot for kitesurf, wingsurf, paddle, in Bilene, Mozambique">
-    <meta name="keywords" content="photo, photos, video, kite, kitesurf, kiteboard, wing, wingsurf, SUP, paddle, Mozambique, Bilene, coaching, progression, one Launch kiteboarding, lessons">
+    <Seo
+        page="center"
+        lang="en"
+        title="The kite Center in Bilene, Mozambique"
+        description="Presentation and details about the magical spot for kitesurf, wingsurf, paddle, in Bilene, Mozambique"
+        image="/images/accueil/2.webp">
+        <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('en'))} />
+    </Seo>
     <Analytics />
 </head>
 <body>
