@@ -2,6 +2,8 @@
 import Menu from '../../components/Menu.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
+import Seo from '../../components/Seo.astro';
+import { businessJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
 ---
 
@@ -13,10 +15,13 @@ import '../../sass/general.scss';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
-    <title>Le Centre de kite de Bilene au Mozambique</title>
-    <meta name="description" content="Les safaris au parc Kruger que l'on organise pour vous à Bilene Kite Center au Mozambique">
-    <meta name="keywords" content="safari, safaris, kruger, maputo, réserve de maputo, parc Kruger, krugerpark, maputoreserv, tour operator">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <Seo
+        page="safari"
+        lang="fr"
+        title="Safaris au Kruger et réserves naturelles au Mozambique"
+        description="Les safaris au parc Kruger que l'on organise pour vous à Bilene Kite Center au Mozambique">
+        <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('fr'))} />
+    </Seo>
     <Analytics />
 </head>
 <body>
