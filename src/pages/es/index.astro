@@ -2,6 +2,8 @@
 import MenuES from '../../components/MenuES.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
+import Seo from '../../components/Seo.astro';
+import { businessJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
 ---
 <!doctype html>
@@ -10,10 +12,16 @@ import '../../sass/general.scss';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/favicon.ico" />
-		<title>Bilene Kite Center - Kitesurf y Wing en Mozambique</title>
-        <meta name="description" content="Tu Centro de Kitesurf y Windsurf en Mozambique directo en el lugar.">
-        <meta name="keywords" content="kite, kitesurf, wing, wingsurf, Wingfoil SUP, paddle, Mozambique, Bilene, curso(s), alquiler(es), viaje(s), África, Océano Índico, aguas turquesas, seguro, viajes">
-        <Analytics />
+		<Seo
+			page="home"
+			lang="es"
+			title="Bilene Kite Center - Kitesurf y Wing en Mozambique"
+			description="Tu Centro de Kitesurf y Windsurf en Mozambique directo en el lugar."
+			image="/images/accueil/1.webp"
+		>
+			<script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('es'))} />
+		</Seo>
+		<Analytics />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
 	</head>
 	<body>

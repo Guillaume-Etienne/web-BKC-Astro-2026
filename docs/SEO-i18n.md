@@ -117,7 +117,8 @@ import { businessJsonLd } from '../../i18n/jsonld.js';
 
 - [x] Fondation (`pages.js`, `Seo.astro`, `jsonld.js`) + pilote accueil FR
 - [x] Déploiement `<Seo>` sur les 14 pages FR
-- [ ] Déploiement sur EN (16 pages) + ES (15 pages)
+- [x] Déploiement `<Seo>` sur les 15 pages EN
+- [x] Déploiement `<Seo>` sur les 14 pages ES (pas de page « mentions légales » en ES)
 - [ ] `FAQPage` JSON-LD sur les 3 pages « Préparation du voyage »
 - [ ] `public/llms.txt` + bots IA dans `robots.txt`
 - [ ] Compléter les `TODO` factuels de `jsonld.js` (téléphone, GPS, réseaux sociaux)

@@ -2,6 +2,8 @@
 import MenuES from '../../components/MenuES.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
+import Seo from '../../components/Seo.astro';
+import { businessJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
 ---
 <!DOCTYPE html>
@@ -12,9 +14,14 @@ import '../../sass/general.scss';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
-    <title>La escuela de kitesurf en Bilene, Mozambique</title>
-    <meta name="description" content="Tu escuela de Kitesurf y Wingsurf en Mozambique, segura y profesional">
-    <meta name="keywords" content="kite, kitesurf, kiteboard, wing, wingsurf, SUP, paddle, Mozambique, Bilene, iko, coaching, progression, olk, one Launch kiteboarding, lessons, freestyle, foil, strapless">
+    <Seo
+        page="school"
+        lang="es"
+        title="La escuela de kitesurf en Bilene, Mozambique"
+        description="Tu escuela de Kitesurf y Wingsurf en Mozambique, segura y profesional"
+        image="/images/accueil/3.webp">
+        <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('es'))} />
+    </Seo>
     <Analytics />
 </head>
 <body>

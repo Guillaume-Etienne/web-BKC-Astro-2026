@@ -2,6 +2,8 @@
 import MenuES from '../../components/MenuES.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
+import Seo from '../../components/Seo.astro';
+import { businessJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
 ---
 
@@ -13,9 +15,14 @@ import '../../sass/general.scss';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
-    <title>Restaurantes y salidas en Bilene, Mozambique</title>
-    <meta name="description" content="Restaurantes, barbacoas, salidas y buenas mesas en Bilene, Mozambique — nuestros sitios favoritos y veladas en equipo">
-    <meta name="keywords" content="restaurante, restaurantes, salidas, barbacoa, beach bar, Palmeiras, cena, comida, Bilene, Mozambique">
+    <Seo
+        page="restaurants"
+        lang="es"
+        title="Restaurantes y salidas en Bilene, Mozambique"
+        description="Restaurantes, barbacoas, salidas y buenas mesas en Bilene, Mozambique — nuestros sitios favoritos y veladas en equipo"
+        image="/images/12-restaurants/Salleresto1.jpg">
+        <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('es'))} />
+    </Seo>
     <Analytics />
 </head>
 <body>

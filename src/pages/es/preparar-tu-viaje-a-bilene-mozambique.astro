@@ -2,6 +2,8 @@
 import MenuES from '../../components/MenuES.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
+import Seo from '../../components/Seo.astro';
+import { businessJsonLd, faqJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
 ---
 
@@ -13,9 +15,13 @@ import '../../sass/general.scss';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
-    <title>Preparar tu viaje a Bilene, Mozambique</title>
-    <meta name="description" content="Para preparar bien tu viaje de kitesurf o wingfoil a Bilene en Mozambique">
-    <meta name="keywords" content="alojamiento, hotel, restaurante, beach-bar, bar, playa, resort, Palmeiras, San Martinho, Sunset, organización, qué llevar, trámites">
+    <Seo
+        page="prepare"
+        lang="es"
+        title="Preparar tu viaje a Bilene, Mozambique"
+        description="Para preparar bien tu viaje de kitesurf o wingfoil a Bilene en Mozambique">
+        <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('es'))} />
+    </Seo>
     <Analytics />
 </head>
 <body>
