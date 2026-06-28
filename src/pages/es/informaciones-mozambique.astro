@@ -6,6 +6,7 @@ import Seo from '../../components/Seo.astro';
 import { businessJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
 ---
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,142 +18,115 @@ import '../../sass/general.scss';
     <Seo
         page="info"
         lang="es"
-        title="Información y contacto para Bilene Kite Center en Mozambique"
-        description="Información práctica sobre alojamiento, vuelos, visados para viajar a Bilene, Mozambique">
+        title="Contacto e información práctica — Bilene Kite Center"
+        description="Visa ETA, vuelos, traslado, alojamiento, salud: todo lo que necesitas para preparar tu estancia de kitesurf en Bilene, Mozambique. Y para escribirnos directamente.">
         <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('es'))} />
     </Seo>
     <Analytics />
 </head>
 <body>
     <MenuES />
+
     <main>
         <section id="headsection">
-            <img src="/images/7-infos/1.webp" alt="mundo de la información">
-            <h1>Información / contacto</h1>
-            <h2>Descubre más sobre viajar a Mozambique</h2>
-        </section>
-        <section id="introinfos">
-            <p>¡Hay tantas cosas que contarte! Hemos resumido las cosas más importantes en forma de enlaces:<br></p>
-            <p id="piti">(haz clic sobre el enlace y llegarás a cada información)</p>
-            <ul id="menulist">
-                <li><a href="#acco">Alojamiento</a></li>
-                <li><a href="#flights">Vuelos</a></li>
-                <li><a href="#visas">Visados</a></li>
-                <li><a href="#transferts">Traslados desde el aeropuerto</a></li>
-                <li><a href="#situation">La situación en Mozambique</a></li>
-                <li><a href="#sanitaire">Precauciones sanitarias</a></li>
-                <li><a href="#emporter">Que llevarte a Mozambique</a></li>
-                <li><a href="#contactus">¿Aún tienes miles de preguntas? Contáctanos</a></li>
-            </ul>
+            <img src="/images/7-infos/1.webp" alt="Laguna de Bilene, Mozambique">
+            <h1>Información & Contacto</h1>
+            <h2>Lo esencial para un viaje sin sorpresas</h2>
         </section>
 
-        <section id="mainsection">
-            <div class="flexdiv">
-                <div class="flextext" id="acco">
-                    <h2>Alojamiento</h2>
-                    <p>Nuestro centro de kitesurf está situado en la playa del "Complexo Palmeiras", un pequeño centro hotelero tradicional,
-                        perfectamente integrado en la naturaleza. Equipado con Wifi, bar de playa y restaurante, lo recomendamos a todos nuestros huéspedes.
-                        Bilene dispone de varios hoteles de diversa categoría con los que también trabajamos,
-                        no dudes en ponerse en contacto con nosotros para obtener más información sobre las posibilidades de alojamiento en el lugar.
-                    </p>
-                </div>
-                <div class="fleximg">
-                    <img src="/images/7-infos/2.webp" alt="paisaje de laguna">
-                    <img src="/images/7-infos/3.webp" alt="paisaje restaurante en la playa">
+        <div class="info-intro">
+            <p>Lo esencial para preparar tu estancia. Para ir más lejos — checklist, consejos de aeropuerto, preguntas frecuentes — todo está en nuestra guía de viaje.</p>
+        </div>
+        <div class="info-guide-cta">
+            <a href="/es/preparar-tu-viaje-a-bilene-mozambique" class="btn">Guía de viaje completa →</a>
+        </div>
+
+        <section class="info-cards" aria-label="Información práctica">
+
+            <!-- Vuelos -->
+            <div class="info-card">
+                <div class="info-card-icon" aria-hidden="true">✈️</div>
+                <h3>Vuelos</h3>
+                <p>Maputo está conectada con Ethiopian Airlines, Qatar Airways, South African Airways, Turkish Airlines y TAP Portugal (vuelo directo desde Lisboa). Calcula entre 10 y 11 horas de vuelo y unos 700 € ida y vuelta.</p>
+            </div>
+
+            <!-- Visado / ETA -->
+            <div class="info-card info-card--visa">
+                <div class="info-card-icon" aria-hidden="true">🛂</div>
+                <h3>Visado / ETA</h3>
+                <p>Desde 2025, los nacionales de 29 países deben obtener una <strong>ETA</strong> (Electronic Travel Authorization) antes de partir, a través del portal oficial mozambiqueño. Prevé varias semanas de antelación para ir tranquilo — tu compañía aérea verificará este documento en el embarque. Unos 48 $. Pasaporte con validez superior a 6 meses después de la llegada obligatorio. Te enviamos la carta de alojamiento necesaria para tu solicitud.</p>
+                <details class="info-card-countries">
+                    <summary>Lista de los 29 países afectados</summary>
+                    <ul class="info-countries-list">
+                        <li>Alemania</li><li>Arabia Saudita</li><li>Bélgica</li>
+                        <li>Canadá</li><li>China</li><li>Corea del Sur</li>
+                        <li>Costa de Marfil</li><li>Dinamarca</li><li>Emiratos Árabes Unidos</li>
+                        <li>España</li><li>Estados Unidos</li><li>Finlandia</li>
+                        <li>Francia</li><li>Ghana</li><li>Indonesia</li>
+                        <li>Irlanda</li><li>Israel</li><li>Italia</li>
+                        <li>Japón</li><li>Noruega</li><li>Países Bajos</li>
+                        <li>Portugal</li><li>Reino Unido</li><li>Rusia</li>
+                        <li>Senegal</li><li>Singapur</li><li>Suecia</li>
+                        <li>Suiza</li><li>Ucrania</li>
+                    </ul>
+                    <p class="info-countries-note">Fuentes: <a href="https://evisa.gov.mz/" target="_blank" rel="noopener">evisa.gov.mz</a> · <a href="https://visasnews.com/en/mozambique-eta-now-mandatory-for-travelers-from-29-visa-exempt-countries/" target="_blank" rel="noopener">VisasNews</a> · <a href="https://www.mozambiquetravel.com/blog/visa-waiver-for-29-countries-visiting-mozambique/" target="_blank" rel="noopener">mozambiquetravel.com</a></p>
+                </details>
+                <div class="info-card-links">
+                    <a href="https://evisa.gov.mz/" target="_blank" rel="noopener">→ Portal oficial ETA / eVisa</a>
+                    <a href="https://visasnews.com/en/mozambique-e-visa-and-eta-application-portal-gets-a-makeover/" target="_blank" rel="noopener">→ Últimos cambios (VisasNews)</a>
                 </div>
             </div>
-            <div class="flexdiv background" id="flights">
-                <div class="flextext">
-                    <h2>Los vuelos</h2>
-                    <p>Muchas aerolíneas operan en Maputo, la capital de Mozambique. Entre ellas, Ethiopian Airlines Qatar Airways South Africa Airways Turkish Airlines, TAAG. Estas compañías generalmente ofrecen vuelos con escala. TAP Portugal ofrece un vuelo directo desde Lisboa.
-                        A modo orientativo, un vuelo a mozambique ronda los 700€ ida y vuelta por persona. En cuanto a comparador de vuelos, Google suele localizar siempre buenos precios.
-                        En cualquier caso, consulta con nosotros, ya que a veces conocemos mejores ofertas.
-                        <a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooagwIAxIIL20vMDVxdGoSCjIwMjItMDktMTVyDAgDEggvbS8wZnFieRooagwIAxIIL20vMGZxYnkSCjIwMjItMTAtMDFyDAgDEggvbS8wNXF0anABggELCP___________wFAAUgBmAEB&hl=fr" target="_blank">Google vuelos</a>
-                    </p>
-                </div>
-                <div class="fleximg">
-                    <img src="/images/7-infos/4.webp" alt="avión en vuelo">
-                    <img src="/images/7-infos/4-5.webp" alt="mapa del mundo">
+
+            <!-- Traslado -->
+            <div class="info-card">
+                <div class="info-card-icon" aria-hidden="true">🚗</div>
+                <h3>Traslado</h3>
+                <p>Unas 3 horas de carretera desde Maputo, por una vía asfaltada en buen estado entre paisajes típicamente africanos. Reservamos el vehículo por ti. Novedad: llegar a Bilene en Cessna, sobrevolando las lagunas turquesa.</p>
+                <div class="info-card-links">
+                    <a href="/es/preparar-tu-viaje-a-bilene-mozambique#el-traslado">→ Detalles del traslado</a>
                 </div>
             </div>
-            <div class="flexdiv">
-                <div class="flextext" id="visas">
-                    <h2>Visados de entrada Mozambique</h2>
-                    <p>Desde mayo de 2023, el visado se expide directamente a tu llegada al aeropuerto, previa presentación de tu pasaporte,
-                        que necesariamente debe tener una validez superior a 6 meses desde la fecha de tu llegada, así como la famosa "carta de alojamiento"
-                        que te enviaremos por adelantado. El trámite te costará 10€, las autoridades te entregarán un recibo que es importante conservar
-                        contigo durante toda tu estancia. Para una estancia prevista superior a 30 días, no dude en contactarnos.
-                    </p>
-                </div>
-                <div class="fleximg">
-                    <img src="/images/7-infos/5.webp" alt="pasaporte de Mozambique">
-                    <img src="/images/7-infos/5.5.webp" alt="pasaportes en blanco y negro">
+
+            <!-- Alojamiento -->
+            <div class="info-card">
+                <div class="info-card-icon" aria-hidden="true">🏠</div>
+                <h3>Alojamiento</h3>
+                <p>Nuestro centro está en la playa del complejo Palmeiras — wifi, bar y restaurante directamente en el spot. Otras opciones disponibles en Bilene según tus preferencias y presupuesto.</p>
+                <div class="info-card-links">
+                    <a href="/es/alojamiento-en-bilene-mozambique">→ Ver alojamientos</a>
                 </div>
             </div>
-            <div class="flexdiv background" id="transferts">
-                <div class="flextext">
-                    <h2>Transbordos Aeropuerto</h2>
-                    <p>Se realizan en taxi o bus privado en función del tamaño del grupo. La carretera hasta Bilene es asfaltada y está en buen estado, en medio de paisajes típicos africanos.
-                        Tenemos un acuerdo de colaboración con empresas locales de confianza (tanto en calidad como en precios), por lo que podemos encargarnos de tus traslados sin ningún problema.
-                    </p>
-                </div>
-                <div class="fleximg">
-                    <img src="/images/7-infos/6.webp" alt="Aeropuerto de Maputo">
-                    <img src="/images/7-infos/6.5.webp" alt="Ciudad de Maputo">
+
+            <!-- Salud -->
+            <div class="info-card">
+                <div class="info-card-icon" aria-hidden="true">💊</div>
+                <h3>Salud</h3>
+                <p>No se requiere ninguna vacuna. Antipalúdicos recomendados únicamente si planeas un safari o visita a una ciudad. Teresa, cofundadora, es enfermera de urgencias en la Cruz Roja Internacional — estás en buenas manos.</p>
+            </div>
+
+            <!-- Qué llevar -->
+            <div class="info-card">
+                <div class="info-card-icon" aria-hidden="true">🎒</div>
+                <h3>Qué llevar</h3>
+                <p>El lycra es lo primero. Protector solar, gafas aptas para el kite, gorra, efectivo en euros. Un jersey ligero por si acaso. Se recomienda un botiquín básico.</p>
+                <div class="info-card-links">
+                    <a href="/es/preparar-tu-viaje-a-bilene-mozambique#que-llevar">→ Lista completa</a>
                 </div>
             </div>
-            <div class="flexdiv">
-                <div class="flextext" id="situation">
-                    <h2>La situación en Mozambique</h2>
-                    <p>Mozambique es un país tranquilo y acogedor, sus habitantes son cálidos y sonrientes. Muchos de nuestros huéspedes han visitado diferentes áreas, en taxi o incluso
-                        a bordo de las tradicionales "chapas" (transporte local). También hemos recibido
-                        a familias enteras, con niños pequeños, que han viajado hasta aquí en autocaravanas y 4x4 equipados : <a href="https://ubuntu-overland.com/" target="_blank">ubuntu-overland</a>.</p>
-                </div>
-                <div class="fleximg">
-                    <img src="/images/7-infos/7.webp" alt="barbacoa con sonrisas">
-                    <img src="/images/1-spot/12.webp" alt="mujeres sonrientes">
-                </div>
-            </div>
-            <div class="flexdiv background" id="sanitaire">
-                <div class="flextext">
-                    <h2>Precauciones sanitarias</h2>
-                    <p>Como para cualquier viaje que realices fuera del espacio Schengen, te recomendamos que contrates un seguro sanitario para viajes.
-                        Teresa es enfermera de emergencias con mucha experiencia (bueno a veces también atiende a animales), por lo que viajamos bastante tranquilos
-                        en todas nuestras excursiones. El centro de kite, está en una zona totalmente segura y protegida, y si algo realmente sucede,
-                        Mozambique tiene varios hospitales privados con personal competente, transporte sanitario en ambulancias y en Helicóptero.
-                        No se requiere vacunación para Mozambique.
-                        Antipalúdicos: recomendados si vas a visitar parques o reservas naturales.
-                    </p>
-                </div>
-                <div class="fleximg">
-                    <img src="/images/7-infos/8.webp" alt="Aeropuerto de Maputo">
-                </div>
-            </div>
-            <section class="flexdiv" id="emporter">
-                <div class="flextext">
-                    <h2>Que llevarte a Mozambique</h2>
-                    <p>En Bilene disfrutarás de un clima tropical perfecto. La temperatura media ronda los 30°, y el agua es también muy cálida.
-                        Habitualmente navegamos con Lycra, aunque más por protección solar. Un shorty puede ser útil para días con viento fuerte,
-                        te permitirá estar más de 4 o 5 horas en el agua sin sentir frio.
-                        Sabemos que preparar una maleta es algo muy personal, pero aquí van algunas recomendaciones básicas:
-                        Protector solar, gafas de sol (si vas a hacer kitesurf con ellas, es preferible utilizar una correa o similar para no perderlas en el agua).
-                        Repelente de mosquitos, una gorra o sombrero, toalla de playa y un cortavientos. Aquí no te hará falta 2 maletas llenas de ropa, un par de pantalones cortos,
-                        unas camisetas y listo.
-                    </p>
-                </div>
-                <div class="fleximg">
-                    <img src="/images/7-infos/2.webp" alt="paisaje de laguna">
-                </div>
-            </section>
+
         </section>
+
+        <img src="/images/7-infos/7.webp" alt="Ambiente acogedor en Bilene Kite Center" class="info-break-img">
+
         <section id="contactus">
-            <h2>Contacta con nosotros</h2>
-            <p>¡A Mozambique no han llegado los robots, solo hablarás con personas!</p>
+            <h2>Escríbenos</h2>
+            <p>Sin robots — una persona real al otro lado de la pantalla.</p>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfiw-UPtgW4GRw_iGyl-DnRwtPcyR7wCO6QfR0MoBt50obV6Q/viewform?embedded=true" width="100%" height="981" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </section>
+
     </main>
 
-    <a href="#menulist" class="btn-top" title="Volver al índice">&#8679;</a>
+    <a href="#" class="btn-top" title="Volver arriba">&#8679;</a>
 
     <Footer />
 </body>

@@ -341,6 +341,14 @@ button, .btn {
     }
 }
 
+// <a class="btn"> : neutralise les styles de lien hérités (a, a:visited, a:hover
+// ont une spécificité plus haute que .btn seul et rendraient le texte bleu sur
+// fond bleu). La règle a.btn monte à (0,1,1) pour couvrir tous les états.
+a.btn {
+    color: white;
+    &:visited, &:hover, &:focus { color: white; }
+}
+
 // Bouton secondaire (outline)
 .btn-outline {
     background: transparent;

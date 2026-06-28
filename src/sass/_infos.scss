@@ -1,0 +1,176 @@
+@use "sass:color";
+@use "variables" as *;
+
+// ─── PAGE INFOS / CONTACT ────────────────────────────────────
+// Styles spécifiques à /fr/infos-mozambique (et équivalents EN/ES)
+
+.info-intro {
+    max-width: 660px;
+    margin: $space-2xl auto $space-md;
+    text-align: center;
+    padding: 0 $space-md;
+    & p { text-align: center; }
+}
+
+.info-guide-cta {
+    display: flex;
+    justify-content: center;
+    padding: 0 $space-md;
+    margin-bottom: $space-2xl;
+}
+
+// ─── GRILLE DE CARDS ─────────────────────────────────────────
+.info-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-md;
+    padding: 0 $space-md $space-xl;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background: $color-surface;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    padding: $space-lg;
+    border-left: 4px solid $color-ocean;
+    transition: box-shadow $transition-base, transform $transition-base;
+
+    &:hover {
+        box-shadow: $shadow-md;
+        transform: translateY(-2px);
+    }
+
+    & h3 {
+        color: $color-ocean-dark;
+        margin-bottom: $space-2xs;
+    }
+
+    & p {
+        font-size: $fs-sm;
+        color: $colorgreytext1;
+        margin-bottom: $space-xs;
+        text-align: left;
+    }
+}
+
+.info-card-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: $space-xs;
+}
+
+.info-card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-xs $space-md;
+    margin-top: $space-sm;
+    padding-top: $space-sm;
+    border-top: 1px solid rgba($color-dark, 0.07);
+
+    & a {
+        font-size: $fs-sm;
+        font-weight: 600;
+        color: $color-ocean;
+        &:hover { color: $color-ocean-dark; }
+    }
+}
+
+// Carte Visa : mise en avant visuelle
+.info-card--visa {
+    border-left-color: $color-sky;
+    background: linear-gradient(135deg,
+        rgba($color-ocean, 0.04) 0%,
+        rgba($color-sky, 0.08) 100%);
+}
+
+// ─── IMAGE DE TRANSITION ─────────────────────────────────────
+.info-break-img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    object-position: center 60%;
+    display: block;
+    margin-top: $space-xl;
+}
+
+// ─── SECTION CONTACT ─────────────────────────────────────────
+#contactus {
+    padding: $space-2xl $space-md;
+    text-align: center;
+    background: $colorsecondary;
+
+    & h2 { margin-bottom: $space-xs; }
+
+    & > p {
+        text-align: center;
+        max-width: 540px;
+        margin: 0 auto $space-xl;
+        color: $colorgreytext1;
+    }
+
+    & iframe {
+        max-width: 700px;
+        width: 100%;
+        border-radius: $radius-md;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+// ─── LISTE PAYS (details/summary natif) ──────────────────────
+.info-card-countries {
+    margin-top: $space-sm;
+
+    & summary {
+        font-size: $fs-sm;
+        font-weight: 600;
+        color: $color-ocean;
+        cursor: pointer;
+        list-style: none;
+        user-select: none;
+        &::-webkit-details-marker { display: none; }
+        &::before { content: "▸ "; font-size: 0.75em; }
+        &:hover { color: $color-ocean-dark; }
+    }
+
+    &[open] summary::before { content: "▾ "; }
+}
+
+.info-countries-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-2xs $space-xs;
+    list-style: none;
+    padding: $space-sm 0 $space-xs;
+    margin: 0;
+
+    & li {
+        font-size: $fs-xs;
+        color: $colorgreytext1;
+        background: rgba($color-dark, 0.06);
+        padding: 2px $space-sm;
+        border-radius: $radius-full;
+    }
+}
+
+.info-countries-note {
+    font-size: $fs-xs;
+    color: $color-muted;
+    margin-bottom: $space-xs;
+    & a { font-size: $fs-xs; }
+}
+
+// ─── RESPONSIVE ──────────────────────────────────────────────
+@media (min-width: $bp-md) {
+    .info-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: $bp-lg) {
+    .info-cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

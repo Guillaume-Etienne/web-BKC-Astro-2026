@@ -6,6 +6,7 @@ import Seo from '../../components/Seo.astro';
 import { businessJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +18,8 @@ import '../../sass/general.scss';
     <Seo
         page="info"
         lang="en"
-        title="Information and contact for Bilene Kite Center in Mozambique"
-        description="Practical information for accommodation, flights, visas, to join us in Bilene, Mozambique, for Kitesurfing and Wingsurfing">
+        title="Contact & practical information — Bilene Kite Center"
+        description="Visa ETA, flights, transfer, accommodation, health: everything you need to prepare your kitesurf stay in Bilene, Mozambique. And to write to us directly.">
         <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('en'))} />
     </Seo>
     <Analytics />
@@ -28,135 +29,104 @@ import '../../sass/general.scss';
 
     <main>
         <section id="headsection">
-            <img src="/images/7-infos/1.webp" alt="information world">
-            <h1>Information / Contacts</h1>
-            <h2>To know more</h2>
-        </section>
-        <section id="introinfos">
-            <p>We take care of everything as soon as you leave the airport.
-                There are so many things to tell you! Here they are summarized in the form of links:<br>
-            </p>
-            <p id="piti">(clicking on a link takes you to the relevant chapter)</p>
-            <ul id="menulist">
-                <li><a href="#acco">Accommodation</a></li>
-                <li><a href="#flights">Flights</a></li>
-                <li><a href="#visas">Visas</a></li>
-                <li><a href="#transferts">Transfers</a></li>
-                <li><a href="#situation">Situation in Mozambique</a></li>
-                <li><a href="#sanitaire">And for your health</a></li>
-                <li><a href="#emporter">To take with you</a></li>
-                <li><a href="#contactus">Contact us</a></li>
-            </ul>
+            <img src="/images/7-infos/1.webp" alt="Bilene lagoon, Mozambique">
+            <h1>Information & Contact</h1>
+            <h2>The essentials for a smooth trip</h2>
         </section>
 
-        <section id="mainsection">
-            <div class="flexdiv">
-                <div class="flextext" id="acco">
-                    <h2>Accommodation</h2>
-                    <p>Our center is located on the beach of the Palmeiras complex, a small charming hotel center perfectly integrated into nature. Equipped with Wifi, with its Beach bar and restaurant directly on the spot,
-                        we recommend it for the vast majority of our guests. Bilene has several hotels of various standings with which we also work, do not hesitate to contact us
-                        for more information on the possibilities of accommodation on site.
-                    </p>
-                </div>
-                <div class="fleximg">
-                    <img src="/images/7-infos/2.webp" alt="lagoon landscape">
-                    <img src="/images/7-infos/3.webp" alt="beach restaurant landscape">
+        <div class="info-intro">
+            <p>The key facts to prepare your stay. For the full picture — checklist, airport tips, FAQs — it's all in our travel guide.</p>
+        </div>
+        <div class="info-guide-cta">
+            <a href="/en/prepare-your-trip-to-bilene-mozambique" class="btn">Full travel guide →</a>
+        </div>
+
+        <section class="info-cards" aria-label="Practical information">
+
+            <!-- Flights -->
+            <div class="info-card">
+                <div class="info-card-icon" aria-hidden="true">✈️</div>
+                <h3>Flights</h3>
+                <p>Maputo is served by Ethiopian Airlines, Qatar Airways, South African Airways, Turkish Airlines and TAP Portugal (direct from Lisbon). Count on 10 to 11 hours of flying and roughly €700 return.</p>
+            </div>
+
+            <!-- Visa / ETA -->
+            <div class="info-card info-card--visa">
+                <div class="info-card-icon" aria-hidden="true">🛂</div>
+                <h3>Visa / ETA</h3>
+                <p>Since 2025, nationals of 29 countries must obtain an <strong>ETA</strong> (Electronic Travel Authorization) before departure, via the official Mozambican portal. Allow several weeks ahead to be safe — your airline will check this document at boarding. Around $48. Passport valid for 6+ months after arrival is mandatory. We send you the accommodation letter needed for your application.</p>
+                <details class="info-card-countries">
+                    <summary>List of the 29 countries concerned</summary>
+                    <ul class="info-countries-list">
+                        <li>Belgium</li><li>Canada</li><li>China</li>
+                        <li>Côte d'Ivoire</li><li>Denmark</li><li>Finland</li>
+                        <li>France</li><li>Germany</li><li>Ghana</li>
+                        <li>Indonesia</li><li>Ireland</li><li>Israel</li>
+                        <li>Italy</li><li>Japan</li><li>Netherlands</li>
+                        <li>Norway</li><li>Portugal</li><li>Russia</li>
+                        <li>Saudi Arabia</li><li>Senegal</li><li>Singapore</li>
+                        <li>South Korea</li><li>Spain</li><li>Sweden</li>
+                        <li>Switzerland</li><li>Ukraine</li><li>United Arab Emirates</li>
+                        <li>United Kingdom</li><li>United States</li>
+                    </ul>
+                    <p class="info-countries-note">Sources: <a href="https://evisa.gov.mz/" target="_blank" rel="noopener">evisa.gov.mz</a> · <a href="https://visasnews.com/en/mozambique-eta-now-mandatory-for-travelers-from-29-visa-exempt-countries/" target="_blank" rel="noopener">VisasNews</a> · <a href="https://www.mozambiquetravel.com/blog/visa-waiver-for-29-countries-visiting-mozambique/" target="_blank" rel="noopener">mozambiquetravel.com</a></p>
+                </details>
+                <div class="info-card-links">
+                    <a href="https://evisa.gov.mz/" target="_blank" rel="noopener">→ Official ETA / eVisa portal</a>
+                    <a href="https://visasnews.com/en/mozambique-e-visa-and-eta-application-portal-gets-a-makeover/" target="_blank" rel="noopener">→ Latest changes (VisasNews)</a>
                 </div>
             </div>
-            <div class="flexdiv background" id="flights">
-                <div class="flextext">
-                    <h2>Flights</h2>
-                    <p>Many airlines serve Maputo, the capital of Mozambique.
-                        Among them
-                        Ethiopian Airlines
-                        Qatar Airways
-                        South Africa Airways
-                        Turkish Airlines
-                        These companies generally offer flights in 2 stages "departure / hub of the company" then "Hub / Maputo"
-                        TAP Portugal can be a significant challenger since it offers a direct flight from Lisbon.
-                        As an indication, an average budget of flights for Mozambique will be around 700€ for a return trip for one person.
-                        In terms of flight comparator, Google has, for a few years, far surpassed all competition, try it for yourself:
-                        <a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooagwIAxIIL20vMDVxdGoSCjIwMjItMDktMTVyDAgDEggvbS8wZnFieRooagwIAxIIL20vMGZxYnkSCjIwMjItMTAtMDFyDAgDEggvbS8wNXF0anABggELCP___________wFAAUgBmAEB&hl=fr" target="_blank">Google flight comparator.</a>
-                    </p>
-                </div>
-                <div class="fleximg">
-                    <img src="/images/7-infos/4.webp" alt="Airliner in flight">
-                    <img src="/images/7-infos/4-5.webp" alt="world map">
+
+            <!-- Transfer -->
+            <div class="info-card">
+                <div class="info-card-icon" aria-hidden="true">🚗</div>
+                <h3>Transfer</h3>
+                <p>Around 3 hours by road from Maputo, on a well-maintained tarmac road through typical African landscapes. We book the vehicle for you. New option: arrive by Cessna, flying over the turquoise lagoons.</p>
+                <div class="info-card-links">
+                    <a href="/en/prepare-your-trip-to-bilene-mozambique#the-transfer">→ Transfer details</a>
                 </div>
             </div>
-            <div class="flexdiv">
-                <div class="flextext" id="visas">
-                    <h2>Visas for Mozambique</h2>
-                    <p>Since May 2023, the visa is issued directly upon your arrival at the airport, upon presentation of your passport,
-                        which must necessarily be valid for more than 6 months from your arrival date, as well as the famous "accommodation letter"
-                        which we will send to you in advance. The process will cost you €10, the authorities will give you a receipt which it is
-                        important to keep with you throughout your stay. For a planned length of stay greater than 30 days, do not hesitate to contact us.
-                    </p>
-                </div>
-                <div class="fleximg">
-                    <img src="/images/7-infos/5.webp" alt="Mozambique passport">
-                    <img src="/images/7-infos/5.5.webp" alt="passports in black and white">
+
+            <!-- Accommodation -->
+            <div class="info-card">
+                <div class="info-card-icon" aria-hidden="true">🏠</div>
+                <h3>Accommodation</h3>
+                <p>Our centre is on the beach at the Palmeiras complex — wi-fi, bar and restaurant right on the spot. Other options available in Bilene to suit your preferences and budget.</p>
+                <div class="info-card-links">
+                    <a href="/en/lodging-in-bilene-mozambique">→ See accommodation</a>
                 </div>
             </div>
-            <div class="flexdiv background" id="transferts">
-                <div class="flextext">
-                    <h2>Airport Transfers</h2>
-                    <p>They are done by taxi, on an asphalt road in good condition, in the middle of typical African landscapes. Prices can vary from simple to triple.
-                        We have a partnership agreement and take care of booking them for you.
-                    </p>
-                </div>
-                <div class="fleximg">
-                    <img src="/images/7-infos/6.webp" alt="Maputo Airport">
-                    <img src="/images/7-infos/6.5.webp" alt="Maputo City">
+
+            <!-- Health -->
+            <div class="info-card">
+                <div class="info-card-icon" aria-hidden="true">💊</div>
+                <h3>Health</h3>
+                <p>No vaccinations required. Antimalarials recommended only if you plan a safari or city visit. Teresa, co-founder, is an emergency nurse at the International Red Cross — you're in safe hands.</p>
+            </div>
+
+            <!-- What to bring -->
+            <div class="info-card">
+                <div class="info-card-icon" aria-hidden="true">🎒</div>
+                <h3>What to bring</h3>
+                <p>Lycra is the priority. Sunscreen, kite-friendly sunglasses, a cap, cash in euros. A light jumper just in case. A basic first-aid kit is advised.</p>
+                <div class="info-card-links">
+                    <a href="/en/prepare-your-trip-to-bilene-mozambique#what-to-bring">→ Full packing list</a>
                 </div>
             </div>
-            <div class="flexdiv">
-                <div class="flextext" id="situation">
-                    <h2>Situation in Mozambique</h2>
-                    <p>Mozambique is a calm and welcoming country, its inhabitants are warm and smiling. Many of our guests have visited many spots, by taxi or even aboard traditional "chapas" (local transport),
-                         not to mention whole families, including young children, who have traveled there in Vans or converted 4x4s <a href="https://ubuntu-overland.com/" target="_blank">ubuntu-overland</a>.
-                    </p>
-                </div>
-                <div class="fleximg">
-                    <img src="/images/7-infos/7.webp" alt="smiling barbecue">
-                    <img src="/images/1-spot/12.webp" alt="smiling women">
-                </div>
-            </div>
-            <div class="flexdiv background" id="sanitaire">
-                <div class="flextext">
-                    <h2>And for health</h2>
-                    <p>Teresa is an emergency nurse at the International Red Cross, she has intervened on many scenes of natural disasters all over the world, in other words, the scratches of everyday life
-                        will be quickly forgotten. The spot is completely safe and secure, if something really happens, Mozambique has several private hospitals with competent staff.
-                        There is no vaccination required for Mozambique.
-                        Antimalarial: recommended only if project visits cities, Safaris etc...
-                    </p>
-                </div>
-                <div class="fleximg">
-                    <img src="/images/7-infos/8.webp" alt="Medical care">
-                </div>
-            </div>
-            <section class="flexdiv" id="emporter">
-                <div class="flextext">
-                    <h2>To take with you</h2>
-                    <p>Bilene enjoys an ideal tropical climate due to its proximity to the ocean. The average temperature is around 30°, the water is not far from it.
-                        We sail in Lycra most of the time, a shorty can be useful for days with strong winds.
-                        A non-exhaustive list of what we recommend taking with you:
-                        Sunscreen, sunglasses, Sunglasses suitable for kitesurfing, Mosquito repellent, Hat/Cap, one pants and sweater just in case.
-                    </p>
-                </div>
-                <div class="fleximg">
-                    <img src="/images/7-infos/2.webp" alt="lagoon landscape">
-                </div>
-            </section>
+
         </section>
+
+        <img src="/images/7-infos/7.webp" alt="Friendly atmosphere at Bilene Kite Center" class="info-break-img">
+
         <section id="contactus">
-            <h2>Contact us</h2>
-            <p>No robots in Bilene, you will be connected to humans</p>
+            <h2>Write to us</h2>
+            <p>No bots — a real person on the other end.</p>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeK2bYq3kie_E8u55hC1iC6l6-JtUzieJP8Ri9qw58BCFvycw/viewform?embedded=true" width="100%" height="981" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
         </section>
+
     </main>
 
-    <a href="#menulist" class="btn-top" title="Back to summary">&#8679;</a>
+    <a href="#" class="btn-top" title="Back to top">&#8679;</a>
 
     <Footer />
 </body>
