@@ -2,6 +2,8 @@
 import Menu from '../../../components/Menu.astro';
 import Footer from '../../../components/Footer.astro';
 import Analytics from '../../../components/Analytics.astro';
+import Seo from '../../../components/Seo.astro';
+import { blogPostingJsonLd } from '../../../i18n/jsonld.js';
 import '../../../sass/general.scss';
 ---
 
@@ -11,8 +13,17 @@ import '../../../sass/general.scss';
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
-    <title>En avion, au-dessus de Bilene</title>
-    <meta name="description" content="Un article du blog Bilene Kite Center : découverte du spot en avion et conditions de vent">
+    <Seo page="blogAvion" lang="fr" type="article"
+        title="En avion, au-dessus de Bilene"
+        description="Un article du blog Bilene Kite Center : découverte du spot en avion et conditions de vent"
+        image="/images/blog/plane.webp">
+      <script type="application/ld+json" set:html={JSON.stringify(blogPostingJsonLd('blogAvion', 'fr', {
+        headline: 'En avion, au-dessus de Bilene',
+        description: 'Un article du blog Bilene Kite Center : découverte du spot en avion et conditions de vent',
+        image: '/images/blog/plane.webp',
+        datePublished: '2026-01-01',
+      }))} />
+    </Seo>
     <Analytics />
 </head>
 <body>
@@ -23,7 +34,7 @@ import '../../../sass/general.scss';
             <img src="/images/blog/blog.webp" alt="blog Bilene Kite Center">
             <div class="blog-hero-overlay">
                 <span class="blog-date">Février 2026</span>
-                <h1>Inondation ? Pas de problème</h1>
+                <h1>En avion au-dessus de Bilene</h1>
             </div>
         </div>
 

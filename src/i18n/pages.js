@@ -45,6 +45,11 @@ export const PAGES = {
   info:        { fr: '/fr/infos-mozambique',                                           en: '/en/information-mozambique',                       es: '/es/informaciones-mozambique' },
   prepare:     { fr: '/fr/La-préparation-de-votre-voyage-a-bilene-au-mozambique',      en: '/en/prepare-your-trip-to-bilene-mozambique',       es: '/es/preparar-tu-viaje-a-bilene-mozambique' },
   legal:       { fr: '/fr/mentions-légales',                                           en: '/en/legal-notice' /* es: à créer */ },
+
+  // Blog : une entrée par article (clé stable, indépendante du slug par langue).
+  blog:         { fr: '/fr/blog',          en: '/en/blog',          es: '/es/blog' },
+  blogMassages: { fr: '/fr/blog/bienvenue', en: '/en/blog/welcome',  es: '/es/blog/bienvenida' },
+  blogAvion:    { fr: '/fr/blog/enavion',   en: '/en/blog/by-plane', es: '/es/blog/en-avion' },
 };
 
 // Helper : renvoie l'entrée de routes d'une page (ou {} si inconnue).

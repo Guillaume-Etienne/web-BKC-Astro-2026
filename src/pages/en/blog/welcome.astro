@@ -2,6 +2,8 @@
 import MenuEN from '../../../components/MenuEN.astro';
 import Footer from '../../../components/Footer.astro';
 import Analytics from '../../../components/Analytics.astro';
+import Seo from '../../../components/Seo.astro';
+import { blogPostingJsonLd } from '../../../i18n/jsonld.js';
 import '../../../sass/general.scss';
 ---
 
@@ -11,8 +13,17 @@ import '../../../sass/general.scss';
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
-    <title>New! Massages at Bilene Kite Center</title>
-    <meta name="description" content="Bilene Kite Center blog: discover our new wellness massage service facing the ocean in Mozambique">
+    <Seo page="blogMassages" lang="en" type="article"
+        title="New! Massages at Bilene Kite Center"
+        description="Bilene Kite Center blog: discover our new wellness massage service facing the ocean in Mozambique"
+        image="/images/blog/massage.webp">
+      <script type="application/ld+json" set:html={JSON.stringify(blogPostingJsonLd('blogMassages', 'en', {
+        headline: 'New! Massages at Bilene Kite Center',
+        description: 'Bilene Kite Center blog: discover our new wellness massage service facing the ocean in Mozambique',
+        image: '/images/blog/massage.webp',
+        datePublished: '2026-02-01',
+      }))} />
+    </Seo>
     <Analytics />
 </head>
 <body>

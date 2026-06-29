@@ -11,7 +11,7 @@
 //    - sameAs      : URLs Facebook / Instagram / YouTube réelles
 //  Mettre une valeur fausse est pire que de l'omettre : si inconnu, retirer la ligne.
 // ============================================================================
-import { SITE } from './pages.js';
+import { SITE, routesFor } from './pages.js';
 
 const SLOGAN = {
   fr: 'Spot de kitesurf et wingfoil vierge dans une lagune paradisiaque au Mozambique.',
@@ -63,6 +63,32 @@ export function organizationJsonLd() {
     url: SITE,
     logo: `${SITE}/favicon.ico`,
     email: 'contact@bilenekite.com',
+  };
+}
+
+// Article de blog (BlogPosting). `page` = clé dans PAGES, `lang` = langue.
+// L'URL canonique + l'image sont dérivées automatiquement (cohérent avec <Seo>).
+export function blogPostingJsonLd(page, lang, { headline, description, image, datePublished, dateModified }) {
+  const path = routesFor(page)[lang];
+  const url = path ? SITE + encodeURI(path) : SITE;
+  const img = image.startsWith('http') ? image : SITE + image;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline,
+    description,
+    image: img,
+    inLanguage: lang,
+    datePublished,
+    dateModified: dateModified ?? datePublished,
+    url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    author: { '@type': 'Organization', name: 'Bilene Kite Center', url: SITE },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Bilene Kite Center',
+      logo: { '@type': 'ImageObject', url: `${SITE}/favicon.ico` },
+    },
   };
 }
 
