@@ -50,6 +50,7 @@ export const PAGES = {
   blog:         { fr: '/fr/blog',          en: '/en/blog',          es: '/es/blog' },
   blogMassages: { fr: '/fr/blog/bienvenue', en: '/en/blog/welcome',  es: '/es/blog/bienvenida' },
   blogAvion:    { fr: '/fr/blog/enavion',   en: '/en/blog/by-plane', es: '/es/blog/en-avion' },
+  blogDestinations: { fr: '/fr/blog/nouvelles-destinations-kitesurf', en: '/en/blog/new-kitesurf-destinations', es: '/es/blog/nuevos-destinos-kitesurf' },
 };
 
 // Helper : renvoie l'entrée de routes d'une page (ou {} si inconnue).

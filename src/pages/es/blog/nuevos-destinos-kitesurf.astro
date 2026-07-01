@@ -1,0 +1,167 @@
+---
+import MenuES from '../../../components/MenuES.astro';
+import Footer from '../../../components/Footer.astro';
+import Analytics from '../../../components/Analytics.astro';
+import Seo from '../../../components/Seo.astro';
+import { blogPostingJsonLd } from '../../../i18n/jsonld.js';
+import '../../../sass/general.scss';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
+    <Seo page="blogDestinations" lang="es" type="article"
+        title="5 nuevos destinos de kitesurf donde (casi) no hay nadie en 2026"
+        description="¿Cansado de pelear por una ventana de viento con 40 kiters más? Aquí tienes 5 destinos de kitesurf en auge en 2026, empezando por Bilene, nuestra laguna en Mozambique."
+        image="/images/1-spot/2.webp">
+      <script type="application/ld+json" set:html={JSON.stringify(blogPostingJsonLd('blogDestinations', 'es', {
+        headline: '5 nuevos destinos de kitesurf donde (casi) no hay nadie en 2026',
+        description: '¿Cansado de pelear por una ventana de viento con 40 kiters más? Aquí tienes 5 destinos de kitesurf en auge en 2026, empezando por Bilene, nuestra laguna en Mozambique.',
+        image: '/images/1-spot/2.webp',
+        datePublished: '2026-07-01',
+      }))} />
+    </Seo>
+    <Analytics />
+</head>
+<body>
+    <MenuES />
+
+    <main>
+        <div class="blog-hero">
+            <img src="/images/1-spot/2.webp" alt="Dos kiters solos en la inmensa laguna de Bilene, Mozambique">
+            <div class="blog-hero-overlay">
+                <span class="blog-date">Julio 2026</span>
+                <h1>5 nuevos destinos de kitesurf donde (casi) no hay nadie en 2026</h1>
+            </div>
+        </div>
+
+        <article class="blog-article">
+            <p>
+                ¿Cansado de pelear por una ventana de viento con otros 40 kiters? ¿De aterrizar tu cometa a dos metros de tu vecino? En 2026 todavía existen spots con viento fiable donde se puede navegar solo, o casi. Aquí van 5 destinos en auge — y por qué creemos que el primero de la lista seguirá siendo nuestro favorito durante mucho tiempo.
+            </p>
+
+            <h2>1. Bilene, Mozambique — nuestra laguna</h2>
+            <img src="/images/1-spot/2.webp" alt="Laguna de Bilene, kitesurf en aguas turquesas desiertas" class="blog-img">
+            <p>
+                Más del 90% de los días de nuestra temporada (de septiembre a marzo) son de "kite normal" — desde que existen los foils, hay que esforzarse de verdad para no navegar. El viento térmico suele subir por la tarde. Nuestro récord personal en la laguna: 12 kiters a la vez, y ya fue un día grande. Cuenta con 3 horas de taxi desde Maputo (o un vuelo directo, consulta nuestra <a href="/es/preparar-tu-viaje-a-bilene-mozambique">guía de preparación de viaje</a>). Algunos riders vuelven cada temporada — sus vídeos circulan por la red — y las reseñas en Google, Facebook y TripAdvisor confirman que no es solo cuestión de suerte.
+            </p>
+
+            <h2>2. Salinas del Rey, Colombia</h2>
+            <img src="/images/blog/destinations/colombia.jpg" alt="Costa caribeña en Colombia, región de La Guajira" class="blog-img">
+            <p>
+                Ya ha albergado dos etapas del GKA World Championship, pero todavía lejos de la masificación de los spots caribeños clásicos. Un destino que sube rápido en el radar de los kiters que buscan algo nuevo en el continente americano.
+            </p>
+
+            <h2>3. Kalpitiya, Sri Lanka</h2>
+            <img src="/images/blog/destinations/srilanka.jpg" alt="Playa desierta al atardecer en Kalpitiya, Sri Lanka" class="blog-img">
+            <p>
+                En la costa noroeste, a dos horas de Colombo. Viento fiable, aguas tropicales cálidas, todavía poco tocado por el turismo de masas que ha invadido el sur de la isla.
+            </p>
+
+            <h2>4. Lassarga, Marruecos</h2>
+            <img src="/images/blog/destinations/morocco.jpg" alt="Costa desértica cerca de Dakhla, Marruecos" class="blog-img">
+            <p>
+                A solo 10 km de Dakhla — que ya está saturada. Este pequeño pueblo de pescadores ofrece los mismos vientos potentes y paisajes desérticos preservados, pero sin la multitud.
+            </p>
+
+            <h2>5. Pranburi, Tailandia</h2>
+            <img src="/images/blog/destinations/thailand.jpg" alt="Playa tranquila de Pranburi, Tailandia" class="blog-img">
+            <p>
+                Alejado de la ruta turística clásica, este spot destaca por su sencillez y su viento constante — la alternativa tranquila a los spots tailandeses ya saturados.
+            </p>
+
+            <h2>Entonces, ¿nos vemos en la laguna?</h2>
+            <p>
+                Estos 5 spots tienen algo en común: viento sin multitudes. Pero seamos honestos, creemos que Bilene sigue siendo imbatible en ese aspecto. ¿Quieres comprobarlo por ti mismo? Visita nuestro <a href="/es/centro-de-kite-in-bilene-mozambique">centro de kite</a> y nuestra <a href="/es/preparar-tu-viaje-a-bilene-mozambique">guía de preparación de viaje</a>.
+            </p>
+
+            <a href="/es/blog" class="blog-back">&larr; Volver al blog</a>
+        </article>
+    </main>
+
+    <Footer />
+</body>
+</html>
+
+<style>
+    .blog-hero {
+        position: relative;
+        width: 100%;
+        height: 560px;
+        overflow: hidden;
+    }
+    .blog-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .blog-hero-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 40px 20px;
+        background: linear-gradient(transparent, rgba(0,0,0,0.7));
+        color: white;
+    }
+    .blog-hero-overlay h1 {
+        font-size: 2.4em;
+        margin: 8px 0 0;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    .blog-hero-overlay .blog-date {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        opacity: 0.9;
+    }
+    .blog-article {
+        max-width: 750px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    .blog-article h2 {
+        margin-top: 40px;
+        font-size: 1.4em;
+    }
+    .blog-article p {
+        font-size: 1.05em;
+        line-height: 1.8;
+        text-align: left;
+        color: #444;
+        margin-bottom: 15px;
+    }
+    .blog-img {
+        width: 100%;
+        border-radius: 8px;
+        margin: 25px 0;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    .blog-back {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #4695fc;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.2s;
+    }
+    .blog-back:hover {
+        background: #3578d8;
+    }
+    .blog-back:visited {
+        color: white;
+    }
+    @media (max-width: 600px) {
+        .blog-hero {
+            height: 350px;
+        }
+        .blog-hero-overlay h1 {
+            font-size: 1.6em;
+        }
+    }
+</style>
