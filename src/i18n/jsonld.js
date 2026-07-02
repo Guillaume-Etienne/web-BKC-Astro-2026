@@ -4,11 +4,6 @@
 //  Centralisé ici pour rester cohérent sur tout le site et dans toutes les
 //  langues. Lu en priorité par Google (rich results) ET par les IA/LLM
 //  (ChatGPT, Perplexity, Claude...) pour comprendre FACTUELLEMENT le centre.
-//
-//  ⚠️ À COMPLÉTER PAR GUILLAUME (valeurs marquées TODO) :
-//    - telephone   : numéro WhatsApp/contact public
-//    - geo         : coordonnées GPS exactes du centre sur la lagune
-//  Mettre une valeur fausse est pire que de l'omettre : si inconnu, retirer la ligne.
 // ============================================================================
 import { SITE, routesFor } from './pages.js';
 
@@ -37,7 +32,9 @@ export function businessJsonLd(lang = 'fr') {
     image: `${SITE}/images/accueil/1.webp`,
     logo: `${SITE}/favicon.ico`,
     email: 'contact@bilenekite.com',
-    // telephone: '+258 XX XXX XXXX', // TODO Guillaume
+    // WhatsApp de Guillaume : joignable toute l'année, contrairement au portable
+    // mozambicain (+258) qui ne fonctionne que sur place.
+    telephone: '+33 6 51 79 05 40',
     sport: ['Kitesurfing', 'Wingfoil', 'Stand up paddleboarding'],
     currenciesAccepted: 'EUR',
     address: {
@@ -46,7 +43,8 @@ export function businessJsonLd(lang = 'fr') {
       addressRegion: 'Gaza',
       addressCountry: 'MZ',
     },
-    // geo: { '@type': 'GeoCoordinates', latitude: -25.28, longitude: 33.24 }, // TODO coords exactes
+    // Position du centre sur la lagune (25°16'57.1"S 33°15'37.8"E).
+    geo: { '@type': 'GeoCoordinates', latitude: -25.28253, longitude: 33.26050 },
     areaServed: 'Mozambique',
     // Saison d'ouverture : septembre → mars.
     openingHoursSpecification: [{
