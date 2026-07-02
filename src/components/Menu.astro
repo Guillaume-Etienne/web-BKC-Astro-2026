@@ -1,7 +1,19 @@
+---
+import { routesFor } from '../i18n/pages.js';
+
+interface Props {
+  page?: string; // clé PAGES (ex. "school") — permet au switcher de langue de rester sur la page équivalente
+}
+
+const { page } = Astro.props;
+const routes = page ? routesFor(page) : {};
+const hrefEN = routes.en ?? '/en/';
+const hrefES = routes.es ?? '/es/';
+---
 <header>
         <a href="/"><img src="/images/logomini.webp" alt="logo Bilene Kite Center" loading="lazy"></a>
         <div id="lang">
-            <p>language: FR / <a href="/en/">EN</a> / <a href="/es/">ES</a></p>
+            <p>language: FR / <a href={hrefEN}>EN</a> / <a href={hrefES}>ES</a></p>
         </div>
         <nav id="mySidenav" class="sidenav">
             <a id="closeBtn" href="#" class="close" aria-label="Fermer le menu">&times;</a>
