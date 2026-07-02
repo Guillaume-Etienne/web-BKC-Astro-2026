@@ -8,10 +8,16 @@
 //  ⚠️ À COMPLÉTER PAR GUILLAUME (valeurs marquées TODO) :
 //    - telephone   : numéro WhatsApp/contact public
 //    - geo         : coordonnées GPS exactes du centre sur la lagune
-//    - sameAs      : URLs Facebook / Instagram / YouTube réelles
 //  Mettre une valeur fausse est pire que de l'omettre : si inconnu, retirer la ligne.
 // ============================================================================
 import { SITE, routesFor } from './pages.js';
+
+// Profils officiels du centre (preuve sociale hors-site, lue par Google et les IA).
+const SAMEAS = [
+  'https://www.facebook.com/profile.php?id=100063467443392',
+  'https://www.tripadvisor.com/Attraction_Review-g1597322-d15360648-Reviews-Bilene_Kite_Center-Bilene_Gaza_Province.html',
+  'https://maps.google.com/?cid=16956463275848852616',
+];
 
 const SLOGAN = {
   fr: 'Spot de kitesurf et wingfoil vierge dans une lagune paradisiaque au Mozambique.',
@@ -49,7 +55,7 @@ export function businessJsonLd(lang = 'fr') {
       validThrough: '2026-03-31',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     }],
-    // sameAs: [ 'https://www.facebook.com/...', 'https://www.instagram.com/...' ], // TODO réseaux sociaux
+    sameAs: SAMEAS,
   };
 }
 
@@ -63,6 +69,7 @@ export function organizationJsonLd() {
     url: SITE,
     logo: `${SITE}/favicon.ico`,
     email: 'contact@bilenekite.com',
+    sameAs: SAMEAS,
   };
 }
 
