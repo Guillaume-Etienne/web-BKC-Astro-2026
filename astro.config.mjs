@@ -8,6 +8,9 @@ const isGhPages = process.env.DEPLOY_TARGET === 'github-pages';
 export default defineConfig({
   site: isGhPages ? 'https://guillaume-etienne.github.io' : 'https://www.bilenekite.com',
   base: isGhPages ? '/web-BKC-Astro-2026' : '/',
+  // Convention unique sur tout le site : URLs AVEC slash final (forme servie
+  // par Apache). Canonicals, hreflang, sitemap et liens internes suivent.
+  trailingSlash: 'always',
   integrations: [
     sitemap({
       // On exclut du sitemap les pages noindex, pour ne lister que des URL

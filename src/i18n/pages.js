@@ -29,28 +29,30 @@ export const LOCALES = {
 };
 
 // Une entrée par page logique. Clé = identifiant stable (indépendant de la langue).
+// IMPORTANT : tous les chemins se terminent par "/" (forme réellement servie par
+// Apache — les canonicals/hreflang/sitemap doivent tous utiliser cette forme).
 export const PAGES = {
   home:        { fr: '/',                                                              en: '/en/',                                              es: '/es/' },
-  spot:        { fr: '/fr/le-spot-de-bilene-au-mozambique',                            en: '/en/the-kitesurf-spot-in-bilene-mozambique',       es: '/es/el-spot-de-kitesurf-en-bilene-mozambique' },
-  center:      { fr: '/fr/le-centre-de-kite-au-mozambique',                            en: '/en/the-kite-center-in-bilene-mozambique',         es: '/es/centro-de-kite-in-bilene-mozambique' },
-  school:      { fr: '/fr/ecole-de-kite-au-mozambique',                                en: '/en/kiteschool-in-bilene-mozambique',              es: '/es/escuela-de-kitesurf-en-bilene-mozambique' },
-  trips:       { fr: '/fr/trip-kite-au-mozambique',                                    en: '/en/kite-trips-in-mozambique',                     es: '/es/kite-trip-en-mozambique' },
-  video:       { fr: '/fr/video-pro-au-mozambique',                                    en: '/en/video-professional-mozambique',                es: '/es/video-professionale-mozambique' },
-  gallery:     { fr: '/fr/galerie-photos-video-bilene-kite-mozambique',                en: '/en/gallery-pictures-videos-bilene-kite-mozambique', es: '/es/galeria-photos-video-bilene-kite-mozambique' },
-  prices:      { fr: '/fr/les-prix-bilene-kite-center',                                en: '/en/services-prices-bilene-kitesurf-mozambique',   es: '/es/services-precios-bilene-kitesurf-mozambique' },
-  activities:  { fr: '/fr/activites-a-bilene-sorties-visites-ballades-exploration',    en: '/en/activities-in-bilene-outings-visits-exploration', es: '/es/actividades-en-bilene-excursiones-visitas-exploracion' },
-  safari:      { fr: '/fr/les-safari-au-kruger-et-réserves-naturelles-au-mozambique', en: '/en/safaris-kruger-park-natural-reserves-mozambique', es: '/es/safaris-kruger-reservas-naturales-mozambique' },
-  lodging:     { fr: '/fr/les-logements-a-bilene-au-mozambique',                       en: '/en/lodging-in-bilene-mozambique',                 es: '/es/alojamiento-en-bilene-mozambique' },
-  restaurants: { fr: '/fr/les-sorties-et-restaurants-a-bilene-au-mozambique',          en: '/en/restaurants-and-dining-in-bilene-mozambique',  es: '/es/restaurantes-y-salidas-en-bilene-mozambique' },
-  info:        { fr: '/fr/infos-mozambique',                                           en: '/en/information-mozambique',                       es: '/es/informaciones-mozambique' },
-  prepare:     { fr: '/fr/La-préparation-de-votre-voyage-a-bilene-au-mozambique',      en: '/en/prepare-your-trip-to-bilene-mozambique',       es: '/es/preparar-tu-viaje-a-bilene-mozambique' },
-  legal:       { fr: '/fr/mentions-légales',                                           en: '/en/legal-notice' /* es: à créer */ },
+  spot:        { fr: '/fr/le-spot-de-bilene-au-mozambique/',                           en: '/en/the-kitesurf-spot-in-bilene-mozambique/',      es: '/es/el-spot-de-kitesurf-en-bilene-mozambique/' },
+  center:      { fr: '/fr/le-centre-de-kite-au-mozambique/',                           en: '/en/the-kite-center-in-bilene-mozambique/',        es: '/es/centro-de-kite-in-bilene-mozambique/' },
+  school:      { fr: '/fr/ecole-de-kite-au-mozambique/',                               en: '/en/kiteschool-in-bilene-mozambique/',             es: '/es/escuela-de-kitesurf-en-bilene-mozambique/' },
+  trips:       { fr: '/fr/trip-kite-au-mozambique/',                                   en: '/en/kite-trips-in-mozambique/',                    es: '/es/kite-trip-en-mozambique/' },
+  video:       { fr: '/fr/video-pro-au-mozambique/',                                   en: '/en/video-professional-mozambique/',               es: '/es/video-professionale-mozambique/' },
+  gallery:     { fr: '/fr/galerie-photos-video-bilene-kite-mozambique/',               en: '/en/gallery-pictures-videos-bilene-kite-mozambique/', es: '/es/galeria-photos-video-bilene-kite-mozambique/' },
+  prices:      { fr: '/fr/les-prix-bilene-kite-center/',                               en: '/en/services-prices-bilene-kitesurf-mozambique/',  es: '/es/services-precios-bilene-kitesurf-mozambique/' },
+  activities:  { fr: '/fr/activites-a-bilene-sorties-visites-ballades-exploration/',   en: '/en/activities-in-bilene-outings-visits-exploration/', es: '/es/actividades-en-bilene-excursiones-visitas-exploracion/' },
+  safari:      { fr: '/fr/les-safari-au-kruger-et-réserves-naturelles-au-mozambique/', en: '/en/safaris-kruger-park-natural-reserves-mozambique/', es: '/es/safaris-kruger-reservas-naturales-mozambique/' },
+  lodging:     { fr: '/fr/les-logements-a-bilene-au-mozambique/',                      en: '/en/lodging-in-bilene-mozambique/',                es: '/es/alojamiento-en-bilene-mozambique/' },
+  restaurants: { fr: '/fr/les-sorties-et-restaurants-a-bilene-au-mozambique/',         en: '/en/restaurants-and-dining-in-bilene-mozambique/', es: '/es/restaurantes-y-salidas-en-bilene-mozambique/' },
+  info:        { fr: '/fr/infos-mozambique/',                                          en: '/en/information-mozambique/',                      es: '/es/informaciones-mozambique/' },
+  prepare:     { fr: '/fr/La-préparation-de-votre-voyage-a-bilene-au-mozambique/',     en: '/en/prepare-your-trip-to-bilene-mozambique/',      es: '/es/preparar-tu-viaje-a-bilene-mozambique/' },
+  legal:       { fr: '/fr/mentions-légales/',                                          en: '/en/legal-notice/' /* es: à créer */ },
 
   // Blog : une entrée par article (clé stable, indépendante du slug par langue).
-  blog:         { fr: '/fr/blog',          en: '/en/blog',          es: '/es/blog' },
-  blogMassages: { fr: '/fr/blog/bienvenue', en: '/en/blog/welcome',  es: '/es/blog/bienvenida' },
-  blogAvion:    { fr: '/fr/blog/enavion',   en: '/en/blog/by-plane', es: '/es/blog/en-avion' },
-  blogDestinations: { fr: '/fr/blog/nouvelles-destinations-kitesurf', en: '/en/blog/new-kitesurf-destinations', es: '/es/blog/nuevos-destinos-kitesurf' },
+  blog:         { fr: '/fr/blog/',          en: '/en/blog/',          es: '/es/blog/' },
+  blogMassages: { fr: '/fr/blog/bienvenue/', en: '/en/blog/welcome/',  es: '/es/blog/bienvenida/' },
+  blogAvion:    { fr: '/fr/blog/enavion/',   en: '/en/blog/by-plane/', es: '/es/blog/en-avion/' },
+  blogDestinations: { fr: '/fr/blog/nouvelles-destinations-kitesurf/', en: '/en/blog/new-kitesurf-destinations/', es: '/es/blog/nuevos-destinos-kitesurf/' },
 };
 
 // Helper : renvoie l'entrée de routes d'une page (ou {} si inconnue).
