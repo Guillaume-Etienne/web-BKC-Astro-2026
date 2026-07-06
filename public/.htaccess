@@ -1,8 +1,21 @@
 RewriteEngine On
-RewriteCond %{SERVER_PORT} !=443
+# Canonicalisation hôte + protocole : tout ce qui n'est pas https://www.bilenekite.com
+# (http, ou https sans www) → redirection 301 vers la forme canonique.
+RewriteCond %{SERVER_PORT} !=443 [OR]
+RewriteCond %{HTTP_HOST} !^www\.bilenekite\.com$ [NC]
 RewriteRule ^(.*)$ https://www.bilenekite.com/$1 [R=301,L]
 
 # Pages FAQ abandonnées → redirigées vers la page "Préparation du voyage" (qui contient désormais la FAQ)
 Redirect 301 /fr/la-faq-pour-bilene-au-mozambique https://www.bilenekite.com/fr/La-pr%C3%A9paration-de-votre-voyage-a-bilene-au-mozambique/
 Redirect 301 /en/faq-bilene-mozambique https://www.bilenekite.com/en/prepare-your-trip-to-bilene-mozambique/
 Redirect 301 /es/faq-bilene-mozambique https://www.bilenekite.com/es/preparar-tu-viaje-a-bilene-mozambique/
+
+# Anciennes URLs du site pré-Astro (pages plates .html, dossier /ES/ en majuscules,
+# anciens slugs) — repérées en 404 dans la Search Console, redirigées vers les
+# pages équivalentes du site actuel.
+RedirectMatch 301 ^/ES/el-spot-de-kitesurf-en-bilene-mozambique\.html$ https://www.bilenekite.com/es/el-spot-de-kitesurf-en-bilene-mozambique/
+RedirectMatch 301 ^/ES/galeria-photos-video-bilene-kite-mozambique\.html$ https://www.bilenekite.com/es/galeria-photos-video-bilene-kite-mozambique/
+RedirectMatch 301 ^/ES(/|/index\.html)?$ https://www.bilenekite.com/es/
+RedirectMatch 301 ^/en/kite-trip-in-mozambique\.html$ https://www.bilenekite.com/en/kite-trips-in-mozambique/
+RedirectMatch 301 ^/en/infomations-mozambique\.html$ https://www.bilenekite.com/en/information-mozambique/
+RedirectMatch 301 ^/en/gallery-pictures-video-bilene-kite-mozambique\.html$ https://www.bilenekite.com/en/gallery-pictures-videos-bilene-kite-mozambique/
