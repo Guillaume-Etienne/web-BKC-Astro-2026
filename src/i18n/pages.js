@@ -53,6 +53,9 @@ export const PAGES = {
   blogMassages: { fr: '/fr/blog/bienvenue/', en: '/en/blog/welcome/',  es: '/es/blog/bienvenida/' },
   blogAvion:    { fr: '/fr/blog/enavion/',   en: '/en/blog/by-plane/', es: '/es/blog/en-avion/' },
   blogDestinations: { fr: '/fr/blog/nouvelles-destinations-kitesurf/', en: '/en/blog/new-kitesurf-destinations/', es: '/es/blog/nuevos-destinos-kitesurf/' },
+  // La vidéo intégrée n'existe qu'en français : les 3 langues pointent volontairement
+  // vers le même reel en attendant les versions traduites.
+  blogSpotVideo:    { fr: '/fr/blog/le-spot-en-video/',                en: '/en/blog/the-spot-on-video/',        es: '/es/blog/el-spot-en-video/' },
 };
 
 // Helper : renvoie l'entrée de routes d'une page (ou {} si inconnue).

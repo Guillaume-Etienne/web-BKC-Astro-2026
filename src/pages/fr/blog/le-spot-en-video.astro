@@ -1,0 +1,250 @@
+---
+import Menu from '../../../components/Menu.astro';
+import Footer from '../../../components/Footer.astro';
+import Analytics from '../../../components/Analytics.astro';
+import Seo from '../../../components/Seo.astro';
+import { blogPostingJsonLd } from '../../../i18n/jsonld.js';
+import '../../../sass/general.scss';
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
+    <Seo page="blogSpotVideo" lang="fr" type="article"
+        title="Bilene en vidéo : la visite guidée du spot de kitesurf"
+        description="Deux minutes de drone au-dessus de la lagune : le spot de kitesurf de Bilène, le Speed Spot, les activités et les soirées, racontés en vidéo."
+        image="/images/1-spot/10.webp">
+      <script type="application/ld+json" set:html={JSON.stringify(blogPostingJsonLd('blogSpotVideo', 'fr', {
+        headline: 'Bilene en vidéo : la visite guidée du spot de kitesurf',
+        description: 'Deux minutes de drone au-dessus de la lagune : le spot de kitesurf de Bilène, le Speed Spot, les activités et les soirées, racontés en vidéo.',
+        image: '/images/1-spot/10.webp',
+        datePublished: '2026-07-17',
+      }))} />
+    </Seo>
+    <Analytics />
+</head>
+<body>
+    <Menu page="blogSpotVideo" />
+
+    <main>
+        <div class="blog-hero">
+            <img src="/images/1-spot/10.webp" alt="La lagune de Bilène vue de drone, plage de sable blanc et eau turquoise">
+            <div class="blog-hero-overlay">
+                <span class="blog-date">Juillet 2026</span>
+                <h1>Bilene en vidéo : la visite guidée du spot</h1>
+            </div>
+        </div>
+
+        <article class="blog-article">
+            <p>
+                On peut te décrire la lagune de Bilène sur trois pages. On l'a fait, d'ailleurs : une page entière sur le spot,
+                une autre sur les activités, une troisième sur les soirées. Soyons honnêtes deux secondes — <em>personne</em> ne lit
+                tout ça avant de choisir sa prochaine destination kite.
+            </p>
+            <p>
+                Alors on a filmé. Un drone, quelques minutes, et le spot qui parle tout seul. La vidéo a fait un joli carton sur
+                Instagram, ce qui règle définitivement le débat : nos paragraphes ne feront jamais le poids face à un plan large
+                sur 15 km d'eau turquoise déserte.
+            </p>
+
+            <div class="blog-reel">
+                <iframe src="https://www.instagram.com/reel/DaxR9OluW0P/embed"
+                        title="Visite guidée du spot de kitesurf de Bilene au Mozambique"
+                        loading="lazy" allowfullscreen></iframe>
+            </div>
+            <p class="blog-caption">
+                La vidéo est en français. Les versions traduites arrivent — en attendant, les images se passent de sous-titres.
+            </p>
+
+            <h2>15 km de lagune, fermée à l'océan</h2>
+            <p>
+                C'est ce que le drone montre en un seul plan et qu'un texte met un paragraphe à expliquer : Bilène est une lagune
+                de <strong>15 km de long, ouverte sur l'océan Indien mais protégée de ses vagues et de ses marées</strong>. Un cordon
+                de sable fait le travail. Résultat : un plan d'eau turquoise, pas de houle, pas de courant, et un vent qui
+                s'installe et qui tient.
+            </p>
+            <p>
+                Pour un kiter, ça se traduit simplement. Des zones de flat à ne plus savoir qu'en faire, des downwinds à rallonge,
+                un accès direct au spot de vague les jours où tu veux changer de programme — et le centre posé <em>directement sur
+                la plage</em>. Tu gonfles, tu descends, tu navigues. Pas de portage, pas de parking, pas de créneau à réserver
+                dans une zone bondée.
+            </p>
+            <p>
+                Le détail qui ne se voit pas à l'image : le nombre de gens dans la fenêtre. Il n'y en a pas.
+                <a href="/fr/le-spot-de-bilene-au-mozambique/">Tout le spot en détail →</a>
+            </p>
+
+            <h2>Le Speed Spot, à vingt minutes de bord</h2>
+            <p>
+                Le passage que tout le monde a relevé en commentaire, c'est l'embouchure de la lagune. Une gigantesque bande de
+                sable, le flat parfait d'un côté, l'océan de l'autre, et rien autour. On y va <strong>en kite, en une vingtaine de
+                minutes de bord</strong> pour les plus joueurs — sinon en bateau.
+            </p>
+            <p>
+                Victor Hayes, passé chez nous, l'a résumé mieux qu'aucune de nos pages : <em>« c'est comme notre spot de freestyle
+                au Brésil, à la différence qu'il n'y a personne »</em>. C'est glassy, c'est immense, et la plupart du temps tu y es
+                seul. Si tu es venu chercher de la vitesse ou du freestyle sur une eau en miroir, c'est là que ça se passe.
+            </p>
+
+            <h2>Apprendre ici : 1 km² d'eau à un mètre de fond</h2>
+            <p>
+                La zone de cours qu'on survole dans la vidéo est difficile à trouver ailleurs : <strong>un kilomètre carré d'eau chaude,
+                un mètre de fond, sans marée ni courant</strong>. Tu as pied partout, tu ne dérives pas, et le vent reste stable pendant
+                que tu apprends à gérer ta fenêtre.
+            </p>
+            <p>
+                Les cours sont donnés par un moniteur IKO, avec du matériel de l'année, radios, casques et gilets. Ça n'a l'air de
+                rien sur des images de drone, mais c'est ce qui fait la différence entre une semaine de progression et une semaine
+                à remonter au vent à pied.
+                <a href="/fr/ecole-de-kite-au-mozambique/">L'école de kite →</a>
+            </p>
+
+            <h2>Et les jours sans vent ?</h2>
+            <p>
+                Il y en a peu, mais la vidéo montre aussi ce qu'on en fait. Le <strong>phare du Limpopo</strong>, deuxième plus haut
+                d'Afrique, au bout d'une heure de pistes en 4x4. Une sortie en bateau jusqu'à l'embouchure, où réside une famille
+                de tortues de mer — et, entre septembre et novembre, les baleines qui longent la côte pendant leur migration.
+                Un <strong>braai</strong> (ne dis surtout pas « barbecue » ici) préparé par un Sud-Africain au bord de l'océan, après
+                une traversée des dunes en 4x4.
+            </p>
+            <p>
+                Il y a aussi le marché de Macia, la cuisine traditionnelle avec Félix, les chants à l'église le dimanche matin,
+                la pêche au gros, le paddle dans les rivières qui se jettent dans la lagune. Et des massages sous les paillotes,
+                face à la mer, pour les mollets qui ont pris cher.
+                <a href="/fr/activites-a-bilene-sorties-visites-ballades-exploration/">Toutes les activités →</a>
+            </p>
+
+            <h2>Le soir, quand le drone est rangé</h2>
+            <p>
+                Les images de soirée, à la fin, ne sont pas de la mise en scène. Le beach bar du Palmeiras, les pieds dans le
+                sable, est le quartier général de l'apéro : une <strong>2M</strong> — la bière locale — et les derniers riders qui
+                finissent leur session sous tes yeux depuis la chaise longue.
+            </p>
+            <p>
+                Une fois par semaine, on sort le <strong>Team Barbecue BKC</strong>, avec le coucher de soleil sur la lagune en fond de
+                décor. Et un soir sur deux, on emmène ceux qui veulent dans nos adresses préférées du village : de petites tables
+                locales, sans carte en quatre langues, où on mange du frango com batata et de la matapa.
+                <a href="/fr/les-sorties-et-restaurants-a-bilene-au-mozambique/">Les restaurants et les sorties →</a>
+            </p>
+
+            <h2>Quand venir</h2>
+            <p>
+                La saison va de <strong>septembre à mars</strong>, avec en moyenne <strong>90 % de jours navigués</strong>. Le reste de
+                l'année, ça tombe à un « malheureux » 60 %. Autant dire que la question n'est pas vraiment de savoir si tu vas
+                naviguer.
+            </p>
+            <p>
+                Si la vidéo t'a donné envie, la suite est ici : <a href="/fr/La-préparation-de-votre-voyage-a-bilene-au-mozambique/">préparer
+                ton voyage</a> (vols, ETA, transfert, ce qu'il faut emporter) et <a href="/fr/les-prix-bilene-kite-center/">les tarifs</a>.
+                Et si tu hésites encore entre plusieurs destinations, on a fait le comparatif :
+                <a href="/fr/blog/nouvelles-destinations-kitesurf/">5 nouvelles destinations kitesurf où il n'y a (presque) personne</a>.
+            </p>
+            <p>À très bientôt sur l'eau !</p>
+
+            <a href="/fr/blog/" class="blog-back">&larr; Retour au blog</a>
+        </article>
+    </main>
+
+    <Footer />
+</body>
+</html>
+
+<style>
+    .blog-hero {
+        position: relative;
+        width: 100%;
+        height: 560px;
+        overflow: hidden;
+    }
+    .blog-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .blog-hero-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 40px 20px;
+        background: linear-gradient(transparent, rgba(0,0,0,0.7));
+        color: white;
+    }
+    .blog-hero-overlay h1 {
+        font-size: 2.4em;
+        margin: 8px 0 0;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    .blog-hero-overlay .blog-date {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        opacity: 0.9;
+    }
+    .blog-article {
+        max-width: 750px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    .blog-article h2 {
+        text-align: left;
+        font-size: 1.5em;
+        margin: 35px 0 12px;
+    }
+    .blog-article p {
+        font-size: 1.05em;
+        line-height: 1.8;
+        text-align: left;
+        color: #444;
+        margin-bottom: 15px;
+    }
+    /* Reel Instagram : format vertical, contrairement aux iframes YouTube 16/9
+       des autres articles. L'embed ajoute son propre bandeau, d'où le ratio 9/14. */
+    .blog-reel {
+        max-width: 400px;
+        margin: 30px auto 10px;
+        aspect-ratio: 9 / 14;
+    }
+    .blog-reel iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    .blog-caption {
+        max-width: 400px;
+        margin: 0 auto 30px !important;
+        font-size: 0.85em !important;
+        color: #777 !important;
+        text-align: center !important;
+        font-style: italic;
+    }
+    .blog-back {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #4695fc;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.2s;
+    }
+    .blog-back:hover {
+        background: #3578d8;
+    }
+    .blog-back:visited {
+        color: white;
+    }
+    @media (max-width: 600px) {
+        .blog-hero {
+            height: 350px;
+        }
+        .blog-hero-overlay h1 {
+            font-size: 1.6em;
+        }
+    }
+</style>
