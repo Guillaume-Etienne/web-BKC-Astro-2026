@@ -50,11 +50,11 @@ import '../../../sass/general.scss';
                 sobre 15 km de agua turquesa desierta.
             </p>
 
-            <div class="blog-reel">
-                <iframe src="https://www.instagram.com/reel/DaxR9OluW0P/embed"
-                        title="Visita guiada al spot de kitesurf de Bilene, Mozambique"
-                        loading="lazy" allowfullscreen></iframe>
-            </div>
+            <a class="blog-reel" href="https://www.instagram.com/reel/DaxR9OluW0P/" target="_blank" rel="noopener">
+                <img src="/images/1-spot/13.webp" alt="La laguna de Bilene vista desde un dron — ver el vídeo en Instagram">
+                <span class="blog-reel-play" aria-hidden="true">▶</span>
+                <span class="blog-reel-cta">Ver el vídeo en Instagram</span>
+            </a>
             <p class="blog-caption">
                 El vídeo está narrado en francés — las versiones traducidas están en camino. Mientras tanto, las imágenes no
                 necesitan subtítulos.
@@ -200,19 +200,55 @@ import '../../../sass/general.scss';
         color: #444;
         margin-bottom: 15px;
     }
-    /* Reel Instagram : format vertical, contrairement aux iframes YouTube 16/9
-       des autres articles. L'embed ajoute son propre bandeau, d'où le ratio 9/14. */
+    /* Vignette cliquable vers le reel, et non une iframe : le lecteur Instagram
+       ne sert qu'une carte statique et refuse de lire un reel en embed. */
     .blog-reel {
+        position: relative;
+        display: block;
         max-width: 400px;
         margin: 30px auto 10px;
-        aspect-ratio: 9 / 14;
+        aspect-ratio: 9 / 16;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
     }
-    .blog-reel iframe {
+    .blog-reel img {
+        display: block;
         width: 100%;
         height: 100%;
-        border: 0;
-        border-radius: 8px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        object-fit: cover;
+    }
+    .blog-reel-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 68px;
+        height: 68px;
+        padding-left: 5px;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.55);
+        color: white;
+        font-size: 1.5em;
+        transition: background 0.2s, transform 0.2s;
+    }
+    .blog-reel:hover .blog-reel-play {
+        background: rgba(0,0,0,0.78);
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+    .blog-reel-cta {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 34px 15px 14px;
+        background: linear-gradient(transparent, rgba(0,0,0,0.75));
+        color: white;
+        font-weight: bold;
+        text-align: center;
     }
     .blog-caption {
         max-width: 400px;
