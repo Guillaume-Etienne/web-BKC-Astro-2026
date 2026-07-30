@@ -48,14 +48,14 @@
     }
 
     .flextext {
-        flex: 1;
+        flex: 0.85;
         & p {
             text-align: justify;
         }
     }
 
     .fleximg {
-        flex: 1;
+        flex: 1.15;
         margin-top: 0;
         display: flex;
         gap: $space-sm;
@@ -163,7 +163,7 @@
             margin-top: -200px;
         }
         & h2 {
-            margin-top: -$space-lg;
+            margin-top: -$space-sm;
         }
         & img {
             max-height: 360px;
@@ -315,7 +315,7 @@
     }
 
     .longtext {
-        flex: 1.5;
+        flex: 1.2;
     }
 
     // Headsection desktop
@@ -328,7 +328,7 @@
         }
         & h2 {
             font-size: $fs-2xl;
-            margin-top: -$space-xl;
+            margin-top: -$space-sm;
         }
         & img {
             max-height: 100%;

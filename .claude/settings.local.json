@@ -34,7 +34,8 @@
       "WebFetch(domain:goo.gl)",
       "WebFetch(domain:www.tripadvisor.es)",
       "Bash(git checkout *)",
-      "Bash(git diff *)"
+      "Bash(git diff *)",
+      "Bash(xargs sed -i 's/family=Shrikhand/family=Anton/g')"
     ]
   }
 }
