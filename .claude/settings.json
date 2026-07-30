@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npm run build)",
+      "PowerShell(git add src/pages/fr/blog/nouvelles-destinations-kitesurf.astro src/pages/en/blog/new-kitesurf-destinations.astro src/pages/es/blog/nuevos-destinos-kitesurf.astro)",
+      "PowerShell(git add src/i18n/jsonld.js)",
+      "PowerShell(git add src/pages/fr/La-pr�paration-de-votre-voyage-a-bilene-au-mozambique.astro src/pages/en/prepare-your-trip-to-bilene-mozambique.astro src/pages/es/preparar-tu-viaje-a-bilene-mozambique.astro)",
+      "PowerShell(Remove-Item \"C:\\\\Users\\\\gui\\\\.claude\\\\projects\\\\c--gui-web-2026-pour-Prod-BKC-Astro\\\\memory\\\\todo-faq-visa-jsonld.md\" -Confirm:$false)",
+      "PowerShell(git add src/pages)",
+      "PowerShell(node \"C:\\\\Users\\\\gui\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--gui-web-2026-pour-Prod-BKC-Astro\\\\9217e987-2316-438e-9ed2-db3ae7033fa8\\\\scratchpad\\\\fix-trailing-slash.mjs\")",
+      "PowerShell(git add -A)",
+      "PowerShell(git reset -q .claude/settings.json .claude/settings.local.json)",
+      "PowerShell(git commit -F \"C:\\\\Users\\\\gui\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--gui-web-2026-pour-Prod-BKC-Astro\\\\9217e987-2316-438e-9ed2-db3ae7033fa8\\\\scratchpad\\\\commit-msg.txt\")",
+      "PowerShell(npm run build 2>$null)",
+      "PowerShell(git add public/.htaccess)",
+      "PowerShell(node \"C:\\\\Users\\\\gui\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--gui-web-2026-pour-Prod-BKC-Astro\\\\9217e987-2316-438e-9ed2-db3ae7033fa8\\\\scratchpad\\\\fix-meta-desc.mjs\")",
+      "Bash(node -e ' *)",
+      "WebFetch(domain:www.instagram.com)",
+      "PowerShell(npm run build 2>&1)",
+      "PowerShell(git add -A src/)",
+      "Bash(echo \"=== headers bloquants \\(X-Frame-Options / CSP\\) ===\" *)",
+      "Read(//tmp/**)",
+      "Bash(grep -oiE \"[A-Za-z',. ]{15,}\")",
+      "Bash(awk '{print $5, $NF}')"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
+    ]
+  }
+}

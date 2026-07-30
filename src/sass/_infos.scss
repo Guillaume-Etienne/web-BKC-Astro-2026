@@ -25,11 +25,13 @@
     grid-template-columns: 1fr;
     gap: $space-md;
     padding: 0 $space-md $space-xl;
-    max-width: 1040px;
+    max-width: 1240px;
     margin: 0 auto;
 }
 
 .info-card {
+    display: flex;
+    flex-direction: column;
     background: $color-surface;
     border-radius: $radius-lg;
     box-shadow: $shadow-sm;
@@ -56,16 +58,36 @@
 }
 
 .info-card-icon {
-    font-size: 1.5rem;
-    line-height: 1;
+    width: 28px;
+    height: 28px;
+    color: $color-ocean;
     margin-bottom: $space-xs;
+}
+
+// Badges "chiffres clés" (comble le vide des cartes courtes : Vols, Transfert)
+.info-card-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-2xs $space-xs;
+    margin-top: auto;
+    padding-top: $space-sm;
+    border-top: 1px solid rgba($color-dark, 0.07);
+}
+
+.info-card-stat {
+    font-size: $fs-xs;
+    font-weight: 600;
+    color: $color-ocean-dark;
+    background: rgba($color-ocean, 0.08);
+    padding: $space-2xs $space-sm;
+    border-radius: $radius-full;
 }
 
 .info-card-links {
     display: flex;
     flex-wrap: wrap;
     gap: $space-xs $space-md;
-    margin-top: $space-sm;
+    margin-top: auto;
     padding-top: $space-sm;
     border-top: 1px solid rgba($color-dark, 0.07);
 
@@ -86,13 +108,36 @@
 }
 
 // ─── IMAGE DE TRANSITION ─────────────────────────────────────
-.info-break-img {
-    width: 100%;
-    max-height: 280px;
-    object-fit: cover;
-    object-position: center 60%;
-    display: block;
-    margin-top: $space-xl;
+.info-break {
+    position: relative;
+    width: calc(100% - #{$space-md} * 2);
+    max-width: 380px;
+    margin: $space-xl auto;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    border: 1px solid rgba($color-dark, 0.08);
+
+    & img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: center 15%;
+        display: block;
+    }
+
+    & figcaption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: $space-md;
+        background: linear-gradient(to top, rgba($color-dark, 0.75), transparent);
+        color: white;
+        font-size: $fs-sm;
+        font-style: italic;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    }
 }
 
 // ─── SECTION CONTACT ─────────────────────────────────────────
@@ -100,6 +145,15 @@
     padding: $space-2xl $space-md;
     text-align: center;
     background: $colorsecondary;
+}
+
+.contact-card {
+    max-width: 740px;
+    margin: 0 auto;
+    background: $color-surface;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-md;
+    padding: $space-xl $space-md;
 
     & h2 { margin-bottom: $space-xs; }
 

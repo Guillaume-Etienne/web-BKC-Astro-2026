@@ -123,6 +123,11 @@ figure {
     padding: 0;
 }
 
+// Header sticky : évite qu'un lien #ancre affiche la cible sous le header
+[id] {
+    scroll-margin-top: 90px;
+}
+
 // ─── HEADER ──────────────────────────────────────────────────
 header {
     position: sticky;
@@ -148,6 +153,34 @@ header {
     white-space: nowrap;
     & a {
         font-weight: 600;
+    }
+}
+
+// ─── BANDEAU CTA (redirection contact) ────────────────────────
+.cta-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: $space-sm $space-md;
+    background: $gradient-ocean;
+    color: white;
+    text-align: center;
+    padding: $space-sm $space-md;
+    font-size: $fs-sm;
+    & p {
+        margin: 0;
+        font-weight: 600;
+    }
+    & a.btn {
+        background: white;
+        color: $color-ocean-dark;
+        padding: $space-xs $space-lg;
+        white-space: nowrap;
+        &:visited, &:hover, &:focus { color: $color-ocean-dark; }
+        &:hover {
+            background: $colorbackground;
+        }
     }
 }
 

@@ -1,5 +1,6 @@
 ---
 import MenuEN from '../../components/MenuEN.astro';
+import IconInfo from '../../components/IconInfo.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
 import Seo from '../../components/Seo.astro';
@@ -45,14 +46,18 @@ import '../../sass/general.scss';
 
             <!-- Flights -->
             <div class="info-card">
-                <div class="info-card-icon" aria-hidden="true">✈️</div>
+                <IconInfo name="flight" />
                 <h3>Flights</h3>
                 <p>Maputo is served by Ethiopian Airlines, Qatar Airways, South African Airways, Turkish Airlines and TAP Portugal (direct from Lisbon). Count on 10 to 11 hours of flying and roughly €700 return.</p>
+                <div class="info-card-stats">
+                    <span class="info-card-stat">10-11h flying</span>
+                    <span class="info-card-stat">~€700 return</span>
+                </div>
             </div>
 
             <!-- Visa / ETA -->
             <div class="info-card info-card--visa">
-                <div class="info-card-icon" aria-hidden="true">🛂</div>
+                <IconInfo name="visa" />
                 <h3>Visa / ETA</h3>
                 <p>Since 2025, nationals of 29 countries must obtain an <strong>ETA</strong> (Electronic Travel Authorization) before departure, via the official Mozambican portal. Allow several weeks ahead to be safe — your airline will check this document at boarding. Around $48. Passport valid for 6+ months after arrival is mandatory. We send you the accommodation letter needed for your application.</p>
                 <details class="info-card-countries">
@@ -79,9 +84,13 @@ import '../../sass/general.scss';
 
             <!-- Transfer -->
             <div class="info-card">
-                <div class="info-card-icon" aria-hidden="true">🚗</div>
+                <IconInfo name="car" />
                 <h3>Transfer</h3>
                 <p>Around 3 hours by road from Maputo, on a well-maintained tarmac road through typical African landscapes. We book the vehicle for you. New option: arrive by Cessna, flying over the turquoise lagoons.</p>
+                <div class="info-card-stats">
+                    <span class="info-card-stat">~3h by road</span>
+                    <span class="info-card-stat">Cessna option</span>
+                </div>
                 <div class="info-card-links">
                     <a href="/en/prepare-your-trip-to-bilene-mozambique/#the-transfer">→ Transfer details</a>
                 </div>
@@ -89,7 +98,7 @@ import '../../sass/general.scss';
 
             <!-- Accommodation -->
             <div class="info-card">
-                <div class="info-card-icon" aria-hidden="true">🏠</div>
+                <IconInfo name="home" />
                 <h3>Accommodation</h3>
                 <p>Our centre is on the beach at the Palmeiras complex — wi-fi, bar and restaurant right on the spot. Other options available in Bilene to suit your preferences and budget.</p>
                 <div class="info-card-links">
@@ -99,14 +108,14 @@ import '../../sass/general.scss';
 
             <!-- Health -->
             <div class="info-card">
-                <div class="info-card-icon" aria-hidden="true">💊</div>
+                <IconInfo name="health" />
                 <h3>Health</h3>
                 <p>No vaccinations required. Antimalarials recommended only if you plan a safari or city visit. Teresa, co-founder, is an emergency nurse at the International Red Cross — you're in safe hands.</p>
             </div>
 
             <!-- What to bring -->
             <div class="info-card">
-                <div class="info-card-icon" aria-hidden="true">🎒</div>
+                <IconInfo name="backpack" />
                 <h3>What to bring</h3>
                 <p>Lycra is the priority. Sunscreen, kite-friendly sunglasses, a cap, cash in euros. A light jumper just in case. A basic first-aid kit is advised.</p>
                 <div class="info-card-links">
@@ -116,12 +125,17 @@ import '../../sass/general.scss';
 
         </section>
 
-        <img src="/images/7-infos/7.webp" alt="Friendly atmosphere at Bilene Kite Center" class="info-break-img">
+        <figure class="info-break">
+            <img src="/images/7-infos/7.webp" alt="Friendly atmosphere at Bilene Kite Center">
+            <figcaption>The warm welcome of Bilene village</figcaption>
+        </figure>
 
         <section id="contactus">
-            <h2>Write to us</h2>
-            <p>No bots — a real person on the other end.</p>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeK2bYq3kie_E8u55hC1iC6l6-JtUzieJP8Ri9qw58BCFvycw/viewform?embedded=true" width="100%" height="981" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+            <div class="contact-card">
+                <h2>Write to us</h2>
+                <p>No bots — a real person on the other end.</p>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeK2bYq3kie_E8u55hC1iC6l6-JtUzieJP8Ri9qw58BCFvycw/viewform?embedded=true" width="100%" height="981" scrolling="no">Loading...</iframe>
+            </div>
         </section>
 
     </main>

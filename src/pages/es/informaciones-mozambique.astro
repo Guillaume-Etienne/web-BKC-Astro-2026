@@ -1,5 +1,6 @@
 ---
 import MenuES from '../../components/MenuES.astro';
+import IconInfo from '../../components/IconInfo.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
 import Seo from '../../components/Seo.astro';
@@ -45,14 +46,18 @@ import '../../sass/general.scss';
 
             <!-- Vuelos -->
             <div class="info-card">
-                <div class="info-card-icon" aria-hidden="true">✈️</div>
+                <IconInfo name="flight" />
                 <h3>Vuelos</h3>
                 <p>Maputo está conectada con Ethiopian Airlines, Qatar Airways, South African Airways, Turkish Airlines y TAP Portugal (vuelo directo desde Lisboa). Calcula entre 10 y 11 horas de vuelo y unos 700 € ida y vuelta.</p>
+                <div class="info-card-stats">
+                    <span class="info-card-stat">10-11h de vuelo</span>
+                    <span class="info-card-stat">~700 € ida y vuelta</span>
+                </div>
             </div>
 
             <!-- Visado / ETA -->
             <div class="info-card info-card--visa">
-                <div class="info-card-icon" aria-hidden="true">🛂</div>
+                <IconInfo name="visa" />
                 <h3>Visado / ETA</h3>
                 <p>Desde 2025, los nacionales de 29 países deben obtener una <strong>ETA</strong> (Electronic Travel Authorization) antes de partir, a través del portal oficial mozambiqueño. Prevé varias semanas de antelación para ir tranquilo — tu compañía aérea verificará este documento en el embarque. Unos 48 $. Pasaporte con validez superior a 6 meses después de la llegada obligatorio. Te enviamos la carta de alojamiento necesaria para tu solicitud.</p>
                 <details class="info-card-countries">
@@ -79,9 +84,13 @@ import '../../sass/general.scss';
 
             <!-- Traslado -->
             <div class="info-card">
-                <div class="info-card-icon" aria-hidden="true">🚗</div>
+                <IconInfo name="car" />
                 <h3>Traslado</h3>
                 <p>Unas 3 horas de carretera desde Maputo, por una vía asfaltada en buen estado entre paisajes típicamente africanos. Reservamos el vehículo por ti. Novedad: llegar a Bilene en Cessna, sobrevolando las lagunas turquesa.</p>
+                <div class="info-card-stats">
+                    <span class="info-card-stat">~3h de carretera</span>
+                    <span class="info-card-stat">Opción Cessna</span>
+                </div>
                 <div class="info-card-links">
                     <a href="/es/preparar-tu-viaje-a-bilene-mozambique/#el-traslado">→ Detalles del traslado</a>
                 </div>
@@ -89,7 +98,7 @@ import '../../sass/general.scss';
 
             <!-- Alojamiento -->
             <div class="info-card">
-                <div class="info-card-icon" aria-hidden="true">🏠</div>
+                <IconInfo name="home" />
                 <h3>Alojamiento</h3>
                 <p>Nuestro centro está en la playa del complejo Palmeiras — wifi, bar y restaurante directamente en el spot. Otras opciones disponibles en Bilene según tus preferencias y presupuesto.</p>
                 <div class="info-card-links">
@@ -99,14 +108,14 @@ import '../../sass/general.scss';
 
             <!-- Salud -->
             <div class="info-card">
-                <div class="info-card-icon" aria-hidden="true">💊</div>
+                <IconInfo name="health" />
                 <h3>Salud</h3>
                 <p>No se requiere ninguna vacuna. Antipalúdicos recomendados únicamente si planeas un safari o visita a una ciudad. Teresa, cofundadora, es enfermera de urgencias en la Cruz Roja Internacional — estás en buenas manos.</p>
             </div>
 
             <!-- Qué llevar -->
             <div class="info-card">
-                <div class="info-card-icon" aria-hidden="true">🎒</div>
+                <IconInfo name="backpack" />
                 <h3>Qué llevar</h3>
                 <p>El lycra es lo primero. Protector solar, gafas aptas para el kite, gorra, efectivo en euros. Un jersey ligero por si acaso. Se recomienda un botiquín básico.</p>
                 <div class="info-card-links">
@@ -116,12 +125,17 @@ import '../../sass/general.scss';
 
         </section>
 
-        <img src="/images/7-infos/7.webp" alt="Ambiente acogedor en Bilene Kite Center" class="info-break-img">
+        <figure class="info-break">
+            <img src="/images/7-infos/7.webp" alt="Ambiente acogedor en Bilene Kite Center">
+            <figcaption>La cálida bienvenida del pueblo de Bilene</figcaption>
+        </figure>
 
         <section id="contactus">
-            <h2>Escríbenos</h2>
-            <p>Sin robots — una persona real al otro lado de la pantalla.</p>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfiw-UPtgW4GRw_iGyl-DnRwtPcyR7wCO6QfR0MoBt50obV6Q/viewform?embedded=true" width="100%" height="981" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <div class="contact-card">
+                <h2>Escríbenos</h2>
+                <p>Sin robots — una persona real al otro lado de la pantalla.</p>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfiw-UPtgW4GRw_iGyl-DnRwtPcyR7wCO6QfR0MoBt50obV6Q/viewform?embedded=true" width="100%" height="981" scrolling="no">Loading…</iframe>
+            </div>
         </section>
 
     </main>
