@@ -184,6 +184,10 @@ import '../../../sass/general.scss';
         opacity: 0.9;
     }
     .blog-article {
+        /* main est un conteneur flex en colonne et "margin: auto" neutralise
+           l'etirement : sans width explicite, l'article prend sa largeur de
+           contenu (750px) meme sur un ecran de 375px. */
+        width: 100%;
         max-width: 750px;
         margin: 40px auto;
         padding: 0 20px;

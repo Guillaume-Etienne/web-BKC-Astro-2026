@@ -150,6 +150,20 @@
 
 // ─── LG (1024px) — Tablettes paysage / petits desktops ──────
 @media screen and (min-width: $bp-lg) {
+    // Tarifs en texte : 2 colonnes des la tablette en paysage.
+    // (etait au palier xl/1280px : une colonne de 700px perdue au milieu
+    // d'un ecran de 1024px.)
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+        max-width: 1000px;
+    }
+    .price-reassurance,
+    .price-ask {
+        max-width: 1000px;
+    }
+
     .flexi a {
         width: calc(50% - #{$space-xl});
         max-width: 600px;
@@ -207,6 +221,12 @@
         display: none;
     }
 
+    // Seules les barres du burger etaient masquees : le <a id="openBtn"> qui
+    // les contient restait dans le flux et poussait la page de ~16px.
+    #openBtn {
+        display: none;
+    }
+
     #lang {
         width: 220px;
         padding: $space-xs $space-md;
@@ -226,6 +246,9 @@
             display: flex;
             justify-content: center;
             gap: $space-xs;
+            // Entre 1280 et ~1350px les 9 entrees ne tenaient pas sur une ligne
+            // et debordaient de la page. On autorise le passage a la ligne.
+            flex-wrap: wrap;
         }
         // Liens principaux (pas sous-menus)
         > ul > li > a {
@@ -364,21 +387,12 @@
         margin-right: $space-md;
     }
 
-    // Tarifs en texte : 2 colonnes sur grand ecran
-    .pricing-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        align-items: start;
-        max-width: 1000px;
-    }
-    .price-reassurance,
-    .price-ask {
-        max-width: 1000px;
-    }
-
     // Galerie
+    // Etait cale par un transform: translateX(150px), qui faisait sortir
+    // l'image de l'ecran entre 1280 et ~1450px. On centre proprement.
     #xaixai {
-        transform: translateX(150px);
+        display: block;
+        margin-inline: auto;
     }
     .middle {
         justify-content: space-around;

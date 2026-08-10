@@ -15,7 +15,7 @@ import '../../../sass/general.scss';
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
     <Seo page="blogDestinations" lang="es" type="article"
         title="5 nuevos destinos de kitesurf donde (casi) no hay nadie en 2026"
-        description="¿Cansado de pelear por una ventana de viento con 80 kiters más? Aquí tienes 5 destinos de kitesurf en auge en 2026, empezando por Bilene, nuestra laguna en Mozambique."
+        description="¿Cansado de pelear por una ventana de viento? 5 destinos de kitesurf en auge en 2026, empezando por Bilene, nuestra laguna en Mozambique."
         image="/images/1-spot/2.webp">
       <script type="application/ld+json" set:html={JSON.stringify(blogPostingJsonLd('blogDestinations', 'es', {
         headline: '5 nuevos destinos de kitesurf donde (casi) no hay nadie en 2026',
@@ -154,6 +154,10 @@ import '../../../sass/general.scss';
         opacity: 0.9;
     }
     .blog-article {
+        /* main est un conteneur flex en colonne et "margin: auto" neutralise
+           l'etirement : sans width explicite, l'article prend sa largeur de
+           contenu (750px) meme sur un ecran de 375px. */
+        width: 100%;
         max-width: 750px;
         margin: 40px auto;
         padding: 0 20px;

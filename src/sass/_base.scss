@@ -640,6 +640,9 @@ a.btn {
     // 3/2 plutot que 16/9 : les photos sont hautes, un cadrage trop
     // panoramique coupait les sujets.
     aspect-ratio: 3 / 2;
+    // ...mais plafonnee : sur une carte de 750px de large le 3/2 donnait une
+    // image de 500px de haut, la page devenait interminable en tablette.
+    max-height: 280px;
     object-fit: cover;
     border-radius: 0;
     margin: 0;
@@ -868,9 +871,14 @@ body:has(.wa-bubble) footer {
     max-width: 100%;
 }
 
+// Cale qui donne sa hauteur au lecteur Vimeo (l'iframe est en position absolue
+// dans #containervimeo, elle ne pousse donc pas le conteneur).
+// Etait en 450x300 fixes : debordait sur tout ecran < 450px et provoquait un
+// scroll horizontal de toute la page en mobile.
 #bug {
-    width: 450px;
-    height: 300px;
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 3 / 2;
 }
 
 // ─── INFOS ───────────────────────────────────────────────────
