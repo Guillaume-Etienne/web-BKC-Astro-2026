@@ -3,6 +3,7 @@ import MenuES from '../../components/MenuES.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
 import Seo from '../../components/Seo.astro';
+import WhatsApp from '../../components/WhatsApp.astro';
 import { businessJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
 ---
@@ -18,7 +19,7 @@ import '../../sass/general.scss';
         page="prices"
         lang="es"
         title="Precios de cursos de kitesurf y servicios — Bilene Kite Center"
-        description="Clases, coaching, packs de aprendizaje, trips y servicios del centro: todos los precios del Bilene Kite Center en Mozambique, con ejemplos de estancias."
+        description="Clases, coaching, wing foil, foil y supervisión: todos los precios del Bilene Kite Center en Mozambique, con ejemplos de estancias para un grupo de 4."
         image="/images/accueil/7.webp">
         <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('es'))} />
     </Seo>
@@ -28,13 +29,14 @@ import '../../sass/general.scss';
     <MenuES page="prices" />
     <main>
         <section id="headsection">
-            <img src="/images/5-prices/1.webp" alt="ordenador portátil sobre un escritorio">
+            <img src="/images/5-prices/1.webp" alt="paisaje de playa en Bilene">
             <h1 style="color:#d9dcdf;text-shadow: 1px 1px 2px black;">Servicios y precios</h1>
             <h2 style="color:#d9dcdf;text-shadow: 1px 1px 2px black;">Mozambique al mejor precio</h2>
         </section>
         <section id="mainprice">
             <p>En esta página, encontrarás ejemplos de los paquetes más demandados, y los precios detallados de los servicios que ofrecemos en nuestro centro de kitesurf en Mozambique.
             </p>
+
             <h2>Algunos ejemplos de paquetes para 4 personas <button class="toggle" data-target="#block1">...</button></h2>
             <div id="block1" class="block">
                 <p>Estos precios se dan como una indicación, como un ejemplo para darle una idea de los costos en el sitio. Se ofrecen en forma de paquetes, para grupos de 4 personas,
@@ -44,6 +46,7 @@ import '../../sass/general.scss';
                     Las comidas no están incluidas en estos precios, Bilene ofrece muchos restaurantes y bares cuyos precios pueden variar enormemente según su clasificación.
                     Cuente en promedio entre 5€ y 10€ por persona para desayunos, entre 10€ y 15€ para almuerzos y cenas.
                 </p>
+
                 <section id="packages">
                     <div class="packs">
                         <img src="/images/accueil/4.webp" alt="kitesurfer durante un salto">
@@ -55,7 +58,7 @@ import '../../sass/general.scss';
                         <ul>
                             <li>Transbordos aeropuerto Bilene Aeropuerto</li>
                             <li>Alojamiento en bungalow de 2 dormitorios con baño (2personas por habitación)</li>
-                            <li>semana de perfeccionamiento OLK</li>
+                            <li>semana de perfeccionamiento</li>
                             <li>Asistencia en playa</li>
                             <li>SUP Paddle-surf 5horas</li>
                             <li>1x excursión al Speed Spot</li>
@@ -63,7 +66,7 @@ import '../../sass/general.scss';
                         <div class="price">
                             <div>
                                 <p>Desde:</p>
-                                <p>590 €</p>
+                                <p>680 €</p>
                             </div>
                             <a href="/es/informaciones-mozambique/#contactus"><button>Mas informaciones</button></a>
                         </div>
@@ -78,14 +81,14 @@ import '../../sass/general.scss';
                         <ul>
                             <li>Transbordos aeropuerto Bilene Aeropuerto</li>
                             <li>Alojamiento en bungalow de 2 dormitorios con baño (2personas por habitación)</li>
-                            <li>Asistencia en playa</li>
+                            <li>Storage y asistencia en playa</li>
                             <li>SUP Paddle-surf 5horas</li>
                             <li>1x excursión al Speed Spot</li>
                         </ul>
                         <div class="price">
                             <div>
                                 <p>Desde:</p>
-                                <p>360 €</p>
+                                <p>415 €</p>
                             </div>
                             <a href="/es/informaciones-mozambique/#contactus"><button>Mas informaciones</button></a>
                         </div>
@@ -102,12 +105,12 @@ import '../../sass/general.scss';
                             <li>Alojamiento en bungalow de 2 dormitorios con baño (2personas por habitación)</li>
                             <li>Asistencia en playa</li>
                             <li>SUP Paddle-surf 5horas</li>
-                            <li>10 horas de clases de kitesurf</li>
+                            <li>10 horas de clases de kitesurf con monitor titulado</li>
                         </ul>
                         <div class="price">
                             <div>
                                 <p>Desde:</p>
-                                <p>559 €</p>
+                                <p>645 €</p>
                             </div>
                             <a href="/es/informaciones-mozambique/#contactus"><button>Mas informaciones</button></a>
                         </div>
@@ -128,26 +131,178 @@ import '../../sass/general.scss';
                     </iframe>
                 </div>
             </section>
+
             <section id="prixlessons">
                 <h2>Tarifas del Centro de Kitesurf</h2>
                 <p>
-                    Aquí encontrarás los precios de todos los servicios que ofrecemos. Estamos ubicados directamente en la tranquila playa, en un complejo hotelero agradablemente integrado en la naturaleza: el complejo Palmeiras. Ofrece varios tipos de alojamiento, wifi, tienda, así como un restaurante y chiringuito directamente en la playa.
+                    Aquí encontrarás los precios de todos los servicios que ofrecemos. Estamos ubicados directamente en la tranquila playa, en un complejo hotelero agradablemente integrado en la naturaleza: el complejo Palmeiras. Ofrece varios tipos de alojamiento, wifi, tienda, así como un restaurante y chiringuito directamente en <a href="/es/el-spot-de-kitesurf-en-bilene-mozambique/">el spot</a>.
                 </p>
-                <div class="groupPrice">
-                    <img src="/images/5-prices/11.webp" alt="lista de precios" loading="lazy">
-                    <img src="/images/5-prices/12.webp" alt="lista de precios" loading="lazy">
+
+                <div class="price-reassurance">
+                    <h3>Nuestras clases, en concreto</h3>
+                    <p>Todas nuestras clases las imparten <strong>monitores titulados y con experiencia</strong>, desde la primera sesión hasta el coaching de freestyle, big air, strapless y olas.</p>
+                    <ul>
+                        <li><strong>Conexión por radio</strong> entre tú y tu monitor durante toda la sesión: te corrige en directo, en el agua. Cambia por completo el aprendizaje y te ahorra horas de clase.</li>
+                        <li>Material Eleveight del año, cascos y chalecos incluidos.</li>
+                        <li>Laguna poco profunda y segura: aprendes de pie, sin estrés.</li>
+                    </ul>
                 </div>
-                <div class="groupPrice">
-                    <img src="/images/5-prices/13.webp" alt="lista de precios" loading="lazy">
-                    <img src="/images/5-prices/14.webp" alt="lista de precios" loading="lazy">
+
+                <div class="pricing-grid">
+
+                    <div class="price-card">
+                        <img class="price-card-media" src="/images/5-prices/Kite-Lesson.webp" alt="Alumnos con casco y chaleco durante el briefing en la playa, frente a la laguna de Bilene" loading="lazy">
+                        <div class="price-card-head">
+                            <h3>Clases de kitesurf — principiantes</h3>
+                            <span>Descubrimiento y aprendizaje</span>
+                        </div>
+                        <div class="price-table-wrap">
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Duración</th>
+                                        <th scope="col">Privado</th>
+                                        <th scope="col">Grupo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><th scope="row">2 h</th><td>120 €</td><td>90 €</td></tr>
+                                    <tr><th scope="row">4 h</th><td>220 €</td><td>172 €</td></tr>
+                                    <tr><th scope="row">10 h</th><td>520 €</td><td>410 €</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="price-note">Precios por persona. El pack de 10 h es la opción más elegida para navegar de forma autónoma al final de la estancia.</p>
+                    </div>
+
+                    <div class="price-card">
+                        <img class="price-card-media" src="/images/5-prices/wing.webp" alt="Rider haciendo wing foil en la laguna de Bilene con un ala amarilla" loading="lazy">
+                        <div class="price-card-head">
+                            <h3>Wing foil</h3>
+                            <span>Descubrimiento y progresión</span>
+                        </div>
+                        <div class="price-table-wrap">
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Fórmula</th>
+                                        <th scope="col">Privado</th>
+                                        <th scope="col">Grupo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><th scope="row">2 h descubrimiento<br><small>sin tabla de foil</small></th><td>100 €</td><td>80 €</td></tr>
+                                    <tr><th scope="row">2 h<br><small>con tabla de foil</small></th><td>110 €</td><td>85 €</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="price-card">
+                        <img class="price-card-media" src="/images/5-prices/coaching.webp" alt="Kitesurfista en pleno salto sobre el agua, con cielo azul" loading="lazy">
+                        <div class="price-card-head">
+                            <h3>Coaching</h3>
+                            <span>Avanzado, freestyle, big air, strapless</span>
+                        </div>
+                        <div class="price-table-wrap">
+                            <table class="price-table">
+                                <tbody>
+                                    <tr><th scope="row">1 h</th><td>60 €</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="price-note">Con un monitor experimentado, análisis de vídeo y conexión por radio.</p>
+                    </div>
+
+                    <div class="price-card">
+                        <img class="price-card-media" src="/images/5-prices/foil.webp" alt="Rider haciendo kitefoil sobre las aguas turquesas de la laguna de Bilene" loading="lazy">
+                        <div class="price-card-head">
+                            <h3>Foil</h3>
+                            <span>Nueva experiencia</span>
+                        </div>
+                        <div class="price-table-wrap">
+                            <table class="price-table">
+                                <tbody>
+                                    <tr><th scope="row">2 h privado</th><td>120 €</td></tr>
+                                    <tr><th scope="row">4 h privado</th><td>220 €</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="price-card">
+                        <img class="price-card-media" src="/images/5-prices/superv.webp" alt="Kitesurfista navegando frente a la playa de Bilene, vista desde el agua" loading="lazy">
+                        <div class="price-card-head">
+                            <h3>Supervisión</h3>
+                            <span>Práctica en autonomía supervisada</span>
+                        </div>
+                        <div class="price-table-wrap">
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Duración</th>
+                                        <th scope="col">Tu material</th>
+                                        <th scope="col">Material de la escuela</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><th scope="row">2 h</th><td>20 €</td><td>65 €</td></tr>
+                                    <tr><th scope="row">4 h</th><td>35 €</td><td>120 €</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="price-note">Tu monitor se queda en la playa, con prismáticos y radio a mano. El paso ideal entre las clases y la autonomía total.</p>
+                    </div>
+
+                    <div class="price-card">
+                        <img class="price-card-media" src="/images/5-prices/sup.webp" alt="Paddleboarders explorando un canal poco profundo rodeado de vegetación en Bilene" loading="lazy">
+                        <div class="price-card-head">
+                            <h3>SUP paddle</h3>
+                            <span>Alquiler y clases</span>
+                        </div>
+                        <div class="price-table-wrap">
+                            <table class="price-table">
+                                <tbody>
+                                    <tr><th scope="row">Alquiler 1 h</th><td>7 €</td></tr>
+                                    <tr><th scope="row">Alquiler 2 h</th><td>13 €</td></tr>
+                                    <tr><th scope="row">Alquiler medio día</th><td>23 €</td></tr>
+                                    <tr><th scope="row">Clase 1 h</th><td>14 €</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="price-note">Perfecto para explorar la laguna los días sin viento.</p>
+                    </div>
+
+                    <div class="price-card">
+                        <img class="price-card-media" src="/images/5-prices/beachboy.webp" alt="Miembro del equipo del centro inflando una cometa en el césped, frente a la laguna" loading="lazy">
+                        <div class="price-card-head">
+                            <h3>Storage y beach-boy</h3>
+                            <span>Mucho más que un simple guardado</span>
+                        </div>
+                        <p class="price-note">
+                            Tu material se guarda en el centro, pero sobre todo: nuestro beach-boy lo saca, lo infla
+                            y lo prepara antes de tu sesión, y lo recoge y lo cuida después. Tienes acceso a la zona
+                            de lavado, al secado, a la ducha y a la zona de descanso del
+                            <a href="/es/centro-de-kite-in-bilene-mozambique/">centro</a>.
+                            Tú llegas y navegas. Nada más.
+                        </p>
+                    </div>
+
                 </div>
-                <div class="groupPrice">
-                    <img src="/images/5-prices/15.webp" alt="lista de precios" loading="lazy">
-                    <img src="/images/5-prices/16.webp" alt="lista de precios" loading="lazy">
+
+                <div class="price-ask">
+                    <h3>¿Una estancia a medida?</h3>
+                    <p>Cada estancia es diferente — duración, nivel, número de personas. Escríbenos y te preparamos un presupuesto preciso.</p>
+                    <div class="price-ask-actions">
+                        <a href="/es/informaciones-mozambique/#contactus">Solicitar presupuesto</a>
+                        <WhatsApp page="prices" lang="es" />
+                    </div>
                 </div>
             </section>
         </section>
     </main>
+
+    <WhatsApp page="prices" lang="es" variant="bubble" />
     <script is:inline src="https://player.vimeo.com/api/player.js"></script>
     <Footer />
 </body>

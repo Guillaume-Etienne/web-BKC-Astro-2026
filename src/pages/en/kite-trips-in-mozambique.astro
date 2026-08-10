@@ -3,6 +3,7 @@ import MenuEN from '../../components/MenuEN.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
 import Seo from '../../components/Seo.astro';
+import WhatsApp from '../../components/WhatsApp.astro';
 import { businessJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
 ---
@@ -92,6 +93,8 @@ import '../../sass/general.scss';
             </div>
         </section>
     </main>
+
+    <WhatsApp page="trips" lang="en" variant="bubble" />
     <Footer />
     <script is:inline src="https://player.vimeo.com/api/player.js"></script>
 </body>

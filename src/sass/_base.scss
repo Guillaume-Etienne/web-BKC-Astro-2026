@@ -607,6 +607,256 @@ a.btn {
     }
 }
 
+// ─── TARIFS EN TEXTE ─────────────────────────────────────────
+// Remplace les cartes tarifaires en images (/images/5-prices/11-16.webp) :
+// lisibles sur mobile, indexables, accessibles.
+// ATTENTION : les pages EN/ES utilisent encore les images → garder .groupPrice.
+.pricing-grid {
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+    width: 100%;
+    max-width: 700px;
+    margin: $space-xl auto 0;
+}
+
+.price-card {
+    background: $color-surface;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    overflow: hidden;
+    transition: box-shadow $transition-base;
+    &:hover {
+        box-shadow: $shadow-md;
+    }
+}
+
+// Visuel en tete de carte (optionnel).
+// Usage : <img class="price-card-media" src="/images/..." alt="..." loading="lazy">
+// en tout premier enfant de .price-card.
+.price-card-media {
+    display: block;
+    width: 100%;
+    // 3/2 plutot que 16/9 : les photos sont hautes, un cadrage trop
+    // panoramique coupait les sujets.
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 0;
+    margin: 0;
+}
+
+.price-card-head {
+    padding: $space-md $space-md $space-sm;
+    border-bottom: 2px solid $color-sky;
+    & h3 {
+        margin: 0;
+        font-family: $font-display;
+        font-size: $fs-lg;
+        color: $color-dark;
+    }
+    & span {
+        display: block;
+        margin-top: $space-2xs;
+        font-size: $fs-sm;
+        color: $color-muted;
+    }
+}
+
+// Les tableaux peuvent deborder sur tres petits ecrans : scroll interne
+// plutot qu'un scroll horizontal de toute la page.
+.price-table-wrap {
+    overflow-x: auto;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: $fs-base;
+    & th,
+    & td {
+        padding: $space-sm $space-md;
+        text-align: left;
+        border-bottom: 1px solid rgba($color-dark, 0.07);
+    }
+    & thead th {
+        font-size: $fs-xs;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        color: $color-muted;
+    }
+    & tbody th {
+        font-weight: 600;
+        color: $colorgreytext1;
+        white-space: nowrap;
+    }
+    & tbody td {
+        font-weight: 700;
+        color: $color-ocean;
+        white-space: nowrap;
+    }
+    & tbody tr:last-child th,
+    & tbody tr:last-child td {
+        border-bottom: 0;
+    }
+}
+
+.price-note {
+    margin: 0;
+    padding: $space-sm $space-md $space-md;
+    font-size: $fs-sm;
+    color: $color-muted;
+}
+
+// Bloc reassurance (moniteurs diplomes, radio, materiel)
+.price-reassurance {
+    max-width: 700px;
+    margin: $space-xl auto 0;
+    padding: $space-lg;
+    background: $colorsecondary;
+    border-left: 4px solid $color-ocean;
+    border-radius: $radius-lg;
+    & h3 {
+        margin: 0 0 $space-sm;
+        font-size: $fs-md;
+    }
+    & p {
+        margin: 0 0 $space-sm;
+    }
+    & ul {
+        margin: 0;
+        padding-left: $space-lg;
+    }
+    & li {
+        margin-bottom: $space-xs;
+    }
+    & li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// ─── BOUTON WHATSAPP ─────────────────────────────────────────
+.wa-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-sm;
+    padding: $space-sm $space-lg;
+    background: #25D366; // vert WhatsApp officiel
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: $radius-full;
+    box-shadow: $shadow-sm;
+    transition: transform $transition-base, box-shadow $transition-base;
+    &:hover,
+    &:focus {
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+    }
+    & svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+        flex-shrink: 0;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+// Bulle WhatsApp flottante — MOBILE UNIQUEMENT.
+// Masquee a partir de $bp-md dans _desktopresponsive.scss.
+.wa-bubble {
+    position: fixed;
+    bottom: $space-lg;
+    right: $space-lg;
+    z-index: $z-sticky;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: #25D366; // vert WhatsApp officiel
+    color: #fff;
+    border-radius: $radius-full;
+    box-shadow: $shadow-lg;
+    text-decoration: none;
+    transition: transform $transition-base, box-shadow $transition-base;
+    &:hover,
+    &:focus,
+    &:visited {
+        color: #fff;
+    }
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-xl;
+    }
+    & svg {
+        width: 28px;
+        height: 28px;
+        fill: currentColor;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+// La bulle flotte au-dessus du pied de page : on lui reserve la place
+// pour qu'elle ne recouvre jamais le dernier lien. Uniquement sur les pages
+// qui ont reellement une bulle (et seulement en mobile, cf. _desktopresponsive).
+body:has(.wa-bubble) footer {
+    padding-bottom: $space-3xl;
+}
+
+// Appel au contact (storage, sejours sur mesure : prix sur demande)
+.price-ask {
+    max-width: 700px;
+    margin: $space-lg auto 0;
+    padding: $space-lg;
+    text-align: center;
+    background: $gradient-ocean;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    & h3 {
+        margin: 0 0 $space-sm;
+        color: $color-surface;
+    }
+    & p {
+        margin: 0 0 $space-md;
+        color: rgba(255, 255, 255, 0.92);
+    }
+    & a {
+        display: inline-block;
+        padding: $space-sm $space-lg;
+        background: $color-surface;
+        color: $color-ocean;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: $radius-full;
+        transition: transform $transition-base, box-shadow $transition-base;
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: $shadow-md;
+        }
+    }
+    // Le bouton WhatsApp garde sa couleur de marque dans ce bloc bleu.
+    & .wa-btn {
+        display: inline-flex;
+        background: #25D366;
+        color: #fff;
+    }
+}
+
+// Les deux CTA cote a cote (devis + WhatsApp), empiles sur mobile.
+.price-ask-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $space-sm;
+}
+
 // ─── GALERIE ─────────────────────────────────────────────────
 #containervimeo {
     width: 100%;
@@ -843,35 +1093,6 @@ li img, .arrow {
 // ─── SOUS-MENUS (hidden par defaut) ──────────────────────────
 .sub-menu {
     display: none;
-}
-
-// ─── BTN TOP (retour haut) ───────────────────────────────────
-.btn-top {
-    position: fixed;
-    bottom: $space-lg;
-    right: $space-lg;
-    width: 48px;
-    height: 48px;
-    background: $gradient-ocean;
-    color: white;
-    border-radius: $radius-full;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4em;
-    font-weight: bold;
-    box-shadow: $shadow-md;
-    z-index: $z-sticky;
-    opacity: 0.8;
-    transition: opacity $transition-fast, transform $transition-fast;
-    text-decoration: none;
-    &:hover {
-        opacity: 1;
-        transform: scale(1.1) translateY(-2px);
-    }
-    &:visited {
-        color: white;
-    }
 }
 
 // ─── SCROLL REVEAL ───────────────────────────────────────────

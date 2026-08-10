@@ -48,6 +48,20 @@ const year = date.getFullYear();
 document.getElementById("activeyear").innerHTML = year;
 
 
+// -------------------------------------  WhatsApp : evenement de conversion
+// Ecoute deleguee : marche pour tous les boutons <WhatsApp>, ou qu'ils soient
+// et meme s'ils sont ajoutes plus tard. data-wa-page indique la page d'origine.
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[data-wa-page]');
+  if (!link) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'whatsapp_click', {
+      page_key: link.dataset.waPage,
+      page_language: document.documentElement.lang || 'fr',
+    });
+  }
+});
+
 // -------------------------------------  Toggle
 const toggles = document.querySelectorAll('.toggle');
   toggles.forEach((toggle) => {

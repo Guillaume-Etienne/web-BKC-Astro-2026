@@ -6,6 +6,7 @@
 //  (ChatGPT, Perplexity, Claude...) pour comprendre FACTUELLEMENT le centre.
 // ============================================================================
 import { SITE, routesFor } from './pages.js';
+import { WHATSAPP_E164 } from './whatsapp.js';
 
 // Profils officiels du centre (preuve sociale hors-site, lue par Google et les IA).
 const SAMEAS = [
@@ -32,9 +33,11 @@ export function businessJsonLd(lang = 'fr') {
     image: `${SITE}/images/accueil/1.webp`,
     logo: `${SITE}/favicon.ico`,
     email: 'contact@bilenekite.com',
-    // WhatsApp de Guillaume : joignable toute l'année, contrairement au portable
-    // mozambicain (+258) qui ne fonctionne que sur place.
-    telephone: '+33 6 51 79 05 40',
+    // PAS DE NUMERO PERSONNEL ICI. Ce bloc est publie sur ~47 pages et sert a
+    // etre lu par les machines (Google, IA, aspirateurs de numeros).
+    // Seul numero autorise : le WhatsApp Business du centre, joignable toute
+    // l'annee (WhatsApp passe par internet, pas par le reseau mozambicain).
+    telephone: WHATSAPP_E164,
     sport: ['Kitesurfing', 'Wingfoil', 'Stand up paddleboarding'],
     currenciesAccepted: 'EUR',
     address: {

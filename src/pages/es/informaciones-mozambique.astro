@@ -4,6 +4,7 @@ import IconInfo from '../../components/IconInfo.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
 import Seo from '../../components/Seo.astro';
+import WhatsApp from '../../components/WhatsApp.astro';
 import { businessJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
 ---
@@ -140,7 +141,8 @@ import '../../sass/general.scss';
 
     </main>
 
-    <a href="#" class="btn-top" title="Volver arriba">&#8679;</a>
+    <WhatsApp page="info" lang="es" variant="bubble" />
+
 
     <Footer />
 </body>

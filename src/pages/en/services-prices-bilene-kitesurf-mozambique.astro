@@ -3,6 +3,7 @@ import MenuEN from '../../components/MenuEN.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
 import Seo from '../../components/Seo.astro';
+import WhatsApp from '../../components/WhatsApp.astro';
 import { businessJsonLd } from '../../i18n/jsonld.js';
 import '../../sass/general.scss';
 ---
@@ -18,7 +19,7 @@ import '../../sass/general.scss';
         page="prices"
         lang="en"
         title="Kitesurf lesson prices and services — Bilene Kite Center"
-        description="Lessons, coaching, learning packs, kite trips and center services: all Bilene Kite Center prices in Mozambique, with sample stay budgets."
+        description="Lessons, coaching, wing foil, foil and supervision: all Bilene Kite Center prices in Mozambique, with sample stay budgets for a group of 4."
         image="/images/accueil/7.webp">
         <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('en'))} />
     </Seo>
@@ -29,124 +30,279 @@ import '../../sass/general.scss';
 
     <main>
         <section id="headsection">
-            <img src="/images/5-prices/1.webp" alt="laptop on a desk">
+            <img src="/images/5-prices/1.webp" alt="beach landscape in Bilene">
             <h1 style="color:#d9dcdf;text-shadow: 1px 1px 2px black;">Services and Prices</h1>
             <h2 style="color:#d9dcdf;text-shadow: 1px 1px 2px black;">Mozambique at right price.</h2>
         </section>
         <section id="mainprice">
             <p>On this page, you will first find examples of typical packages, then the detailed prices of the services we offer in our kite center in Mozambique.
             </p>
+
             <h2>Examples of prices of full stay for 4 people <button class="toggle" data-target="#block1">...</button></h2>
             <div id="block1" class="block">
                 <p>These prices are given for information only, as an example to give you an idea of the costs on site.
-                They are offered in the form of packages, for groups of 4 people, the prices are given per person.
-            </p>
-            <p>
-                Meals are not included in these prices, Bilene offers many restaurants and bars whose prices can vary enormously depending on their standings.
-                Count on average between €5 and €10 per person for breakfasts, between €10 and €15 for lunches and dinners.
-            </p>
-            <section id="packages">
-                <div class="packs">
-                    <img src="/images/accueil/4.webp" alt="kitesurfer during a jump">
-                    <aside>
-                        <h2>Coaching</h2>
-                        <p>8 days, 7 nights</p>
-                    </aside>
-                    <p>included:</p>
-                    <ul>
-                        <li>Airport Transfers</li>
-                        <li>Accommodation in a 2-bedroom bungalow (2p per room)</li>
-                        <li>OLK coaching week</li>
-                        <li>5h SUP rental</li>
-                        <li>1 Speed Spot trip</li>
-                    </ul>
-                    <div class="price">
-                        <div>
-                            <p>From:</p>
-                            <p>590 €</p>
+                    They are offered in the form of packages, for groups of 4 people, the prices are given per person.
+                </p>
+                <p>
+                    Meals are not included in these prices, Bilene offers many restaurants and bars whose prices can vary enormously depending on their standings.
+                    Count on average between €5 and €10 per person for breakfasts, between €10 and €15 for lunches and dinners.
+                </p>
+
+                <section id="packages">
+                    <div class="packs">
+                        <img src="/images/accueil/4.webp" alt="kitesurfer during a jump">
+                        <aside>
+                            <h2>Coaching</h2>
+                            <p>8 days, 7 nights</p>
+                        </aside>
+                        <p>included:</p>
+                        <ul>
+                            <li>Airport Transfers</li>
+                            <li>Accommodation in a 2-bedroom bungalow (2p per room)</li>
+                            <li>Coaching week</li>
+                            <li>5h SUP rental</li>
+                            <li>1 Speed Spot trip</li>
+                        </ul>
+                        <div class="price">
+                            <div>
+                                <p>From:</p>
+                                <p>680 €</p>
+                            </div>
+                            <a href="/en/information-mozambique/#contactus"><button>Contact us</button></a>
                         </div>
-                        <a href="/en/information-mozambique/#contactus"><button>Contact us</button></a>
                     </div>
-                </div>
-                <div class="packs">
-                    <img src="/images/3-school/9.webp" alt="kitesurfer on the water">
-                    <aside>
-                        <h2>Passionate Riders</h2>
-                        <p>8 days, 7 nights</p>
-                    </aside>
-                    <p>included:</p>
-                    <ul>
-                        <li>Airport Transfers</li>
-                        <li>Accommodation in a 2-bedroom bungalow (2p per room)</li>
-                        <li>Storage</li>
-                        <li>5h SUP rental</li>
-                        <li>1 Speed Spot trip</li>
-                    </ul>
-                    <div class="price">
-                        <div>
-                            <p>From:</p>
-                            <p>360 €</p>
+                    <div class="packs">
+                        <img src="/images/3-school/9.webp" alt="kitesurfer on the water">
+                        <aside>
+                            <h2>Passionate Riders</h2>
+                            <p>8 days, 7 nights</p>
+                        </aside>
+                        <p>included:</p>
+                        <ul>
+                            <li>Airport Transfers</li>
+                            <li>Accommodation in a 2-bedroom bungalow (2p per room)</li>
+                            <li>Storage and beach-boy</li>
+                            <li>5h SUP rental</li>
+                            <li>1 Speed Spot trip</li>
+                        </ul>
+                        <div class="price">
+                            <div>
+                                <p>From:</p>
+                                <p>415 €</p>
+                            </div>
+                            <a href="/en/information-mozambique/#contactus"><button>Contact us</button></a>
                         </div>
-                        <a href="/en/information-mozambique/#contactus"><button>Contact us</button></a>
                     </div>
-                </div>
-                <div class="packs">
-                    <img src="/images/accueil/3.webp" alt="kitesurf students and instructor">
-                    <aside>
-                        <h2>Easy Spot Beginners</h2>
-                        <p>8 days, 7 nights</p>
-                    </aside>
-                    <p>included:</p>
-                    <ul>
-                        <li>Airport Transfers</li>
-                        <li>Accommodation in a 2-bedroom bungalow (2p per room)</li>
-                        <li>10 hours kitesurf lesson</li>
-                        <li>5h SUP rental</li>
-                        <li>1 Speed Spot trip</li>
-                    </ul>
-                    <div class="price">
-                        <div>
-                            <p>From:</p>
-                            <p>559 €</p>
+                    <div class="packs">
+                        <img src="/images/accueil/3.webp" alt="kitesurf students and instructor">
+                        <aside>
+                            <h2>Easy Spot Beginners</h2>
+                            <p>8 days, 7 nights</p>
+                        </aside>
+                        <p>included:</p>
+                        <ul>
+                            <li>Airport Transfers</li>
+                            <li>Accommodation in a 2-bedroom bungalow (2p per room)</li>
+                            <li>10 hours kitesurf lesson with a qualified instructor</li>
+                            <li>5h SUP rental</li>
+                            <li>1 Speed Spot trip</li>
+                        </ul>
+                        <div class="price">
+                            <div>
+                                <p>From:</p>
+                                <p>645 €</p>
+                            </div>
+                            <a href="/en/information-mozambique/#contactus"><button>Contact us</button></a>
                         </div>
-                        <a href="/en/information-mozambique/#contactus"><button>Contact us</button></a>
+                    </div>
+                </section>
+            </div>
+
+            <section id="prixtrips">
+                <h2>Kitesurfing Trips in Mozambique</h2>
+                <p>We offer complete trips to the best spots on the southern coast of Mozambique. You can discover them on <a href="/en/kite-trips-in-mozambique/">our dedicated page</a>.
+                    Prices vary according to many parameters, we suggest you make an estimate.
+                    To give a basic idea, indicative only, for a group of 4 people, the average is around 100€/day/person, including accommodation, transport,
+                    guiding on the spots, beach boy, and 2 meals per day.
+                </p>
+                <div class="vimeo" style="padding:56.25% 0 0 0;position:relative;">
+                    <iframe src="https://player.vimeo.com/video/342077640?h=04157a2824&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+            <section id="prixlessons">
+                <h2>Kite Center Prices</h2>
+                <p>
+                    Here is the list of prices charged at the kite center. We are located directly on the beach of the spot, in an authentic hotel complex pleasantly integrated into nature: the Palmeiras complex. It offers several types of accommodation,
+                    wifi, shop, as well as a restaurant and beach bar directly on <a href="/en/the-kitesurf-spot-in-bilene-mozambique/">the spot</a>.
+                </p>
+
+                <div class="price-reassurance">
+                    <h3>How our lessons actually work</h3>
+                    <p>Every lesson is taught by <strong>qualified and experienced instructors</strong>, from your very first session all the way to freestyle, big air, strapless and wave coaching.</p>
+                    <ul>
+                        <li><strong>Radio link</strong> between you and your instructor throughout the session: he corrects you live, out on the water. It changes everything, and it saves you hours of lessons.</li>
+                        <li>Current-year Eleveight gear, helmets and impact vests provided.</li>
+                        <li>Shallow, secure lagoon: you learn standing up, without the stress.</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-grid">
+
+                    <div class="price-card">
+                        <img class="price-card-media" src="/images/5-prices/Kite-Lesson.webp" alt="Students in helmets and impact vests during the beach briefing, facing the Bilene lagoon" loading="lazy">
+                        <div class="price-card-head">
+                            <h3>Kitesurf lessons — beginners</h3>
+                            <span>Discovery and learning</span>
+                        </div>
+                        <div class="price-table-wrap">
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Duration</th>
+                                        <th scope="col">Private</th>
+                                        <th scope="col">Group</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><th scope="row">2 h</th><td>120 €</td><td>90 €</td></tr>
+                                    <tr><th scope="row">4 h</th><td>220 €</td><td>172 €</td></tr>
+                                    <tr><th scope="row">10 h</th><td>520 €</td><td>410 €</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="price-note">Prices per person. The 10-hour pack is the most popular choice to be riding on your own by the end of your stay.</p>
+                    </div>
+
+                    <div class="price-card">
+                        <img class="price-card-media" src="/images/5-prices/wing.webp" alt="Rider wing foiling on the Bilene lagoon with a yellow wing" loading="lazy">
+                        <div class="price-card-head">
+                            <h3>Wing foil</h3>
+                            <span>Discovery and progression</span>
+                        </div>
+                        <div class="price-table-wrap">
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Option</th>
+                                        <th scope="col">Private</th>
+                                        <th scope="col">Group</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><th scope="row">2 h discovery<br><small>without foil board</small></th><td>100 €</td><td>80 €</td></tr>
+                                    <tr><th scope="row">2 h<br><small>with foil board</small></th><td>110 €</td><td>85 €</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="price-card">
+                        <img class="price-card-media" src="/images/5-prices/coaching.webp" alt="Kitesurfer mid-jump above the spray against a blue sky" loading="lazy">
+                        <div class="price-card-head">
+                            <h3>Coaching</h3>
+                            <span>Advanced, freestyle, big air, strapless</span>
+                        </div>
+                        <div class="price-table-wrap">
+                            <table class="price-table">
+                                <tbody>
+                                    <tr><th scope="row">1 h</th><td>60 €</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="price-note">Led by an experienced instructor, with video analysis and radio link.</p>
+                    </div>
+
+                    <div class="price-card">
+                        <img class="price-card-media" src="/images/5-prices/foil.webp" alt="Rider kitefoiling over the turquoise water of the Bilene lagoon" loading="lazy">
+                        <div class="price-card-head">
+                            <h3>Foil</h3>
+                            <span>New experience</span>
+                        </div>
+                        <div class="price-table-wrap">
+                            <table class="price-table">
+                                <tbody>
+                                    <tr><th scope="row">2 h private</th><td>120 €</td></tr>
+                                    <tr><th scope="row">4 h private</th><td>220 €</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="price-card">
+                        <img class="price-card-media" src="/images/5-prices/superv.webp" alt="Kitesurfer riding in front of Bilene beach, seen from the water" loading="lazy">
+                        <div class="price-card-head">
+                            <h3>Supervision</h3>
+                            <span>Supervised independent riding</span>
+                        </div>
+                        <div class="price-table-wrap">
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Duration</th>
+                                        <th scope="col">Your own gear</th>
+                                        <th scope="col">School gear</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><th scope="row">2 h</th><td>20 €</td><td>65 €</td></tr>
+                                    <tr><th scope="row">4 h</th><td>35 €</td><td>120 €</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="price-note">Your instructor stays on the beach, binoculars and radio within reach. The ideal step between lessons and full independence.</p>
+                    </div>
+
+                    <div class="price-card">
+                        <img class="price-card-media" src="/images/5-prices/sup.webp" alt="Paddleboarders exploring a shallow channel lined with vegetation in Bilene" loading="lazy">
+                        <div class="price-card-head">
+                            <h3>SUP paddle</h3>
+                            <span>Rental and lessons</span>
+                        </div>
+                        <div class="price-table-wrap">
+                            <table class="price-table">
+                                <tbody>
+                                    <tr><th scope="row">Rental 1 h</th><td>7 €</td></tr>
+                                    <tr><th scope="row">Rental 2 h</th><td>13 €</td></tr>
+                                    <tr><th scope="row">Rental half day</th><td>23 €</td></tr>
+                                    <tr><th scope="row">Lesson 1 h</th><td>14 €</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="price-note">Perfect for exploring the lagoon on windless days.</p>
+                    </div>
+
+                    <div class="price-card">
+                        <img class="price-card-media" src="/images/5-prices/beachboy.webp" alt="Centre team member inflating a kite on the lawn, facing the lagoon" loading="lazy">
+                        <div class="price-card-head">
+                            <h3>Storage and beach-boy</h3>
+                            <span>Far more than just a locker</span>
+                        </div>
+                        <p class="price-note">
+                            Your gear is stored at the centre, but above all: our beach-boy takes it out, pumps it
+                            and rigs it before your session, then packs it away and looks after it afterwards. You
+                            have access to the rinsing area, the drying racks, the shower and the chill-out zone at
+                            the <a href="/en/the-kite-center-in-bilene-mozambique/">centre</a>.
+                            You show up, you ride. That's it.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="price-ask">
+                    <h3>A tailor-made trip?</h3>
+                    <p>Every stay is different — length, level, number of people. Write to us and we'll put together a precise quote.</p>
+                    <div class="price-ask-actions">
+                        <a href="/en/information-mozambique/#contactus">Request a quote</a>
+                        <WhatsApp page="prices" lang="en" />
                     </div>
                 </div>
             </section>
-            </div>
-        </section>
-        <section id="prixtrips">
-            <h2>Kitesurfing Trips in Mozambique</h2>
-            <p>We offer complete trips to the best spots on the southern coast of Mozambique. You can discover them on our dedicated page.
-                Prices vary according to many parameters, we suggest you make an estimate.
-                To give a basic idea, indicative only, for a group of 4 people, the average is around 100€/day/person, including accommodation, transport,
-                guiding on the spots, beach boy, and 2 meals per day.
-            </p>
-            <div class="vimeo" style="padding:56.25% 0 0 0;position:relative;">
-                <iframe src="https://player.vimeo.com/video/342077640?h=04157a2824&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
-                </iframe>
-            </div>
-        </section>
-        <section id="prixlessons">
-            <h2>Kite Center Prices</h2>
-            <p>
-                Here is the list of prices charged at the kite center. We are located directly on the beach of the spot, in an authentic hotel complex pleasantly integrated into nature: the Palmeiras complex. It offers several types of accommodation,
-                wifi, shop, as well as a restaurant and beach bar directly on <a href="/en/the-kitesurf-spot-in-bilene-mozambique/">the spot</a>.
-            </p>
-            <div class="groupPrice">
-                <img src="/images/5-prices/11.webp" alt="price list" loading="lazy">
-                <img src="/images/5-prices/12.webp" alt="price list" loading="lazy">
-            </div>
-            <div class="groupPrice">
-                <img src="/images/5-prices/13.webp" alt="price list" loading="lazy">
-                <img src="/images/5-prices/14.webp" alt="price list" loading="lazy">
-            </div>
-            <div class="groupPrice">
-                <img src="/images/5-prices/15.webp" alt="price list" loading="lazy">
-                <img src="/images/5-prices/16.webp" alt="price list" loading="lazy">
-            </div>
         </section>
     </main>
+
+    <WhatsApp page="prices" lang="en" variant="bubble" />
     <Footer />
     <script is:inline src="https://player.vimeo.com/api/player.js"></script>
 </body>
