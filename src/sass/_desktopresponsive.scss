@@ -150,6 +150,15 @@
 
 // ─── LG (1024px) — Tablettes paysage / petits desktops ──────
 @media screen and (min-width: $bp-lg) {
+    // Avis clients : 3 temoignages cote a cote
+    .avis-list {
+        flex-direction: row;
+        align-items: stretch;
+        & > * {
+            flex: 1;
+        }
+    }
+
     // Tarifs en texte : 2 colonnes des la tablette en paysage.
     // (etait au palier xl/1280px : une colonne de 700px perdue au milieu
     // d'un ecran de 1024px.)

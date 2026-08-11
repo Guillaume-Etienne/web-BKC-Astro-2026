@@ -7,6 +7,7 @@
 // ============================================================================
 import { SITE, routesFor } from './pages.js';
 import { WHATSAPP_E164 } from './whatsapp.js';
+import { GOOGLE_RATING, GOOGLE_COUNT } from './reviews.js';
 
 // Profils officiels du centre (preuve sociale hors-site, lue par Google et les IA).
 const SAMEAS = [
@@ -49,6 +50,21 @@ export function businessJsonLd(lang = 'fr') {
     // Position du centre sur la lagune (25°16'57.1"S 33°15'37.8"E).
     geo: { '@type': 'GeoCoordinates', latitude: -25.28253, longitude: 33.26050 },
     areaServed: 'Mozambique',
+    // Note agregee, lue depuis reviews.js (source unique, partagee avec le
+    // composant <Reviews>) : on ne peut pas avoir de divergence entre le
+    // balisage et ce qui est affiche sur la page.
+    // On s'en tient a UNE plateforme reelle — additionner Google et TripAdvisor
+    // fabriquerait un total qui n'existe nulle part.
+    // Rappel : Google n'affiche PAS d'etoiles pour un LocalBusiness qui publie
+    // sa propre note (regle des avis "self-serving", 2019). Ce bloc sert a la
+    // comprehension de l'entite par Google et les IA, pas au rich result.
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: GOOGLE_RATING,
+      reviewCount: GOOGLE_COUNT,
+      bestRating: '5',
+      worstRating: '1',
+    },
     // Saison d'ouverture : septembre → mars.
     openingHoursSpecification: [{
       '@type': 'OpeningHoursSpecification',

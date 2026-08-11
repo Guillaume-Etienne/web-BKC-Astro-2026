@@ -16,6 +16,9 @@ $color-ocean:       #0066CC;   // bleu ocean — CTA, accents forts
 $color-ocean-dark:  #004D99;   // ocean hover / pressed
 $color-sky:         #00B4D8;   // turquoise ciel — accents secondaires
 $color-sand:        #E8C99A;   // sable dore — highlights, bordures chaudes
+$color-star:        #E0A82E;   // ambre etoiles — plus dense que $color-sand
+                               // pour rester lisible en 14px, sans virer au
+                               // jaune criard qui jurerait avec l'ocean
 
 // Texte
 $colorprimary:      #1A1A2E;   // quasi-noir bleute (corps de texte)

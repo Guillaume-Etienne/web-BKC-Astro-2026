@@ -476,6 +476,12 @@ a.btn {
     padding: $space-xl $space-md;
 }
 
+// Le bloc partenaires n'avait aucune regle : son titre etait centre (heritage)
+// mais sa ligne d'intro restait collee a gauche.
+#partenaires {
+    text-align: center;
+}
+
 #partnairesListe {
     display: flex;
     flex-wrap: wrap;
@@ -515,6 +521,266 @@ a.btn {
             padding: $space-md $space-lg;
         }
     }
+}
+
+// ─── AVIS CLIENTS ────────────────────────────────────────────
+// Remplace l'ancienne capture d'ecran TripAdvisor. Toutes les donnees
+// (notes, citations, dates) viennent de src/i18n/reviews.js.
+#avis {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto $space-2xl;
+    // La section vivait dans #feednpart, qui portait le padding. Sortie de ce
+    // conteneur (elle y etait ecrasee a 500px en desktop), elle porte le sien.
+    padding: $space-xl $space-md 0;
+    text-align: center;
+    & > h2 {
+        margin-bottom: $space-sm;
+    }
+}
+
+// Le chiffre qui porte la section : on met le fait le plus fort en tete.
+.avis-big {
+    font-family: $font-display;
+    font-size: $fs-2xl;
+    line-height: $lh-tight;
+    color: $color-ocean;
+    margin: 0 0 $space-xs;
+}
+
+.avis-sub {
+    max-width: 62ch;
+    margin: 0 auto $space-xl;
+    font-size: $fs-sm;
+    color: $colorgreytext1;
+}
+
+// ─ Pastilles plateformes
+.avis-scores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $space-sm;
+    margin-bottom: $space-xl;
+}
+
+.avis-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-2xs;
+    width: 168px;
+    padding: $space-md $space-sm;
+    background: $color-surface;
+    border: 1px solid rgba($color-dark, 0.10);
+    border-radius: $radius-lg;
+    box-shadow: $shadow-xs;
+    text-decoration: none;
+    transition: transform $transition-base, box-shadow $transition-base;
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+    }
+}
+
+// Zone logo de hauteur fixe : les 3 plateformes s'alignent malgre des formats
+// tres differents (le logo Tripadvisor est un lockup vertical).
+.avis-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-xs;
+    height: 40px;
+    margin-bottom: $space-2xs;
+    // Hauteur EXPLICITE, pas max-height : un SVG sans dimensions intrinseques
+    // (l'icone Facebook) se rend en 0x0 avec width:auto + max-height.
+    & img {
+        height: 28px;
+        width: auto;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+// Les SVG sans attributs width/height ne propagent pas leur ratio en flex :
+// il leur faut une largeur explicite, sinon ils se rendent en 0px de large.
+// Selecteurs assez specifiques pour battre `.avis-logo img { width: auto }`.
+.avis-logo img.avis-logo-icone {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.avis-item-head .avis-item-src img.avis-logo-icone {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+// Google est rendu en texte : ses regles de marque interdisent d'employer son
+// logo d'une facon qui suggere une approbation.
+.avis-logo-texte {
+    font-size: $fs-md;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: $colorprimary;
+}
+
+.avis-stars {
+    display: inline-flex;
+    gap: 1px;
+    & svg {
+        width: 15px;
+        height: 15px;
+        fill: $color-star;
+    }
+}
+
+// Facebook ne note pas sur 5 : pas d'etoiles, mais on garde la hauteur pour
+// que les trois pastilles restent alignees.
+.avis-stars--vide {
+    height: 15px;
+}
+
+.avis-stars--sm {
+    flex-shrink: 0;
+    & svg {
+        width: 13px;
+        height: 13px;
+    }
+}
+
+.avis-note {
+    font-family: $font-display;
+    font-size: $fs-lg;
+    line-height: 1;
+    color: $color-ocean;
+}
+
+.avis-nb {
+    font-size: $fs-xs;
+    color: $color-muted;
+}
+
+// ─ Temoignages
+.avis-list {
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+    text-align: left;
+}
+
+.avis-item {
+    display: flex;
+    flex-direction: column;
+    background: $color-surface;
+    border: 1px solid rgba($color-dark, 0.08);
+    border-radius: $radius-lg;
+    box-shadow: $shadow-xs;
+    padding: $space-md $space-lg $space-lg;
+}
+
+.avis-item-head {
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+    padding-bottom: $space-sm;
+    margin-bottom: $space-sm;
+    border-bottom: 1px solid rgba($color-dark, 0.07);
+    & .avis-item-src {
+        display: flex;
+        align-items: center;
+        gap: $space-2xs;
+        height: 18px;
+        // Sans ca, la source se fait comprimer par les etoiles et la date,
+        // et le mot "Facebook" vient coller aux etoiles.
+        flex-shrink: 0;
+        & img {
+            height: 16px;
+            width: auto;
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+    & .avis-logo-texte {
+        font-size: $fs-sm;
+    }
+    & .avis-date {
+        margin-left: auto;
+        font-size: $fs-xs;
+        color: $color-muted;
+        white-space: nowrap;
+    }
+}
+
+.avis-item blockquote {
+    margin: 0 0 $space-sm;
+    font-size: $fs-base;
+    line-height: $lh-normal;
+    color: $colorprimary;
+    quotes: "« " " »";
+    &::before { content: open-quote; }
+    &::after { content: close-quote; }
+}
+
+// Guillemets anglais sur les pages EN (l'espagnol utilise les memes que le FR).
+:lang(en) .avis-item blockquote {
+    quotes: "\201C" "\201D";
+}
+
+.avis-item figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: $space-2xs $space-sm;
+    font-size: $fs-sm;
+    color: $color-muted;
+    & cite {
+        font-style: normal;
+        font-weight: 600;
+        color: $colorgreytext1;
+    }
+}
+
+.avis-badge {
+    padding: 1px $space-sm;
+    font-size: $fs-xs;
+    font-weight: 600;
+    border-radius: $radius-full;
+    background: rgba($color-ocean, 0.08);
+    color: $color-ocean-dark;
+}
+
+.avis-trad {
+    font-size: $fs-xs;
+    font-style: italic;
+}
+
+// La reponse du centre : c'est le signal de confiance le plus fort de la page,
+// il prouve que quelqu'un lit et repond. On le montre.
+.avis-reponse {
+    margin: $space-md 0 0 $space-md;
+    padding: $space-sm $space-md;
+    background: $colorsecondary;
+    border-left: 2px solid $color-sky;
+    border-radius: 0 $radius-md $radius-md 0;
+    & p {
+        margin: 0;
+        font-size: $fs-sm;
+        color: $colorgreytext1;
+    }
+}
+
+.avis-reponse-label {
+    display: block;
+    margin-bottom: $space-2xs;
+    font-size: $fs-xs;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $color-ocean;
 }
 
 // ─── PRIX ────────────────────────────────────────────────────

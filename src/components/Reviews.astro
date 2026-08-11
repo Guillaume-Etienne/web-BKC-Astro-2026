@@ -1,0 +1,83 @@
+---
+// Bloc d'avis clients. Toutes les donnees viennent de src/i18n/reviews.js :
+// pour mettre a jour les notes, on ne touche QUE ce fichier-la.
+import { platforms, HEADINGS, QUOTES, TRANSLATED_NOTE } from '../i18n/reviews.js';
+
+const { lang = 'fr' } = Astro.props;
+const t = HEADINGS[lang] ?? HEADINGS.fr;
+const plats = platforms(lang);
+const byKey = Object.fromEntries(plats.map((p) => [p.key, p]));
+const translated = TRANSLATED_NOTE[lang];
+---
+<section id="avis">
+    <h2>{t.title}</h2>
+    <p class="avis-big">{t.big}</p>
+    <p class="avis-sub">{t.sub}</p>
+
+    <div class="avis-scores">
+        {plats.map((p) => (
+            <a class="avis-score" href={p.url} target="_blank" rel="noopener">
+                <span class="avis-logo">
+                    {p.logo
+                        ? <>
+                            <img class={p.iconOnly ? 'avis-logo-icone' : null} src={p.logo} alt={p.iconOnly ? '' : p.name} loading="lazy" />
+                            {p.iconOnly && <span class="avis-logo-texte">{p.name}</span>}
+                          </>
+                        : <span class="avis-logo-texte">{p.name}</span>}
+                </span>
+                {p.stars ? (
+                    <span class="avis-stars" role="img" aria-label={`${p.score} / 5`}>
+                        {Array.from({ length: p.stars }).map(() => (
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        ))}
+                    </span>
+                ) : (
+                    <span class="avis-stars avis-stars--vide" aria-hidden="true"></span>
+                )}
+                <span class="avis-note">{p.score}</span>
+                <span class="avis-nb">{p.count}</span>
+            </a>
+        ))}
+    </div>
+
+    <div class="avis-list">
+        {QUOTES.map((q) => {
+            const p = byKey[q.platform];
+            return (
+                <figure class="avis-item">
+                    <div class="avis-item-head">
+                        <span class="avis-item-src">
+                            {p.logo
+                                ? <>
+                                    <img class={p.iconOnly ? 'avis-logo-icone' : null} src={p.logo} alt={p.iconOnly ? '' : p.name} loading="lazy" />
+                                    {p.iconOnly && <span class="avis-logo-texte">{p.name}</span>}
+                                  </>
+                                : <span class="avis-logo-texte">{p.name}</span>}
+                        </span>
+                        <span class="avis-stars avis-stars--sm" role="img" aria-label="5 / 5">
+                            {Array.from({ length: 5 }).map(() => (
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            ))}
+                        </span>
+                        <span class="avis-date">{q.date[lang]}</span>
+                    </div>
+
+                    <blockquote>{q.text[lang]}</blockquote>
+
+                    <figcaption>
+                        <cite>{q.author}</cite>
+                        {q.badge && <span class="avis-badge">{q.badge[lang]}</span>}
+                        {translated && <span class="avis-trad">{translated}</span>}
+                    </figcaption>
+
+                    {q.ownerReply && (
+                        <div class="avis-reponse">
+                            <span class="avis-reponse-label">{t.reply}</span>
+                            <p>{q.ownerReply[lang]}</p>
+                        </div>
+                    )}
+                </figure>
+            );
+        })}
+    </div>
+</section>
