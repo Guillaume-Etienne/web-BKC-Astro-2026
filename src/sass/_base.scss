@@ -1035,8 +1035,10 @@ a.btn {
     }
 }
 
-// Bulle WhatsApp flottante — MOBILE UNIQUEMENT.
-// Masquee a partir de $bp-md dans _desktopresponsive.scss.
+// Bulle WhatsApp flottante, a toutes les tailles d'ecran.
+// (Etait mobile seulement, pour ne pas heurter le bouton "haut de page" —
+// celui-ci a ete supprime, le coin bas-droite est libre. Et sans elle, les
+// pages ecole / trips / infos n'avaient aucun acces WhatsApp en desktop.)
 .wa-bubble {
     position: fixed;
     bottom: $space-lg;

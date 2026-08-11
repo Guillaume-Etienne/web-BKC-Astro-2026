@@ -30,15 +30,6 @@
 
 // ─── MD (768px) — Tablettes portrait ─────────────────────────
 @media screen and (min-width: $bp-md) {
-    // La bulle WhatsApp est une convention mobile : on la retire au-dela,
-    // et on rend au pied de page sa marge normale.
-    .wa-bubble {
-        display: none;
-    }
-    body:has(.wa-bubble) footer {
-        padding-bottom: $space-2xl; // valeur d'origine de footer
-    }
-
     .flexi {
         flex-direction: row;
         flex-wrap: wrap;
