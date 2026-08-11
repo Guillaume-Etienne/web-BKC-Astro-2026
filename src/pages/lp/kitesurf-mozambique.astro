@@ -1,0 +1,262 @@
+---
+// ============================================================================
+//  LANDING PAGE — campagne Google Ads (FR / BE / CH)
+// ----------------------------------------------------------------------------
+//  Volontairement HORS du plan de routes (src/i18n/pages.js) :
+//    - pas de hreflang, pas de switcher de langue, pas de menu
+//    - noindex : elle ne doit pas cannibaliser les pages SEO
+//    - exclue du sitemap (filtre dans astro.config.mjs)
+//  Pas de <Menu> : sur une page payante, chaque lien de nav est une fuite.
+//  Conversion mesurable = clic WhatsApp (evenement gtag whatsapp_click).
+//  Le formulaire viendra plus tard ; en attendant on renvoie vers la page
+//  contact existante.
+// ============================================================================
+import Footer from '../../components/Footer.astro';
+import Analytics from '../../components/Analytics.astro';
+import Seo from '../../components/Seo.astro';
+import WhatsApp from '../../components/WhatsApp.astro';
+import Reviews from '../../components/Reviews.astro';
+import { businessJsonLd } from '../../i18n/jsonld.js';
+import '../../sass/general.scss';
+
+const CONTACT = '/fr/infos-mozambique/#contactus';
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+    <Seo
+        page="lp"
+        lang="fr"
+        noindex={true}
+        title="Séjour kitesurf au Mozambique — Bilene Kite Center"
+        description="Une lagune de 15 km, du vent 9 jours sur 10 et 12 kiters au maximum sur l'eau. Séjour kitesurf tout organisé à Bilene, de septembre à mars.">
+        <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('fr'))} />
+    </Seo>
+    <Analytics />
+</head>
+<body class="lp">
+
+    <header class="lp-header">
+        <img src="/images/logomini.webp" alt="Bilene Kite Center" width="70">
+        <span class="lp-header-saison">Saison septembre → mars</span>
+    </header>
+
+    <main>
+
+        <!-- ─── HERO ─────────────────────────────────────────── -->
+        <section class="lp-hero">
+            <video src="/images/mini.webm" autoplay loop muted playsinline poster="/images/1-spot/9.webp">
+                Navigateur incompatible
+            </video>
+            <div class="lp-hero-texte">
+                <p class="lp-eyebrow">Mozambique · Lagune de Bilene</p>
+                <h1>Le spot de kitesurf que personne n’a encore abîmé</h1>
+                <p class="lp-accroche">
+                    Quinze kilomètres d’eau plate et turquoise, du vent plus de neuf jours sur dix,
+                    et notre record d’affluence absolu : <strong>douze kiters en même temps sur l’eau</strong>.
+                    On s’occupe de tout dès votre sortie de l’aéroport de Maputo.
+                </p>
+                <div class="lp-cta">
+                    <WhatsApp page="lp" lang="fr" label="Poser une question sur WhatsApp" />
+                    <a class="lp-btn-second" href={CONTACT}>Demander un devis</a>
+                </div>
+                <p class="lp-cta-note">Une vraie personne répond — pas un formulaire dans le vide.</p>
+            </div>
+        </section>
+
+        <!-- ─── CHIFFRES ─────────────────────────────────────── -->
+        <section class="lp-chiffres">
+            <div><b>90 %</b><span>des jours de la saison sont navigables</span></div>
+            <div><b>12</b><span>kiters sur l’eau, notre record d’affluence</span></div>
+            <div><b>15 km</b><span>de lagune plate, sans vague ni courant</span></div>
+            <div><b>5,0</b><span>de moyenne sur 53 avis Google</span></div>
+        </section>
+
+        <!-- ─── LE SPOT ──────────────────────────────────────── -->
+        <section class="lp-bloc">
+            <div class="lp-bloc-texte">
+                <h2>Une lagune, deux terrains de jeu</h2>
+                <p>
+                    Bilene, c’est une lagune de 15 km ouverte sur l’océan Indien mais protégée des
+                    vagues et des marées. De l’eau plate à perte de vue, turquoise, sans courant.
+                </p>
+                <p>
+                    <strong>Si vous débutez</strong>, vous apprenez sur une zone d’un mètre de fond,
+                    grande comme un kilomètre carré, dans une eau à température de bain. On a pied.
+                    C’est difficile de rêver mieux pour ne pas avoir peur.
+                </p>
+                <p>
+                    <strong>Si vous naviguez déjà</strong>, vous enchaînez les downwinds ou vous filez
+                    en vingt minutes au speed spot de l’embouchure : une bande de sable avec le flat
+                    parfait d’un côté et les vagues de l’océan de l’autre.
+                </p>
+            </div>
+            <div class="lp-bloc-images">
+                <img src="/images/1-spot/2.webp" alt="La lagune turquoise de Bilene, déserte" loading="lazy">
+                <img src="/images/5-prices/superv.webp" alt="Kitesurfeuse devant la plage de Bilene" loading="lazy">
+            </div>
+        </section>
+
+        <!-- ─── CE QUI EST COMPRIS ───────────────────────────── -->
+        <section class="lp-inclus">
+            <h2>Vous arrivez, vous naviguez</h2>
+            <p class="lp-inclus-intro">C’est la partie dont personne ne parle, et c’est celle qui change tout.</p>
+            <div class="lp-inclus-grid">
+                <div>
+                    <h3>Un beach-boy s’occupe de votre matériel</h3>
+                    <p>
+                        Il le sort, le gonfle et le prépare avant votre session. Il le range, le rince
+                        et le bichonne après. Vous ne portez rien, vous ne montez rien, vous ne pliez rien.
+                        Cherchez le centre qui propose ça en Europe.
+                    </p>
+                </div>
+                <div>
+                    <h3>Une radio dans le casque</h3>
+                    <p>
+                        Votre moniteur vous corrige en direct, pendant que vous êtes sur l’eau, au lieu
+                        de vous l’expliquer une fois rentré. Ça fait gagner des heures de cours —
+                        et beaucoup de frustration.
+                    </p>
+                </div>
+                <div>
+                    <h3>Des moniteurs diplômés</h3>
+                    <p>
+                        De la toute première leçon jusqu’au coaching freestyle, big air, strapless et
+                        vagues. Matériel Eleveight de l’année, casques et gilets fournis.
+                    </p>
+                </div>
+                <div>
+                    <h3>Le voyage organisé de bout en bout</h3>
+                    <p>
+                        Transfert depuis Maputo, logement, lettre d’hébergement pour votre visa,
+                        excursions. On récupère le fil à votre sortie de l’aéroport.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FORMULES ─────────────────────────────────────── -->
+        <section class="lp-formules">
+            <h2>Trois formules, huit jours, sept nuits</h2>
+            <p class="lp-formules-note">
+                Prix <strong>par personne</strong>, sur une base de 4 personnes, transferts et logement
+                compris — <strong>hors vols et hors repas</strong>. Comptez 25 à 40 € par jour et par
+                personne pour manger sur place.
+            </p>
+            <div class="lp-packs">
+                <div class="lp-pack">
+                    <h3>Pack apprentissage</h3>
+                    <p class="lp-pack-pour">Vous n’avez jamais volé</p>
+                    <ul>
+                        <li>10 h de cours avec moniteur diplômé</li>
+                        <li>Transferts aéroport</li>
+                        <li>Bungalow 2 chambres</li>
+                        <li>5 h de location SUP</li>
+                    </ul>
+                    <p class="lp-pack-prix">645 €</p>
+                </div>
+                <div class="lp-pack lp-pack--phare">
+                    <span class="lp-pack-tag">Le plus demandé</span>
+                    <h3>Coaching</h3>
+                    <p class="lp-pack-pour">Vous naviguez et vous voulez passer un cap</p>
+                    <ul>
+                        <li>Une semaine de coaching</li>
+                        <li>Transferts aéroport</li>
+                        <li>Bungalow 2 chambres</li>
+                        <li>5 h de SUP + 1 trip Speed Spot</li>
+                    </ul>
+                    <p class="lp-pack-prix">680 €</p>
+                </div>
+                <div class="lp-pack">
+                    <h3>Passionate Riders</h3>
+                    <p class="lp-pack-pour">Vous êtes autonome, vous voulez juste naviguer</p>
+                    <ul>
+                        <li>Storage et beach-boy</li>
+                        <li>Transferts aéroport</li>
+                        <li>Bungalow 2 chambres</li>
+                        <li>5 h de SUP + 1 trip Speed Spot</li>
+                    </ul>
+                    <p class="lp-pack-prix">415 €</p>
+                </div>
+            </div>
+            <div class="lp-cta lp-cta--centre">
+                <WhatsApp page="lp" lang="fr" label="Combien pour mes dates ?" />
+                <a class="lp-btn-second" href="/fr/les-prix-bilene-kite-center/">Voir tous les tarifs</a>
+            </div>
+        </section>
+
+        <!-- ─── AVIS ─────────────────────────────────────────── -->
+        <Reviews lang="fr" />
+
+        <!-- ─── OBJECTIONS ───────────────────────────────────── -->
+        <section class="lp-faq">
+            <h2>Les questions que tout le monde se pose</h2>
+            <div class="lp-faq-list">
+                <details>
+                    <summary>Le Mozambique, c’est compliqué à préparer ?</summary>
+                    <p>
+                        Un passeport valide six mois et une autorisation électronique à demander en
+                        ligne avant de partir, aux alentours de 48 $. Prévoyez plusieurs semaines
+                        d’avance : votre compagnie la vérifiera à l’embarquement. On vous envoie la
+                        lettre d’hébergement nécessaire au dossier.
+                        <a href="/fr/La-préparation-de-votre-voyage-a-bilene-au-mozambique/">Le détail de la préparation</a>
+                    </p>
+                </details>
+                <details>
+                    <summary>Comment on arrive jusque là ?</summary>
+                    <p>
+                        Vol jusqu’à Maputo, puis environ trois heures de route goudronnée à travers
+                        les paysages du sud mozambicain. On réserve le véhicule pour vous. Il existe
+                        aussi une option en Cessna, au-dessus des lagons.
+                    </p>
+                </details>
+                <details>
+                    <summary>Je suis vraiment débutant, c’est jouable ?</summary>
+                    <p>
+                        C’est même l’endroit idéal. La zone d’apprentissage fait un mètre de fond sur
+                        un kilomètre carré, l’eau est chaude et il n’y a ni vague ni courant. Vous avez
+                        pied pendant tout l’apprentissage, ce qui enlève l’essentiel de l’appréhension.
+                    </p>
+                </details>
+                <details>
+                    <summary>Et si ça se passe mal, on est loin de tout…</summary>
+                    <p>
+                        Teresa, cofondatrice du centre, est infirmière urgentiste à la Croix-Rouge
+                        internationale. Aucune vaccination n’est obligatoire, et les antipaludéens ne
+                        sont recommandés que si vous partez en safari ou en ville.
+                    </p>
+                </details>
+                <details>
+                    <summary>Il y a du vent à quelle période ?</summary>
+                    <p>
+                        La saison va de septembre à mars, et plus de 90 % des jours y sont navigables.
+                        Le thermique se lève surtout l’après-midi. Les jours sans, il reste le paddle,
+                        les excursions et les réserves naturelles.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- ─── CTA FINAL ────────────────────────────────────── -->
+        <section class="lp-final">
+            <h2>Dites-nous vos dates, on vous dit tout</h2>
+            <p>
+                Combien vous êtes, votre niveau, la période qui vous arrange. On vous répond avec un
+                devis précis — et sans vous relancer tous les trois jours.
+            </p>
+            <div class="lp-cta lp-cta--centre">
+                <WhatsApp page="lp" lang="fr" label="Écrire sur WhatsApp" />
+                <a class="lp-btn-second lp-btn-second--clair" href={CONTACT}>Passer par le formulaire</a>
+            </div>
+        </section>
+
+    </main>
+
+    <WhatsApp page="lp" lang="fr" variant="bubble" />
+    <Footer />
+</body>
+</html>

@@ -1,30 +1,32 @@
-// Buger menu    /  Année automatique / / Toggle / Toggle Excursions / Automatised Language Selector
+// Burger menu / Année automatique / Toggle / Toggle Excursions
+//
+// IMPORTANT : ce fichier est chargé sur TOUTES les pages, y compris celles qui
+// n'ont ni menu ni pied de page standard (landing pages). Chaque bloc doit
+// donc vérifier que ses éléments existent : sans ça, une erreur en haut du
+// fichier stoppe tout le reste — notamment le suivi WhatsApp plus bas.
 
 // ------------------------------------- burger :
 //  -- ----------- Base
 var sidenav = document.getElementById("mySidenav");
 var openBtn = document.getElementById("openBtn");
-// var openBtn = document.getElementsByClassName("burger-icon")
 var closeBtn = document.getElementById("closeBtn");
-
-openBtn.onclick = openNav;
-closeBtn.onclick = closeNav;
 
 /* Set the width of the side navigation to 250px */
 function openNav() {
-  sidenav.classList.add("active");
+  if (sidenav) sidenav.classList.add("active");
 }
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
-  sidenav.classList.remove("active");
+  if (sidenav) sidenav.classList.remove("active");
 }
+
+if (openBtn) openBtn.onclick = openNav;
+if (closeBtn) closeBtn.onclick = closeNav;
 
 
 // -- -------------- Sub Menu System
 document.addEventListener('DOMContentLoaded', function() {
-  const menuList = document.querySelector('.menu-list');
-
   document.querySelectorAll('.menu-list li').forEach(function(item) {
       item.addEventListener('click', function(e) {
           const subMenu = e.target.nextElementSibling;
@@ -42,10 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });
+
 // ------------------------------------- année automatique
 const date = new Date();
 const year = date.getFullYear();
-document.getElementById("activeyear").innerHTML = year;
+const activeyear = document.getElementById("activeyear");
+if (activeyear) activeyear.innerHTML = year;
 
 
 // -------------------------------------  WhatsApp : evenement de conversion
@@ -63,35 +67,28 @@ document.addEventListener('click', (e) => {
 });
 
 // -------------------------------------  Toggle
-const toggles = document.querySelectorAll('.toggle');
-  toggles.forEach((toggle) => {
-    const target = document.querySelector(toggle.getAttribute('data-target'));
-    toggle.addEventListener('click', () => {
-      target.classList.toggle('visible');
-    });
+document.querySelectorAll('.toggle').forEach((toggle) => {
+  const target = document.querySelector(toggle.getAttribute('data-target'));
+  if (!target) return;
+  toggle.addEventListener('click', () => {
+    target.classList.toggle('visible');
   });
+});
 
-  // -------------------------------------  Toggle Excursion
-  // Récupérez tous les boutons et le texte supplémentaire
+// -------------------------------------  Toggle Excursion
 const toggleButtons = document.querySelectorAll('.toggle-button');
 const additionalTexts = document.querySelectorAll('.additional-text');
 
-// Ajoutez un gestionnaire d'événements de clic à chaque bouton
 toggleButtons.forEach((button, index) => {
+    const text = additionalTexts[index];
+    if (!text) return;
     button.addEventListener('click', () => {
-        // Affichez ou masquez le texte supplémentaire en fonction de son état actuel
-        if (additionalTexts[index].style.display === 'none' || additionalTexts[index].style.display === '') {
-            additionalTexts[index].style.display = 'block';
+        if (text.style.display === 'none' || text.style.display === '') {
+            text.style.display = 'block';
             button.textContent = ' < ';
         } else {
-            additionalTexts[index].style.display = 'none';
+            text.style.display = 'none';
             button.textContent = ' > ';
         }
     });
 });
-
-// language automatised selector
-
-// Identifie and store selected language
-
-// detect and apply  -> on specific JS to work only on the index

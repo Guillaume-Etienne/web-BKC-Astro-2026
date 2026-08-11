@@ -17,7 +17,9 @@ export default defineConfig({
       // réellement indexables (sinon Google s'en plaint dans la Search Console) :
       //   - /secret (page cachée, noindex/nofollow)
       //   - les 3 stubs de redirection FAQ (noindex + meta-refresh vers la prépa)
+      //   - /lp/* : landing pages Google Ads, en noindex volontaire
       filter: (page) =>
+        !page.includes('/lp/') &&
         !page.includes('/secret/') &&
         !page.includes('/la-faq-pour-bilene-au-mozambique/') &&
         !page.includes('/faq-bilene-mozambique/'),

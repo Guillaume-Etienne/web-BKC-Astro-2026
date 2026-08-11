@@ -46,6 +46,13 @@ const MESSAGES = {
     es: '¡Hola! Me interesa un kite trip en Mozambique.',
   },
   home: DEFAULT,
+  // Landing page Google Ads : le message identifie la provenance publicitaire
+  // sans aucun outil de mesure — on sait d'ou vient le contact des le 1er mot.
+  lp: {
+    fr: 'Bonjour ! Je viens de votre page kitesurf au Mozambique, j’aimerais des informations sur un séjour.',
+    en: 'Hello! I’m coming from your Mozambique kitesurf page, I’d like information about a stay.',
+    es: '¡Hola! Vengo de vuestra página de kitesurf en Mozambique, me gustaría información sobre una estancia.',
+  },
 };
 
 // Libelle du bouton. Le numero n'est JAMAIS affiche — uniquement dans le lien.
