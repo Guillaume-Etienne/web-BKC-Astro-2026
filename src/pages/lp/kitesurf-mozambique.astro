@@ -41,7 +41,12 @@ const CONTACT = '/fr/infos-mozambique/#contactus';
 <body class="lp">
 
     <header class="lp-header">
-        <img src="/images/logomini.webp" alt="Bilene Kite Center" width="70">
+        <!-- Logo cliquable : un logo qui ne fait rien donne l'impression d'une
+             page bricolee. Sur un achat a 2000 EUR, laisser verifier que le
+             site existe vaut mieux que verrouiller la page. -->
+        <a href="/" aria-label="Accueil Bilene Kite Center">
+            <img src="/images/logomini.webp" alt="Bilene Kite Center" width="70">
+        </a>
         <span class="lp-header-saison">Saison septembre → mars</span>
     </header>
 
@@ -150,7 +155,7 @@ const CONTACT = '/fr/infos-mozambique/#contactus';
             <div class="lp-packs">
                 <div class="lp-pack">
                     <h3>Pack apprentissage</h3>
-                    <p class="lp-pack-pour">Vous n’avez jamais volé</p>
+                    <p class="lp-pack-pour">Vous débutez ?</p>
                     <ul>
                         <li>10 h de cours avec moniteur diplômé</li>
                         <li>Transferts aéroport</li>
@@ -252,6 +257,10 @@ const CONTACT = '/fr/infos-mozambique/#contactus';
                 <WhatsApp page="lp" lang="fr" label="Écrire sur WhatsApp" />
                 <a class="lp-btn-second lp-btn-second--clair" href={CONTACT}>Passer par le formulaire</a>
             </div>
+            <p class="lp-sortie">
+                Envie de fouiller d’abord ? <a href="/">Le site complet est par ici</a> —
+                le spot, le centre, les logements, les excursions et le blog.
+            </p>
         </section>
 
     </main>

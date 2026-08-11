@@ -389,6 +389,26 @@
     }
 }
 
+// La seule porte de sortie assumee vers le site. Discrete, tout en bas :
+// celui qui veut verifier peut le faire, sans distraire celui qui allait ecrire.
+.lp-sortie {
+    margin: $space-xl auto 0;
+    max-width: 56ch;
+    font-size: $fs-sm;
+    color: rgba(255, 255, 255, 0.65);
+    & a {
+        color: $color-sky;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        &:visited {
+            color: $color-sky;
+        }
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
 // Le bloc final est deja sombre : la marge haute du pied de page creait une
 // bande creme coincee entre deux blocs sombres.
 body.lp footer {
