@@ -22,10 +22,16 @@ export const LANGS = ['fr', 'en', 'es'];
 export const DEFAULT_LANG = 'fr';
 
 // Locales pour og:locale (et raffinement hreflang régional si besoin un jour).
+// "de" et "pl" sont là UNIQUEMENT pour les landing pages Google Ads : elles
+// vivent hors du plan de routes, donc ces langues ne sont volontairement PAS
+// dans LANGS — les y ajouter ferait pointer le hreflang de tout le site vers
+// des pages allemandes et polonaises qui n'existent pas.
 export const LOCALES = {
   fr: 'fr_FR',
   en: 'en_GB',
   es: 'es_ES',
+  de: 'de_DE',
+  pl: 'pl_PL',
 };
 
 // Une entrée par page logique. Clé = identifiant stable (indépendant de la langue).

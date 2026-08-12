@@ -1,0 +1,271 @@
+---
+// ============================================================================
+//  LANDING PAGE — campagne Google Ads (DE)
+// ----------------------------------------------------------------------------
+//  Le site n'existe PAS en allemand : les liens secondaires pointent donc vers
+//  les pages ANGLAISES (choix de Guillaume, 12/08/2026), et le bloc d'avis est
+//  affiche en anglais (<Reviews lang="en" />) — les temoignages ne sont pas
+//  traduits en allemand dans src/i18n/reviews.js.
+//  Memes regles que les autres LP : hors plan de routes, noindex, hors sitemap.
+//  Conversion mesurable = clic WhatsApp (evenement gtag whatsapp_click).
+//  Traduction du copy de Chris — A FAIRE RELIRE par lui.
+// ============================================================================
+import Footer from '../../components/Footer.astro';
+import Analytics from '../../components/Analytics.astro';
+import Seo from '../../components/Seo.astro';
+import WhatsApp from '../../components/WhatsApp.astro';
+import Reviews from '../../components/Reviews.astro';
+import { businessJsonLd } from '../../i18n/jsonld.js';
+import '../../sass/general.scss';
+
+const CONTACT = '/en/information-mozambique/#contactus';
+const PRICES = '/en/services-prices-bilene-kitesurf-mozambique/';
+const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+    <Seo
+        page="lp"
+        lang="de"
+        noindex={true}
+        title="Kitesurf-Trip nach Mosambik: das Paradies, das die Rider noch nicht entdeckt haben"
+        description="Eine 15 km lange Flachwasserlagune, Wind an mehr als neun von zehn Tagen und höchstens zwölf Kiter auf dem Wasser. Rundum organisierte Kitereisen in Bilene, September bis März.">
+        <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('de'))} />
+    </Seo>
+    <Analytics />
+</head>
+<body class="lp">
+
+    <header class="lp-header">
+        <a href="/en/" aria-label="Bilene Kite Center Startseite">
+            <img src="/images/logomini.webp" alt="Bilene Kite Center" width="70">
+        </a>
+        <span class="lp-header-saison">Saison September → März</span>
+    </header>
+
+    <main>
+
+        <!-- ─── HERO ─────────────────────────────────────────── -->
+        <section class="lp-hero">
+            <video src="/images/miniHD-web.mp4" autoplay loop muted playsinline poster="/images/1-spot/9.webp">
+                Ihr Browser unterstützt kein Video
+            </video>
+            <div class="lp-hero-texte">
+                <p class="lp-eyebrow">Lagune von Bilene</p>
+                <h1>Kitesurf-Trip nach Mosambik: das Paradies, das die Rider noch nicht entdeckt haben</h1>
+                <p class="lp-accroche">
+                    Fünfzehn Kilometer flaches, türkisfarbenes Wasser, Wind an mehr als neun von zehn
+                    Tagen und unser absoluter Andrangsrekord: <strong>zwölf Kiter gleichzeitig auf
+                    dem Wasser</strong>. Ab dem Flughafen Maputo übernehmen wir alles.
+                </p>
+                <div class="lp-cta">
+                    <WhatsApp page="lp" lang="de" label="Auf WhatsApp fragen" />
+                    <a class="lp-btn-second" href={CONTACT}>Angebot anfragen</a>
+                </div>
+                <p class="lp-cta-note">Es antwortet ein Mensch — kein Formular ins Leere.</p>
+            </div>
+        </section>
+
+        <!-- ─── CHIFFRES ─────────────────────────────────────── -->
+        <section class="lp-chiffres">
+            <div><b>90 %</b><span>der Saisontage sind befahrbar</span></div>
+            <div><b>12</b><span>Kiter auf dem Wasser, unser Rekord</span></div>
+            <div><b>15 km</b><span>flache Lagune, ohne Wellen und Strömung</span></div>
+            <div><b>5,0</b><span>Durchschnitt aus 53 Google-Bewertungen</span></div>
+        </section>
+
+        <!-- ─── LE SPOT ──────────────────────────────────────── -->
+        <section class="lp-bloc">
+            <div class="lp-bloc-texte">
+                <h2>Eine Lagune, zwei Spielwiesen</h2>
+                <p>
+                    Bilene ist eine 15 km lange Lagune, die sich zum Indischen Ozean öffnet, aber vor
+                    Wellen und Gezeiten geschützt bleibt. Flaches, türkisfarbenes Wasser bis zum
+                    Horizont, ohne Strömung.
+                </p>
+                <p>
+                    <strong>Wenn Sie anfangen</strong>, lernen Sie auf einem Quadratkilometer
+                    hüfttiefem Wasser mit Badewannentemperatur. Überall steht man. Sanfter kann man
+                    die Angst kaum verlieren.
+                </p>
+                <p>
+                    <strong>Wenn Sie schon fahren</strong>, reihen Sie Downwinder aneinander oder
+                    fahren in zwanzig Minuten zum Speed Spot an der Mündung: eine Sandbank mit
+                    perfektem Flachwasser auf der einen und Ozeanwellen auf der anderen Seite.
+                </p>
+            </div>
+            <div class="lp-bloc-images">
+                <img src="/images/1-spot/2.webp" alt="Die menschenleere türkisfarbene Lagune von Bilene" loading="lazy">
+                <img src="/images/5-prices/superv.webp" alt="Kitesurferin vor dem Strand von Bilene" loading="lazy">
+            </div>
+        </section>
+
+        <!-- ─── CE QUI EST COMPRIS ───────────────────────────── -->
+        <section class="lp-inclus">
+            <h2>Ankommen und aufs Wasser</h2>
+            <p class="lp-inclus-intro">Über diesen Teil spricht niemand — und genau er macht den Unterschied.</p>
+            <div class="lp-inclus-grid">
+                <div>
+                    <h3>Ein Beachboy kümmert sich um Ihr Material</h3>
+                    <p>
+                        Er holt es raus, pumpt es auf und baut es vor Ihrer Session auf. Danach spült
+                        er es ab, verstaut es und pflegt es. Sie tragen nichts, bauen nichts auf und
+                        falten nichts zusammen. Suchen Sie das mal in Europa.
+                    </p>
+                </div>
+                <div>
+                    <h3>Funk im Helm</h3>
+                    <p>
+                        Ihr Lehrer korrigiert Sie live, während Sie auf dem Wasser sind, statt es
+                        Ihnen nach der Rückkehr an den Strand zu erklären. Das spart Unterrichtsstunden
+                        — und eine Menge Frust.
+                    </p>
+                </div>
+                <div>
+                    <h3>Lizenzierte Lehrer</h3>
+                    <p>
+                        Von der allerersten Stunde bis zum Coaching in Freestyle, Big Air, Strapless
+                        und Welle. Eleveight-Material aus dem laufenden Jahr, Helme und Westen
+                        inklusive.
+                    </p>
+                </div>
+                <div>
+                    <h3>Die Reise von Anfang bis Ende organisiert</h3>
+                    <p>
+                        Transfer ab Maputo, Unterkunft, das Unterkunftsschreiben für Ihren Visumantrag,
+                        Ausflüge. Wir nehmen den Faden auf, sobald Sie aus dem Flughafen treten.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FORMULES ─────────────────────────────────────── -->
+        <section class="lp-formules">
+            <h2>Drei Pakete, acht Tage, sieben Nächte</h2>
+            <p class="lp-formules-note">
+                Preise <strong>pro Person</strong> auf Basis von vier Personen, Transfers und
+                Unterkunft inklusive — <strong>ohne Flüge und ohne Mahlzeiten</strong>. Rechnen Sie
+                vor Ort mit 25 bis 40 € pro Person und Tag fürs Essen.
+            </p>
+            <div class="lp-packs">
+                <div class="lp-pack">
+                    <h3>Einsteigerpaket</h3>
+                    <p class="lp-pack-pour">Sie fangen bei null an?</p>
+                    <ul>
+                        <li>10 Std. Unterricht mit lizenziertem Lehrer</li>
+                        <li>Flughafentransfers</li>
+                        <li>Bungalow mit zwei Schlafzimmern</li>
+                        <li>5 Std. SUP-Verleih</li>
+                    </ul>
+                    <p class="lp-pack-prix">645 €</p>
+                </div>
+                <div class="lp-pack lp-pack--phare">
+                    <span class="lp-pack-tag">Am häufigsten gebucht</span>
+                    <h3>Coaching</h3>
+                    <p class="lp-pack-pour">Sie fahren und wollen den nächsten Schritt</p>
+                    <ul>
+                        <li>Eine Woche Coaching</li>
+                        <li>Flughafentransfers</li>
+                        <li>Bungalow mit zwei Schlafzimmern</li>
+                        <li>5 Std. SUP + 1 Speed-Spot-Trip</li>
+                    </ul>
+                    <p class="lp-pack-prix">680 €</p>
+                </div>
+                <div class="lp-pack">
+                    <h3>Passionate Riders</h3>
+                    <p class="lp-pack-pour">Sie sind selbstständig und wollen einfach fahren</p>
+                    <ul>
+                        <li>Storage und Beachboy</li>
+                        <li>Flughafentransfers</li>
+                        <li>Bungalow mit zwei Schlafzimmern</li>
+                        <li>5 Std. SUP + 1 Speed-Spot-Trip</li>
+                    </ul>
+                    <p class="lp-pack-prix">415 €</p>
+                </div>
+            </div>
+            <div class="lp-cta lp-cta--centre">
+                <WhatsApp page="lp" lang="de" label="Was kostet mein Zeitraum?" />
+                <a class="lp-btn-second" href={PRICES}>Alle Preise ansehen</a>
+            </div>
+        </section>
+
+        <!-- ─── AVIS (en anglais : pas de temoignages traduits en DE) ── -->
+        <Reviews lang="en" />
+
+        <!-- ─── OBJECTIONS ───────────────────────────────────── -->
+        <section class="lp-faq">
+            <h2>Die Fragen, die sich alle stellen</h2>
+            <div class="lp-faq-list">
+                <details>
+                    <summary>Ist Mosambik kompliziert vorzubereiten?</summary>
+                    <p>
+                        Ein sechs Monate gültiger Reisepass und eine elektronische Genehmigung, die
+                        Sie vor der Abreise online beantragen, rund 48 $. Planen Sie mehrere Wochen
+                        ein: Ihre Airline prüft sie beim Boarding. Das nötige Unterkunftsschreiben
+                        schicken wir Ihnen zu.
+                        <a href={PREPARE}>So bereiten Sie Ihre Reise vor (auf Englisch)</a>
+                    </p>
+                </details>
+                <details>
+                    <summary>Wie kommt man überhaupt dorthin?</summary>
+                    <p>
+                        Flug nach Maputo, dann etwa drei Stunden auf asphaltierter Straße durch den
+                        Süden Mosambiks. Das Fahrzeug buchen wir für Sie. Es gibt auch eine Variante
+                        mit der Cessna, über die Lagunen hinweg.
+                    </p>
+                </details>
+                <details>
+                    <summary>Ich bin blutiger Anfänger — ist das machbar?</summary>
+                    <p>
+                        Es ist sogar der ideale Ort dafür. Die Lernzone ist ein Quadratkilometer
+                        hüfttiefes, warmes Wasser, ohne Wellen und ohne Strömung. Sie stehen die ganze
+                        Zeit, und das nimmt den größten Teil der Anspannung.
+                    </p>
+                </details>
+                <details>
+                    <summary>Und wenn etwas passiert, wir sind weit weg von allem…</summary>
+                    <p>
+                        Teresa, Mitgründerin des Centers, ist Notfallkrankenschwester beim
+                        Internationalen Roten Kreuz. Keine Impfung ist Pflicht, und Malariaprophylaxe
+                        wird nur empfohlen, wenn Sie auf Safari oder in die Stadt fahren.
+                    </p>
+                </details>
+                <details>
+                    <summary>Wann weht der Wind?</summary>
+                    <p>
+                        Die Saison läuft von September bis März, mehr als 90 % der Tage sind
+                        befahrbar. Der Thermikwind kommt vor allem nachmittags auf. An den windlosen
+                        Tagen bleiben SUP, Ausflüge und die Naturreservate.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- ─── CTA FINAL ────────────────────────────────────── -->
+        <section class="lp-final">
+            <h2>Sagen Sie uns Ihre Termine, wir sagen Ihnen alles</h2>
+            <p>
+                Wie viele Sie sind, Ihr Niveau, der Zeitraum, der Ihnen passt. Sie bekommen ein
+                genaues Angebot zurück — und wir laufen Ihnen nicht alle drei Tage hinterher.
+            </p>
+            <div class="lp-cta lp-cta--centre">
+                <WhatsApp page="lp" lang="de" label="Auf WhatsApp schreiben" />
+                <a class="lp-btn-second lp-btn-second--clair" href={CONTACT}>Über das Formular</a>
+            </div>
+            <p class="lp-sortie">
+                Erst einmal stöbern? <a href="/en/">Hier geht es zur kompletten Website</a> —
+                Spot, Center, Unterkünfte, Ausflüge und Blog, auf Englisch.
+            </p>
+        </section>
+
+    </main>
+
+    <WhatsApp page="lp" lang="de" variant="bubble" />
+    <Footer />
+</body>
+</html>

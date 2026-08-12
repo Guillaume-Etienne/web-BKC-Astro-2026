@@ -1,0 +1,268 @@
+---
+// ============================================================================
+//  LANDING PAGE — campagne Google Ads (PL)
+// ----------------------------------------------------------------------------
+//  Le site n'existe PAS en polonais : les liens secondaires pointent vers les
+//  pages ANGLAISES (choix de Guillaume, 12/08/2026), et le bloc d'avis est
+//  affiche en anglais (<Reviews lang="en" />).
+//  Le copy tutoie (forme "Ty") : c'est l'usage du marketing sportif en Pologne,
+//  et ca colle au ton direct de la version francaise. Les tournures genrees
+//  sont evitees (pas de "chciałbym/chciałabym").
+//  Memes regles que les autres LP : hors plan de routes, noindex, hors sitemap.
+//  Traduction du copy de Chris — A FAIRE RELIRE PAR UN NATIF avant diffusion.
+// ============================================================================
+import Footer from '../../components/Footer.astro';
+import Analytics from '../../components/Analytics.astro';
+import Seo from '../../components/Seo.astro';
+import WhatsApp from '../../components/WhatsApp.astro';
+import Reviews from '../../components/Reviews.astro';
+import { businessJsonLd } from '../../i18n/jsonld.js';
+import '../../sass/general.scss';
+
+const CONTACT = '/en/information-mozambique/#contactus';
+const PRICES = '/en/services-prices-bilene-kitesurf-mozambique/';
+const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
+---
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+    <Seo
+        page="lp"
+        lang="pl"
+        noindex={true}
+        title="Kitesurfing w Mozambiku: rajski kierunek, którego riderzy jeszcze nie odkryli"
+        description="Piętnaście kilometrów płaskiej laguny, wiatr przez ponad dziewięć dni na dziesięć i najwyżej dwunastu kiterów na wodzie. Zorganizowane wyjazdy kitesurfingowe do Bilene, od września do marca.">
+        <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('pl'))} />
+    </Seo>
+    <Analytics />
+</head>
+<body class="lp">
+
+    <header class="lp-header">
+        <a href="/en/" aria-label="Bilene Kite Center — strona główna">
+            <img src="/images/logomini.webp" alt="Bilene Kite Center" width="70">
+        </a>
+        <span class="lp-header-saison">Sezon wrzesień → marzec</span>
+    </header>
+
+    <main>
+
+        <!-- ─── HERO ─────────────────────────────────────────── -->
+        <section class="lp-hero">
+            <video src="/images/miniHD-web.mp4" autoplay loop muted playsinline poster="/images/1-spot/9.webp">
+                Twoja przeglądarka nie obsługuje wideo
+            </video>
+            <div class="lp-hero-texte">
+                <p class="lp-eyebrow">Laguna Bilene</p>
+                <h1>Kitesurfing w Mozambiku: rajski kierunek, którego riderzy jeszcze nie odkryli</h1>
+                <p class="lp-accroche">
+                    Piętnaście kilometrów płaskiej, turkusowej wody, wiatr przez ponad dziewięć dni na
+                    dziesięć i nasz absolutny rekord tłoku: <strong>dwunastu kiterów naraz na
+                    wodzie</strong>. Od wyjścia z lotniska w Maputo zajmujemy się wszystkim.
+                </p>
+                <div class="lp-cta">
+                    <WhatsApp page="lp" lang="pl" label="Zapytaj na WhatsAppie" />
+                    <a class="lp-btn-second" href={CONTACT}>Poproś o wycenę</a>
+                </div>
+                <p class="lp-cta-note">Odpisuje żywy człowiek — a nie formularz w próżnię.</p>
+            </div>
+        </section>
+
+        <!-- ─── CHIFFRES ─────────────────────────────────────── -->
+        <section class="lp-chiffres">
+            <div><b>90 %</b><span>dni w sezonie nadaje się do pływania</span></div>
+            <div><b>12</b><span>kiterów na wodzie — nasz rekord tłoku</span></div>
+            <div><b>15 km</b><span>płaskiej laguny, bez fal i prądu</span></div>
+            <div><b>5,0</b><span>średniej z 53 opinii w Google</span></div>
+        </section>
+
+        <!-- ─── LE SPOT ──────────────────────────────────────── -->
+        <section class="lp-bloc">
+            <div class="lp-bloc-texte">
+                <h2>Jedna laguna, dwa place zabaw</h2>
+                <p>
+                    Bilene to laguna o długości 15 km, otwarta na Ocean Indyjski, ale osłonięta od fal
+                    i pływów. Płaska, turkusowa woda po horyzont, bez prądu.
+                </p>
+                <p>
+                    <strong>Jeśli dopiero zaczynasz</strong>, uczysz się na kilometrze kwadratowym
+                    wody sięgającej do pasa, w temperaturze kąpieli. Wszędzie masz grunt pod nogami.
+                    Trudno o łagodniejsze miejsce, żeby pozbyć się strachu.
+                </p>
+                <p>
+                    <strong>Jeśli już pływasz</strong>, robisz downwindy albo w dwadzieścia minut
+                    docierasz na speed spot przy ujściu: piaszczysta łacha z idealnym flatem z jednej
+                    strony i falami oceanu z drugiej.
+                </p>
+            </div>
+            <div class="lp-bloc-images">
+                <img src="/images/1-spot/2.webp" alt="Pusta turkusowa laguna Bilene" loading="lazy">
+                <img src="/images/5-prices/superv.webp" alt="Kitesurferka przed plażą w Bilene" loading="lazy">
+            </div>
+        </section>
+
+        <!-- ─── CE QUI EST COMPRIS ───────────────────────────── -->
+        <section class="lp-inclus">
+            <h2>Przyjeżdżasz i pływasz</h2>
+            <p class="lp-inclus-intro">O tej części nikt nie mówi, a to właśnie ona zmienia wszystko.</p>
+            <div class="lp-inclus-grid">
+                <div>
+                    <h3>Beach boy zajmuje się twoim sprzętem</h3>
+                    <p>
+                        Wynosi go, pompuje i rozkłada przed sesją. Po sesji składa, płucze i dogląda.
+                        Nic nie dźwigasz, nic nie rozkładasz, nic nie zwijasz. Poszukaj takiego
+                        centrum w Europie.
+                    </p>
+                </div>
+                <div>
+                    <h3>Radio w kasku</h3>
+                    <p>
+                        Instruktor poprawia cię na bieżąco, kiedy jesteś na wodzie, zamiast tłumaczyć
+                        po powrocie na plażę. To oszczędza godziny lekcji — i mnóstwo frustracji.
+                    </p>
+                </div>
+                <div>
+                    <h3>Instruktorzy z licencją</h3>
+                    <p>
+                        Od pierwszej lekcji aż po coaching z freestyle’u, big air, strapless i fal.
+                        Sprzęt Eleveight z bieżącego roku, kaski i kamizelki w cenie.
+                    </p>
+                </div>
+                <div>
+                    <h3>Wyjazd zorganizowany od początku do końca</h3>
+                    <p>
+                        Transfer z Maputo, nocleg, potwierdzenie zakwaterowania do wniosku wizowego,
+                        wycieczki. Przejmujemy pałeczkę, gdy tylko wyjdziesz z lotniska.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FORMULES ─────────────────────────────────────── -->
+        <section class="lp-formules">
+            <h2>Trzy pakiety, osiem dni, siedem nocy</h2>
+            <p class="lp-formules-note">
+                Ceny <strong>od osoby</strong> przy czterech osobach, z transferami i noclegiem —
+                <strong>bez lotów i bez wyżywienia</strong>. Na jedzenie na miejscu licz od 25 do
+                40 € dziennie na osobę.
+            </p>
+            <div class="lp-packs">
+                <div class="lp-pack">
+                    <h3>Pakiet dla początkujących</h3>
+                    <p class="lp-pack-pour">Zaczynasz od zera?</p>
+                    <ul>
+                        <li>10 godz. lekcji z instruktorem z licencją</li>
+                        <li>Transfery z lotniska</li>
+                        <li>Bungalow z dwiema sypialniami</li>
+                        <li>5 godz. wypożyczenia SUP-a</li>
+                    </ul>
+                    <p class="lp-pack-prix">645 €</p>
+                </div>
+                <div class="lp-pack lp-pack--phare">
+                    <span class="lp-pack-tag">Najczęściej wybierany</span>
+                    <h3>Coaching</h3>
+                    <p class="lp-pack-pour">Pływasz i chcesz wskoczyć poziom wyżej</p>
+                    <ul>
+                        <li>Tydzień coachingu</li>
+                        <li>Transfery z lotniska</li>
+                        <li>Bungalow z dwiema sypialniami</li>
+                        <li>5 godz. SUP-a + 1 wyprawa na Speed Spot</li>
+                    </ul>
+                    <p class="lp-pack-prix">680 €</p>
+                </div>
+                <div class="lp-pack">
+                    <h3>Passionate Riders</h3>
+                    <p class="lp-pack-pour">Jesteś samodzielny i chcesz po prostu pływać</p>
+                    <ul>
+                        <li>Storage i beach boy</li>
+                        <li>Transfery z lotniska</li>
+                        <li>Bungalow z dwiema sypialniami</li>
+                        <li>5 godz. SUP-a + 1 wyprawa na Speed Spot</li>
+                    </ul>
+                    <p class="lp-pack-prix">415 €</p>
+                </div>
+            </div>
+            <div class="lp-cta lp-cta--centre">
+                <WhatsApp page="lp" lang="pl" label="Ile to kosztuje w moim terminie?" />
+                <a class="lp-btn-second" href={PRICES}>Zobacz wszystkie ceny</a>
+            </div>
+        </section>
+
+        <!-- ─── AVIS (en anglais : pas de temoignages traduits en PL) ── -->
+        <Reviews lang="en" />
+
+        <!-- ─── OBJECTIONS ───────────────────────────────────── -->
+        <section class="lp-faq">
+            <h2>Pytania, które zadają wszyscy</h2>
+            <div class="lp-faq-list">
+                <details>
+                    <summary>Czy Mozambik jest skomplikowany w przygotowaniu?</summary>
+                    <p>
+                        Paszport ważny sześć miesięcy i elektroniczne zezwolenie, o które składasz
+                        wniosek online przed wyjazdem — około 48 $. Zarezerwuj sobie kilka tygodni:
+                        linia lotnicza sprawdzi je przy wejściu na pokład. Potwierdzenie
+                        zakwaterowania do wniosku wysyłamy my.
+                        <a href={PREPARE}>Jak przygotować wyjazd (po angielsku)</a>
+                    </p>
+                </details>
+                <details>
+                    <summary>Jak się tam w ogóle dostać?</summary>
+                    <p>
+                        Lot do Maputo, a potem około trzech godzin asfaltową drogą przez południe
+                        Mozambiku. Samochód rezerwujemy my. Jest też opcja cessną, nad lagunami.
+                    </p>
+                </details>
+                <details>
+                    <summary>Jestem kompletnie początkujący — da się?</summary>
+                    <p>
+                        To wręcz idealne miejsce. Strefa nauki to kilometr kwadratowy ciepłej wody do
+                        pasa, bez fal i bez prądu. Przez cały czas masz grunt pod nogami, a to zdejmuje
+                        większość stresu.
+                    </p>
+                </details>
+                <details>
+                    <summary>A jeśli coś się stanie? Jesteśmy daleko od wszystkiego…</summary>
+                    <p>
+                        Teresa, współzałożycielka centrum, jest pielęgniarką ratunkową Międzynarodowego
+                        Czerwonego Krzyża. Żadne szczepienia nie są obowiązkowe, a leki
+                        przeciwmalaryczne zaleca się tylko przy wyjeździe na safari albo do miasta.
+                    </p>
+                </details>
+                <details>
+                    <summary>Kiedy wieje?</summary>
+                    <p>
+                        Sezon trwa od września do marca i ponad 90 % dni nadaje się do pływania.
+                        Termika rozkręca się głównie po południu. W dni bez wiatru zostaje SUP,
+                        wycieczki i rezerwaty przyrody.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- ─── CTA FINAL ────────────────────────────────────── -->
+        <section class="lp-final">
+            <h2>Podaj nam swoje terminy, a my powiemy ci resztę</h2>
+            <p>
+                Ile was jest, jaki masz poziom, jaki termin ci pasuje. Odsyłamy konkretną wycenę —
+                i nie dzwonimy co trzy dni z przypomnieniem.
+            </p>
+            <div class="lp-cta lp-cta--centre">
+                <WhatsApp page="lp" lang="pl" label="Napisz na WhatsAppie" />
+                <a class="lp-btn-second lp-btn-second--clair" href={CONTACT}>Przez formularz</a>
+            </div>
+            <p class="lp-sortie">
+                Wolisz najpierw poczytać? <a href="/en/">Tędy do pełnej strony</a> —
+                spot, centrum, noclegi, wycieczki i blog, po angielsku.
+            </p>
+        </section>
+
+    </main>
+
+    <WhatsApp page="lp" lang="pl" variant="bubble" />
+    <Footer />
+</body>
+</html>

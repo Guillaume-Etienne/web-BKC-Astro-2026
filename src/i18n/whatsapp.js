@@ -18,10 +18,15 @@ export const WHATSAPP_NUMBER = '258870062521';
 // Format E.164 pour les donnees structurees (JSON-LD).
 export const WHATSAPP_E164 = '+258870062521';
 
+// "de" et "pl" n'existent QUE pour les landing pages Google Ads : le site,
+// lui, reste en fr/en/es. Les formulations polonaises evitent les formes
+// genrees ("poproszę" plutot que "chciałbym/chciałabym").
 const DEFAULT = {
   fr: 'Bonjour ! Je vous écris depuis bilenekite.com, j’aimerais des informations.',
   en: 'Hello! I’m writing from bilenekite.com, I’d like some information.',
   es: '¡Hola! Os escribo desde bilenekite.com, me gustaría más información.',
+  de: 'Hallo! Ich schreibe Ihnen über bilenekite.com und hätte gerne ein paar Informationen.',
+  pl: 'Dzień dobry! Piszę ze strony bilenekite.com — poproszę o więcej informacji.',
 };
 
 const MESSAGES = {
@@ -52,6 +57,8 @@ const MESSAGES = {
     fr: 'Bonjour ! Je viens de votre page kitesurf au Mozambique, j’aimerais des informations sur un séjour.',
     en: 'Hello! I’m coming from your Mozambique kitesurf page, I’d like information about a stay.',
     es: '¡Hola! Vengo de vuestra página de kitesurf en Mozambique, me gustaría información sobre una estancia.',
+    de: 'Hallo! Ich komme von Ihrer Seite über Kitesurfen in Mosambik und hätte gerne Informationen zu einem Aufenthalt.',
+    pl: 'Dzień dobry! Piszę z Waszej strony o kitesurfingu w Mozambiku — poproszę o informacje o wyjeździe.',
   },
 };
 
@@ -60,6 +67,8 @@ const LABELS = {
   fr: 'Écrire au centre sur WhatsApp',
   en: 'Message the centre on WhatsApp',
   es: 'Escribir al centro por WhatsApp',
+  de: 'Dem Center auf WhatsApp schreiben',
+  pl: 'Napisz do centrum na WhatsAppie',
 };
 
 export function whatsappMessage(page = 'home', lang = 'fr') {

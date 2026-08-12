@@ -1,0 +1,269 @@
+---
+// ============================================================================
+//  LANDING PAGE — campagne Google Ads (EN)
+// ----------------------------------------------------------------------------
+//  Version anglaise de /lp/kitesurf-mozambique/. Memes regles :
+//    - hors du plan de routes (src/i18n/pages.js) : pas de hreflang, pas de
+//      switcher de langue, pas de menu
+//    - noindex : elle ne doit pas cannibaliser les pages SEO
+//    - exclue du sitemap (filtre /lp/ dans astro.config.mjs)
+//  Conversion mesurable = clic WhatsApp (evenement gtag whatsapp_click).
+//  Traduction du copy de Chris — A FAIRE RELIRE par lui.
+// ============================================================================
+import Footer from '../../components/Footer.astro';
+import Analytics from '../../components/Analytics.astro';
+import Seo from '../../components/Seo.astro';
+import WhatsApp from '../../components/WhatsApp.astro';
+import Reviews from '../../components/Reviews.astro';
+import { businessJsonLd } from '../../i18n/jsonld.js';
+import '../../sass/general.scss';
+
+const CONTACT = '/en/information-mozambique/#contactus';
+const PRICES = '/en/services-prices-bilene-kitesurf-mozambique/';
+const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+    <Seo
+        page="lp"
+        lang="en"
+        noindex={true}
+        title="Kitesurf trip to Mozambique: discover the paradise riders haven’t found yet"
+        description="A 15 km flatwater lagoon, wind more than nine days out of ten, and twelve kiters on the water at most. All-inclusive kitesurf trips in Bilene, September to March.">
+        <script type="application/ld+json" set:html={JSON.stringify(businessJsonLd('en'))} />
+    </Seo>
+    <Analytics />
+</head>
+<body class="lp">
+
+    <header class="lp-header">
+        <a href="/en/" aria-label="Bilene Kite Center home">
+            <img src="/images/logomini.webp" alt="Bilene Kite Center" width="70">
+        </a>
+        <span class="lp-header-saison">Season September → March</span>
+    </header>
+
+    <main>
+
+        <!-- ─── HERO ─────────────────────────────────────────── -->
+        <section class="lp-hero">
+            <video src="/images/miniHD-web.mp4" autoplay loop muted playsinline poster="/images/1-spot/9.webp">
+                Your browser does not support video
+            </video>
+            <div class="lp-hero-texte">
+                <p class="lp-eyebrow">Bilene Lagoon</p>
+                <h1>Kitesurf trip to Mozambique: discover the paradise riders haven’t found yet</h1>
+                <p class="lp-accroche">
+                    Fifteen kilometres of flat turquoise water, wind more than nine days out of ten,
+                    and our all-time crowd record: <strong>twelve kiters on the water at once</strong>.
+                    We take over the moment you walk out of Maputo airport.
+                </p>
+                <div class="lp-cta">
+                    <WhatsApp page="lp" lang="en" label="Ask us anything on WhatsApp" />
+                    <a class="lp-btn-second" href={CONTACT}>Request a quote</a>
+                </div>
+                <p class="lp-cta-note">A real person answers — not a form shouting into the void.</p>
+            </div>
+        </section>
+
+        <!-- ─── CHIFFRES ─────────────────────────────────────── -->
+        <section class="lp-chiffres">
+            <div><b>90%</b><span>of days in the season are rideable</span></div>
+            <div><b>12</b><span>kiters on the water, our crowd record</span></div>
+            <div><b>15 km</b><span>of flat lagoon, no waves, no current</span></div>
+            <div><b>5.0</b><span>average across 53 Google reviews</span></div>
+        </section>
+
+        <!-- ─── LE SPOT ──────────────────────────────────────── -->
+        <section class="lp-bloc">
+            <div class="lp-bloc-texte">
+                <h2>One lagoon, two playgrounds</h2>
+                <p>
+                    Bilene is a 15 km lagoon that opens onto the Indian Ocean but stays shielded from
+                    swell and tides. Flat turquoise water as far as you can see, and no current.
+                </p>
+                <p>
+                    <strong>If you are learning</strong>, you start in a square kilometre of
+                    waist-deep water that sits at bath temperature. You can stand up anywhere. It is
+                    hard to imagine a gentler place to get over the fear.
+                </p>
+                <p>
+                    <strong>If you already ride</strong>, you link downwinders, or you run twenty
+                    minutes up to the speed spot at the mouth: a sandbank with perfect flat on one
+                    side and ocean waves on the other.
+                </p>
+            </div>
+            <div class="lp-bloc-images">
+                <img src="/images/1-spot/2.webp" alt="The empty turquoise lagoon of Bilene" loading="lazy">
+                <img src="/images/5-prices/superv.webp" alt="Kitesurfer in front of Bilene beach" loading="lazy">
+            </div>
+        </section>
+
+        <!-- ─── CE QUI EST COMPRIS ───────────────────────────── -->
+        <section class="lp-inclus">
+            <h2>You arrive, you ride</h2>
+            <p class="lp-inclus-intro">This is the part nobody talks about, and it is the part that changes everything.</p>
+            <div class="lp-inclus-grid">
+                <div>
+                    <h3>A beach boy handles your gear</h3>
+                    <p>
+                        He carries it out, pumps it and sets it up before your session. He packs it
+                        away, rinses it and looks after it afterwards. You carry nothing, rig nothing,
+                        fold nothing. Try finding that at a European centre.
+                    </p>
+                </div>
+                <div>
+                    <h3>A radio in your helmet</h3>
+                    <p>
+                        Your instructor corrects you live, while you are on the water, instead of
+                        explaining it once you are back on the beach. It saves hours of lessons —
+                        and a lot of frustration.
+                    </p>
+                </div>
+                <div>
+                    <h3>Certified instructors</h3>
+                    <p>
+                        From your very first lesson through to freestyle, big air, strapless and wave
+                        coaching. Current-year Eleveight gear, helmets and impact vests included.
+                    </p>
+                </div>
+                <div>
+                    <h3>The whole trip organised</h3>
+                    <p>
+                        Transfer from Maputo, accommodation, the accommodation letter your visa
+                        application needs, excursions. We pick up the thread the moment you land.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FORMULES ─────────────────────────────────────── -->
+        <section class="lp-formules">
+            <h2>Three packages, eight days, seven nights</h2>
+            <p class="lp-formules-note">
+                Prices <strong>per person</strong>, based on four people sharing, transfers and
+                accommodation included — <strong>flights and meals not included</strong>. Budget
+                €25 to €40 per person per day for food on site.
+            </p>
+            <div class="lp-packs">
+                <div class="lp-pack">
+                    <h3>Learn to kite</h3>
+                    <p class="lp-pack-pour">Never flown a kite?</p>
+                    <ul>
+                        <li>10 h of lessons with a certified instructor</li>
+                        <li>Airport transfers</li>
+                        <li>Two-bedroom bungalow</li>
+                        <li>5 h of SUP rental</li>
+                    </ul>
+                    <p class="lp-pack-prix">€645</p>
+                </div>
+                <div class="lp-pack lp-pack--phare">
+                    <span class="lp-pack-tag">Most booked</span>
+                    <h3>Coaching</h3>
+                    <p class="lp-pack-pour">You ride, and you want to step up</p>
+                    <ul>
+                        <li>A full week of coaching</li>
+                        <li>Airport transfers</li>
+                        <li>Two-bedroom bungalow</li>
+                        <li>5 h of SUP + 1 Speed Spot trip</li>
+                    </ul>
+                    <p class="lp-pack-prix">€680</p>
+                </div>
+                <div class="lp-pack">
+                    <h3>Passionate Riders</h3>
+                    <p class="lp-pack-pour">You are independent, you just want water time</p>
+                    <ul>
+                        <li>Storage and beach boy</li>
+                        <li>Airport transfers</li>
+                        <li>Two-bedroom bungalow</li>
+                        <li>5 h of SUP + 1 Speed Spot trip</li>
+                    </ul>
+                    <p class="lp-pack-prix">€415</p>
+                </div>
+            </div>
+            <div class="lp-cta lp-cta--centre">
+                <WhatsApp page="lp" lang="en" label="What would my dates cost?" />
+                <a class="lp-btn-second" href={PRICES}>See all prices</a>
+            </div>
+        </section>
+
+        <!-- ─── AVIS ─────────────────────────────────────────── -->
+        <Reviews lang="en" />
+
+        <!-- ─── OBJECTIONS ───────────────────────────────────── -->
+        <section class="lp-faq">
+            <h2>The questions everyone asks</h2>
+            <div class="lp-faq-list">
+                <details>
+                    <summary>Is Mozambique complicated to organise?</summary>
+                    <p>
+                        A passport valid for six months and an electronic authorisation to apply for
+                        online before you travel, around $48. Allow several weeks: your airline will
+                        check it at boarding. We send you the accommodation letter your application
+                        needs.
+                        <a href={PREPARE}>How to prepare your trip</a>
+                    </p>
+                </details>
+                <details>
+                    <summary>How do we actually get there?</summary>
+                    <p>
+                        Fly to Maputo, then about three hours on tarmac road through southern
+                        Mozambique. We book the vehicle for you. There is also a Cessna option, over
+                        the lagoons.
+                    </p>
+                </details>
+                <details>
+                    <summary>I am a complete beginner — is this realistic?</summary>
+                    <p>
+                        It is the ideal place for it. The learning area is a square kilometre of
+                        waist-deep water, warm, with no waves and no current. You can stand up
+                        throughout, which removes most of the apprehension.
+                    </p>
+                </details>
+                <details>
+                    <summary>And if something goes wrong, we are far from everything…</summary>
+                    <p>
+                        Teresa, who co-founded the centre, is an emergency nurse with the
+                        International Red Cross. No vaccination is compulsory, and antimalarials are
+                        only recommended if you head off on safari or into the city.
+                    </p>
+                </details>
+                <details>
+                    <summary>When is there wind?</summary>
+                    <p>
+                        The season runs from September to March, and more than 90% of days are
+                        rideable. The thermal builds mostly in the afternoon. On the days without,
+                        there is paddleboarding, excursions and the nature reserves.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- ─── CTA FINAL ────────────────────────────────────── -->
+        <section class="lp-final">
+            <h2>Tell us your dates and we will tell you everything</h2>
+            <p>
+                How many of you, your level, the period that suits you. We come back with a precise
+                quote — and we will not chase you every three days.
+            </p>
+            <div class="lp-cta lp-cta--centre">
+                <WhatsApp page="lp" lang="en" label="Message us on WhatsApp" />
+                <a class="lp-btn-second lp-btn-second--clair" href={CONTACT}>Use the contact form</a>
+            </div>
+            <p class="lp-sortie">
+                Want to dig around first? <a href="/en/">The full site is this way</a> —
+                the spot, the centre, accommodation, excursions and the blog.
+            </p>
+        </section>
+
+    </main>
+
+    <WhatsApp page="lp" lang="en" variant="bubble" />
+    <Footer />
+</body>
+</html>

@@ -16,10 +16,14 @@ const SAMEAS = [
   'https://maps.google.com/?cid=16956463275848852616',
 ];
 
+// "de" et "pl" ne servent qu'aux landing pages Google Ads (le site reste
+// en fr/en/es) : sans eux, le JSON-LD de ces pages repartirait en francais.
 const SLOGAN = {
   fr: 'Spot de kitesurf et wingfoil vierge dans une lagune paradisiaque au Mozambique.',
   en: 'Pristine kitesurf and wingfoil spot in a paradise lagoon in Mozambique.',
   es: 'Spot de kitesurf y wingfoil virgen en una laguna paradisíaca de Mozambique.',
+  de: 'Unberührter Kitesurf- und Wingfoil-Spot in einer paradiesischen Lagune in Mosambik.',
+  pl: 'Dziewiczy spot do kitesurfingu i wingfoila w rajskiej lagunie w Mozambiku.',
 };
 
 // Établissement principal (LocalBusiness spécialisé sports nautiques).
