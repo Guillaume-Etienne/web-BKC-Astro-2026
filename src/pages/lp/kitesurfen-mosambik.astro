@@ -5,7 +5,9 @@
 //  Le site n'existe PAS en allemand : les liens secondaires pointent donc vers
 //  les pages ANGLAISES (choix de Guillaume, 12/08/2026), et le bloc d'avis est
 //  affiche en anglais (<Reviews lang="en" />) — les temoignages ne sont pas
-//  traduits en allemand dans src/i18n/reviews.js.
+//  traduits en allemand dans src/i18n/reviews.js. Meme chose pour le
+//  formulaire integre en iframe : l'app de gestion ne gere que fr/en/es,
+//  donc enquiryFormUrl('en') ici aussi.
 //  Memes regles que les autres LP : hors plan de routes, noindex, hors sitemap.
 //  Conversion mesurable = clic WhatsApp (evenement gtag whatsapp_click).
 //  Traduction du copy de Chris — A FAIRE RELIRE par lui.
@@ -16,9 +18,9 @@ import Seo from '../../components/Seo.astro';
 import WhatsApp from '../../components/WhatsApp.astro';
 import Reviews from '../../components/Reviews.astro';
 import { businessJsonLd } from '../../i18n/jsonld.js';
+import { enquiryFormUrl } from '../../i18n/enquiryForm.js';
 import '../../sass/general.scss';
 
-const CONTACT = '/en/information-mozambique/#contactus';
 const PRICES = '/en/services-prices-bilene-kitesurf-mozambique/';
 const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
 ---
@@ -65,7 +67,7 @@ const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
                 </p>
                 <div class="lp-cta">
                     <WhatsApp page="lp" lang="de" label="Auf WhatsApp fragen" />
-                    <a class="lp-btn-second" href={CONTACT}>Angebot anfragen</a>
+                    <a class="lp-btn-second" href="#lp-contact">Angebot anfragen</a>
                 </div>
                 <p class="lp-cta-note">Es antwortet ein Mensch — kein Formular ins Leere.</p>
             </div>
@@ -255,7 +257,16 @@ const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
             </p>
             <div class="lp-cta lp-cta--centre">
                 <WhatsApp page="lp" lang="de" label="Auf WhatsApp schreiben" />
-                <a class="lp-btn-second lp-btn-second--clair" href={CONTACT}>Über das Formular</a>
+            </div>
+            <div class="lp-form-card" id="lp-contact">
+                <p class="lp-form-note">Oder füllen Sie das Formular unten aus, ohne die Seite zu verlassen.</p>
+                <iframe
+                    id="bkc-enquiry"
+                    data-page-key="lp"
+                    title="Bilene Kite Center Kontaktformular"
+                    src={enquiryFormUrl('en')}
+                    style="width:100%;border:0;display:block;height:560px"
+                    loading="lazy"></iframe>
             </div>
             <p class="lp-sortie">
                 Erst einmal stöbern? <a href="/en/">Hier geht es zur kompletten Website</a> —

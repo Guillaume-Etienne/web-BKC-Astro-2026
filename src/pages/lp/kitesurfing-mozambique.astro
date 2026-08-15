@@ -16,9 +16,9 @@ import Seo from '../../components/Seo.astro';
 import WhatsApp from '../../components/WhatsApp.astro';
 import Reviews from '../../components/Reviews.astro';
 import { businessJsonLd } from '../../i18n/jsonld.js';
+import { enquiryFormUrl } from '../../i18n/enquiryForm.js';
 import '../../sass/general.scss';
 
-const CONTACT = '/en/information-mozambique/#contactus';
 const PRICES = '/en/services-prices-bilene-kitesurf-mozambique/';
 const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
 ---
@@ -65,7 +65,7 @@ const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
                 </p>
                 <div class="lp-cta">
                     <WhatsApp page="lp" lang="en" label="Ask us anything on WhatsApp" />
-                    <a class="lp-btn-second" href={CONTACT}>Request a quote</a>
+                    <a class="lp-btn-second" href="#lp-contact">Request a quote</a>
                 </div>
                 <p class="lp-cta-note">A real person answers — not a form shouting into the void.</p>
             </div>
@@ -253,7 +253,16 @@ const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
             </p>
             <div class="lp-cta lp-cta--centre">
                 <WhatsApp page="lp" lang="en" label="Message us on WhatsApp" />
-                <a class="lp-btn-second lp-btn-second--clair" href={CONTACT}>Use the contact form</a>
+            </div>
+            <div class="lp-form-card" id="lp-contact">
+                <p class="lp-form-note">Or fill in the form below, without leaving the page.</p>
+                <iframe
+                    id="bkc-enquiry"
+                    data-page-key="lp"
+                    title="Bilene Kite Center contact form"
+                    src={enquiryFormUrl('en')}
+                    style="width:100%;border:0;display:block;height:560px"
+                    loading="lazy"></iframe>
             </div>
             <p class="lp-sortie">
                 Want to dig around first? <a href="/en/">The full site is this way</a> —

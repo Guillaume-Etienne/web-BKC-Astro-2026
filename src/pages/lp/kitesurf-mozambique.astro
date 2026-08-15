@@ -8,8 +8,9 @@
 //    - exclue du sitemap (filtre dans astro.config.mjs)
 //  Pas de <Menu> : sur une page payante, chaque lien de nav est une fuite.
 //  Conversion mesurable = clic WhatsApp (evenement gtag whatsapp_click).
-//  Le formulaire viendra plus tard ; en attendant on renvoie vers la page
-//  contact existante.
+//  Formulaire de l'app de gestion integre en iframe dans le bloc final
+//  (#lp-contact) : le CTA "Demander un devis" du hero y renvoie par ancre
+//  plutot que de faire quitter la page. Voir .claude/ENQUIRY_FORM_EMBED.md.
 // ============================================================================
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
@@ -17,9 +18,8 @@ import Seo from '../../components/Seo.astro';
 import WhatsApp from '../../components/WhatsApp.astro';
 import Reviews from '../../components/Reviews.astro';
 import { businessJsonLd } from '../../i18n/jsonld.js';
+import { enquiryFormUrl } from '../../i18n/enquiryForm.js';
 import '../../sass/general.scss';
-
-const CONTACT = '/fr/infos-mozambique/#contactus';
 ---
 <!DOCTYPE html>
 <html lang="fr">
@@ -67,7 +67,7 @@ const CONTACT = '/fr/infos-mozambique/#contactus';
                 </p>
                 <div class="lp-cta">
                     <WhatsApp page="lp" lang="fr" label="Poser une question sur WhatsApp" />
-                    <a class="lp-btn-second" href={CONTACT}>Demander un devis</a>
+                    <a class="lp-btn-second" href="#lp-contact">Demander un devis</a>
                 </div>
                 <p class="lp-cta-note">Une vraie personne répond — pas un formulaire dans le vide.</p>
             </div>
@@ -255,7 +255,16 @@ const CONTACT = '/fr/infos-mozambique/#contactus';
             </p>
             <div class="lp-cta lp-cta--centre">
                 <WhatsApp page="lp" lang="fr" label="Écrire sur WhatsApp" />
-                <a class="lp-btn-second lp-btn-second--clair" href={CONTACT}>Passer par le formulaire</a>
+            </div>
+            <div class="lp-form-card" id="lp-contact">
+                <p class="lp-form-note">Ou remplissez le formulaire ci-dessous, sans quitter la page.</p>
+                <iframe
+                    id="bkc-enquiry"
+                    data-page-key="lp"
+                    title="Formulaire de contact du Bilene Kite Center"
+                    src={enquiryFormUrl('fr')}
+                    style="width:100%;border:0;display:block;height:560px"
+                    loading="lazy"></iframe>
             </div>
             <p class="lp-sortie">
                 Envie de fouiller d’abord ? <a href="/">Le site complet est par ici</a> —

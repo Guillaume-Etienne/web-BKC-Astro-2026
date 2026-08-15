@@ -389,6 +389,33 @@
     }
 }
 
+// ─── FORMULAIRE (integre au bloc final) ────────────────────────
+// Carte claire posee sur le fond sombre du bloc final, meme construction
+// que .contact-card (src/sass/_infos.scss) : le WhatsApp reste le CTA
+// principal juste au-dessus, le formulaire est l'option pour qui prefere
+// ecrire sans quitter la page plutot que d'etre renvoye vers le site.
+.lp-form-card {
+    max-width: 700px;
+    margin: $space-xl auto 0;
+    background: $color-surface;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+    padding: $space-xl $space-md;
+    text-align: left;
+
+    & iframe {
+        width: 100%;
+        border-radius: $radius-md;
+        transition: height 0.2s ease;
+    }
+}
+
+.lp-form-note {
+    text-align: center;
+    color: $colorgreytext1;
+    margin: 0 0 $space-lg;
+}
+
 // La seule porte de sortie assumee vers le site. Discrete, tout en bas :
 // celui qui veut verifier peut le faire, sans distraire celui qui allait ecrire.
 .lp-sortie {

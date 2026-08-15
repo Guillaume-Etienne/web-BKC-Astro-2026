@@ -4,7 +4,9 @@
 // ----------------------------------------------------------------------------
 //  Le site n'existe PAS en polonais : les liens secondaires pointent vers les
 //  pages ANGLAISES (choix de Guillaume, 12/08/2026), et le bloc d'avis est
-//  affiche en anglais (<Reviews lang="en" />).
+//  affiche en anglais (<Reviews lang="en" />). Meme chose pour le formulaire
+//  integre en iframe : l'app de gestion ne gere que fr/en/es, donc
+//  enquiryFormUrl('en') ici aussi.
 //  Le copy tutoie (forme "Ty") : c'est l'usage du marketing sportif en Pologne,
 //  et ca colle au ton direct de la version francaise. Les tournures genrees
 //  sont evitees (pas de "chciałbym/chciałabym").
@@ -17,9 +19,9 @@ import Seo from '../../components/Seo.astro';
 import WhatsApp from '../../components/WhatsApp.astro';
 import Reviews from '../../components/Reviews.astro';
 import { businessJsonLd } from '../../i18n/jsonld.js';
+import { enquiryFormUrl } from '../../i18n/enquiryForm.js';
 import '../../sass/general.scss';
 
-const CONTACT = '/en/information-mozambique/#contactus';
 const PRICES = '/en/services-prices-bilene-kitesurf-mozambique/';
 const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
 ---
@@ -66,7 +68,7 @@ const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
                 </p>
                 <div class="lp-cta">
                     <WhatsApp page="lp" lang="pl" label="Zapytaj na WhatsAppie" />
-                    <a class="lp-btn-second" href={CONTACT}>Poproś o wycenę</a>
+                    <a class="lp-btn-second" href="#lp-contact">Poproś o wycenę</a>
                 </div>
                 <p class="lp-cta-note">Odpisuje żywy człowiek — a nie formularz w próżnię.</p>
             </div>
@@ -252,7 +254,16 @@ const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
             </p>
             <div class="lp-cta lp-cta--centre">
                 <WhatsApp page="lp" lang="pl" label="Napisz na WhatsAppie" />
-                <a class="lp-btn-second lp-btn-second--clair" href={CONTACT}>Przez formularz</a>
+            </div>
+            <div class="lp-form-card" id="lp-contact">
+                <p class="lp-form-note">Albo wypełnij poniższy formularz, bez opuszczania strony.</p>
+                <iframe
+                    id="bkc-enquiry"
+                    data-page-key="lp"
+                    title="Formularz kontaktowy Bilene Kite Center"
+                    src={enquiryFormUrl('en')}
+                    style="width:100%;border:0;display:block;height:560px"
+                    loading="lazy"></iframe>
             </div>
             <p class="lp-sortie">
                 Wolisz najpierw poczytać? <a href="/en/">Tędy do pełnej strony</a> —
