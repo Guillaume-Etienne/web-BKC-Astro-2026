@@ -6,6 +6,7 @@ import Analytics from '../../components/Analytics.astro';
 import Seo from '../../components/Seo.astro';
 import WhatsApp from '../../components/WhatsApp.astro';
 import { businessJsonLd } from '../../i18n/jsonld.js';
+import { enquiryFormUrl } from '../../i18n/enquiryForm.js';
 import '../../sass/general.scss';
 ---
 
@@ -135,7 +136,13 @@ import '../../sass/general.scss';
             <div class="contact-card">
                 <h2>Nous écrire</h2>
                 <p>Pas de robot — une vraie personne de l'autre côté de l'écran.</p>
-                <iframe title="Formulaire de contact du Bilene Kite Center" src="https://docs.google.com/forms/d/e/1FAIpQLSdWUWL2O2EnkCcHwrPwBHKuq2T8ppf0SRJYzRoQVa5GG6vuig/viewform?embedded=true" width="100%" height="981" scrolling="no">Loading…</iframe>
+                <iframe
+                    id="bkc-enquiry"
+                    data-page-key="info"
+                    title="Formulaire de contact du Bilene Kite Center"
+                    src={enquiryFormUrl('fr')}
+                    style="width:100%;border:0;display:block;height:560px"
+                    loading="lazy"></iframe>
             </div>
         </section>
 

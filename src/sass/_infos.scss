@@ -170,6 +170,7 @@
         border-radius: $radius-md;
         display: block;
         margin: 0 auto;
+        transition: height 0.2s ease;
     }
 }
 
