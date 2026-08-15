@@ -251,11 +251,16 @@
             flex-wrap: wrap;
         }
         // Liens principaux (pas sous-menus)
+        // Padding horizontal resserre a $space-sm (etait $space-md) : les 9
+        // entrees + "Infos / Contacto" en espagnol (le plus long des 3
+        // langues) ne tenaient plus sur une ligne aux largeurs de bureau
+        // proches de $container-max — l'espagnol retombait seul sur 2 lignes
+        // alors que le francais/anglais tenaient de justesse.
         > ul > li > a {
             font-size: $fs-base;
             color: $colorprimary;
             border-left: none;
-            padding: $space-sm $space-md;
+            padding: $space-sm $space-sm;
             border-radius: $radius-md;
             font-weight: 500;
             white-space: nowrap;
@@ -263,7 +268,7 @@
                 color: $color-ocean;
                 background: rgba($color-ocean, 0.06);
                 border-left: none;
-                padding-left: $space-md;
+                padding-left: $space-sm;
                 transform: none;
             }
             &:visited {
