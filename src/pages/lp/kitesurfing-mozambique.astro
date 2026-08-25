@@ -4,12 +4,15 @@
 // ----------------------------------------------------------------------------
 //  Version anglaise de /lp/kitesurf-mozambique/. Memes regles :
 //    - hors du plan de routes (src/i18n/pages.js) : pas de hreflang, pas de
-//      switcher de langue, pas de menu
+//      switcher de langue base sur pages.js
 //    - noindex : elle ne doit pas cannibaliser les pages SEO
 //    - exclue du sitemap (filtre /lp/ dans astro.config.mjs)
+//  <MenuEN> reintegre le 25/08/2026 (demande Guillaume), a la place du
+//  mini-header lp-header.
 //  Conversion mesurable = clic WhatsApp (evenement gtag whatsapp_click).
 //  Traduction du copy de Chris — A FAIRE RELIRE par lui.
 // ============================================================================
+import MenuEN from '../../components/MenuEN.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
 import Seo from '../../components/Seo.astro';
@@ -41,12 +44,7 @@ const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
 </head>
 <body class="lp">
 
-    <header class="lp-header">
-        <a href="/en/" aria-label="Bilene Kite Center home">
-            <img src="/images/logomini.webp" alt="Bilene Kite Center" width="70">
-        </a>
-        <span class="lp-header-saison">Season September → March</span>
-    </header>
+    <MenuEN page="lp" />
 
     <main>
 
@@ -56,6 +54,7 @@ const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
                 Your browser does not support video
             </video>
             <div class="lp-hero-texte">
+                <span class="lp-badge-saison">Season September → March</span>
                 <p class="lp-eyebrow">Bilene Lagoon</p>
                 <h1>Kitesurf trip to Mozambique: discover the paradise riders haven’t found yet</h1>
                 <p class="lp-accroche">

@@ -11,26 +11,13 @@
 //  tenant evite d'aller chercher ses reglages dans deux fichiers.
 // ============================================================================
 
-// ─── EN-TETE MINIMALE ────────────────────────────────────────
-// Pas de navigation : sur une page payante, chaque lien est une fuite.
-.lp-header {
-    position: sticky;
-    top: 0;
-    z-index: $z-sticky;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: $space-md;
-    padding: $space-sm $space-md;
-    background: $colorbackground;
-    border-bottom: 1px solid rgba($color-dark, 0.08);
-    & img {
-        width: 70px;
-        margin: 0;
-    }
-}
-
-.lp-header-saison {
+// ─── HERO ────────────────────────────────────────────────────
+// L'entete standard du site (<Menu>/<MenuEN>) porte la nav depuis le
+// 25/08/2026 ; le badge de saison qui vivait dans le mini-header disparu
+// est reaffiche ici, en tete du bloc texte du hero.
+.lp-badge-saison {
+    display: inline-block;
+    margin-bottom: $space-sm;
     font-size: $fs-sm;
     font-weight: 600;
     color: $color-ocean-dark;
@@ -40,7 +27,6 @@
     white-space: nowrap;
 }
 
-// ─── HERO ────────────────────────────────────────────────────
 .lp-hero {
     display: flex;
     flex-direction: column;

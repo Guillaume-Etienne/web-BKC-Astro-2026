@@ -3,15 +3,20 @@
 //  LANDING PAGE — campagne Google Ads (FR / BE / CH)
 // ----------------------------------------------------------------------------
 //  Volontairement HORS du plan de routes (src/i18n/pages.js) :
-//    - pas de hreflang, pas de switcher de langue, pas de menu
+//    - pas de hreflang, pas de switcher de langue base sur pages.js
 //    - noindex : elle ne doit pas cannibaliser les pages SEO
 //    - exclue du sitemap (filtre dans astro.config.mjs)
-//  Pas de <Menu> : sur une page payante, chaque lien de nav est une fuite.
+//  <Menu> reintegre le 25/08/2026 (demande Guillaume) : le header standard
+//  du site remplace le mini-header lp-header. La cle "lp" est absente de
+//  pages.js, donc le switcher FR/EN/ES du composant retombe sur les accueils
+//  generalistes /en/ et /es/ plutot que sur une LP equivalente (aucune LP
+//  n'est enregistree dans pages.js).
 //  Conversion mesurable = clic WhatsApp (evenement gtag whatsapp_click).
 //  Formulaire de l'app de gestion integre en iframe dans le bloc final
 //  (#lp-contact) : le CTA "Demander un devis" du hero y renvoie par ancre
 //  plutot que de faire quitter la page. Voir .claude/ENQUIRY_FORM_EMBED.md.
 // ============================================================================
+import Menu from '../../components/Menu.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
 import Seo from '../../components/Seo.astro';
@@ -40,15 +45,7 @@ import '../../sass/general.scss';
 </head>
 <body class="lp">
 
-    <header class="lp-header">
-        <!-- Logo cliquable : un logo qui ne fait rien donne l'impression d'une
-             page bricolee. Sur un achat a 2000 EUR, laisser verifier que le
-             site existe vaut mieux que verrouiller la page. -->
-        <a href="/" aria-label="Accueil Bilene Kite Center">
-            <img src="/images/logomini.webp" alt="Bilene Kite Center" width="70">
-        </a>
-        <span class="lp-header-saison">Saison septembre → mars</span>
-    </header>
+    <Menu page="lp" />
 
     <main>
 
@@ -58,6 +55,7 @@ import '../../sass/general.scss';
                 Navigateur incompatible
             </video>
             <div class="lp-hero-texte">
+                <span class="lp-badge-saison">Saison septembre → mars</span>
                 <p class="lp-eyebrow">Lagune de Bilene</p>
                 <h1>Kitesurf trip au Mozambique : découvrez la nouvelle destination paradisiaque encore méconnue des riders</h1>
                 <p class="lp-accroche">

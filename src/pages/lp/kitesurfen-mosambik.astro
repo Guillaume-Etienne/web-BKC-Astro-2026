@@ -7,11 +7,14 @@
 //  affiche en anglais (<Reviews lang="en" />) — les temoignages ne sont pas
 //  traduits en allemand dans src/i18n/reviews.js. Meme chose pour le
 //  formulaire integre en iframe : l'app de gestion ne gere que fr/en/es,
-//  donc enquiryFormUrl('en') ici aussi.
+//  donc enquiryFormUrl('en') ici aussi. Pour la meme raison, le menu de nav
+//  est <MenuEN> (pas de version allemande du site) — demande Guillaume,
+//  25/08/2026.
 //  Memes regles que les autres LP : hors plan de routes, noindex, hors sitemap.
 //  Conversion mesurable = clic WhatsApp (evenement gtag whatsapp_click).
 //  Traduction du copy de Chris — A FAIRE RELIRE par lui.
 // ============================================================================
+import MenuEN from '../../components/MenuEN.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
 import Seo from '../../components/Seo.astro';
@@ -43,12 +46,7 @@ const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
 </head>
 <body class="lp">
 
-    <header class="lp-header">
-        <a href="/en/" aria-label="Bilene Kite Center Startseite">
-            <img src="/images/logomini.webp" alt="Bilene Kite Center" width="70">
-        </a>
-        <span class="lp-header-saison">Saison September → März</span>
-    </header>
+    <MenuEN page="lp" />
 
     <main>
 
@@ -58,6 +56,7 @@ const PREPARE = '/en/prepare-your-trip-to-bilene-mozambique/';
                 Ihr Browser unterstützt kein Video
             </video>
             <div class="lp-hero-texte">
+                <span class="lp-badge-saison">Saison September → März</span>
                 <p class="lp-eyebrow">Lagune von Bilene</p>
                 <h1>Kitesurf-Trip nach Mosambik: das Paradies, das die Rider noch nicht entdeckt haben</h1>
                 <p class="lp-accroche">
