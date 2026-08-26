@@ -18,9 +18,11 @@ export default defineConfig({
       //   - /secret (page cachée, noindex/nofollow)
       //   - les 3 stubs de redirection FAQ (noindex + meta-refresh vers la prépa)
       //   - /lp/* : landing pages Google Ads, en noindex volontaire
+      //   - /programme-ambassadeurs/ : lien direct newsletter, noindex volontaire
       filter: (page) =>
         !page.includes('/lp/') &&
         !page.includes('/secret/') &&
+        !page.includes('/programme-ambassadeurs/') &&
         !page.includes('/la-faq-pour-bilene-au-mozambique/') &&
         !page.includes('/faq-bilene-mozambique/'),
     }),

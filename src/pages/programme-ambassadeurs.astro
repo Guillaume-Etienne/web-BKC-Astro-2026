@@ -1,0 +1,287 @@
+---
+// ============================================================================
+//  PROGRAMME AMBASSADEURS — page hors plan de routes (noindex)
+// ----------------------------------------------------------------------------
+//  Volontairement HORS de src/i18n/pages.js, sur le meme modele que
+//  src/pages/secret.astro : lien direct donne en newsletter, pas de
+//  hreflang/switcher base sur pages.js, exclue du sitemap (astro.config.mjs).
+//  <Seo> est quand meme utilise (page="programme-ambassadeurs", cle absente
+//  de PAGES : routesFor() retombe sur {} et le canonical sur l'URL courante,
+//  comme pour les LP Ads) pour avoir un bel apercu de lien dans la newsletter
+//  (og:title/description/image).
+// ============================================================================
+import Menu from '../components/Menu.astro';
+import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import Seo from '../components/Seo.astro';
+import WhatsApp from '../components/WhatsApp.astro';
+import Reviews from '../components/Reviews.astro';
+import '../sass/general.scss';
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+    <Seo
+        page="programme-ambassadeurs"
+        lang="fr"
+        noindex={true}
+        title="Programme Ambassadeurs — Bilene Kite Center"
+        description="Organisez un groupe pour venir kiter à Bilène et voyagez à moindre coût, voire gratuitement. Plus le groupe est grand, plus les avantages augmentent."
+        image="/images/11-Accomodation/Palm_view.jpg"
+    />
+    <Analytics />
+</head>
+<body>
+
+    <Menu page="programme-ambassadeurs" />
+
+    <main>
+
+        <!-- ─── MASTHEAD ─────────────────────────────────────── -->
+        <section class="amb-hero">
+            <p class="amb-eyebrow">Bilene Kite Center · Mozambique</p>
+            <h1>Programme Ambassadeurs</h1>
+            <p>Organisez un groupe pour venir kiter à Bilène et voyagez à moindre coût — voire gratuitement. Plus votre groupe est grand, plus les avantages augmentent, jusqu'à un chèque-cadeau pour votre billet d'avion à partir de 10 personnes amenées.</p>
+        </section>
+
+        <!-- ─── TROIS PROFILS ────────────────────────────────── -->
+        <section class="amb-section">
+            <p class="amb-section-label">Comment ça marche</p>
+            <h2>Trois profils, un principe commun</h2>
+            <p class="amb-lead">Le programme s'adapte à votre pratique : que vous naviguiez déjà avec votre matériel, que vous louiez sur place, ou que vous fassiez découvrir le kite à votre groupe.</p>
+            <p class="amb-anchor-note">À partir de 3 personnes amenées : voyage complet offert (hébergement, transferts, storage)</p>
+
+            <div class="amb-tiers">
+
+                <div class="acc-item is-open" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="true">
+                        <span class="acc-head-content">
+                            <span class="amb-badge">A</span>
+                            <span class="amb-tier-title">
+                                <span class="acc-title">Riders indépendants</span>
+                                <span class="amb-tier-sub">Vous voyagez avec votre propre matériel</span>
+                            </span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-tier-rows">
+                                <div class="amb-tier-row"><span class="amb-amene">1-2 personnes</span><span class="amb-avantage">10% de réduction sur l'hébergement + storage gratuit</span></div>
+                                <div class="amb-tier-row amb-tier-row--highlight"><span class="amb-amene">3 personnes</span><span class="amb-avantage">Voyage complet gratuit (vols et visas non inclus)</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">4-6 personnes</span><span class="amb-avantage">+ 40% de réduction sur la location de matériel<br>+ 1 session d'essai d'une demi-journée avec l'équipement Eleveight 2027</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">7 personnes</span><span class="amb-avantage">+ 2 sessions d'essai d'une demi-journée avec l'équipement Eleveight 2027</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">10+ personnes</span><span class="amb-avantage">+ chèque-cadeau de ~90€/personne amenée pour le billet d'avion</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="false">
+                        <span class="acc-head-content">
+                            <span class="amb-badge">B</span>
+                            <span class="amb-tier-title">
+                                <span class="acc-title">Location de matériel</span>
+                                <span class="amb-tier-sub">Vous n'avez pas d'équipement, vous louez sur place</span>
+                            </span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-tier-rows">
+                                <div class="amb-tier-row"><span class="amb-amene">1-2 personnes</span><span class="amb-avantage">20% de réduction sur l'hébergement + storage gratuit</span></div>
+                                <div class="amb-tier-row amb-tier-row--highlight"><span class="amb-amene">3 personnes</span><span class="amb-avantage">Voyage complet gratuit (vols et visas non inclus)</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">4-6 personnes</span><span class="amb-avantage">+ 50% de réduction sur la location de matériel<br>+ 2 sessions d'essai d'une demi-journée avec l'équipement Eleveight 2027</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">7 personnes</span><span class="amb-avantage">+ 3 sessions d'essai d'une demi-journée avec l'équipement Eleveight 2027</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">10+ personnes</span><span class="amb-avantage">+ chèque-cadeau de ~115€/personne amenée pour le billet d'avion</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="false">
+                        <span class="acc-head-content">
+                            <span class="amb-badge">C</span>
+                            <span class="amb-tier-title">
+                                <span class="acc-title">Cours</span>
+                                <span class="amb-tier-sub">Vous découvrez le kite ou faites découvrir le sport à votre groupe</span>
+                            </span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-tier-rows">
+                                <div class="amb-tier-row"><span class="amb-amene">1-2 personnes</span><span class="amb-avantage">25% de réduction sur l'hébergement + excursions</span></div>
+                                <div class="amb-tier-row amb-tier-row--highlight"><span class="amb-amene">3 personnes</span><span class="amb-avantage">Voyage complet gratuit (vols et visas non inclus)</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">4-6 personnes</span><span class="amb-avantage">+ pack de 4h de cours gratuit</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">7 personnes</span><span class="amb-avantage">+ pack de 10h de cours gratuit</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">10+ personnes</span><span class="amb-avantage">+ chèque-cadeau de ~120€/personne amenée pour le billet d'avion</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ─── EXEMPLE DE SEJOUR ────────────────────────────── -->
+        <section class="amb-package-hero">
+            <p class="amb-eyebrow">Bilene Kite Center · Mozambique</p>
+            <h2>7 nuits sur un lagon vierge, entre kite, plage et lune de Bilène</h2>
+            <p>Un séjour clé en main pour groupe de 4, pensé pour découvrir le meilleur spot du sud du Mozambique sans rien organiser.</p>
+            <div class="amb-price-tag">
+                <span class="amb-amount">690€</span>
+                <span class="amb-unit">par personne</span>
+            </div>
+        </section>
+
+        <section class="amb-section">
+            <p class="amb-section-label">Le séjour que vous offrez à votre groupe</p>
+            <h2>Tout est prévu, il ne reste qu'à voler</h2>
+            <p class="amb-lead">Un séjour complet pensé pour se concentrer sur l'essentiel : le vent, le lagon, et le groupe.</p>
+
+            <div class="amb-quick-items">
+                <div class="amb-qi"><span class="amb-dot"></span><div><strong>Transfert aéroport – Bilène</strong><span>Aller-retour, pris en charge dès la sortie de l'avion</span></div></div>
+                <div class="amb-qi"><span class="amb-dot"></span><div><strong>Spot direct sur la plage</strong><span>Zone sécurisée, douches, espace chilling</span></div></div>
+                <div class="amb-qi"><span class="amb-dot"></span><div><strong>Storage matériel</strong><span>Rangement sécurisé pour votre équipement pendant tout le séjour</span></div></div>
+            </div>
+
+            <div class="amb-included">
+
+                <div class="acc-item" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="false">
+                        <span class="acc-head-content">
+                            <span class="acc-title">7 nuits en chalet première ligne</span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-included-body">
+                                <img src="/images/11-Accomodation/Palm_Bung.jpg" alt="Allée ombragée entre les bungalows du centre" loading="lazy">
+                                <p>Chambre double partagée, salon-cuisine, 2 salles de bain, terrasse face à la plage.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="false">
+                        <span class="acc-head-content">
+                            <span class="acc-title">Excursion au Limpopo</span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-included-body">
+                                <img src="/images/4-trips/8.webp" alt="Le phare et l'embouchure du fleuve Limpopo, vus du ciel" loading="lazy" class="amb-img-full">
+                                <p>Journée découverte avec déjeuner inclus.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="false">
+                        <span class="acc-head-content">
+                            <span class="acc-title">Excursion à Macia</span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-included-body">
+                                <img src="/images/2-excursions/Macia.webp" alt="Marché local de Macia" loading="lazy">
+                                <p>Matinée village et marché local.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="false">
+                        <span class="acc-head-content">
+                            <span class="acc-title">La lagune vue du ciel</span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-included-body">
+                                <img src="/images/2-excursions/autres.webp" alt="Vue aérienne de la lagune de Bilène, bras de mer et bancs de sable" loading="lazy">
+                                <p>Bras de mer, bancs de sable et dunes, à quelques minutes du centre.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="false">
+                        <span class="acc-head-content">
+                            <span class="acc-title">Massage 45 minutes</span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-included-body">
+                                <img src="/images/blog/massage.webp" alt="Massage détente 45 minutes" loading="lazy" class="amb-img-top">
+                                <p>Un moment détente après les sessions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="amb-note-band">
+            <div class="amb-note-badge">+</div>
+            <div>
+                <h3>En option, selon votre profil</h3>
+                <p>Location de matériel Eleveight (50€/demi-journée) ou cours particuliers avec un moniteur IKO (à partir de 120€), pour ceux qui n'ont pas encore leur équipement ou débutent.</p>
+            </div>
+        </div>
+
+        <Reviews lang="fr" />
+
+        <div class="amb-cta">
+            <h2>Prêt à devenir ambassadeur ?</h2>
+            <p>Contactez-nous directement sur WhatsApp pour organiser votre groupe et mettre en place vos avantages, en direct avec l'équipe du centre.</p>
+            <WhatsApp page="ambassador" lang="fr" label="Nous contacter sur WhatsApp" />
+            <p class="amb-fine">Prix indicatif pour un groupe de 4 personnes · vols et visas non inclus</p>
+        </div>
+
+    </main>
+
+    <Footer />
+    <script is:inline src="/js/accordion.js?v=2"></script>
+</body>
+</html>

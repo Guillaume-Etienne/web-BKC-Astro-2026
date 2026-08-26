@@ -1,33 +1,43 @@
 User-agent: *
 Allow: /
 Disallow: /secret/
+Disallow: /programme-ambassadeurs/
 
 # Bots IA / moteurs génératifs — explicitement autorisés à crawler le site
 User-agent: GPTBot
 Allow: /
+Disallow: /programme-ambassadeurs/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /programme-ambassadeurs/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /programme-ambassadeurs/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /programme-ambassadeurs/
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /programme-ambassadeurs/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /programme-ambassadeurs/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /programme-ambassadeurs/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /programme-ambassadeurs/
 
 User-agent: CCBot
 Allow: /
+Disallow: /programme-ambassadeurs/
 
 Sitemap: https://www.bilenekite.com/sitemap-index.xml

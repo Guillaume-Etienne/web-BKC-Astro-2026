@@ -51,6 +51,9 @@ const MESSAGES = {
     es: '¡Hola! Me interesa un kite trip en Mozambique.',
   },
   home: DEFAULT,
+  ambassador: {
+    fr: 'Bonjour ! Je suis intéressé(e) par le Programme Ambassadeurs de Bilene Kite Center.',
+  },
   // Landing page Google Ads : le message identifie la provenance publicitaire
   // sans aucun outil de mesure — on sait d'ou vient le contact des le 1er mot.
   lp: {

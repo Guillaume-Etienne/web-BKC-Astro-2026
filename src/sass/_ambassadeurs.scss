@@ -1,0 +1,351 @@
+@use "sass:color";
+@use "variables" as *;
+
+// ============================================================================
+//  PAGE "PROGRAMME AMBASSADEURS" — /programme-ambassadeurs/
+// ----------------------------------------------------------------------------
+//  Page hors plan de routes (noindex, lien direct newsletter). Tout est
+//  prefixe .amb- et ne touche aucune autre page.
+//  Reutilise l'accordeon partage (JS : public/js/accordion.js, CSS commun
+//  .acc-panel/.acc-toggle/.is-open : _preparation.scss) mais avec un header
+//  compact (.amb-acc-header) au lieu de la banniere photo de la page prepa.
+//  DEROGATION ASSUMEE (comme _landing.scss) : media queries ici, pas dans
+//  _desktopresponsive.scss — page autonome, un seul fichier a maintenir.
+// ============================================================================
+
+// ─── CONTENEUR ───────────────────────────────────────────────
+.amb-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: $space-2xl $space-md;
+}
+
+.amb-section-label {
+    font-size: $fs-xs;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $color-ocean-dark;
+    text-align: center;
+    margin-bottom: $space-xs;
+}
+
+.amb-lead {
+    max-width: 62ch;
+    margin: 0 auto $space-lg;
+    text-align: center;
+    color: $colorgreytext1;
+}
+
+.amb-anchor-note {
+    display: block;
+    width: fit-content;
+    margin: 0 auto $space-xl;
+    font-size: $fs-sm;
+    font-weight: 600;
+    color: $color-ocean-dark;
+    background: rgba($color-ocean, 0.08);
+    padding: $space-xs $space-md;
+    border-radius: $radius-full;
+    text-align: center;
+}
+
+// ─── MASTHEAD (bandeau sombre) ────────────────────────────────
+.amb-hero {
+    background: $gradient-dark;
+    color: $color-sand;
+    padding: $space-3xl $space-md $space-2xl;
+    text-align: center;
+}
+.amb-hero .amb-eyebrow {
+    justify-content: center;
+}
+.amb-hero h1 {
+    color: white;
+    max-width: 620px;
+    margin: 0 auto $space-md;
+}
+.amb-hero p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: rgba(white, 0.85);
+}
+
+.amb-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: $space-2xs;
+    font-size: $fs-xs;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $color-sky;
+    margin-bottom: $space-sm;
+}
+
+// ─── HERO SEJOUR TYPE (avec prix) ─────────────────────────────
+.amb-package-hero {
+    position: relative;
+    background: $gradient-hero, url('/images/11-Accomodation/Palm_view.jpg') center/cover no-repeat;
+    color: white;
+    padding: $space-3xl $space-md $space-2xl;
+    text-align: center;
+}
+.amb-package-hero .amb-eyebrow {
+    justify-content: center;
+    color: $color-sand;
+}
+.amb-package-hero h2 {
+    color: white;
+    max-width: 640px;
+    margin: 0 auto $space-sm;
+}
+.amb-package-hero p {
+    max-width: 520px;
+    margin: 0 auto;
+    color: rgba(white, 0.9);
+}
+
+.amb-price-tag {
+    display: inline-flex;
+    flex-direction: column;
+    margin-top: $space-lg;
+    background: $color-ocean;
+    color: white;
+    padding: $space-sm $space-lg;
+    border-radius: $radius-md;
+    box-shadow: $shadow-md;
+    & .amb-amount {
+        font-family: $font-display;
+        font-weight: 400;
+        font-size: $fs-xl;
+        line-height: 1;
+    }
+    & .amb-unit {
+        font-size: $fs-xs;
+        opacity: 0.9;
+    }
+}
+
+// ─── QUICK ITEMS (bande texte, sans photo) ───────────────────
+.amb-quick-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-lg;
+    margin-bottom: $space-xl;
+    padding-bottom: $space-lg;
+    border-bottom: 1px solid $colorsecondary;
+}
+.amb-qi {
+    display: flex;
+    align-items: flex-start;
+    gap: $space-sm;
+    flex: 1 1 220px;
+    & strong {
+        display: block;
+        font-size: $fs-base;
+    }
+    & span {
+        font-size: $fs-sm;
+        color: $colorgreytext1;
+    }
+}
+.amb-dot {
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    border-radius: $radius-full;
+    background: $color-ocean;
+    margin-top: 7px;
+}
+
+// ─── ACCORDEON — header compact (paliers + inclus) ───────────
+// Surcharge du header photo-banniere de _preparation.scss pour un rendu
+// carte compacte, sans toucher aux regles existantes de la page prepa.
+.amb-acc-header {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-md;
+    width: 100%;
+    padding: $space-md $space-lg;
+    cursor: pointer;
+    background: $color-surface;
+    &::before {
+        content: none;
+    }
+    &:focus-visible {
+        outline: 2px solid $color-ocean;
+        outline-offset: -2px;
+    }
+    & .acc-title {
+        color: $colorprimary;
+        text-shadow: none;
+        font-size: $fs-lg;
+    }
+    & .acc-toggle {
+        width: 36px;
+        height: 36px;
+        & svg {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+.amb-acc-header .amb-badge {
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    border-radius: $radius-full;
+    background: $gradient-ocean;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-display;
+    font-weight: 400;
+}
+.amb-tier-title {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.amb-acc-header .amb-tier-sub {
+    display: block;
+    font-size: $fs-sm;
+    font-weight: 400;
+    color: $colorgreytext1;
+    margin-top: $space-2xs;
+}
+
+.amb-tiers,
+.amb-included {
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+}
+
+.amb-tiers .acc-item,
+.amb-included .acc-item {
+    max-width: 100%;
+}
+
+// ─── PALIERS — lignes de recompense ────────────────────────────
+.amb-tier-rows {
+    display: flex;
+    flex-direction: column;
+}
+.amb-tier-row {
+    padding: $space-sm 0;
+    border-bottom: 1px solid $colorsecondary;
+    &:last-child {
+        border-bottom: none;
+    }
+    &--highlight {
+        background: rgba($color-ocean, 0.06);
+        margin: 0 (-$space-lg);
+        padding: $space-sm $space-lg;
+    }
+}
+.amb-amene {
+    display: block;
+    font-family: $font-display;
+    font-weight: 400;
+    font-size: $fs-sm;
+    color: $color-ocean-dark;
+    margin-bottom: $space-2xs;
+}
+.amb-avantage {
+    font-size: $fs-sm;
+    color: $colorprimary;
+    line-height: $lh-snug;
+}
+
+// ─── INCLUS DANS LE SEJOUR — corps avec photo ─────────────────
+.amb-included-body {
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+    & img {
+        border-radius: $radius-md;
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        object-position: center;
+        &.amb-img-top {
+            object-position: center top;
+        }
+        // Photo dont le cadrage d'origine est déjà serré sur le sujet :
+        // on affiche l'image entière (son propre ratio) plutôt que de la
+        // recadrer encore avec le 3/2 commun, pour ne pas "zoomer" davantage.
+        &.amb-img-full {
+            aspect-ratio: 845 / 520;
+            object-fit: cover;
+        }
+    }
+    & p {
+        margin: 0;
+        color: $colorgreytext1;
+    }
+}
+
+// ─── BANDE "EN OPTION" ─────────────────────────────────────────
+.amb-note-band {
+    background: $color-dark;
+    color: $color-sand;
+    padding: $space-xl $space-md;
+    display: flex;
+    gap: $space-lg;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: $radius-lg;
+    & h3 {
+        color: white;
+        margin-bottom: $space-xs;
+    }
+    & p {
+        font-size: $fs-sm;
+        color: rgba($color-sand, 0.85);
+        max-width: 560px;
+        margin: 0;
+    }
+}
+.amb-note-badge {
+    flex: 0 0 auto;
+    width: 56px;
+    height: 56px;
+    border-radius: $radius-full;
+    background: $color-ocean;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-display;
+    font-weight: 400;
+    font-size: $fs-lg;
+    color: white;
+}
+
+// ─── CTA FINAL ───────────────────────────────────────────────
+.amb-cta {
+    text-align: center;
+    padding: $space-3xl $space-md;
+    & p {
+        max-width: 440px;
+        margin: 0 auto $space-lg;
+        color: $colorgreytext1;
+    }
+}
+.amb-fine {
+    margin-top: $space-md;
+    font-size: $fs-xs;
+    color: $color-muted;
+}
+
+@media (max-width: $bp-sm) {
+    .amb-note-band {
+        flex-direction: column;
+        text-align: center;
+    }
+}
