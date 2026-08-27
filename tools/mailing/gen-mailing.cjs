@@ -29,7 +29,9 @@ const path = require('path');
 const SRC = path.join(__dirname, 'template-mailchimp-chris.html');
 const OUT = path.join(__dirname, 'mailing-clubs-ecoles-fr.html');
 
-const TITLE = 'La sortie club dont ils vont parler pendant dix ans';
+// Objet de la campagne, a saisir a l'identique dans Brevo. Le <title> n'est pas
+// l'objet de l'e-mail : il sert a la version "voir dans le navigateur".
+const TITLE = 'Bil\u00e8ne, Mozambique : 15 km de lagon, 1 m de fond, personne dessus';
 
 const orig = fs.readFileSync(SRC, 'utf8');
 let head = orig.slice(0, orig.indexOf('<body'));
@@ -269,7 +271,11 @@ function socialIcon(name, href) {
 }
 
 // ---------------------------------------------------------------- contenu
-const PREHEADER = 'Un lagon de 15 km, 1 m de fond, et personne dessus. Montez le groupe, votre voyage est offert.';
+// APERCU DU TEXTE -> a saisir dans Brevo, pas ici :
+//   Un lagon ferme de 15 km rien que pour vous — et le voyage de
+//   l'organisateur est offert.
+// Volontairement absent du HTML : Brevo injecte son propre preheader cache a
+// l'envoi, un second ferait doublon dans la boite de reception.
 
 // --- entete : le logo est blanc + vert, il lui faut ce fond sombre
 const header = section(
@@ -396,7 +402,6 @@ const spacers = new Array(16).join('&#847;&nbsp;&zwnj;&nbsp;');
 
 const body = [
   '<body>',
-  '<div style="display:none;font-size:1px;color:' + SAND_BG + ';line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;" class="mcnPreviewText">' + PREHEADER + '</div>',
   '<div style="display:none;font-size:1px;color:' + SAND_BG + ';line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">' + spacers + '</div>',
   '<center>',
   '<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="background-color:' + SAND_BG + '">',

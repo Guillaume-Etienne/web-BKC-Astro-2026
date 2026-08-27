@@ -48,6 +48,30 @@ Relecture locale avant déploiement, en servant `public/` sur le port 8898 :
 MAIL_IMG_BASE=http://localhost:8898/images/mailing/ node tools/mailing/gen-mailing.cjs
 ```
 
+## Objet et aperçu du texte
+
+À saisir dans Brevo, **pas dans le HTML** :
+
+> **Objet** — Bilène, Mozambique : 15 km de lagon, 1 m de fond, personne dessus
+>
+> **Aperçu du texte** — Un lagon fermé de 15 km rien que pour vous — et le
+> voyage de l'organisateur est offert.
+
+**Nom d'expéditeur** : « Guillaume – Bilene Kite Center ». En B2B un prénom
+ouvre mieux qu'une marque seule.
+
+Le `<title>` du HTML reprend l'objet, mais **ce n'est pas lui l'objet de
+l'e-mail** : il sert à la version « voir dans le navigateur ».
+
+⚠️ Le HTML ne contient **volontairement pas** de préheader caché : Brevo injecte
+le sien à l'envoi, et un second ferait doublon dans la boîte de réception. Donc
+si le champ « Aperçu du texte » de Brevo est laissé vide, l'aperçu retombera sur
+le premier texte visible du mail (« Affichez cet e-mail dans votre navigateur »).
+**Il faut le remplir.**
+
+Éviter « GRATUIT » dans l'objet : déclencheur classique de filtres anti-spam sur
+un premier contact à froid. « Offert » dit la même chose sans le risque.
+
 ## Envoi via Brevo
 
 Coller dans **« Code your own » → « Paste your code »** (éditeur HTML).
@@ -92,6 +116,7 @@ réception : un lien mort dans un vieux test n'est pas forcément un bug.
 
 - [ ] `/programme-ambassadeurs/` en ligne (sinon le CTA principal est un 404)
 - [ ] `public/images/mailing/` déployé en FTP
+- [ ] **objet et « Aperçu du texte » saisis dans Brevo** (le HTML n'en contient pas)
 - [ ] copy relue
 - [ ] liste de clubs/écoles + base légitime côté RGPD — le pied de page annonce
       « votre structure figure dans notre annuaire de clubs et écoles de kite »
