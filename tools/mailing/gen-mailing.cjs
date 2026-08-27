@@ -272,8 +272,9 @@ function socialIcon(name, href) {
 
 // ---------------------------------------------------------------- contenu
 // APERCU DU TEXTE -> a saisir dans Brevo, pas ici :
-//   Un lagon ferme de 15 km rien que pour vous — et le voyage de
+//   Du vent 9 jours sur 10 de septembre a mars — et le voyage de
 //   l'organisateur est offert.
+// (choisi pour apporter une info neuve : l'objet dit deja le lagon)
 // Volontairement absent du HTML : Brevo injecte son propre preheader cache a
 // l'envoi, un second ferait doublon dans la boite de reception.
 

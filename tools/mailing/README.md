@@ -54,8 +54,12 @@ MAIL_IMG_BASE=http://localhost:8898/images/mailing/ node tools/mailing/gen-maili
 
 > **Objet** — Bilène, Mozambique : 15 km de lagon, 1 m de fond, personne dessus
 >
-> **Aperçu du texte** — Un lagon fermé de 15 km rien que pour vous — et le
+> **Aperçu du texte** — Du vent 9 jours sur 10 de septembre à mars — et le
 > voyage de l'organisateur est offert.
+
+L'aperçu apporte volontairement une information que l'objet ne donne pas : le
+vent et la saison. Répéter le lagon aurait gâché le seul autre espace visible
+avant ouverture.
 
 **Nom d'expéditeur** : « Guillaume – Bilene Kite Center ». En B2B un prénom
 ouvre mieux qu'une marque seule.
