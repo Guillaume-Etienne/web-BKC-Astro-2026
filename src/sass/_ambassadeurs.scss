@@ -15,6 +15,10 @@
 
 // ─── CONTENEUR ───────────────────────────────────────────────
 .amb-section {
+    // width:100% obligatoire : <main> est un flex column (_base.scss), et un
+    // "margin: 0 auto" sur un flex item le fait se retrecir a la largeur de son
+    // contenu au lieu d aller jusqu a max-width -> rendu "colonne mobile" en desktop.
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
     padding: $space-2xl $space-md;
@@ -298,6 +302,7 @@
     display: flex;
     gap: $space-lg;
     align-items: center;
+    width: 100%;              // idem .amb-section : flex item + margin auto
     max-width: 1000px;
     margin: 0 auto;
     border-radius: $radius-lg;
