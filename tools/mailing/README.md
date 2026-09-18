@@ -91,7 +91,8 @@ un premier contact à froid. « Offert » dit la même chose sans le risque.
 
 ## Envoi via Brevo
 
-Coller dans **« Code your own » → « Paste your code »** (éditeur HTML).
+Coller dans **« Code HTML personnalisé »** (le « Code your own » de la doc
+anglaise), accessible depuis Design → « Créer de zéro ».
 
 | | |
 |---|---|
@@ -180,14 +181,30 @@ Deux envois, parce que le plan gratuit Brevo plafonne à **300 e-mails par jour*
 |---|---|---|---|
 | Délivrés | 289 | 96 | **385** |
 | Ouvertures | 148 (51,2 %) | 45 (46,9 %) | **193 (50,1 %)** |
-| Clics | 30 (10,4 %) | 16 (16,7 %) | **46 (11,9 %)** |
+| Clics (total) | 30 (10,4 %) | 16 (16,7 %) | **46 (11,9 %)** |
+| **Cliqueurs uniques** | **16** | **4** | **20** |
 | Désinscrits | 3 | 0 | 3 |
 
-Très au-dessus des standards de la prospection B2B à froid (20-25 % d'ouverture,
-2-3 % de clic). **Mais 46 clics pour 1 seule réponse** : le mail fonctionne, la
-conversion se perd après le clic, sur `/programme-ambassadeurs/`. D'où l'ajout
-du formulaire de contact sur cette page (elle n'offrait qu'un bouton WhatsApp,
-que peu de gérants de club ouvrent pour un premier contact professionnel).
+⚠️ **Les compteurs de Brevo sont trompeurs, vérifiés le 18/09 en remontant aux
+contacts réels :**
+
+- **« Clics » = clics au total, pas des personnes.** Le filtre contacts « a
+  cliqué dans la campagne #4 » ne renvoie que **16 contacts**, pas 30. Sur les
+  deux campagnes réunies : **20 cliqueurs uniques**, pas 46.
+- **Les ouvertures incluent Apple MPP** (préchargement des images par Apple, qui
+  compte comme une ouverture sans que personne ne lise). En excluant Apple MPP,
+  la campagne #4 tombe de **148 à 93 ouvreurs réels**, soit **32,2 %** et non
+  51,2 %.
+
+La vraie lecture : 32 % d'ouverture et 5,5 % de cliqueurs uniques. Ça reste
+au-dessus des standards du B2B à froid (20-25 % et 2-3 %), mais loin des
+chiffres qu'affiche le tableau de bord.
+
+**Et 20 personnes sur la page ambassadeurs pour 1 seule réponse** : le mail
+fonctionne, la conversion se perd après le clic, sur `/programme-ambassadeurs/`.
+D'où l'ajout du formulaire de contact sur cette page (elle n'offrait qu'un bouton
+WhatsApp, que peu de gérants de club ouvrent pour un premier contact
+professionnel).
 
 À noter : l'envoi du **samedi matin** a fait +60 % de clics sur celui du
 **vendredi après-midi**, à ouvertures comparables. L'heure pèse plus que le jour.
@@ -200,12 +217,16 @@ leur renvoyer le même lien ne peut rien donner. Deux publics, deux messages :
 
 | Public | Taille | Message |
 |---|---|---|
-| A cliqué, pas répondu | 46 | `relance-cliqueurs-texte.md` — mail **texte brut**, une question, aucun lien |
-| N'a pas cliqué | ~339 | `relance-clubs-ecoles-fr-b.html` — la relance HTML |
+| A cliqué, pas répondu | **20** | `relance-cliqueurs-texte.md` — mail **texte brut**, une question, aucun lien |
+| N'a pas cliqué, liste `-1` | **273** | `relance-clubs-ecoles-fr-b.html` — la relance HTML, lot 1 |
+| N'a pas cliqué, liste `-2` | ~92 | la même, lot 2, le lendemain |
 
-⚠️ Les 46 cliqueurs doivent être **exclus** du segment de la relance HTML : ils
-ne doivent pas recevoir les deux. Et ~339 dépasse le plafond de 300/jour —
-prévoir 300 le premier matin, le reste le lendemain matin.
+⚠️ Les 20 cliqueurs doivent être **exclus** des deux lots de la relance HTML :
+personne ne doit recevoir les deux messages. Le plafond de 300/jour impose de
+toute façon de scinder en deux matins.
+
+À 20 destinataires, le mail texte se justifie encore plus d'être envoyé **à la
+main depuis Gmail** plutôt que via Brevo : 20 messages, un quart d'heure.
 
 Dans les deux cas, retirer le club qui a déjà répondu. Les désabonnés et les
 hard bounces sont exclus automatiquement par Brevo. Relancer quelqu'un qui a
