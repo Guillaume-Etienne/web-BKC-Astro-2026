@@ -16,6 +16,7 @@ import Analytics from '../components/Analytics.astro';
 import Seo from '../components/Seo.astro';
 import WhatsApp from '../components/WhatsApp.astro';
 import Reviews from '../components/Reviews.astro';
+import { enquiryFormUrl } from '../i18n/enquiryForm.js';
 import '../sass/general.scss';
 ---
 <!DOCTYPE html>
@@ -272,11 +273,26 @@ import '../sass/general.scss';
 
         <Reviews lang="fr" />
 
-        <div class="amb-cta">
+        <div class="amb-cta" id="amb-contact">
             <h2>Prêt à devenir ambassadeur ?</h2>
-            <p>Contactez-nous directement sur WhatsApp pour organiser votre groupe et mettre en place vos avantages, en direct avec l'équipe du centre.</p>
+            <p>Pas besoin d'avoir déjà bouclé votre groupe : dites-nous combien vous pensez être et à quelle période, on vous répond avec les avantages qui s'appliquent et un devis précis.</p>
             <WhatsApp page="ambassador" lang="fr" label="Nous contacter sur WhatsApp" />
             <p class="amb-fine">Prix indicatif pour un groupe de 4 personnes · vols et visas non inclus</p>
+            <!-- Meme logique que les LP Ads (src/pages/lp/) : WhatsApp reste le CTA
+                 principal, le formulaire est la pour qui prefere ecrire sans quitter
+                 la page — un gerant de club sur ordinateur n'ouvrira pas WhatsApp pour
+                 un premier contact. Resize de l'iframe + evenement generate_lead :
+                 /js/enquiry-form.js, charge globalement par Footer.astro. -->
+            <div class="lp-form-card">
+                <p class="lp-form-note">Ou écrivez-nous ici, sans quitter la page.</p>
+                <iframe
+                    id="bkc-enquiry"
+                    data-page-key="ambassador"
+                    title="Formulaire de contact du Bilene Kite Center"
+                    src={enquiryFormUrl('fr')}
+                    style="width:100%;border:0;display:block;height:560px"
+                    loading="lazy"></iframe>
+            </div>
         </div>
 
     </main>
