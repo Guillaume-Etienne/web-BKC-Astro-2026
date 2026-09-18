@@ -7,11 +7,18 @@ Angle : « emmenez votre club kiter au Mozambique », CTA vers
 **FR uniquement, volontairement** : la cible est française, la règle
 « toute modif → FR + EN + ES » ne s'applique pas ici.
 
-## Le fichier à envoyer
+## Les fichiers à envoyer
 
-`mailing-clubs-ecoles-fr.html` — c'est **celui-ci** qu'on colle dans Brevo.
-Il est **généré** : ne pas l'éditer à la main, les modifications seraient
-écrasées à la prochaine génération.
+Deux envois, deux fichiers :
+
+1. `mailing-clubs-ecoles-fr.html` — le **1er mail**, parti le 28/08/2026 ;
+2. `relance-clubs-ecoles-fr-b.html` — la **relance** HTML, aux non-cliqueurs
+   (variante B retenue le 18/09/2026 ; la `-a.html` ne part pas) ;
+3. `relance-cliqueurs-texte.md` — le mail **texte brut** aux 46 cliqueurs.
+   Pas de HTML à générer : le texte est dans le fichier, à coller dans Brevo.
+
+C'est le HTML qu'on colle dans Brevo. Ils sont **générés** : ne pas les éditer à
+la main, les modifications seraient écrasées à la prochaine génération.
 
 ## Régénérer
 
@@ -20,6 +27,12 @@ node tools/mailing/gen-mailing.cjs
 ```
 
 `.cjs` et non `.js` : le `package.json` du projet est en `"type": "module"`.
+
+Les briques communes aux deux campagnes (helpers de mise en page, palette,
+liste des images et des URL, balises Brevo, `<head>`) vivent dans `lib.cjs` —
+extraites le 28/08/2026 à l'arrivée de la relance. Une modification de `lib.cjs`
+change **les deux** mails : après y avoir touché, régénérer le premier mailing
+et vérifier qu'il n'a pas bougé (`git diff --stat tools/mailing/`).
 
 Le générateur reprend le `<head>` de `template-mailchimp-chris.html` tel quel
 (styles responsive, empilement mobile, correctifs Outlook) et réécrit tout le
@@ -99,6 +112,105 @@ jour de profil créé côté Brevo et son identifiant à 24 caractères.
 Sur le plan gratuit, les liens d'un e-mail de test expirent ~30 min après
 réception : un lien mort dans un vieux test n'est pas forcément un bug.
 
+## La relance HTML — envoi prévu le mardi 22/09/2026, 8h30
+
+Deuxième mail de la séquence, court : rappel en quelques lignes, une photo, un
+bouton vers `/programme-ambassadeurs/`. Pour les **non-cliqueurs uniquement**
+(les 46 cliqueurs reçoivent le mail texte, voir `relance-cliqueurs-texte.md`).
+
+**Variante B retenue** le 18/09/2026 : la relance qui s'assume (« on sait,
+encore nous »), décalée mais B2B. La `-a.html` (humour discret, angle « la
+saison vient d'ouvrir ») est conservée mais ne part pas.
+
+Le mardi matin plutôt que le vendredi après-midi : les chiffres du 1er envoi
+montrent que l'heure pèse bien plus que le jour (voir plus bas). Initialement
+prévue le 11/09, la relance a glissé d'une dizaine de jours.
+
+Deux formulations relatives ont été recalées le 18/09 dans le générateur, la
+relance ne partant plus quinze jours après le 1er mail mais trois semaines :
+« Il y a quinze jours » → « Fin août », et le « mardi matin » de la vanne →
+« vendredi matin », le jour où le 1er mail est réellement arrivé.
+
+```bash
+node tools/mailing/gen-relance-clubs-ecoles-fr.cjs                      # -> ...-a.html
+RELANCE_VARIANT=b node tools/mailing/gen-relance-clubs-ecoles-fr.cjs    # -> ...-b.html
+```
+
+Même remarque que pour le premier mail : les HTML sont **générés**, ne pas les
+éditer à la main. `MAIL_IMG_BASE` fonctionne pareil pour la relecture locale.
+
+La relance ne réutilise **que des images déjà déployées** (`hero-lagon.jpg`,
+plus le logo et les icônes) : rien de nouveau à envoyer en FTP si le premier
+mailing est parti.
+
+### Objet et aperçu du texte — relance
+
+Trois couples possibles, l'aperçu apporte toujours ce que l'objet ne dit pas :
+
+**Variante A**
+
+> **Objet** — On remet le lien (le lagon, lui, n'a pas bougé)
+>
+> **Aperçu** — Bilène, Mozambique : le voyage de l'organisateur est offert dès 3 personnes amenées.
+
+> **Objet** — Votre sortie club de cet hiver, en trois lignes
+>
+> **Aperçu** — Un lagon fermé de 15 km au Mozambique, du vent 9 jours sur 10, et votre voyage offert.
+
+**Variante B**
+
+> **Objet** — Deuxième mail, et le dernier
+>
+> **Aperçu** — Emmener votre club kiter au Mozambique — et repartir sans payer votre propre séjour.
+
+Toujours pas de « GRATUIT » (filtres anti-spam), toujours pas de préheader dans
+le HTML : c'est Brevo qui l'injecte, le champ « Aperçu du texte » **doit** être
+rempli. Nom d'expéditeur inchangé : « Guillaume – Bilene Kite Center ».
+
+L'objet de la 1re campagne (« 15 km de lagon, 1 m de fond, personne dessus »)
+n'est volontairement pas repris tel quel : il a déjà échoué à faire ouvrir ces
+contacts-là, et un doublon exact dans la boîte de réception se lit comme un
+renvoi automatique.
+
+### Résultats du 1er envoi (28-29/08/2026)
+
+Deux envois, parce que le plan gratuit Brevo plafonne à **300 e-mails par jour** :
+
+| | ven. 28/08, 14h00 | sam. 29/08, 10h41 | Total |
+|---|---|---|---|
+| Délivrés | 289 | 96 | **385** |
+| Ouvertures | 148 (51,2 %) | 45 (46,9 %) | **193 (50,1 %)** |
+| Clics | 30 (10,4 %) | 16 (16,7 %) | **46 (11,9 %)** |
+| Désinscrits | 3 | 0 | 3 |
+
+Très au-dessus des standards de la prospection B2B à froid (20-25 % d'ouverture,
+2-3 % de clic). **Mais 46 clics pour 1 seule réponse** : le mail fonctionne, la
+conversion se perd après le clic, sur `/programme-ambassadeurs/`. D'où l'ajout
+du formulaire de contact sur cette page (elle n'offrait qu'un bouton WhatsApp,
+que peu de gérants de club ouvrent pour un premier contact professionnel).
+
+À noter : l'envoi du **samedi matin** a fait +60 % de clics sur celui du
+**vendredi après-midi**, à ouvertures comparables. L'heure pèse plus que le jour.
+
+### Ciblage de la relance
+
+Le plan initial (« relancer les non-cliqueurs ») a été **revu à la lecture des
+chiffres** : les 46 cliqueurs sont les contacts les plus chauds de la liste, et
+leur renvoyer le même lien ne peut rien donner. Deux publics, deux messages :
+
+| Public | Taille | Message |
+|---|---|---|
+| A cliqué, pas répondu | 46 | `relance-cliqueurs-texte.md` — mail **texte brut**, une question, aucun lien |
+| N'a pas cliqué | ~339 | `relance-clubs-ecoles-fr-b.html` — la relance HTML |
+
+⚠️ Les 46 cliqueurs doivent être **exclus** du segment de la relance HTML : ils
+ne doivent pas recevoir les deux. Et ~339 dépasse le plafond de 300/jour —
+prévoir 300 le premier matin, le reste le lendemain matin.
+
+Dans les deux cas, retirer le club qui a déjà répondu. Les désabonnés et les
+hard bounces sont exclus automatiquement par Brevo. Relancer quelqu'un qui a
+déjà répondu est le plus sûr moyen de perdre le contact.
+
 ## Pièges appris (à ne pas refaire)
 
 - **Le logo est blanc + vert.** Sur fond clair il n'en reste que le swoosh vert.
@@ -125,3 +237,9 @@ réception : un lien mort dans un vieux test n'est pas forcément un bug.
 - [ ] liste de clubs/écoles + base légitime côté RGPD — le pied de page annonce
       « votre structure figure dans notre annuaire de clubs et écoles de kite »
 - [ ] envoi de test depuis Brevo, rendu vérifié dans Outlook et Gmail
+
+Et, pour la relance uniquement :
+
+- [ ] variante A ou B choisie (une seule part)
+- [ ] segment Brevo « n'a pas cliqué la campagne du 28/08 »
+- [ ] clubs ayant répondu par e-mail ou WhatsApp retirés à la main du segment
