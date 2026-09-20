@@ -1,11 +1,14 @@
-# Mailing clubs & écoles de kite (FR)
+# Mailing clubs & écoles de kite (FR, ES)
 
-Campagne de prospection B2B vers les clubs et écoles de kite français.
-Angle : « emmenez votre club kiter au Mozambique », CTA vers
-`/programme-ambassadeurs/`.
+Campagne de prospection B2B vers les clubs et écoles de kite.
+Angle : « emmenez votre club kiter au Mozambique », CTA vers la page du
+programme ambassadeurs.
 
-**FR uniquement, volontairement** : la cible est française, la règle
-« toute modif → FR + EN + ES » ne s'applique pas ici.
+**Une langue = un marché, pas une traduction du site.** La règle « toute modif
+→ FR + EN + ES » ne s'applique pas ici : chaque mail part vers sa propre liste
+de contacts, et une langue n'est écrite que quand la liste existe. FR/CH/BE
+depuis le 28/08/2026, **Espagne depuis le 20/09/2026** (voir plus bas),
+d'autres langues à suivre.
 
 ## Les fichiers à envoyer
 
@@ -16,6 +19,8 @@ Deux envois, deux fichiers :
    (variante B retenue le 18/09/2026 ; la `-a.html` ne part pas) ;
 3. `relance-cliqueurs-texte.md` — le mail **texte brut** aux 46 cliqueurs.
    Pas de HTML à générer : le texte est dans le fichier, à coller dans Brevo.
+4. `mailing-clubs-escuelas-es.html` — le **1er mail espagnol**, vers les 157
+   écoles et clubs d'Espagne (voir « La campagne espagnole »).
 
 C'est le HTML qu'on colle dans Brevo. Ils sont **générés** : ne pas les éditer à
 la main, les modifications seraient écrasées à la prochaine génération.
@@ -232,6 +237,58 @@ Dans les deux cas, retirer le club qui a déjà répondu. Les désabonnés et le
 hard bounces sont exclus automatiquement par Brevo. Relancer quelqu'un qui a
 déjà répondu est le plus sûr moyen de perdre le contact.
 
+## La campagne espagnole (septembre 2026)
+
+```bash
+node tools/mailing/gen-mailing-clubs-escuelas-es.cjs   # -> mailing-clubs-escuelas-es.html
+```
+
+Transposition du 1er mail français : **même structure en 10 blocs, mêmes
+photos, même angle**, pour pouvoir comparer les résultats à périmètre égal avec
+FR/CH/BE. Ce qui change, et seulement ça :
+
+- la langue (relue par Teresa, hispanophone) ;
+- les URL, qui pointent toutes vers la partie `/es/` du site — `urlsFor('es')`
+  dans `lib.cjs`, dont la table de slugs recopie `src/i18n/pages.js` ;
+- **« Teresa es española : podéis escribirnos en castellano »** ajouté au bloc
+  équipe. C'est le seul frein que la version française n'avait pas à lever ;
+- le néoprène qu'on peut « laisser en France » se laisse en Espagne ;
+- « moniteurs français diplômés IKO » devient « instructores titulados IKO » :
+  la nationalité des moniteurs ne vend rien à un club espagnol.
+
+**Page de destination** : `/es/programa-embajadores/`, version espagnole de
+`/programme-ambassadeurs/`, même régime (noindex, hors `pages.js`, hors
+sitemap). Elle embarque déjà le formulaire de contact — la leçon des 20 clics
+pour 1 réponse côté français.
+
+**Aucune nouvelle image** : le mail espagnol ne réutilise que
+`public/images/mailing/`, déployé depuis le 28/08. Rien à renvoyer en FTP,
+sauf la page ES elle-même.
+
+### La liste
+
+Onglet « 5. Espagne » de `Annuaire_kite_FR_BE_CH_ES.xlsx` : 168 lignes,
+**157 e-mails uniques** (11 structures partagent une adresse avec une autre —
+le club déportif et l'école commerciale du même spot). 46 à Tarifa, puis
+Canaries, Baléares, Levante, Catalogne. 30 adresses sont en gmail/hotmail.
+
+Le CSV d'import Brevo est généré **hors du dépôt** (`Downloads/Claude outputs/
+brevo-club-kite-ES-2026.csv`) : il contient des adresses nominatives et le
+projet a un miroir GitHub public.
+
+157 contacts tiennent **sous le plafond de 300/jour** du plan gratuit : un seul
+lot, un seul envoi — contrairement au français, scindé en deux matins.
+
+### Objet et aperçu du texte — Espagne
+
+> **Objet** — Bilene, Mozambique: 15 km de laguna, 1 m de fondo, nadie en el agua
+>
+> **Aperçu** — Viento 9 días de cada 10 de septiembre a marzo — y el viaje del
+> organizador es gratis.
+
+Même construction qu'en français : l'objet donne le spot, l'aperçu donne le
+vent et la gratuité. Pas de « GRATIS » dans l'objet (filtres anti-spam).
+
 ## Pièges appris (à ne pas refaire)
 
 - **Le logo est blanc + vert.** Sur fond clair il n'en reste que le swoosh vert.
@@ -251,7 +308,9 @@ déjà répondu est le plus sûr moyen de perdre le contact.
 
 ## Avant d'envoyer
 
-- [ ] `/programme-ambassadeurs/` en ligne (sinon le CTA principal est un 404)
+- [ ] la page du programme en ligne — `/programme-ambassadeurs/` pour le mail
+      français, **`/es/programa-embajadores/` pour l'espagnol** (sinon le CTA
+      principal, et le seul, est un 404)
 - [ ] `public/images/mailing/` déployé en FTP
 - [ ] **objet et « Aperçu du texte » saisis dans Brevo** (le HTML n'en contient pas)
 - [ ] copy relue

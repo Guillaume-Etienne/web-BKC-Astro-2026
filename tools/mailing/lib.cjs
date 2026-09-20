@@ -39,15 +39,11 @@ const IMG = {
   paddle:   BASE + 'paddle.jpg',
 };
 
-const URLS = {
-  // L'accueil FR est a la RACINE, pas dans /fr/ : ce dossier ne contient que
-  // les pages internes, sans index.html, donc /fr/ renvoie un 403. Le lien du
-  // logo (entete + pied de page) et l'icone "site web" tapaient dedans.
-  home:         'https://www.bilenekite.com/',
-  ambass:       'https://www.bilenekite.com/programme-ambassadeurs/',
-  centre:       'https://www.bilenekite.com/fr/le-centre-de-kite-au-mozambique/',
-  activites:    'https://www.bilenekite.com/fr/activites-a-bilene-sorties-visites-ballades-exploration/',
-  contact:      'https://www.bilenekite.com/fr/infos-mozambique/#contactus',
+// --- URL du site : celles qui changent de langue, et celles qui n'en changent pas
+// Decoupe le 20/09/2026, a l'arrivee de la campagne espagnole : URLS etait une
+// constante 100 % francaise. urlsFor('es') sert au generateur ES ; URLS reste
+// le francais, a l'identique, pour les generateurs deja ecrits.
+const URLS_COMMON = {
   videoSpot:    'https://www.youtube.com/watch?v=jzfpku5Eghg',
   videoArrivee: 'https://youtu.be/XeEac9lFaYk',
   maps:         'https://www.google.com/maps/place/Bilene+Kite+Center/@-25.2824375,33.2601875,17z/data=!3m1!4b1!4m6!3m5!1s0x1ee127bd3561593d:0xeb5175829bed6488!8m2!3d-25.2824375!4d33.2601875!16s%2Fg%2F11j1f_xws9',
@@ -55,6 +51,38 @@ const URLS = {
   facebook:     'https://www.facebook.com/288244685233804',
   instagram:    'https://www.instagram.com/bilene_kite_center_bkc/',
 };
+
+const URLS_BY_LANG = {
+  fr: {
+    // L'accueil FR est a la RACINE, pas dans /fr/ : ce dossier ne contient que
+    // les pages internes, sans index.html, donc /fr/ renvoie un 403. Le lien du
+    // logo (entete + pied de page) et l'icone "site web" tapaient dedans.
+    home:      'https://www.bilenekite.com/',
+    ambass:    'https://www.bilenekite.com/programme-ambassadeurs/',
+    centre:    'https://www.bilenekite.com/fr/le-centre-de-kite-au-mozambique/',
+    activites: 'https://www.bilenekite.com/fr/activites-a-bilene-sorties-visites-ballades-exploration/',
+    contact:   'https://www.bilenekite.com/fr/infos-mozambique/#contactus',
+  },
+  es: {
+    // /es/ a bien son index.astro, contrairement a /fr/.
+    home:      'https://www.bilenekite.com/es/',
+    ambass:    'https://www.bilenekite.com/es/programa-embajadores/',
+    centre:    'https://www.bilenekite.com/es/centro-de-kite-in-bilene-mozambique/',
+    activites: 'https://www.bilenekite.com/es/actividades-en-bilene-excursiones-visitas-exploracion/',
+    contact:   'https://www.bilenekite.com/es/informaciones-mozambique/#contactus',
+  },
+};
+
+// Les slugs viennent de src/i18n/pages.js : en cas de changement de route,
+// c'est la-bas la source de verite, a repercuter ici a la main (le generateur
+// est en CommonJS, pages.js en ESM).
+function urlsFor(lang) {
+  const byLang = URLS_BY_LANG[lang];
+  if (!byLang) throw new Error('urlsFor : langue inconnue "' + lang + '"');
+  return Object.assign({}, byLang, URLS_COMMON);
+}
+
+const URLS = urlsFor('fr');
 
 // --- balises de fusion : ENVOI VIA BREVO (et non Mailchimp) ------------------
 // Brevo utilise la "Brevo Template Language" en doubles accolades, la ou
@@ -282,7 +310,7 @@ function wrapBody(sections) {
 }
 
 module.exports = {
-  BASE, IMG, URLS,
+  BASE, IMG, URLS, urlsFor,
   TAG_MIRROR, TAG_UNSUB,
   SAND_BG, NAVY, OCEAN, SAND, INK, MUTED, HAIRLINE, FF,
   buildHead, wrapBody,
