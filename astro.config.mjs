@@ -23,6 +23,7 @@ export default defineConfig({
         !page.includes('/lp/') &&
         !page.includes('/secret/') &&
         !page.includes('/programme-ambassadeurs/') &&
+        !page.includes('/programa-embajadores/') &&
         !page.includes('/la-faq-pour-bilene-au-mozambique/') &&
         !page.includes('/faq-bilene-mozambique/'),
     }),
