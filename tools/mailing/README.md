@@ -19,7 +19,7 @@ Deux envois, deux fichiers :
    (variante B retenue le 18/09/2026 ; la `-a.html` ne part pas) ;
 3. `relance-cliqueurs-texte.md` — le mail **texte brut** aux 46 cliqueurs.
    Pas de HTML à générer : le texte est dans le fichier, à coller dans Brevo.
-4. `mailing-clubs-escuelas-es.html` — le **1er mail espagnol**, vers les 157
+4. `mailing-clubs-escuelas-es.html` — le **1er mail espagnol**, vers les 158
    écoles et clubs d'Espagne (voir « La campagne espagnole »).
 
 C'est le HTML qu'on colle dans Brevo. Ils sont **générés** : ne pas les éditer à
@@ -302,16 +302,29 @@ sauf la page ES elle-même.
 
 ### La liste
 
-Onglet « 5. Espagne » de `Annuaire_kite_FR_BE_CH_ES.xlsx` : 168 lignes,
-**157 e-mails uniques** (11 structures partagent une adresse avec une autre —
-le club déportif et l'école commerciale du même spot). 46 à Tarifa, puis
-Canaries, Baléares, Levante, Catalogne. 30 adresses sont en gmail/hotmail.
+Onglet « 5. Espagne » de `Annuaire_kite_FR_BE_CH_ES.xlsx` : 168 lignes et
+**169 adresses uniques** — certaines cellules en contiennent deux. 46 à Tarifa,
+puis Canaries, Baléares, Levante, Catalogne. 30 adresses sont en gmail/hotmail.
+
+⚠️ **Le piège du fichier source** : les adresses multiples d'une même cellule
+sont séparées tantôt par `;` ou `,`, tantôt par une **espace**. Un découpage
+sur les seuls séparateurs classiques laisse « a@x.com b@y.com » dans une seule
+cellule, et Brevo **rejette silencieusement toute la ligne** : c'est ce qui a
+fait tomber le premier import à 144 contacts au lieu de 158. Découper sur
+`[;,/s]+` et valider chaque adresse avant d'écrire le CSV.
+
+Quand une structure a deux adresses, **une seule part** : deux fois le même
+mail au même club, c'est un signalement spam. On garde l'adresse générique
+(`info@`) plutôt que la comptabilité ou le secrétariat, le domaine propre
+plutôt que le gmail, et le centre local plutôt que la centrale de réservation.
+Seule exception : deux implantations réellement distinctes (Anywhere Water
+Sports, Badalona et Barcelone).
 
 Le CSV d'import Brevo est généré **hors du dépôt** (`Downloads/Claude outputs/
-brevo-club-kite-ES-2026.csv`) : il contient des adresses nominatives et le
+brevo-club-kite-ES-2026.csv`, la liste complète et corrigée) : il contient des adresses nominatives et le
 projet a un miroir GitHub public.
 
-157 contacts tiennent **sous le plafond de 300/jour** du plan gratuit : un seul
+158 contacts tiennent **sous le plafond de 300/jour** du plan gratuit : un seul
 lot, un seul envoi — contrairement au français, scindé en deux matins.
 
 ### Objet et aperçu du texte — Espagne
@@ -324,6 +337,41 @@ lot, un seul envoi — contrairement au français, scindé en deux matins.
 L'objet mise sur le chiffre qui parle à quelqu'un qui navigue à Tarifa en
 août : **douze**. L'aperçu apporte le vent et la gratuité, que l'objet ne dit
 pas. Pas de « GRATIS » dans l'objet (filtres anti-spam).
+
+## Les campagnes allemande et polonaise (21/09/2026)
+
+`gen-mailing-kiteschulen-de.cjs` → `mailing-kiteschulen-de.html`,
+`gen-mailing-szkoly-kite-pl.cjs` → `mailing-szkoly-kite-pl.html`.
+
+**Écrits dans la langue, pas traduits** — même leçon que l'espagnol. Base :
+les faits et la structure du mail espagnol (11 blocs, dont celui de Teresa
+sur le matériel qu'on monte et range pour le client). Vocabulaire vérifié par
+des agents sur de vrais sites d'écoles kite allemandes et polonaises ; les
+règles de plume sont en tête de chaque générateur.
+
+- **Tutoiement** dans les deux langues (« du » / « Ty ») : c'est l'usage des
+  écoles kite des deux pays.
+- Le programme s'appelle **« Gruppenprogramm »** en allemand (« Botschafter »
+  n'existe pas dans le milieu), **« Program Ambasadorski »** en polonais.
+- Liens secondaires vers le **site anglais** (`urlsFor('de'|'pl')`), CTA vers
+  le bloc contact de la page dans la langue (`#amb-contact`).
+- Personne ne parle allemand ni polonais au centre : **Guillaume répond**. Le
+  mail dit dans quelle langue on peut écrire, pas dans laquelle on répondra.
+
+### Objet et aperçu du texte — Allemagne / Pologne
+
+> **Objet DE** — Bilene, Mosambik: 15 km Flachwasser und höchstens zwölf Kiter
+>
+> **Aperçu DE** — Wind an neun von zehn Tagen, von September bis März. Und
+> wenn du die Gruppe zusammenstellst, zahlst du für deinen Aufenthalt nichts.
+
+> **Objet PL** — Bilene, Mozambik: 15 km płaskiej wody i najwyżej 12 osób na spocie
+>
+> **Aperçu PL** — Wieje dziewięć dni na dziesięć, od września do marca. A
+> jeśli zbierzesz grupę, za swój pobyt nie zapłacisz.
+
+Expéditeur : « Guillaume von Bilene Kite » / « Guillaume z Bilene Kite » — le
+« de » de l'expéditeur français est du français.
 
 ## Pièges appris (à ne pas refaire)
 

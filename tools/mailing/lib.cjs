@@ -71,6 +71,25 @@ const URLS_BY_LANG = {
     activites: 'https://www.bilenekite.com/es/actividades-en-bilene-excursiones-visitas-exploracion/',
     contact:   'https://www.bilenekite.com/es/informaciones-mozambique/#contactus',
   },
+  // Le site n'existe pas en allemand ni en polonais : tout renvoie vers le
+  // site ANGLAIS (choix de Guillaume, 21/09/2026), sauf la page du programme,
+  // qui existe dans la langue. Le contact pointe sur le bloc contact de CETTE
+  // page (#amb-contact, texte dans la langue + formulaire) plutot que sur
+  // /en/information-mozambique/#contactus, entierement en anglais.
+  de: {
+    home:      'https://www.bilenekite.com/en/',
+    ambass:    'https://www.bilenekite.com/de/gruppenprogramm/',
+    centre:    'https://www.bilenekite.com/en/the-kite-center-in-bilene-mozambique/',
+    activites: 'https://www.bilenekite.com/en/activities-in-bilene-outings-visits-exploration/',
+    contact:   'https://www.bilenekite.com/de/gruppenprogramm/#amb-contact',
+  },
+  pl: {
+    home:      'https://www.bilenekite.com/en/',
+    ambass:    'https://www.bilenekite.com/pl/program-ambasadorski/',
+    centre:    'https://www.bilenekite.com/en/the-kite-center-in-bilene-mozambique/',
+    activites: 'https://www.bilenekite.com/en/activities-in-bilene-outings-visits-exploration/',
+    contact:   'https://www.bilenekite.com/pl/program-ambasadorski/#amb-contact',
+  },
 };
 
 // Les slugs viennent de src/i18n/pages.js : en cas de changement de route,
