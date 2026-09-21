@@ -1,13 +1,21 @@
 ---
 // ============================================================================
-//  PROGRAMA EMBAJADORES — version ES de /programme-ambassadeurs/ (noindex)
+//  PROGRAMA DE EMBAJADORES — page ES, pendant de /programme-ambassadeurs/
 // ----------------------------------------------------------------------------
 //  Meme regime que la page FR : volontairement HORS de src/i18n/pages.js
 //  (pas de hreflang ni de switcher base sur pages.js), noindex, exclue du
 //  sitemap (astro.config.mjs). <Seo> est quand meme utilise pour l'apercu
 //  de lien dans le mailing (og:title/description/image).
+//
+//  /!\ Le texte n'est PAS une traduction de la page francaise : il a ete
+//  reecrit en espagnol le 21/09/2026, la traduction ayant ete rejetee par
+//  Teresa (calques et typographie francaise). Memes faits, memes paliers,
+//  autre plume. Detail des regles dans l'en-tete de
+//  tools/mailing/gen-mailing-clubs-escuelas-es.cjs — les deux textes doivent
+//  rester du meme espagnol, le mail amene sur cette page.
+//
 //  Cible : le mailing de prospection vers les ecoles et clubs espagnols
-//  (tools/mailing/, campagne Brevo "Club ES"). Teresa repond en espagnol.
+//  (campagne Brevo "Club ES"). Teresa repond en espagnol.
 // ============================================================================
 import MenuES from '../../components/MenuES.astro';
 import Footer from '../../components/Footer.astro';
@@ -31,8 +39,8 @@ import '../../sass/general.scss';
         page="programme-ambassadeurs"
         lang="es"
         noindex={true}
-        title="Programa Embajadores — Bilene Kite Center"
-        description="Organiza un grupo para venir a navegar a Bilene y viaja a menor coste, o incluso gratis. Cuanto más grande es el grupo, mayores son las ventajas."
+        title="Programa de Embajadores — Bilene Kite Center"
+        description="Monta un grupo para venir a navegar a Bilene y tu viaje te sale gratis a partir de tres personas. Cuanto más grande es el grupo, más ventajas."
         image="/images/11-Accomodation/Palm_view.jpg"
     />
     <Analytics />
@@ -46,16 +54,16 @@ import '../../sass/general.scss';
         <!-- ─── MASTHEAD ─────────────────────────────────────── -->
         <section class="amb-hero">
             <p class="amb-eyebrow">Bilene Kite Center · Mozambique</p>
-            <h1>Programa Embajadores</h1>
-            <p>Organiza un grupo para venir a navegar a Bilene y viaja a menor coste — o incluso gratis. Cuanto más grande es tu grupo, mayores son las ventajas, hasta un cheque regalo para tu billete de avión a partir de 10 personas traídas.</p>
+            <h1>Programa de Embajadores</h1>
+            <p>Monta un grupo para venir a navegar a Bilene y viaja por mucho menos, o gratis del todo. Cuanto más grande sea el grupo, más ventajas, hasta una tarjeta regalo para tu billete de avión a partir de diez personas.</p>
         </section>
 
         <!-- ─── TRES PERFILES ────────────────────────────────── -->
         <section class="amb-section">
             <p class="amb-section-label">Cómo funciona</p>
-            <h2>Tres perfiles, un mismo principio</h2>
-            <p class="amb-lead">El programa se adapta a tu forma de navegar: tanto si vienes con tu propio material, como si lo alquilas aquí, o si quieres que tu grupo descubra el kite.</p>
-            <p class="amb-anchor-note">A partir de 3 personas traídas: viaje completo gratis (alojamiento, traslados, storage)</p>
+            <h2>Tres perfiles, un mismo trato</h2>
+            <p class="amb-lead">El programa se adapta a cómo navegas: si vienes con tu material, si lo alquilas aquí, o si tu grupo todavía está aprendiendo.</p>
+            <p class="amb-anchor-note">Con 3 personas que vengan contigo, tu viaje te sale gratis (alojamiento, traslados y material guardado)</p>
 
             <div class="amb-tiers">
 
@@ -65,7 +73,7 @@ import '../../sass/general.scss';
                             <span class="amb-badge">A</span>
                             <span class="amb-tier-title">
                                 <span class="acc-title">Riders independientes</span>
-                                <span class="amb-tier-sub">Viajas con tu propio material</span>
+                                <span class="amb-tier-sub">Vienes con tu propio material</span>
                             </span>
                         </span>
                         <span class="acc-toggle" aria-hidden="true">
@@ -75,11 +83,11 @@ import '../../sass/general.scss';
                     <div class="acc-panel">
                         <div class="acc-panel-inner">
                             <div class="acc-body amb-tier-rows">
-                                <div class="amb-tier-row"><span class="amb-amene">1-2 personas</span><span class="amb-avantage">10% de descuento en el alojamiento + storage gratis</span></div>
-                                <div class="amb-tier-row amb-tier-row--highlight"><span class="amb-amene">3 personas</span><span class="amb-avantage">Viaje completo gratis (vuelos y visados no incluidos)</span></div>
-                                <div class="amb-tier-row"><span class="amb-amene">4-6 personas</span><span class="amb-avantage">+ 40% de descuento en el alquiler de material<br>+ 1 sesión de prueba de medio día con el equipo Eleveight 2027</span></div>
-                                <div class="amb-tier-row"><span class="amb-amene">7 personas</span><span class="amb-avantage">+ 2 sesiones de prueba de medio día con el equipo Eleveight 2027</span></div>
-                                <div class="amb-tier-row"><span class="amb-amene">10+ personas</span><span class="amb-avantage">+ cheque regalo de ~90€/persona traída para el billete de avión</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">1-2 personas</span><span class="amb-avantage">10% de descuento en el alojamiento y el material guardado gratis</span></div>
+                                <div class="amb-tier-row amb-tier-row--highlight"><span class="amb-amene">3 personas</span><span class="amb-avantage">Viaje completo gratis (vuelos y visados aparte)</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">4-6 personas</span><span class="amb-avantage">+ 40% de descuento en el alquiler de material<br>+ 1 sesión de prueba de medio día con material Eleveight 2027</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">7 personas</span><span class="amb-avantage">+ 2 sesiones de prueba de medio día con material Eleveight 2027</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">10 o más</span><span class="amb-avantage">+ tarjeta regalo de unos 90€ por persona para el billete de avión</span></div>
                             </div>
                         </div>
                     </div>
@@ -91,7 +99,7 @@ import '../../sass/general.scss';
                             <span class="amb-badge">B</span>
                             <span class="amb-tier-title">
                                 <span class="acc-title">Alquiler de material</span>
-                                <span class="amb-tier-sub">No tienes equipo, lo alquilas aquí</span>
+                                <span class="amb-tier-sub">No traes equipo, lo alquilas aquí</span>
                             </span>
                         </span>
                         <span class="acc-toggle" aria-hidden="true">
@@ -101,11 +109,11 @@ import '../../sass/general.scss';
                     <div class="acc-panel">
                         <div class="acc-panel-inner">
                             <div class="acc-body amb-tier-rows">
-                                <div class="amb-tier-row"><span class="amb-amene">1-2 personas</span><span class="amb-avantage">20% de descuento en el alojamiento + storage gratis</span></div>
-                                <div class="amb-tier-row amb-tier-row--highlight"><span class="amb-amene">3 personas</span><span class="amb-avantage">Viaje completo gratis (vuelos y visados no incluidos)</span></div>
-                                <div class="amb-tier-row"><span class="amb-amene">4-6 personas</span><span class="amb-avantage">+ 50% de descuento en el alquiler de material<br>+ 2 sesiones de prueba de medio día con el equipo Eleveight 2027</span></div>
-                                <div class="amb-tier-row"><span class="amb-amene">7 personas</span><span class="amb-avantage">+ 3 sesiones de prueba de medio día con el equipo Eleveight 2027</span></div>
-                                <div class="amb-tier-row"><span class="amb-amene">10+ personas</span><span class="amb-avantage">+ cheque regalo de ~115€/persona traída para el billete de avión</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">1-2 personas</span><span class="amb-avantage">20% de descuento en el alojamiento y el material guardado gratis</span></div>
+                                <div class="amb-tier-row amb-tier-row--highlight"><span class="amb-amene">3 personas</span><span class="amb-avantage">Viaje completo gratis (vuelos y visados aparte)</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">4-6 personas</span><span class="amb-avantage">+ 50% de descuento en el alquiler de material<br>+ 2 sesiones de prueba de medio día con material Eleveight 2027</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">7 personas</span><span class="amb-avantage">+ 3 sesiones de prueba de medio día con material Eleveight 2027</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">10 o más</span><span class="amb-avantage">+ tarjeta regalo de unos 115€ por persona para el billete de avión</span></div>
                             </div>
                         </div>
                     </div>
@@ -117,7 +125,7 @@ import '../../sass/general.scss';
                             <span class="amb-badge">C</span>
                             <span class="amb-tier-title">
                                 <span class="acc-title">Clases</span>
-                                <span class="amb-tier-sub">Empiezas en el kite o quieres que tu grupo descubra el deporte</span>
+                                <span class="amb-tier-sub">Empiezas ahora, o tu grupo viene a aprender</span>
                             </span>
                         </span>
                         <span class="acc-toggle" aria-hidden="true">
@@ -127,11 +135,11 @@ import '../../sass/general.scss';
                     <div class="acc-panel">
                         <div class="acc-panel-inner">
                             <div class="acc-body amb-tier-rows">
-                                <div class="amb-tier-row"><span class="amb-amene">1-2 personas</span><span class="amb-avantage">25% de descuento en el alojamiento + excursiones</span></div>
-                                <div class="amb-tier-row amb-tier-row--highlight"><span class="amb-amene">3 personas</span><span class="amb-avantage">Viaje completo gratis (vuelos y visados no incluidos)</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">1-2 personas</span><span class="amb-avantage">25% de descuento en el alojamiento y en las excursiones</span></div>
+                                <div class="amb-tier-row amb-tier-row--highlight"><span class="amb-amene">3 personas</span><span class="amb-avantage">Viaje completo gratis (vuelos y visados aparte)</span></div>
                                 <div class="amb-tier-row"><span class="amb-amene">4-6 personas</span><span class="amb-avantage">+ pack de 4h de clases gratis</span></div>
                                 <div class="amb-tier-row"><span class="amb-amene">7 personas</span><span class="amb-avantage">+ pack de 10h de clases gratis</span></div>
-                                <div class="amb-tier-row"><span class="amb-amene">10+ personas</span><span class="amb-avantage">+ cheque regalo de ~120€/persona traída para el billete de avión</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">10 o más</span><span class="amb-avantage">+ tarjeta regalo de unos 120€ por persona para el billete de avión</span></div>
                             </div>
                         </div>
                     </div>
@@ -140,11 +148,11 @@ import '../../sass/general.scss';
             </div>
         </section>
 
-        <!-- ─── EJEMPLO DE ESTANCIA ──────────────────────────── -->
+        <!-- ─── EJEMPLO DE VIAJE ─────────────────────────────── -->
         <section class="amb-package-hero">
             <p class="amb-eyebrow">Bilene Kite Center · Mozambique</p>
-            <h2>7 noches en una laguna virgen, entre kite, playa y la luna de Bilene</h2>
-            <p>Una estancia llave en mano para un grupo de 4, pensada para descubrir el mejor spot del sur de Mozambique sin tener que organizar nada.</p>
+            <h2>Siete noches en una laguna virgen: kite, playa y la luna de Bilene</h2>
+            <p>Un viaje cerrado para grupos de cuatro, para descubrir el mejor spot del sur de Mozambique sin tener que organizar nada.</p>
             <div class="amb-price-tag">
                 <span class="amb-amount">690€</span>
                 <span class="amb-unit">por persona</span>
@@ -152,14 +160,14 @@ import '../../sass/general.scss';
         </section>
 
         <section class="amb-section">
-            <p class="amb-section-label">La estancia que le ofreces a tu grupo</p>
-            <h2>Está todo previsto, solo queda volar</h2>
-            <p class="amb-lead">Una estancia completa pensada para centrarse en lo esencial: el viento, la laguna y el grupo.</p>
+            <p class="amb-section-label">El viaje que les organizas</p>
+            <h2>Está todo montado, solo queda navegar</h2>
+            <p class="amb-lead">Un viaje completo para no tener que pensar en nada más que en el viento, la laguna y el grupo.</p>
 
             <div class="amb-quick-items">
-                <div class="amb-qi"><span class="amb-dot"></span><div><strong>Traslado aeropuerto – Bilene</strong><span>Ida y vuelta, a cargo nuestro desde que salís del avión</span></div></div>
-                <div class="amb-qi"><span class="amb-dot"></span><div><strong>Spot directamente en la playa</strong><span>Zona segura, duchas, espacio chill</span></div></div>
-                <div class="amb-qi"><span class="amb-dot"></span><div><strong>Storage de material</strong><span>Guardado seguro para vuestro equipo durante toda la estancia</span></div></div>
+                <div class="amb-qi"><span class="amb-dot"></span><div><strong>Traslado aeropuerto – Bilene</strong><span>Ida y vuelta, os recogemos al salir del avión</span></div></div>
+                <div class="amb-qi"><span class="amb-dot"></span><div><strong>El spot, a pie de playa</strong><span>Zona segura, duchas y sitio para estar</span></div></div>
+                <div class="amb-qi"><span class="amb-dot"></span><div><strong>Aquí no montas ni recoges</strong><span>Nuestros asistentes montan tu equipo y lo guardan en almacén cerrado</span></div></div>
             </div>
 
             <div class="amb-included">
@@ -167,7 +175,7 @@ import '../../sass/general.scss';
                 <div class="acc-item" data-acc>
                     <button class="acc-header amb-acc-header" aria-expanded="false">
                         <span class="acc-head-content">
-                            <span class="acc-title">7 noches en chalet en primera línea</span>
+                            <span class="acc-title">Siete noches en chalet en primera línea</span>
                         </span>
                         <span class="acc-toggle" aria-hidden="true">
                             <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -176,8 +184,8 @@ import '../../sass/general.scss';
                     <div class="acc-panel">
                         <div class="acc-panel-inner">
                             <div class="acc-body amb-included-body">
-                                <img src="/images/11-Accomodation/Palm_Bung.jpg" alt="Camino sombreado entre los bungalows del centro" loading="lazy">
-                                <p>Habitación doble compartida, salón-cocina, 2 baños, terraza frente a la playa.</p>
+                                <img src="/images/11-Accomodation/Palm_Bung.jpg" alt="Camino con sombra entre los bungalows del centro" loading="lazy">
+                                <p>Habitación doble compartida, salón con cocina, dos baños y terraza mirando a la playa.</p>
                             </div>
                         </div>
                     </div>
@@ -195,8 +203,8 @@ import '../../sass/general.scss';
                     <div class="acc-panel">
                         <div class="acc-panel-inner">
                             <div class="acc-body amb-included-body">
-                                <img src="/images/4-trips/8.webp" alt="El faro y la desembocadura del río Limpopo, vistos desde el cielo" loading="lazy" class="amb-img-full">
-                                <p>Día de descubrimiento con comida incluida.</p>
+                                <img src="/images/4-trips/8.webp" alt="El faro y la desembocadura del río Limpopo desde el aire" loading="lazy" class="amb-img-full">
+                                <p>Un día entero, con la comida incluida.</p>
                             </div>
                         </div>
                     </div>
@@ -215,7 +223,7 @@ import '../../sass/general.scss';
                         <div class="acc-panel-inner">
                             <div class="acc-body amb-included-body">
                                 <img src="/images/2-excursions/Macia.webp" alt="Mercado local de Macia" loading="lazy">
-                                <p>Una mañana de pueblo y mercado local.</p>
+                                <p>Una mañana de pueblo y mercado.</p>
                             </div>
                         </div>
                     </div>
@@ -224,7 +232,7 @@ import '../../sass/general.scss';
                 <div class="acc-item" data-acc>
                     <button class="acc-header amb-acc-header" aria-expanded="false">
                         <span class="acc-head-content">
-                            <span class="acc-title">La laguna vista desde el cielo</span>
+                            <span class="acc-title">La laguna desde el aire</span>
                         </span>
                         <span class="acc-toggle" aria-hidden="true">
                             <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -233,8 +241,8 @@ import '../../sass/general.scss';
                     <div class="acc-panel">
                         <div class="acc-panel-inner">
                             <div class="acc-body amb-included-body">
-                                <img src="/images/2-excursions/autres.webp" alt="Vista aérea de la laguna de Bilene, brazo de mar y bancos de arena" loading="lazy">
-                                <p>Brazo de mar, bancos de arena y dunas, a pocos minutos del centro.</p>
+                                <img src="/images/2-excursions/autres.webp" alt="Vista aérea de la laguna de Bilene, con el brazo de mar y los bancos de arena" loading="lazy">
+                                <p>Brazo de mar, bancos de arena y dunas, a unos minutos del centro.</p>
                             </div>
                         </div>
                     </div>
@@ -252,8 +260,8 @@ import '../../sass/general.scss';
                     <div class="acc-panel">
                         <div class="acc-panel-inner">
                             <div class="acc-body amb-included-body">
-                                <img src="/images/blog/massage.webp" alt="Masaje relajante de 45 minutos" loading="lazy" class="amb-img-top">
-                                <p>Un momento de relax después de las sesiones.</p>
+                                <img src="/images/blog/massage.webp" alt="Masaje de 45 minutos" loading="lazy" class="amb-img-top">
+                                <p>Para después de las sesiones.</p>
                             </div>
                         </div>
                     </div>
@@ -265,18 +273,18 @@ import '../../sass/general.scss';
         <div class="amb-note-band">
             <div class="amb-note-badge">+</div>
             <div>
-                <h3>Opcional, según tu perfil</h3>
-                <p>Alquiler de material Eleveight (50€/medio día) o clases particulares con un instructor IKO (desde 120€), para quienes todavía no tienen equipo o están empezando.</p>
+                <h3>Si lo necesitas</h3>
+                <p>Alquiler de material Eleveight (50€ el medio día) o clases particulares con instructor IKO (desde 120€), para quien todavía no tiene equipo o está empezando.</p>
             </div>
         </div>
 
         <Reviews lang="es" />
 
         <div class="amb-cta" id="amb-contact">
-            <h2>¿Listo para ser embajador?</h2>
-            <p>No hace falta que tengas el grupo cerrado: dinos cuántos pensáis ser y en qué fechas, y te respondemos con las ventajas que os corresponden y un presupuesto preciso.</p>
+            <h2>¿Montamos tu grupo?</h2>
+            <p>No hace falta que lo tengas cerrado. Dinos cuántos creéis que seréis y en qué fechas, y te decimos qué ventajas os tocan y cuánto sale exactamente.</p>
             <WhatsApp page="ambassador" lang="es" label="Escríbenos por WhatsApp" />
-            <p class="amb-fine">Precio orientativo para un grupo de 4 personas · vuelos y visados no incluidos</p>
+            <p class="amb-fine">Precio orientativo para un grupo de cuatro · vuelos y visados aparte</p>
             <!-- Meme logique que la page FR : WhatsApp reste le CTA principal, le
                  formulaire est la pour qui prefere ecrire sans quitter la page.
                  data-page-key inchange ("ambassador") : c'est <html lang="es"> qui

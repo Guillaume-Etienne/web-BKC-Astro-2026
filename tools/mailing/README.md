@@ -243,18 +243,53 @@ déjà répondu est le plus sûr moyen de perdre le contact.
 node tools/mailing/gen-mailing-clubs-escuelas-es.cjs   # -> mailing-clubs-escuelas-es.html
 ```
 
-Transposition du 1er mail français : **même structure en 10 blocs, mêmes
-photos, même angle**, pour pouvoir comparer les résultats à périmètre égal avec
-FR/CH/BE. Ce qui change, et seulement ça :
+**Ce n'est pas la traduction du mail français.** La v1 l'était, et Teresa l'a
+rejetée. Le texte a été **réécrit en espagnol** le 21/09/2026 à partir des
+mêmes faits (15 km de lagune, 1 m de fond, vent 9 jours sur 10, 12 kiters au
+maximum, les paliers du programme). Mêmes photos, même structure en 10 blocs,
+même angle — pas une phrase traduite.
 
-- la langue (relue par Teresa, hispanophone) ;
-- les URL, qui pointent toutes vers la partie `/es/` du site — `urlsFor('es')`
-  dans `lib.cjs`, dont la table de slugs recopie `src/i18n/pages.js` ;
-- **« Teresa es española : podéis escribirnos en castellano »** ajouté au bloc
-  équipe. C'est le seul frein que la version française n'avait pas à lever ;
-- le néoprène qu'on peut « laisser en France » se laisse en Espagne ;
-- « moniteurs français diplômés IKO » devient « instructores titulados IKO » :
-  la nationalité des moniteurs ne vend rien à un club espagnol.
+Ce qui trahissait la traduction, à ne pas réintroduire :
+
+- **les espaces insécables avant `:` `;` `?` `!`** — règle typographique
+  française qui n'existe pas en espagnol, et qui signe le calque dès la
+  première ligne. Les `¿` et `¡` ouvrants, eux, sont obligatoires ;
+- **« personas traídas »**, calque de « personnes amenées ». En espagnol :
+  « tres personas que se apunten contigo » ;
+- **« tu estructura »** pour parler d'une école (calque de « structure ») →
+  « tu escuela o tu club » ;
+- des phrases trop longues : le ton commercial espagnol est plus court et plus
+  direct que l'ironie écrite du français.
+
+Deux choix de fond, propres au marché espagnol :
+
+- **l'argument n'est pas le plan d'eau mais le vide.** Un Espagnol a Tarifa, il
+  connaît l'eau plate et le vent ; ce qu'il n'a pas, c'est un spot désert. D'où
+  la quatrième puce du bloc spot, absente du mail français : « doce kiters en
+  el agua como mucho — es nuestro récord de gente, no nuestra media » ;
+- **« Teresa es española, así que escríbenos en castellano sin problema »** dans
+  le bloc équipe : le seul frein que la version française n'avait pas à lever.
+
+Les URL pointent toutes vers la partie `/es/` du site — `urlsFor('es')` dans
+`lib.cjs`, dont la table de slugs recopie `src/i18n/pages.js`.
+
+### Le 11e bloc, écrit par Teresa
+
+Elle a relu, corrigé sept endroits, et **écrit elle-même un bloc que le mail
+français n'a pas** : « Aprovéchate de nuestra experiencia ». Il porte un
+argument qui n'était écrit nulle part — **ici, le matériel, on le monte et on
+le range pour le client** : « sí, aquí no montas ni recoges, lo hacemos
+nosotros ». Ses mots sont conservés tels quels, seule la ponctuation a été
+remise d'aplomb.
+
+Conséquence sur la structure : le bloc « El grupo » ne parle plus du centre
+mais **des soirées** (un plan différent chaque soir, restaurants locaux,
+braais) ; le centre, l'expérience et les instructeurs IKO ont leur bloc à eux.
+C'est le seul bloc sans photo — les neuf images du mail étaient déjà prises, et
+le mail est assez long comme ça.
+
+Cet argument a été repris sur la page ES, dans les trois points rapides du
+séjour. Le mail et la page doivent rester du même espagnol.
 
 **Page de destination** : `/es/programa-embajadores/`, version espagnole de
 `/programme-ambassadeurs/`, même régime (noindex, hors `pages.js`, hors
@@ -281,13 +316,14 @@ lot, un seul envoi — contrairement au français, scindé en deux matins.
 
 ### Objet et aperçu du texte — Espagne
 
-> **Objet** — Bilene, Mozambique: 15 km de laguna, 1 m de fondo, nadie en el agua
+> **Objet** — Bilene, Mozambique: 15 km de agua plana y doce kiters como mucho
 >
-> **Aperçu** — Viento 9 días de cada 10 de septiembre a marzo — y el viaje del
-> organizador es gratis.
+> **Aperçu** — Viento nueve días de cada diez, de septiembre a marzo. Y si
+> montas tú el grupo, tu plaza te sale gratis.
 
-Même construction qu'en français : l'objet donne le spot, l'aperçu donne le
-vent et la gratuité. Pas de « GRATIS » dans l'objet (filtres anti-spam).
+L'objet mise sur le chiffre qui parle à quelqu'un qui navigue à Tarifa en
+août : **douze**. L'aperçu apporte le vent et la gratuité, que l'objet ne dit
+pas. Pas de « GRATIS » dans l'objet (filtres anti-spam).
 
 ## Pièges appris (à ne pas refaire)
 

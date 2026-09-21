@@ -53,7 +53,7 @@ const MESSAGES = {
   home: DEFAULT,
   ambassador: {
     fr: 'Bonjour ! Je suis intéressé(e) par le Programme Ambassadeurs de Bilene Kite Center.',
-    es: '¡Hola! Me interesa el Programa Embajadores de Bilene Kite Center.',
+    es: '¡Hola! Os escribo por el Programa de Embajadores, me gustaría saber más.',
   },
   // Landing page Google Ads : le message identifie la provenance publicitaire
   // sans aucun outil de mesure — on sait d'ou vient le contact des le 1er mot.
