@@ -54,6 +54,10 @@ const MESSAGES = {
   ambassador: {
     fr: 'Bonjour ! Je suis intéressé(e) par le Programme Ambassadeurs de Bilene Kite Center.',
     es: '¡Hola! Os escribo por el Programa de Embajadores, me gustaría saber más.',
+    // Pages de prospection ecoles/clubs DE et PL. La page allemande tutoie
+    // (comme toutes les ecoles de kite allemandes), le message suit : "euer".
+    de: 'Hallo! Ich interessiere mich für euer Gruppenprogramm und hätte gern mehr Infos.',
+    pl: 'Dzień dobry! Piszę w sprawie Programu Ambasadorskiego – poproszę o więcej informacji.',
   },
   // Landing page Google Ads : le message identifie la provenance publicitaire
   // sans aucun outil de mesure — on sait d'ou vient le contact des le 1er mot.
