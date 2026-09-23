@@ -18,7 +18,7 @@ export default defineConfig({
       //   - /secret (page cachée, noindex/nofollow)
       //   - les 3 stubs de redirection FAQ (noindex + meta-refresh vers la prépa)
       //   - /lp/* : landing pages Google Ads, en noindex volontaire
-      //   - /programme-ambassadeurs/ et ses versions ES/DE/PL : lien direct
+      //   - /programme-ambassadeurs/ et ses versions ES/DE/PL/EN : lien direct
       //     newsletter/mailing, noindex volontaire
       filter: (page) =>
         !page.includes('/lp/') &&
@@ -27,6 +27,7 @@ export default defineConfig({
         !page.includes('/programa-embajadores/') &&
         !page.includes('/gruppenprogramm/') &&
         !page.includes('/program-ambasadorski/') &&
+        !page.includes('/bring-your-crew/') &&
         !page.includes('/la-faq-pour-bilene-au-mozambique/') &&
         !page.includes('/faq-bilene-mozambique/'),
     }),

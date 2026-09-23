@@ -54,6 +54,8 @@ const MESSAGES = {
   ambassador: {
     fr: 'Bonjour ! Je suis intéressé(e) par le Programme Ambassadeurs de Bilene Kite Center.',
     es: '¡Hola! Os escribo por el Programa de Embajadores, me gustaría saber más.',
+    // Page /en/bring-your-crew/ : l'offre ne s'appelle pas "ambassador" en anglais.
+    en: 'Hi! I’m interested in your Bring Your Crew group offer and would like to know more.',
     // Pages de prospection ecoles/clubs DE et PL. La page allemande tutoie
     // (comme toutes les ecoles de kite allemandes), le message suit : "euer".
     de: 'Hallo! Ich interessiere mich für euer Gruppenprogramm und hätte gern mehr Infos.',

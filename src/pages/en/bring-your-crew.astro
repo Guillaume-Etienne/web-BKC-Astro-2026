@@ -1,0 +1,312 @@
+---
+// ============================================================================
+//  BRING YOUR CREW — page EN, pendant de /programme-ambassadeurs/
+// ----------------------------------------------------------------------------
+//  Meme regime que les pages FR/ES/DE/PL : HORS de src/i18n/pages.js (pas de
+//  hreflang ni de switcher), noindex, exclue du sitemap (astro.config.mjs).
+//  <Seo> sert a l'apercu de lien du mailing (og:title/description/image).
+//
+//  /!\ Ecrite EN ANGLAIS a partir des faits de la page FR, pas traduite
+//  (demande de Guillaume, 23/09/2026 : « des vrais mots qui ont du sens en
+//  anglais »). A garder si on retouche :
+//    - pas d'"Ambassador Programme" : en anglais, un "brand ambassador" est
+//      un rider sponsorise par une marque. L'offre s'appelle "Bring Your
+//      Crew", et le principe se dit comme dans les voyages de groupe
+//      anglophones : l'organisateur voyage gratuitement ;
+//    - le vocabulaire des ecoles : kit (le materiel), hire (la location),
+//      rig / de-rig (monter / demonter), demo session, flat water, standing
+//      depth ;
+//    - orthographe britannique (organise, programme, kilometres), la plus
+//      repandue chez les ecoles de kite anglophones hors USA ;
+//    - "€690", "10%" : sans espace, a l'anglaise ; tiret " – ".
+// ============================================================================
+import MenuEN from '../../components/MenuEN.astro';
+import Footer from '../../components/Footer.astro';
+import Analytics from '../../components/Analytics.astro';
+import Seo from '../../components/Seo.astro';
+import WhatsApp from '../../components/WhatsApp.astro';
+import Reviews from '../../components/Reviews.astro';
+import { enquiryFormUrl } from '../../i18n/enquiryForm.js';
+import '../../sass/general.scss';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+    <Seo
+        page="programme-ambassadeurs"
+        lang="en"
+        noindex={true}
+        title="Bring Your Crew – Group Trips at Bilene Kite Center"
+        description="Put a group together and kite in Bilene, Mozambique: bring three people and your stay is free – and the bigger the group, the more we throw in."
+        image="/images/11-Accomodation/Palm_view.jpg"
+    />
+    <Analytics />
+</head>
+<body>
+
+    <MenuEN page="programme-ambassadeurs" />
+
+    <main>
+
+        <!-- ─── MASTHEAD ─────────────────────────────────────── -->
+        <section class="amb-hero">
+            <p class="amb-eyebrow">Bilene Kite Center · Mozambique</p>
+            <h1>Bring Your Crew</h1>
+            <p>You put the group together, we cover your stay. Bring three people and your trip costs you nothing – and the bigger the group, the more we throw in. Bring ten or more and we'll even chip in on your flights.</p>
+        </section>
+
+        <!-- ─── THREE WAYS TO RIDE ───────────────────────────── -->
+        <section class="amb-section">
+            <p class="amb-section-label">How it works</p>
+            <h2>Three ways to ride, one simple rule</h2>
+            <p class="amb-lead">However your crew rides – on their own kit, on ours, or in lessons – the perks depend on one thing: how many people you bring.</p>
+            <p class="amb-anchor-note">Bring 3 people and your stay is on us (accommodation, transfers, kit storage)</p>
+
+            <div class="amb-tiers">
+
+                <div class="acc-item is-open" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="true">
+                        <span class="acc-head-content">
+                            <span class="amb-badge">A</span>
+                            <span class="amb-tier-title">
+                                <span class="acc-title">Own kit</span>
+                                <span class="amb-tier-sub">You travel with your own kites and board</span>
+                            </span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-tier-rows">
+                                <div class="amb-tier-row"><span class="amb-amene">1–2 people</span><span class="amb-avantage">10% off accommodation + free kit storage</span></div>
+                                <div class="amb-tier-row amb-tier-row--highlight"><span class="amb-amene">3 people</span><span class="amb-avantage">Your whole stay free (flights and visa not included)</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">4–6 people</span><span class="amb-avantage">+ 40% off kit hire<br>+ a half-day demo session on the 2027 Eleveight range</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">7 people</span><span class="amb-avantage">+ two half-day demo sessions on the 2027 Eleveight range</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">10+ people</span><span class="amb-avantage">+ a flight voucher worth around €90 for every person you bring</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="false">
+                        <span class="acc-head-content">
+                            <span class="amb-badge">B</span>
+                            <span class="amb-tier-title">
+                                <span class="acc-title">Hire kit</span>
+                                <span class="amb-tier-sub">No kit of your own? You ride ours</span>
+                            </span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-tier-rows">
+                                <div class="amb-tier-row"><span class="amb-amene">1–2 people</span><span class="amb-avantage">20% off accommodation + free kit storage</span></div>
+                                <div class="amb-tier-row amb-tier-row--highlight"><span class="amb-amene">3 people</span><span class="amb-avantage">Your whole stay free (flights and visa not included)</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">4–6 people</span><span class="amb-avantage">+ 50% off kit hire<br>+ two half-day demo sessions on the 2027 Eleveight range</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">7 people</span><span class="amb-avantage">+ three half-day demo sessions on the 2027 Eleveight range</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">10+ people</span><span class="amb-avantage">+ a flight voucher worth around €115 for every person you bring</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="false">
+                        <span class="acc-head-content">
+                            <span class="amb-badge">C</span>
+                            <span class="amb-tier-title">
+                                <span class="acc-title">Lessons</span>
+                                <span class="amb-tier-sub">You're learning to kite – or getting your group into it</span>
+                            </span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-tier-rows">
+                                <div class="amb-tier-row"><span class="amb-amene">1–2 people</span><span class="amb-avantage">25% off accommodation and excursions</span></div>
+                                <div class="amb-tier-row amb-tier-row--highlight"><span class="amb-amene">3 people</span><span class="amb-avantage">Your whole stay free (flights and visa not included)</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">4–6 people</span><span class="amb-avantage">+ a free 4-hour lesson pack</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">7 people</span><span class="amb-avantage">+ a free 10-hour lesson pack</span></div>
+                                <div class="amb-tier-row"><span class="amb-amene">10+ people</span><span class="amb-avantage">+ a flight voucher worth around €120 for every person you bring</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ─── SAMPLE TRIP ──────────────────────────────────── -->
+        <section class="amb-package-hero">
+            <p class="amb-eyebrow">Bilene Kite Center · Mozambique</p>
+            <h2>Seven nights on an unspoilt lagoon: kite, beach, repeat</h2>
+            <p>A hassle-free package for a group of four – the best spot in southern Mozambique, and nothing for you to organise.</p>
+            <div class="amb-price-tag">
+                <span class="amb-amount">€690</span>
+                <span class="amb-unit">per person</span>
+            </div>
+        </section>
+
+        <section class="amb-section">
+            <p class="amb-section-label">What your group gets</p>
+            <h2>It's all sorted – you just get on the water</h2>
+            <p class="amb-lead">A complete package, so you can focus on what matters: the wind, the lagoon and your crew. Kilometres of flat water at standing depth – and the wetsuit stays at home.</p>
+
+            <div class="amb-quick-items">
+                <div class="amb-qi"><span class="amb-dot"></span><div><strong>Airport transfers</strong><span>Both ways – we meet you as you walk out of arrivals</span></div></div>
+                <div class="amb-qi"><span class="amb-dot"></span><div><strong>Right on the beach</strong><span>Safe launch area, showers, chill-out zone</span></div></div>
+                <div class="amb-qi"><span class="amb-dot"></span><div><strong>We rig, you ride</strong><span>Before each session your kite is pumped up and rigged; afterwards it's rinsed and locked away in our kit store</span></div></div>
+            </div>
+
+            <div class="amb-included">
+
+                <div class="acc-item" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="false">
+                        <span class="acc-head-content">
+                            <span class="acc-title">7 nights in a beachfront chalet</span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-included-body">
+                                <img src="/images/11-Accomodation/Palm_Bung.jpg" alt="Shaded path between the centre's bungalows" loading="lazy">
+                                <p>Shared double rooms, open-plan living room and kitchen, two bathrooms and a terrace looking out over the beach.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="false">
+                        <span class="acc-head-content">
+                            <span class="acc-title">Limpopo day trip</span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-included-body">
+                                <img src="/images/4-trips/8.webp" alt="The lighthouse and the mouth of the Limpopo river from the air" loading="lazy" class="amb-img-full">
+                                <p>A full day out, lunch included.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="false">
+                        <span class="acc-head-content">
+                            <span class="acc-title">A morning in Macia</span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-included-body">
+                                <img src="/images/2-excursions/Macia.webp" alt="The local market in Macia" loading="lazy">
+                                <p>The village and its local market.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="false">
+                        <span class="acc-head-content">
+                            <span class="acc-title">The lagoon from above</span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-included-body">
+                                <img src="/images/2-excursions/autres.webp" alt="The Bilene lagoon from the air, with its channel to the sea and sandbanks" loading="lazy">
+                                <p>Channels, sandbanks and dunes, just minutes from the centre.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" data-acc>
+                    <button class="acc-header amb-acc-header" aria-expanded="false">
+                        <span class="acc-head-content">
+                            <span class="acc-title">45-minute massage</span>
+                        </span>
+                        <span class="acc-toggle" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="acc-panel">
+                        <div class="acc-panel-inner">
+                            <div class="acc-body amb-included-body">
+                                <img src="/images/blog/massage.webp" alt="45-minute relaxing massage" loading="lazy" class="amb-img-top">
+                                <p>To wind down after your sessions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="amb-note-band">
+            <div class="amb-note-badge">+</div>
+            <div>
+                <h3>Optional extras</h3>
+                <p>Eleveight kit hire (€50 per half day) or private lessons with IKO-certified instructors (from €120) – for anyone without their own kit or just starting out.</p>
+            </div>
+        </div>
+
+        <Reviews lang="en" />
+
+        <div class="amb-cta" id="amb-contact">
+            <h2>Tell us about your crew</h2>
+            <p>Your group doesn't need to be locked in yet. Just tell us roughly how many of you there'll be and when you'd like to come – we'll get back to you with the perks that apply and an exact quote.</p>
+            <WhatsApp page="ambassador" lang="en" label="Message us on WhatsApp" />
+            <p class="amb-fine">Guide price for a group of 4 · flights and visa not included</p>
+            <!-- Meme logique que les pages FR/ES/DE/PL : WhatsApp en CTA principal,
+                 le formulaire pour qui prefere ecrire sans quitter la page.
+                 data-page-key inchange ("ambassador") : <html lang="en"> distingue
+                 la provenance anglaise dans GA4 (page_language). -->
+            <div class="lp-form-card">
+                <p class="lp-form-note">Or drop us a line here, without leaving the page.</p>
+                <iframe
+                    id="bkc-enquiry"
+                    data-page-key="ambassador"
+                    title="Bilene Kite Center contact form"
+                    src={enquiryFormUrl('en')}
+                    style="width:100%;border:0;display:block;height:560px"
+                    loading="lazy"></iframe>
+            </div>
+        </div>
+
+    </main>
+
+    <Footer />
+    <script is:inline src="/js/accordion.js?v=2"></script>
+</body>
+</html>

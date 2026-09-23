@@ -373,6 +373,25 @@ règles de plume sont en tête de chaque générateur.
 Expéditeur : « Guillaume von Bilene Kite » / « Guillaume z Bilene Kite » — le
 « de » de l'expéditeur français est du français.
 
+## La campagne anglaise (23/09/2026)
+
+`gen-mailing-kite-schools-en.cjs` → `mailing-kite-schools-en.html`, page
+`/en/bring-your-crew/` (`urlsFor('en')`). Même principe : **écrit en anglais,
+pas traduit**, 11 blocs comme DE/ES.
+
+- Pas d'« ambassador » : en anglais c'est un rider sponsorisé par une marque.
+  L'offre s'appelle **« Bring Your Crew »** (page et mail).
+- Vocabulaire des écoles : kit, hire, rig / de-rig, flat water, standing depth.
+  Orthographe britannique.
+- Liens secondaires vers le site anglais, CTA vers `#amb-contact` de la page.
+
+> **Objet EN** — Bilene, Mozambique: 15 km of flat water and never more than twelve kiters
+>
+> **Aperçu EN** — Wind nine days out of ten, September to March. And if you
+> get the group together, your trip is on us.
+
+Expéditeur : « Guillaume from Bilene Kite ».
+
 ## Pièges appris (à ne pas refaire)
 
 - **Le logo est blanc + vert.** Sur fond clair il n'en reste que le swoosh vert.

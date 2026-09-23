@@ -90,6 +90,16 @@ const URLS_BY_LANG = {
     activites: 'https://www.bilenekite.com/en/activities-in-bilene-outings-visits-exploration/',
     contact:   'https://www.bilenekite.com/pl/program-ambasadorski/#amb-contact',
   },
+  // Anglais (23/09/2026) : le site existe en entier. Le contact pointe quand
+  // meme sur le bloc contact de la page du programme, comme DE/PL : le lecteur
+  // y retrouve l'offre ET le formulaire, sans repartir de zero.
+  en: {
+    home:      'https://www.bilenekite.com/en/',
+    ambass:    'https://www.bilenekite.com/en/bring-your-crew/',
+    centre:    'https://www.bilenekite.com/en/the-kite-center-in-bilene-mozambique/',
+    activites: 'https://www.bilenekite.com/en/activities-in-bilene-outings-visits-exploration/',
+    contact:   'https://www.bilenekite.com/en/bring-your-crew/#amb-contact',
+  },
 };
 
 // Les slugs viennent de src/i18n/pages.js : en cas de changement de route,
